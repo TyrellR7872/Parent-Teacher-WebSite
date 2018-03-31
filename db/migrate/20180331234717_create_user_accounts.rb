@@ -4,7 +4,7 @@ class CreateUserAccounts < ActiveRecord::Migration[5.1]
       t.string :username
       t.string :password
       t.string :email
-      t.string :type
+      t.string :accounttype
       t.string :name
       t.string :childname
       t.integer :childgrade
