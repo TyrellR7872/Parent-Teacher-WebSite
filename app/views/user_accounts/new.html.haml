@@ -1,2 +1,19 @@
 #main.container
-  %h1.header= "Hello, world"
+    %h1.header= 'Welcome to Hamilton Central School Parent Teacher Website'
+
+    %h2.create_header= 'Create a new Account'
+    =form_for @user_account, :method => :post do |f|
+        .field
+        =f.label :username, "Username"
+        =f.text_field :username
+
+        .field
+        =f.label :password, "Password"
+        =f.text_field :password
+
+        .field
+        =f.label :email, "Email"
+        =f.text_field :email
+
+        .field
+        =f.submit "Create User Account"
