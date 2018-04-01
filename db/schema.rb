@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180401052621) do
+=======
+ActiveRecord::Schema.define(version: 20180331234717) do
+>>>>>>> master
 
   create_table "calendar_events", force: :cascade do |t|
     t.text "title"
@@ -42,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180401052621) do
     t.string "username"
     t.string "password"
     t.string "email"
-    t.string "type"
+    t.string "accounttype"
     t.string "name"
     t.string "childname"
     t.integer "childgrade"

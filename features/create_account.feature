@@ -12,7 +12,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
   Scenario: Create a new user account
     Given I am on the create user account page
     When I fill in the following:
-      | Username|Somm|
+      | Username|JSomm|
       | Password|cosc|
       | Email|jsommers@colgate.edu|
 
