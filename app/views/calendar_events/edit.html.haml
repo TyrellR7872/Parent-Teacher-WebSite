@@ -15,6 +15,14 @@
       =f.text_field :location
 
     .field
+      =f.label :start_date_time, "Start date of the event"
+      =f.datetime_local_field :start_date_time
+
+    .field
+      =f.label :end_date_time, "End date of the event (optional)"
+      =f.datetime_local_field :end_date_time
+
+    .field
       =f.label :is_sport
       =f.check_box :is_sport
 
@@ -56,7 +64,7 @@
 
     .field
       =f.label :contact_person, "Contact person email"
-      =f.text_field :contact_person
+      =f.email_field :contact_person
 
     .field
       =f.label :is_approved, "Is this event approved?"
