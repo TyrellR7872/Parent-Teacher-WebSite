@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180401052621) do
     t.string "username"
     t.string "password"
     t.string "email"
-    t.string "type"
+    t.string "accounttype"
     t.string "name"
     t.string "childname"
     t.integer "childgrade"
