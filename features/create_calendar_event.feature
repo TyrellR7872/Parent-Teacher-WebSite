@@ -5,23 +5,23 @@ Feature: Create a Calendar events
 
   Background: the website already has some existing calendar event
     Given these CalendarEvents:
-      | title        | description               | date_day | date_month |date_year| time     | location                | type | contact_person        | is_approved |
-      | football     | cozy and sunny            | 10       |  7         | 2018    | 16:00    | Lathrop, Hamilton, NY   | sport| hnguyenvu@colgate.edu | true        |
-      | jazz concert | come and chill with music | 12       |  5         | 2018    | 20:00    | Ho, Hamilton, NY        | music| pdhawka@colgate.edu   | true        |
+      | title        | description               | start_date_day | start_date_month |start_date_year| start_time     | location                | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 10             |  7               | 2018          | 16:00          | Lathrop, Hamilton, NY   | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 12             |  5               | 2018          | 20:00          |  Ho, Hamilton, NY       |          | true       | pdhawka@colgate.edu   | true        |
 
   Scenario: Create a new calendar event with a status of approved
     Given I am on the create calendar event page
     When I fill in the following:
-      | title          | easter egg decoration            |
-      | description    | have fun eating hardboiled eggs  |
-      | date_day       | 15                               |
-      | date_month     | 4                                |
-      | date_year      | 2018                             |
-      | time           | 17:00  |
-      | location       |  Newell, Colgate University |
-      | type           |  family |
-      | contact_person |  hnguyenvu@colgate.edu |
-      | is_approved    | true |
+      | title            | easter egg decoration            |
+      | description      | have fun eating hardboiled eggs  |
+      | start_date_day   | 15                               |
+      | start_date_month | 4                                |
+      | start_date_year  | 2018                             |
+      | start_time       | 17:00  |
+      | location         |  Newell, Colgate University |
+      | for_family       |  true |
+      | contact_person   |  hnguyenvu@colgate.edu |
+      | is_approved      | true |
 
 
     When I press "Create Event"
@@ -34,16 +34,16 @@ Feature: Create a Calendar events
     Scenario: Create a new calendar event with a status of not yet approved
       Given I am on the create calendar event page
       When I fill in the following:
-        | title          | church dinner                    |
-        | description    | free dinner for hungry students  |
-        | date_day       | 5                                |
-        | date_month     | 5                                |
-        | date_year      | 2018                             |
-        | time           | 17:30  |
-        | location       |  First Baptist Church |
-        | type           |  family |
-        | contact_person |  hnguyenvu@colgate.edu |
-        | is_approved    | false |
+        | title            | church dinner                    |
+        | description      | free dinner for hungry students  |
+        | start_date_day   | 20                               |
+        | start_date_month | 5                                |
+        | start_date_year  | 2018                             |
+        | start_time       | 17:00  |
+        | location         |  First Baptist Church |
+        | for_family       |  true |
+        | contact_person   |  hnguyenvu@colgate.edu |
+        | is_approved      | true |
 
       When I press "Create Event"
       Then I should be on the calendar events page
