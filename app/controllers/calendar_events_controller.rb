@@ -2,22 +2,22 @@ class CalendarEventsController < ApplicationController
 
   def index
     @calendar_event = CalendarEvent.all
+    @calendar_event = @calendar_event.where(:is_approved => true)
   end
 
   def show
     @calendar_event = CalendarEvent.find(params[:id])
-
   end
 
   def create
-    # event = CalendarEvent.new(create_update_params)
-    # if event.save
-    #   flash[:success] = "New event \'#{event.title}\' created"
-    #   redirect_to calendar_events_path
-    # else
-    #   flash[:warning]= "Error creating new event"
-    #   redirect_to new_calendar_event_path(event)
-    # end
+    @calendar_event = CalendarEvent.new(create_update_params)
+    if @calendar_event.save
+      flash[:success] = "New event \'#{event.title}\' created"
+      redirect_to calendar_events_path
+    else
+      flash[:warning]= "Error creating new event"
+      redirect_to new_calendar_event_path(event)
+    end
   end
 
   def edit
