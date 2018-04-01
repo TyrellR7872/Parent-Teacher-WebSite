@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "home#index"
+  resources :user_accounts
 
   get 'user_accounts/new'
 
@@ -13,6 +15,6 @@ Rails.application.routes.draw do
   get 'user_account/update'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :user_accounts
-  root "user_accounts#new"
+  resources :calendar_events
+  # root "user_accounts#new"
 end
