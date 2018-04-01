@@ -2,7 +2,7 @@ class CalendarEventsController < ApplicationController
 
   def index
     @calendar_event = CalendarEvent.all
-  # TODO add filter is_approved here
+    @calendar_event = @calendar_event.where('is_approved = ?', true)
   end
 
   def show
@@ -11,8 +11,8 @@ class CalendarEventsController < ApplicationController
   end
 
   def create
-    event = CalendarEvent.new(create_update_params)
-    if event.save
+    @calendar_event = CalendarEvent.new(create_update_params)
+    if @calendar_event.save
       flash[:success] = "New event \'#{event.title}\' created"
       redirect_to calendar_events_path
     else
