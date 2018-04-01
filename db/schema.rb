@@ -10,15 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180401052621) do
+ActiveRecord::Schema.define(version: 20180401154701) do
 
   create_table "calendar_events", force: :cascade do |t|
     t.text "title"
     t.text "description"
-    t.date "start_date"
-    t.time "start_time"
-    t.date "end_date"
-    t.time "end_time"
     t.text "location"
     t.boolean "is_sport"
     t.boolean "is_musical"
@@ -36,6 +32,8 @@ ActiveRecord::Schema.define(version: 20180401052621) do
     t.text "contact_person"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.datetime "start_date_time"
+    t.datetime "end_date_time"
   end
 
   create_table "user_accounts", force: :cascade do |t|
