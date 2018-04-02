@@ -2,7 +2,7 @@ class CalendarEventsController < ApplicationController
 
   def index
     @calendar_events = CalendarEvent.all
-    @calendar_events = @calendar_event.where('is_approved = ?', true)
+    @calendar_events = @calendar_events.where('is_approved = ?', true)
   end
 
   def show
