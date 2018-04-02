@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe CalendarEvent, type: :model do
   describe "check attributes and methods" do
     it "should be able to create a CalendarEvent object which has the correct methods on it" do
-      event = CalendarEvent.create!(title: "Event 1", description: "Gibberish nonsensical text", start_date_time: Date.new(2018,9,5), location: "Huntington Gym", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      event = CalendarEvent.create!(title: "Event 1", description: "Gibberish nonsensical text", start_date_time: DateTime.new(2018,9,5), location: "Huntington Gym", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
       expect(event).to respond_to :title
       expect(event).to respond_to :start_date_time
       expect(event).to respond_to :location
@@ -32,7 +32,7 @@ RSpec.describe CalendarEvent, type: :model do
 
   it "should be able to create a CalendarEvent object if the all the fields are given" do
       expect {
-          CalendarEvent.create!(title: "Mary Poppins", description: "supercalifragilisticexpialidocious", start_date_time: Date.new(2018,9,5), location: "Hamilton Theatre", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+          CalendarEvent.create!(title: "Mary Poppins", description: "supercalifragilisticexpialidocious", start_date_time: DateTime.new(2018,9,5), location: "Hamilton Theatre", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
   end
 
 end
