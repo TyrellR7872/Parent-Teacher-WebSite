@@ -11,8 +11,8 @@ class CalendarEventsController < ApplicationController
   end
 
   def create
-    @calendar_event = CalendarEvent.new(create_update_params)
-    if @calendar_event.save
+    event = CalendarEvent.new(create_update_params)
+    if event.save
       flash[:success] = "New event \'#{event.title}\' created"
       redirect_to calendar_events_path
     else
