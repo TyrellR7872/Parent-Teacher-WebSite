@@ -8,10 +8,10 @@
                 %th Description
                 %th Location
                 %th Contact Person
-                %th Start_Date
-                %th End_Date
+                %th Start Date
+                %th End Date
         %tbody
-            -@calendar_event.each do |event|
+            -@calendar_events.each do |event|
                 %tr
                 %td=event.title
                 %td=event.description
