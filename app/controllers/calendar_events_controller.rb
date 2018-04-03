@@ -17,15 +17,15 @@ class CalendarEventsController < ApplicationController
   end
 
   def create
-    event = CalendarEvent.new(create_update_params)
-    event.start_date_time = event.start_date_time.to_formatted_s(:short)
-    event.end_date_time = event.end_date_time.to_formatted_s(:short)
-    if event.save
-      flash[:success] = "New event \'#{event.title}\' created"
+    @calendar_event = CalendarEvent.new(create_update_params)
+    @calendar_event.start_date_time = @calendar_event.start_date_time.to_formatted_s(:short)
+    @calendar_event.end_date_time = @calendar_event.end_date_time.to_formatted_s(:short)
+    if @calendar_event.save
+      flash[:success] = "New event \'#{@calendar_event.title}\' created"
       redirect_to calendar_events_path
     else
       flash[:warning]= "Error creating new event"
-      redirect_to new_calendar_event_path(event)
+      redirect_to new_calendar_event_path(@calendar_event)
     end
   end
 
@@ -37,6 +37,15 @@ class CalendarEventsController < ApplicationController
   def update
     id = params[:id]
     @calendar_event = CalendarEvent.find(id)
+
+    @calendar_event.update(create_update_params)
+    if @calendar_event.save
+      flash[:notice] = "Event \"#{@calendar_event.title}\" updated"
+      redirect_to calendar_events_path and return
+    else
+      flash[:error] = "Error updating event"
+      redirect_to edit_calendar_event_path(@calendar_event) and return
+    end
   end
 
   def new

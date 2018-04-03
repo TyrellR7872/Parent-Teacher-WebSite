@@ -68,9 +68,9 @@
 
 -# -if current_user.admin
 -#   .field.form-group
--#     = form.label :is_reviewed, "Is the event reviewed?"
--#     = form.check_box :is_reviewed, :checked => false, required: false
+-#     = f.label :is_approved, "Is the event approved?"
+-#     = f.check_box :is_reviewed, :checked => (f.is_approved ? f.is_approved : false), required: true
 -#
 -# -else
 -#   .field.form-group
--#     = form.hidden_field :is_reviewed, :value => false, required: false
+-#     = form.hidden_field :is_approved, :value => false, required: false

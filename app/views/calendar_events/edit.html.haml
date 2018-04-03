@@ -1,7 +1,7 @@
 #main.container
   %h3.header Edit event details
 
-  =form_for @event, :method => :patch do |f|
+  =form_for @calendar_event, :method => :patch do |f|
     =render 'event_form_template', f: f
 
     -# .field
