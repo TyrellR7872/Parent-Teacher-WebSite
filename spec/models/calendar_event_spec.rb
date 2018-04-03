@@ -25,14 +25,31 @@ RSpec.describe CalendarEvent, type: :model do
     end
   end
 
-  it "should fail to create a CalendarEvent object if the start date time is not specified" do
-      expect {
-          CalendarEvent.create!(title: "Event 2", description: "Gibberish nonsensical text", location: "Huntington Gym", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
-  end
+  describe "check failure of creating when mandatory fields are nil" do
+    it "should fail to create a CalendarEvent object if the start date time is not specified" do
+        expect {
+            CalendarEvent.create!(title: "Start Date Time Nil Test", description: "Gibberish nonsensical text", location: "Huntington Gym", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+    end
 
-  it "should be able to create a CalendarEvent object if the all the fields are given" do
-      expect {
-          CalendarEvent.create!(title: "Mary Poppins", description: "supercalifragilisticexpialidocious", start_date_time: DateTime.new(2018,9,5), location: "Hamilton Theatre", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+    it "should fail to create a CalendarEvent object if the location is not specified" do
+        expect {
+            CalendarEvent.create!(title: "Location Nil Test", description: "Gibberish nonsensical text", start_date_time: DateTime.new(2018,9,5), is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+    end
+
+    it "should fail to create a CalendarEvent object if the contact person is not specified" do
+        expect {
+            CalendarEvent.create!(title: "Contact Person Nil Test", description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5), is_sport: true, is_approved: true)}.to raise_exception ActiveRecord::NotNullViolation
+    end
+
+    it "should fail to create a CalendarEvent object if the status of being approved is not specified" do
+        expect {
+            CalendarEvent.create!(title: "Approved Nil Test", description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5), is_sport: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+    end
+
+    it "should fail to create a CalendarEvent object if the title is not specified" do
+        expect {
+            CalendarEvent.create!(description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5), is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+    end
   end
   # it "should show calendar events in chronological order" do
   #   collection = []
