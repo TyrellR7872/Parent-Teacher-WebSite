@@ -1,22 +1,26 @@
 #main.container
-    %h3.header Calendar Events For HCS-PTO
+  %h3.header Calendar Events For HCS-PTO
 
-    %table.table
-        %thead
-            %tr
-                %th= link_to('Title',calendar_events_path(:order => 'title'))
-                %th Description
-                %th Location
-                %th Contact Person
-                %th Start Date
-                %th End Date
-        %tbody
-            -@calendar_events.each do |event|
-                %tr
-                %td.title=event.title
-                %td.description=event.description
-                %td.location=event.location
-                %td.contact_person=event.contact_person
-                %td.start_date=event.start_date_time ? event.start_date_time.to_formatted_s(:short): "No time indicated"
-                %td.end_date=event.end_date_time ? event.end_date_time.to_formatted_s(:short): "No time indicated"
+  %table.table
+    %thead
+      %tr
+        %th= link_to('Title',calendar_events_path(:order => 'title'))
+        %th Description
+        %th Location
+        %th Contact Person
+        %th Start Date
+        %th End Date
+    %tbody
+      -@calendar_events.each do |event|
+        %tr
+        %td.title=link_to event.title, calendar_event_path(event)
+        %td.description=truncate(event.description, length: 50)
+        %td.location=event.location
+        %td.contact_person=event.contact_person
+        %td.start_date=event.start_date_time ? event.start_date_time.to_formatted_s(:short): "No time indicated"
+        %td.end_date=event.end_date_time ? event.end_date_time.to_formatted_s(:short): "No time indicated"
+
+  %br
+  %br
+
 =link_to "Create a new event for HCS-PTO", new_calendar_event_path
