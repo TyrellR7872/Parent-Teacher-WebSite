@@ -252,3 +252,18 @@ end
 Then /^show me the page$/ do
   save_and_open_page
 end
+
+###############################
+# FOR CALENDAR EVENT
+###############################
+
+Given("these CalendarEvents:") do |table|
+  hash_table = table.hashes
+  for row_hash in hash_table
+    event = row_hash
+    event[:start_date_time] = DateTime.parse(event[:start_date_time])
+    event[:end_date_time] = DateTime.parse(event[:end_date_time])
+    e = CalendarEvent.new(event)
+    e.save
+  end
+end
