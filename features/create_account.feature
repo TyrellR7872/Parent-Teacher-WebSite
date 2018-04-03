@@ -5,9 +5,9 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
   Background: the website has already has existing accounts
     Given these UserAccounts:
-    | username  | password  | email                | type     | name          | childname | childgrade| homeaddress |
-    | ty_rell   | roberts   | troberts@colgate.edu |  teacher | Tyrell Roberts| Little T  | 4         | 13 Oak Dr   |
-    | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter    | Little Jimmy    | 2         | 10 Oak Dr   |
+    | username  | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
+    | ty_rell   | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
+    | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
 
   Scenario: Create a new user account
     Given I am on the create user account page
@@ -18,13 +18,14 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
     When I press "Create User Account"
     Then I should be on edit user account page
-    I should see that "Somm" has Password of "cosc"
+    And I should see "User Account "JSomm"" Successfully Created
+    I should see that "JSomm" has Password of "cosc"
     When I fill in the following:
-      | Type|Teacher|
-      | Name|Joel Sommers|
-      | Child's Name|Annie|
-      | Child's Grade|4|
-      | Home Address|14 Oak Dr|
+      | Type          |Teacher      |
+      | Name          |Joel Sommers |
+      | Child's Name  |Annie        |
+      | Child's Grade |4            |
+      | Home Address  |14 Oak Dr     |
 
     And press "Update User Account Details"
     I should be on the show user account page
