@@ -34,5 +34,13 @@ RSpec.describe CalendarEvent, type: :model do
       expect {
           CalendarEvent.create!(title: "Mary Poppins", description: "supercalifragilisticexpialidocious", start_date_time: DateTime.new(2018,9,5), location: "Hamilton Theatre", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
   end
+  # it "should show calendar events in chronological order" do
+  #   collection = []
+  #   page.all('.start_date').each do |row|
+  #     collection << row.text
+  #   end
+  #   sorted_collection = collection.sort_by{|prop| "prop.#{string}"}
+  #   expect(collection).to eq(sorted_collection)
+  # end
 
 end

@@ -4,7 +4,7 @@
     %table.table
         %thead
             %tr
-                %th Title
+                %th= link_to('Title',calendar_events_path(:order => 'title'))
                 %th Description
                 %th Location
                 %th Contact Person
@@ -17,6 +17,6 @@
                 %td=event.description
                 %td=event.location
                 %td=event.contact_person
-                %td=event.start_date_time ? event.start_date_time.to_formatted_s(:short) : "No time indicated"
-                %td=event.end_date_time ? event.end_date_time.to_formatted_s(:short) : "No time indicated"
+                %td.start_date=event.start_date_time ? event.start_date_time.to_formatted_s(:short): "No time indicated"
+                %td=event.end_date_time ? event.end_date_time.to_formatted_s(:short): "No time indicated"
 =link_to "Create a new event for HCS-PTO", new_calendar_event_path

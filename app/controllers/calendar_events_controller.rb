@@ -1,8 +1,14 @@
+require 'date'
+
 class CalendarEventsController < ApplicationController
 
   def index
     @calendar_events = CalendarEvent.all
-    @calendar_events = @calendar_events.where('is_approved = ?', true)
+    @calendar_events = @calendar_events.where('is_approved = ?', true).order('start_date_time')
+    order = params[:order]
+    if !order.nil?
+      @calendar_events = @calendar_events.order(order)
+    end
   end
 
   def show
@@ -12,6 +18,8 @@ class CalendarEventsController < ApplicationController
 
   def create
     event = CalendarEvent.new(create_update_params)
+    event.start_date_time = event.start_date_time.to_formatted_s(:short)
+    event.end_date_time = event.end_date_time.to_formatted_s(:short)
     if event.save
       flash[:success] = "New event \'#{event.title}\' created"
       redirect_to calendar_events_path
