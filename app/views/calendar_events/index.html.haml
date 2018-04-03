@@ -20,6 +20,14 @@
         %td.start_date=event.start_date_time ? event.start_date_time.to_formatted_s(:short): "No time indicated"
         %td.end_date=event.end_date_time ? event.end_date_time.to_formatted_s(:short): "No time indicated"
 
+  =form_for :search, :method => :get do |f|
+    =f.label :start_date_time, "From"
+    =f.datetime_local_field :start_date_time
+
+    =f.label :end_date_time, "To"
+    =f.datetime_local_field :end_date_time
+
+    =f.submit "Show events"
   %br
   %br
 
