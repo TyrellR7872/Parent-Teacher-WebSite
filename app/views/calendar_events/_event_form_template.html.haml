@@ -1,0 +1,76 @@
+.field
+  =f.label :title, "Title"
+  =f.text_field :title, required: true, class: 'form-template'
+
+.field
+  =f.label :description, "Description"
+  =f.text_field :description, required: true, class: 'form-template'
+
+.field
+  =f.label :location, "Location"
+  =f.text_field :location, required: true, class: 'form-template'
+
+.field
+  =f.label :start_date_time, "Start date of the event"
+  =f.datetime_local_field :start_date_time, required: true, class: 'form-template'
+
+.field
+  =f.label :end_date_time, "End date of the event (optional)"
+  =f.datetime_local_field :end_date_time, required: true, class: 'form-template'
+
+.field
+  =f.label :is_sport
+  =f.check_box :is_sport, class: 'form-template'
+
+.field
+  =f.label :is_musical
+  =f.check_box :is_musical, class: 'form-template'
+
+.field
+  =f.label :is_meeting
+  =f.check_box :is_meeting, class: 'form-template'
+
+.field
+  =f.label :is_charity
+  =f.check_box :is_charity, class: 'form-template'
+
+.field
+  =f.label :is_gathering
+  =f.check_box :is_gathering, class: 'form-template'
+
+.field
+  =f.label :is_optional
+  =f.check_box :is_optional, class: 'form-template'
+
+.field
+  =f.label :for_teacher
+  =f.check_box :for_teacher, class: 'form-template'
+
+.field
+  =f.label :for_parent
+  =f.check_box :for_parent, class: 'form-template'
+
+.field
+  =f.label :for_elementary_student
+  =f.check_box :for_elementary_student, class: 'form-template'
+
+.field
+  =f.label :for_highschool_student
+  =f.check_box :for_highschool_student, class: 'form-template'
+
+.field
+  =f.label :contact_person, "Contact person email"
+  =f.email_field :contact_person, required: true, class: 'form-template'
+
+.field
+  =f.label :is_approved, "Is this event approved?"
+  =f.check_box :is_approved, required: true, class: 'form-template'
+
+-# -if current_user.admin
+-#   .field.form-group
+-#     = form.label :is_reviewed, "Is the event reviewed?"
+-#     = form.check_box :is_reviewed, :checked => false, required: false
+-#
+-# -else
+-#   .field.form-group
+-#     = form.hidden_field :is_reviewed, :value => false, required: false

@@ -1,78 +1,11 @@
 #main.container
   %h3.header Create a new calendar event to list
 
-=form_for @calendar_event, :method => :post do |f|
-  .field
-    =f.label :title, "Title"
-    =f.text_field :title
+  =form_for @calendar_event, :method => :post do |f|
+    =render 'event_form_template', f: f
+    -# .field
+    -#   =f.label :image, "Image"
+    -#   =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
 
-  .field
-    =f.label :description, "Description"
-    =f.text_field :description
-
-  .field
-    =f.label :location, "Location"
-    =f.text_field :location
-
-  .field
-    =f.label :start_date_time, "Start date of the event"
-    =f.datetime_local_field :start_date_time
-
-  .field
-    =f.label :end_date_time, "End date of the event (optional)"
-    =f.datetime_local_field :end_date_time
-
-  .field
-    =f.label :is_sport
-    =f.check_box :is_sport
-
-  .field
-    =f.label :is_musical
-    =f.check_box :is_musical
-
-  .field
-    =f.label :is_meeting
-    =f.check_box :is_meeting
-
-  .field
-    =f.label :is_charity
-    =f.check_box :is_charity
-
-  .field
-    =f.label :is_gathering
-    =f.check_box :is_gathering
-
-  .field
-    =f.label :is_optional
-    =f.check_box :is_optional
-
-  .field
-    =f.label :for_teacher
-    =f.check_box :for_teacher
-
-  .field
-    =f.label :for_parent
-    =f.check_box :for_parent
-
-  .field
-    =f.label :for_elementary_student
-    =f.check_box :for_elementary_student
-
-  .field
-    =f.label :for_highschool_student
-    =f.check_box :for_highschool_student
-
-  .field
-    =f.label :contact_person, "Contact person email"
-    =f.email_field :contact_person
-
-  .field
-    =f.label :is_approved, "Is this event approved?"
-    =f.check_box :is_approved
-
-  -# .field
-  -#   =f.label :image, "Image"
-  -#   =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
-
-  .field
-    =f.submit "Create event"
+    .field
+      =f.submit "Create event"
