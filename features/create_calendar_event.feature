@@ -12,32 +12,34 @@ Feature: Create a Calendar events
   Scenario: Create a new calendar event with a status of approved
     Given I am on the create calendar event page
     When I fill in the following:
-      | title            | easter egg decoration            |
-      | description      | have fun eating hardboiled eggs  |
-      | start_date_time  | 3rd Jan 2021 04:05:06 AM         |
-      | end_date_time    | 3rd Jan 2021 04:05:06 PM         |
-      | location         |  Newell, Colgate University |
-      | for_family       |  true |
-      | contact_person   |  hnguyenvu@colgate.edu |
-      | is_approved      | true |
+      | Title                    | easter egg decoration            |
+      | Description              | have fun eating hardboiled eggs  |
+      | Start date of the event  | 3rd Jan 2021 04:05:06 AM         |
+      | End date of the event    | 3rd Jan 2021 04:05:06 PM         |
+      | Location                 |  Newell, Colgate University |
+      | For family               |  true |
+      | Contact person email     |  hnguyenvu@colgate.edu |
+      | Is this event approved?  | true |
 
-    When I press "Create Event"
+    When I press "Create event"
     Then I should be on the calendar events page
     And I should see "New event 'easter egg decoration' created and added to the page"
     And I should see that "easter egg decoration" has a date of "2021/01/03"
     And I should see that "easter egg decoration" has a time of "04:05"
+    And I should see "football"
+    And I should see "jazz concert"
 
   Scenario: Create a new calendar event with a status of not yet approved
     Given I am on the create calendar event page
     When I fill in the following:
-      | title            | church dinner                    |
-      | description      | free dinner for hungry students  |
-      | start_date_time  | 3rd Sep 2001 05:05:00 PM         |
-      | end_date_time    | 8th Oct 2001 07:05:06 PM         |
-      | location         |  First Baptist Church |
-      | for_family       |  true |
-      | contact_person   |  hnguyenvu@colgate.edu |
-      | is_approved      | false |
+    | Title                    | church dinner                    |
+    | Description              | free dinner for hungry students  |
+    | Start date of the event  | 3rd Jan 2021 04:05:06 AM         |
+    | End date of the event    | 3rd Jan 2021 04:05:06 PM         |
+    | Location                 |  Newell, Colgate University |
+    | For family               |  true |
+    | Contact person email     |  hnguyenvu@colgate.edu |
+    | Is this event approved?  | false |
 
     When I press "Create Event"
     Then I should be on the calendar events page

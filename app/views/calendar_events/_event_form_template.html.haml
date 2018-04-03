@@ -15,7 +15,7 @@
   =f.datetime_local_field :start_date_time, required: true, class: 'form-template'
 
 .field
-  =f.label :end_date_time, "End date of the event (optional)"
+  =f.label :end_date_time, "End date of the event"
   =f.datetime_local_field :end_date_time, required: true, class: 'form-template'
 
 .field
@@ -53,6 +53,10 @@
 .field
   =f.label :for_elementary_student
   =f.check_box :for_elementary_student, class: 'form-template'
+
+.field
+  =f.label :for_family
+  =f.check_box :for_family, class: 'form-template'
 
 .field
   =f.label :for_highschool_student
