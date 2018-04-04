@@ -6,6 +6,8 @@
   %tr
     .user= "Email: "+@user_account.email
   %tr
+    .user= "Name: "+@user_account.name
+  %tr
     .user= "Child Name: "+@user_account.childname
     - @user_account.childgrade == 0 ? childgrade = "" : childgrade =  @user_account.childgrade
     .user= "Child Grade: "+childgrade.to_s

@@ -7,7 +7,13 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+  <%= render :partial => 'shared/header' %>
+  <% if flash[:warning] -%>
+  <p class='warning'><%=h flash[:warning] %></p>
+  <% end -%>
+  <% if flash[:notice] -%>
+  <p class='notice'><%=h flash[:notice] %></p>
+  <% end -%>
   <body>
     <%= yield %>
   </body>

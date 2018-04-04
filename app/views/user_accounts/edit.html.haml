@@ -11,6 +11,10 @@
       =f.text_field :username
 
     .field
+      =f.label :email, "Email"
+      =f.text_field :email
+
+    .field
       =f.label :childname, "Child's name"
       =f.text_field :childname
 
@@ -25,6 +29,7 @@
     .field
       =f.label :password, "Password"
       =f.password_field :password
+
 
     .field
       =f.submit "Update Profile"
