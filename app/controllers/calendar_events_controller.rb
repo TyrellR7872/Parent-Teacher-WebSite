@@ -11,7 +11,7 @@ class CalendarEventsController < ApplicationController
       @calendar_events = @calendar_events.order(order)
     end
     if !search.nil?
-      @calendar_events.event_between(search[0],search[1])
+      @calendar_events = @calendar_events.event_between(search[:start_date_time], search[:end_date_time])
     end
   end
 
