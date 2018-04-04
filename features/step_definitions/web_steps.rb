@@ -49,6 +49,28 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
+# When(/^(?:|I )select "([^"]*)" from the date box "([^"]*)" $/) do |value, select_label|
+#   select_date value, from: select_label
+# end
+
+When /^(?:|I )fill in the following:$/ do |fields|
+  fields.rows_hash.each do |name, value|
+    # puts name
+    # if (name =~ /date_time$/)
+    #   step %{I select "#{value}" from the date box "#{name}"}
+    if (name =~ /(For|Is)/) #TODO
+      if (value =~ /true/)
+        step %{I check "#{name}"}
+      else
+        step %{I uncheck "#{name}"}
+      end
+    else
+      # puts "using fill" + name
+      step %{I fill in "#{name}" with "#{value}"}
+    end
+  end
+end
+
 When /^(?:|I )press "([^"]*)"$/ do |button|
   click_button(button)
 end
@@ -63,23 +85,6 @@ end
 
 When /^(?:|I )fill in "([^"]*)" for "([^"]*)"$/ do |value, field|
   fill_in(field, :with => value)
-end
-
-# Use this to fill in an entire form with data from a table. Example:
-#
-#   When I fill in the following:
-#     | Account Number | 5002       |
-#     | Expiry date    | 2009-11-01 |
-#     | Note           | Nice guy   |
-#     | Wants Email?   |            |
-#
-# TODO: Add support for checkbox, select or option
-# based on naming conventions.
-#
-When /^(?:|I )fill in the following:$/ do |fields|
-  fields.rows_hash.each do |name, value|
-    When %{I fill in "#{name}" with "#{value}"}
-  end
 end
 
 When /^(?:|I )select "([^"]*)" from "([^"]*)"$/ do |value, field|
@@ -251,4 +256,19 @@ end
 
 Then /^show me the page$/ do
   save_and_open_page
+end
+
+###############################
+# FOR CALENDAR EVENT
+###############################
+
+Given("these CalendarEvents:") do |table|
+  hash_table = table.hashes
+  for row_hash in hash_table
+    event = row_hash
+    event[:start_date_time] = DateTime.parse(event[:start_date_time])
+    event[:end_date_time] = DateTime.parse(event[:end_date_time])
+    e = CalendarEvent.new(event)
+    e.save
+  end
 end

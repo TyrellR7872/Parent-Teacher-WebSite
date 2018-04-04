@@ -2,34 +2,11 @@
 =render 'header'
 %h3.header Create a new calendar event to list
 
-=form_for @event, :method => :post do |f|
-  .field
-    =f.label :title, "Title"
-    =f.text_field :title
+  =form_for @calendar_event, :method => :post do |f|
+    =render 'event_form_template', f: f
+    -# .field
+    -#   =f.label :image, "Image"
+    -#   =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
 
-  .field
-    =f.label :description, "Description"
-    =f.text_field :description
-
-  .field
-    =f.label :location, "Location"
-    =f.text_field :location
-
-  .field
-    =f.label :type, "Type"
-    =f.text_field :type
-
-  .field
-    =f.label :contact_person, "Contact person email"
-    =f.text_field :contact_person
-
-  .field
-    =f.label :is_approved, "Is this event approved?"
-    =f.check_box :is_approved
-
-  -# .field
-  -#   =f.label :image, "Image"
-  -#   =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
-
-  .field
-    =f.submit "Create event"
+    .field
+      =f.submit "Create event"

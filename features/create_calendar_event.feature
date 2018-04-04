@@ -5,47 +5,46 @@ Feature: Create a Calendar events
 
   Background: the website already has some existing calendar event
     Given these CalendarEvents:
-      | title        | description               | start_date_day | start_date_month |start_date_year| start_time     | location                | is_sport | is_musical | contact_person        | is_approved |
-      | football     | cozy and sunny            | 10             |  7               | 2018          | 16:00          | Lathrop, Hamilton, NY   | true     |            | hnguyenvu@colgate.edu | true        |
-      | jazz concert | come and chill with music | 12             |  5               | 2018          | 20:00          |  Ho, Hamilton, NY       |          | true       | pdhawka@colgate.edu   | true        |
+      | title        | description               | start_date_time            | end_date_time              | location                | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 3rd Feb 2021 04:05:06 PM   | 2nd Mar 2021 04:05:06 PM   | Lathrop, Hamilton, NY   | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 6th Feb 2020 04:05:06 PM   | 8th Feb 2021 04:05:06 PM   | Ho, Hamilton, NY        |          | true       | pdhawka@colgate.edu   | true        |
 
   Scenario: Create a new calendar event with a status of approved
     Given I am on the create calendar event page
     When I fill in the following:
-      | title            | easter egg decoration            |
-      | description      | have fun eating hardboiled eggs  |
-      | start_date_day   | 15                               |
-      | start_date_month | 4                                |
-      | start_date_year  | 2018                             |
-      | start_time       | 17:00  |
-      | location         |  Newell, Colgate University |
-      | for_family       |  true |
-      | contact_person   |  hnguyenvu@colgate.edu |
-      | is_approved      | true |
+      | Title                    | easter egg decoration            |
+      | Description              | have fun eating hardboiled eggs  |
+      | Start date of the event  | 3rd Jan 2021 04:05:06 AM         |
+      | End date of the event    | 3rd Jan 2021 04:05:06 PM         |
+      | Location                 |  Newell, Colgate University |
+      | For family               |  true |
+      | Contact person email     |  hnguyenvu@colgate.edu |
+      | Is this event approved?  | true |
 
+    When I press "Create event"
+    Then I should be on the calendar events page
+    And I should see "New event 'easter egg decoration' created and added to the page"
+    And I should see that "easter egg decoration" has a date of "2021/01/03"
+    And I should see that "easter egg decoration" has a time of "04:05"
+    And I should see "football"
+    And I should see "jazz concert"
+
+  Scenario: Create a new calendar event with a status of not yet approved
+    Given I am on the create calendar event page
+    When I fill in the following:
+    | Title                    | church dinner                    |
+    | Description              | free dinner for hungry students  |
+    | Start date of the event  | 3rd Jan 2021 04:05:06 AM         |
+    | End date of the event    | 3rd Jan 2021 04:05:06 PM         |
+    | Location                 |  Newell, Colgate University |
+    | For family               |  true |
+    | Contact person email     |  hnguyenvu@colgate.edu |
+    | Is this event approved?  | false |
 
     When I press "Create Event"
     Then I should be on the calendar events page
-    And I should see "New event 'easter egg decoration' created and added to the page"
-    And I should see that "easter egg decoration" has a date of "2018/04/15"
-    And I should see that "easter egg decoration" has a time of "17:00"
-
-
-    Scenario: Create a new calendar event with a status of not yet approved
-      Given I am on the create calendar event page
-      When I fill in the following:
-        | title            | church dinner                    |
-        | description      | free dinner for hungry students  |
-        | start_date_day   | 20                               |
-        | start_date_month | 5                                |
-        | start_date_year  | 2018                             |
-        | start_time       | 17:00  |
-        | location         |  First Baptist Church |
-        | for_family       |  true |
-        | contact_person   |  hnguyenvu@colgate.edu |
-        | is_approved      | true |
-
-      When I press "Create Event"
-      Then I should be on the calendar events page
-      And I should see "New event 'church dinner' created but not shown"
-      And I should not see "free dinner for hungry students"
+    And I should see "New event 'church dinner' created but not shown"
+    When I go to the calendar events page
+    Then I should be on the calendar events page
+    And I should not see "church dinner"
+    And I should not see "free dinner for hungry students"
