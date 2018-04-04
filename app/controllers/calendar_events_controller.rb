@@ -3,14 +3,10 @@ require 'date' # or is it datetime?
 class CalendarEventsController < ApplicationController
 
   def index
-    @calendar_events = CalendarEvent.all
-    @calendar_events = @calendar_events.where('is_approved = ?', true)
+    @calendar_events = CalendarEvent.where('is_approved = ?', true)
+    @calendar_events = @calendar_events.event_between(params[:start_date_time],params[:end_date_time]) if params[:start_date_time].present? || params[:end_date_time].present?
     order = params[:order] || :start_date_time
-    search = params[:search]
     @calendar_events = @calendar_events.order(order)
-    if !search.nil?
-      @calendar_events.event_between(search[0],search[1])
-    end
   end
 
   def show
