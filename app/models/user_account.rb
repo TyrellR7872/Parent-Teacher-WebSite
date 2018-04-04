@@ -9,7 +9,6 @@ class UserAccount < ApplicationRecord
     user.childname = ""
     user.childgrade = 0
     user.homeaddress = ""
-    user.name = ""
     user
   end
 end

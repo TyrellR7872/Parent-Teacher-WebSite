@@ -12,6 +12,7 @@ class UserAccountsController < ApplicationController
     if user.save
       flash[:notice] = "User Account #{user.username} Successfully Created"
       session[:id] = user.id
+      session[:user] = user
       session[:pass] = user.password
       redirect_to user_accounts_path and return
     else
@@ -43,7 +44,12 @@ class UserAccountsController < ApplicationController
   end
 
   def index
-    @user_account = UserAccount.find(session[:id])
+    begin
+      @user_account = UserAccount.find(session[:id])
+    rescue ActiveRecord::RecordNotFound
+      flash[:warning] = "Please Sign Up for an Account"
+      redirect_to new_user_account_path and return
+    end
 
   end
 

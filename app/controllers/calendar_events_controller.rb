@@ -4,7 +4,8 @@ class CalendarEventsController < ApplicationController
 
   def index
     @calendar_events = CalendarEvent.all
-    @calendar_events = @calendar_events.where('is_approved = ?', true).order('start_date_time')
+    @calendar_events = CalendarEvent.where('is_approved = ?', true).order(:start_date_time)
+    @user_account = session[:user]
     order = params[:order]
     search = params[:search]
     if !order.nil?
@@ -17,6 +18,7 @@ class CalendarEventsController < ApplicationController
 
   def show
     id = params[:id]
+    @user_account = session[:user]
     @calendar_event = CalendarEvent.find(id)
   end
 
@@ -35,6 +37,7 @@ class CalendarEventsController < ApplicationController
 
   def edit
     id = params[:id]
+    @user_account = session[:user]
     @calendar_event = CalendarEvent.find(id)
   end
 
@@ -53,6 +56,7 @@ class CalendarEventsController < ApplicationController
   end
 
   def new
+    @user_account = session[:user]
     @calendar_event = CalendarEvent.new
   end
 

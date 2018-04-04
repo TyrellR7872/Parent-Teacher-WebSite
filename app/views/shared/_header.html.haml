@@ -1,6 +1,7 @@
 %table.table
   %thead
     %tr
-      %th= link_to "User Account Home", user_accounts_path
+      - if @user_account.present?
+        %th= link_to "User Account Home", user_accounts_path
       %th= link_to "Sign Up", new_user_account_path
       %th= link_to "Calendar Home", calendar_events_path
