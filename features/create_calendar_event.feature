@@ -41,7 +41,7 @@ Feature: Create a Calendar events
     | Contact person email     |  hnguyenvu@colgate.edu |
     | Is this event approved?  | false |
 
-    When I press "Create Event"
+    When I press "Create event"
     Then I should be on the calendar events page
     And I should see "New event 'church dinner' created but not shown"
     When I go to the calendar events page
