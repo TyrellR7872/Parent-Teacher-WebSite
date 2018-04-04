@@ -13,7 +13,8 @@
  *= require_tree .
  *= require_self
  */
-<<<<<<< HEAD:app/assets/stylesheets/application.css
+ @import "bootstrap";
+ @import "colors";
  #warning {
    background-color: red;
    font-size: 18px;
@@ -25,10 +26,6 @@
    font-family: Arial;
    font-size: 18px;
  }
-=======
-
-@import "bootstrap";
-@import "colors";
 
 // For more information about the scss syntax and the sass language, go to http://sass-lang.com/guide
 // I think it's fine to use vanilla CSS in an scss file, but there are many advantages to using SCSS
@@ -66,4 +63,3 @@ body {
   background-color: $bg-light;
   font-family: $font
 }
->>>>>>> 1549c856a17cb5aab2b38fbb2f404c977e53292d:app/assets/stylesheets/application.scss
