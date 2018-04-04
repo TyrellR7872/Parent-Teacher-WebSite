@@ -1,15 +1,16 @@
 #main.container
-  %h3.header Calendar Events For HCS-PTO
+  %h1.header= link_to("HCS-PTO", root_path)
+  %h3.header Calendar Events
 
   %table.table
     %thead
       %tr
         %th= link_to('Title',calendar_events_path(:order => 'title'))
         %th Description
-        %th Location
-        %th Contact Person
-        %th Start Date
-        %th End Date
+        %th= link_to('Location', calendar_events_path(:order => :location))
+        %th= link_to('Contact Person', calendar_events_path(:order => :contact_person))
+        %th= link_to('Start Date', calendar_events_path(:order => :start_date_time))
+        %th= link_to('End Date', calendar_events_path(:order => :end_date_time))
     %tbody
       -@calendar_events.each do |event|
         %tr

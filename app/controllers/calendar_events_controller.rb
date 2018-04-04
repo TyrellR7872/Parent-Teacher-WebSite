@@ -4,12 +4,10 @@ class CalendarEventsController < ApplicationController
 
   def index
     @calendar_events = CalendarEvent.all
-    @calendar_events = @calendar_events.where('is_approved = ?', true).order('start_date_time')
-    order = params[:order]
+    @calendar_events = @calendar_events.where('is_approved = ?', true)
+    order = params[:order] || :start_date_time
     search = params[:search]
-    if !order.nil?
-      @calendar_events = @calendar_events.order(order)
-    end
+    @calendar_events = @calendar_events.order(order)
     if !search.nil?
       @calendar_events.event_between(search[0],search[1])
     end
