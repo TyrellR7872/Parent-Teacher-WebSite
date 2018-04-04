@@ -19,7 +19,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     When I press "Create User Account"
     Then I should be on edit user account page
     And I should see "User Account "JSomm"" Successfully Created
-    I should see that "JSomm" has Password of "cosc"
+    And I should see that "JSomm" has Password of "cosc"
     When I fill in the following:
       | Type          |Teacher      |
       | Name          |Joel Sommers |
@@ -28,7 +28,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
       | Home Address  |14 Oak Dr     |
 
     And press "Update User Account Details"
-    I should be on the show user account page
+    Then I should be on the show user account page
     And I should see "Teacher"
     And I should see "Joel Sommers"
     And I should see "Annie"
