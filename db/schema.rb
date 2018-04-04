@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20180401052621) do
   create_table "user_accounts", force: :cascade do |t|
     t.string "username"
     t.string "password"
+    t.string "pass_confirm"
     t.string "email"
     t.string "accounttype"
     t.string "name"
