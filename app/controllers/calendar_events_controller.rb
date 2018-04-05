@@ -19,7 +19,8 @@ class CalendarEventsController < ApplicationController
     @calendar_event.start_date_time = @calendar_event.start_date_time.to_formatted_s(:short)
     @calendar_event.end_date_time = @calendar_event.end_date_time.to_formatted_s(:short)
     if @calendar_event.save
-      flash[:success] = "New event \'#{@calendar_event.title}\' created"
+      flash[:notice] = "New event \'#{@calendar_event.title}\' awaiting approval"
+      flash[:notice] = "New event \'#{@calendar_event.title}\' created and added to the page" if @calendar_event.is_approved
       redirect_to calendar_events_path
     else
       flash[:warning]= "Error creating new event"

@@ -1,7 +1,7 @@
 class CalendarEvent < ApplicationRecord
   scope :event_between, -> (start_date, end_date) {
     if start_date.blank? && end_date.present?
-      where("end_date_time <= ?", DateTime.parse(end_date))
+      where("end_date_time < ?", DateTime.parse(end_date).next_day)
     elsif start_date.present? && end_date.blank?
       where("start_date_time >= ?", DateTime.parse(start_date))
     else

@@ -24,8 +24,7 @@ Feature: Create a Calendar events
     When I press "Create event"
     Then I should be on the calendar events page
     And I should see "New event 'easter egg decoration' created and added to the page"
-    And I should see that "easter egg decoration" has a date of "2021/01/03"
-    And I should see that "easter egg decoration" has a time of "04:05"
+    And I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05"
     And I should see "football"
     And I should see "jazz concert"
 
@@ -41,10 +40,7 @@ Feature: Create a Calendar events
     | Contact person email     |  hnguyenvu@colgate.edu |
     | Is this event approved?  | false |
 
-    When I press "Create Event"
+    When I press "Create event"
     Then I should be on the calendar events page
-    And I should see "New event 'church dinner' created but not shown"
-    When I go to the calendar events page
-    Then I should be on the calendar events page
-    And I should not see "church dinner"
+    And I should see "New event 'church dinner' awaiting approval"
     And I should not see "free dinner for hungry students"

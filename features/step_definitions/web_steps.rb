@@ -272,3 +272,10 @@ Given("these CalendarEvents:") do |table|
     e.save
   end
 end
+
+Then("I should see that {string} has a datetime of {string}") do |string1, string2|
+  all(".event").each do |row|
+    next unless row.has_css?('td.title', text: string1)
+    expect(row).to have_css('td.date', text: string2)
+  end # Write code here that turns the phrase above into concrete actions
+end

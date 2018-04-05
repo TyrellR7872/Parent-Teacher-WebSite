@@ -12,7 +12,7 @@ Feature: Filter calendar events by date
 
   Scenario: Filter with given start date and empty end date
     Given I am on the calendar events page
-    And I fill in "From" with "02/06/2018 12:00 PM"
+    And I fill in "From" with "02/06/2018"
     And I press "Show events"
     Then I should see "jazz concert"
     And I should see "game night"
@@ -29,7 +29,7 @@ Feature: Filter calendar events by date
 
   Scenario: Filter with empty start date and given end date
     Given I am on the calendar events page
-    And I fill in "To" with "02/05/2018 12:00 PM"
+    And I fill in "To" with "02/05/2018"
     And I press "Show events"
     Then I should see "football"
     And I should not see "jazz concert"
@@ -37,8 +37,8 @@ Feature: Filter calendar events by date
 
   Scenario: Filter with given start and end dates
     Given I am on the calendar events page
-    And I fill in "From" with "02/05/2018 12:00 PM"
-    And I fill in "To" with "02/09/2018 12:00 PM"
+    And I fill in "From" with "02/05/2018"
+    And I fill in "To" with "02/09/2018"
     And I press "Show events"
     Then I should see "jazz concert"
     And I should not see "football"

@@ -1,5 +1,5 @@
 #main.container
-  %h1.header= link_to("HCS-PTO", root_path)
+
   %h3.header Calendar Events
 
   %table.table
@@ -11,22 +11,26 @@
         %th= link_to('Contact Person', calendar_events_path(:order => :contact_person))
         %th= link_to('Start Date', calendar_events_path(:order => :start_date_time))
         %th= link_to('End Date', calendar_events_path(:order => :end_date_time))
+        %th Start Time
+        %th End Time
     %tbody
       -@calendar_events.each do |event|
-        %tr
+        %tr.event
         %td.title=link_to event.title, calendar_event_path(event)
         %td.description=truncate(event.description, length: 50)
         %td.location=event.location
         %td.contact_person=event.contact_person
-        %td.start_date=event.start_date_time ? event.start_date_time.to_formatted_s(:short): "No time indicated"
-        %td.end_date=event.end_date_time ? event.end_date_time.to_formatted_s(:short): "No time indicated"
+        %td.date=event.start_date_time ? event.start_date: "No date indicated"
+        %td.date=event.end_date_time ? event.end_date: "No date indicated"
+        %td.time=event.start_date_time ? event.start_time: "No time indicated"
+        %td.time=event.end_date_time ? event.end_time: "No time indicated"
 
   = form_tag calendar_events_path, :method => :get do
     = label_tag :start_date_time, "From"
-    = datetime_local_field_tag :start_date_time
+    = date_field_tag :start_date_time
 
     = label_tag :end_date_time, "To"
-    = datetime_local_field_tag :end_date_time
+    = date_field_tag :end_date_time
 
     = submit_tag "Show events"
   %br
