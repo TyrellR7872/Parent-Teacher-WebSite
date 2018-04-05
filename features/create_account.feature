@@ -13,7 +13,9 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     Given I am on the new user account page
     When I fill in the following:
       | Username|JSomm|
+      | Full Name|Joel Sommers|
       | Password|cosc|
+      |Confirm Password| cosc|
       | Email|jsommers@colgate.edu|
 
     When I press "Create User Account"
@@ -22,10 +24,10 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     And I should see that "JSomm" has Password of "cosc"
     When I fill in the following:
       | Type          |Teacher      |
-      | Name          |Joel Sommers |
+      | Full Name     |Joel Sommers |
       | Child's Name  |Annie        |
       | Child's Grade |4            |
-      | Home Address  |14 Oak Dr     |
+      | Home Address  |14 Oak Dr    |
 
     And press "Update User Account Details"
     Then I should be on the show user account page
