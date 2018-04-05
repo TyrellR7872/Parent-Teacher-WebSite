@@ -10,14 +10,14 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
 
   Scenario: Create a new user account
-    Given I am on the create user account page
+    Given I am on the new user account page
     When I fill in the following:
       | Username|JSomm|
       | Password|cosc|
       | Email|jsommers@colgate.edu|
 
     When I press "Create User Account"
-    Then I should be on edit user account page
+    Then I should be on the user accounts page
     And I should see "User Account "JSomm"" Successfully Created
     And I should see that "JSomm" has Password of "cosc"
     When I fill in the following:

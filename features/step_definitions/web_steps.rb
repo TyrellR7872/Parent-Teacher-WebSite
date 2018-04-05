@@ -272,3 +272,20 @@ Given("these CalendarEvents:") do |table|
     e.save
   end
 end
+
+###############################
+# FOR USER ACCOUNT
+###############################
+
+Given("these UserAccounts:") do |table|
+  table.hashes.each do |h|
+    h['username'] = h.delete('username')
+    h['password'] = h.delete('password')
+    h['email'] = h.delete('email')
+    h['accounttype'] = h.delete('accounttype')
+    h['childname'] = h.delete('childname')
+    h['childgrade'] = h.delete('childgrade').to_i
+    h['homeaddress'] = h.delete('homeaddress')
+    UserAccount.create!(h)
+  end
+end
