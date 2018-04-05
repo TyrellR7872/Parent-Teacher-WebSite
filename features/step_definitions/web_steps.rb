@@ -293,3 +293,14 @@ end
 Then(/^I should see "([^"]*)" Successfully Created$/) do |string|
    puts("HERE")# Write code here that turns the phrase above into concrete actions
 end
+
+Then /^(?:|I )should see that "([^"]*)".*"([^"]*)"$/ do |name,value|
+  actual = find("table.useraccount").text
+  if actual.respond_to? (:should)
+    actual.should have_content(name)
+    actual.should have_content(value)
+  else
+    assert actual.has_content?name
+    assert actual.has_content?value
+  end
+end

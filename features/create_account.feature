@@ -13,23 +13,23 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     Given I am on the new user account page
     When I fill in the following:
       | Username|JSomm|
+      |Full Name|Joel Sommers|
       | Password|cosc|
+      |Confirm Password|cosc|
       | Email|jsommers@colgate.edu|
 
     When I press "Create User Account"
     Then I should be on the user accounts page
     And I should see "User Account 'JSomm'" Successfully Created
-    And I should see that "JSomm" has Password of "cosc"
-    When I fill in the following:
-      | Type          |Teacher      |
-      | Name          |Joel Sommers |
+    And I should see that "JSomm" has name of "Joel Sommers"
+    When I follow "Edit profile details"
+    And I fill in the following:
       | Child's Name  |Annie        |
       | Child's Grade |4            |
-      | Home Address  |14 Oak Dr     |
+      | Address  |14 Oak Dr     |
 
-    And press "Update User Account Details"
-    Then I should be on the show user account page
-    And I should see "Teacher"
+    And press "Update Profile"
+    Then I should be on the user accounts page
     And I should see "Joel Sommers"
     And I should see "Annie"
     And I should see "4"

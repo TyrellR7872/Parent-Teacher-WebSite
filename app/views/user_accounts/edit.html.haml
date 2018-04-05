@@ -3,11 +3,11 @@
 
   =form_for @user_account, :method => :patch do |f|
     .field
-      =f.label :name, "Name"
+      =f.label :name, "Full Name"
       =f.text_field :name
 
     .field
-      =f.label :username, "UserName"
+      =f.label :username, "Username"
       =f.text_field :username
 
     .field
@@ -15,7 +15,7 @@
       =f.text_field :email
 
     .field
-      =f.label :childname, "Child's name"
+      =f.label :childname, "Child's Name"
       =f.text_field :childname
 
     .field
