@@ -18,6 +18,7 @@ class CalendarEventsController < ApplicationController
     @calendar_event = CalendarEvent.new(create_update_params)
     @calendar_event.start_date_time = @calendar_event.start_date_time.to_formatted_s(:short)
     @calendar_event.end_date_time = @calendar_event.end_date_time.to_formatted_s(:short)
+    is_approved = @calendar_event.is_approved
     if @calendar_event.save
       flash[:notice] = "New event \'#{@calendar_event.title}\' awaiting approval"
       flash[:notice] = "New event \'#{@calendar_event.title}\' created and added to the page" if @calendar_event.is_approved
