@@ -18,10 +18,13 @@ class CalendarEventsController < ApplicationController
     @calendar_event = CalendarEvent.new(create_update_params)
     @calendar_event.start_date_time = @calendar_event.start_date_time.to_formatted_s(:short)
     @calendar_event.end_date_time = @calendar_event.end_date_time.to_formatted_s(:short)
-    is_approved = @calendar_event.is_approved
+    # is_approved = @calendar_event.is_approved
     if @calendar_event.save
-      flash[:notice] = "New event \'#{@calendar_event.title}\' awaiting approval"
-      flash[:notice] = "New event \'#{@calendar_event.title}\' created and added to the page" if @calendar_event.is_approved
+      if @calendar_event.is_approved
+        flash[:success] = "New event \'#{@calendar_event.title}\' created and added to the page"
+      else
+        flash[:notice] = "New event \'#{@calendar_event.title}\' awaiting approval"
+      end
       redirect_to calendar_events_path
     else
       flash[:warning]= "Error creating new event"
@@ -40,8 +43,8 @@ class CalendarEventsController < ApplicationController
 
     @calendar_event.update(create_update_params)
     if @calendar_event.save
-      flash[:notice] = "Event \"#{@calendar_event.title}\" updated"
-      redirect_to calendar_events_path and return
+      flash[:success] = "Event \'#{@calendar_event.title}\' updated"
+      redirect_to calendar_event_path(@calendar_event) and return
     else
       flash[:error] = "Error updating event"
       redirect_to edit_calendar_event_path(@calendar_event) and return

@@ -64,12 +64,13 @@
 
 .field
   =f.label :contact_person, "Contact person email"
-  =f.email_field :contact_person, required: true, class: 'form-template'
+  =f.text_field :contact_person, required: true, class: 'form-template'
 
 .field
   =f.label :is_approved, "Is this event approved?"
   =f.check_box :is_approved, class: 'form-template'
 
+-# TODO for futre implementation with authorization
 -# -if current_user.admin
 -#   .field.form-group
 -#     = f.label :is_approved, "Is the event approved?"
