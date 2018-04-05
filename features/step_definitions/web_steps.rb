@@ -291,7 +291,9 @@ Given("these UserAccounts:") do |table|
 end
 
 Then(/^I should see "([^"]*)" Successfully Created$/) do |string|
-   puts("HERE")# Write code here that turns the phrase above into concrete actions
+  if page.respond_to?(:should)
+    page.should have_content(string)
+  end
 end
 
 Then /^(?:|I )should see that "([^"]*)".*"([^"]*)"$/ do |name,value|

@@ -1,8 +1,7 @@
 class UserAccount < ApplicationRecord
-  validates :username, presence: {message: "Must be given"}
-  validates :password, confirmation: true, on: create
+  validates :username, presence: {message: "Must be given"}, length: {minimum: 5}
+  validates :password, confirmation: true, on: new, length: {minimum: 6}
   validates :email, presence: {message: "Must be given"}
-
 
 
   def self.fill_user(user)
