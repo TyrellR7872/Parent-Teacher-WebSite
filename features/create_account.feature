@@ -18,7 +18,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
     When I press "Create User Account"
     Then I should be on the user accounts page
-    And I should see "User Account "JSomm"" Successfully Created
+    And I should see "User Account 'JSomm'" Successfully Created
     And I should see that "JSomm" has Password of "cosc"
     When I fill in the following:
       | Type          |Teacher      |

@@ -10,13 +10,13 @@ class UserAccountsController < ApplicationController
       redirect_to new_user_account_path and return
     end
     if user.save
-      flash[:notice] = "User Account #{user.username} Successfully Created"
+      flash[:notice] = "User Account '#{user.username}' Successfully Created"
       session[:id] = user.id
       session[:user] = user
       session[:pass] = user.password
       redirect_to user_accounts_path and return
     else
-      flash[:warning] = "User Account #{user.username} Creation Failed"
+      flash[:warning] = "User Account '#{user.username}' Creation Failed"
       redirect_to new_user_account_path and return
     end
   end

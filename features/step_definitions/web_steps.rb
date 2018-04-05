@@ -289,3 +289,7 @@ Given("these UserAccounts:") do |table|
     UserAccount.create!(h)
   end
 end
+
+Then(/^I should see "([^"]*)" Successfully Created$/) do |string|
+   puts("HERE")# Write code here that turns the phrase above into concrete actions
+end
