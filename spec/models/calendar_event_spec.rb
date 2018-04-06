@@ -56,13 +56,4 @@ RSpec.describe CalendarEvent, type: :model do
             CalendarEvent.create!(description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5.4), end_date_time: DateTime.new(2018,9,5.6), is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
     end
   end
-  # it "should show calendar events in chronological order" do
-  #   collection = []
-  #   page.all('.start_date').each do |row|
-  #     collection << row.text
-  #   end
-  #   sorted_collection = collection.sort_by{|prop| "prop.#{string}"}
-  #   expect(collection).to eq(sorted_collection)
-  # end
-
 end

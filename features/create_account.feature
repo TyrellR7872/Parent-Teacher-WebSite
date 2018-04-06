@@ -9,7 +9,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     | ty_rell   | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
     | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
 
-  Scenario: Create a new user account
+  Scenario: Create a new user account with success
     Given I am on the new user account page
     When I fill in the following:
       | Username|JSomm|
@@ -34,3 +34,28 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     And I should see "Annie"
     And I should see "4"
     And I should see "14 Oak Dr"
+
+  Scenario: Create a new user account with unequal password
+    Given I am on the new user account page
+    When I fill in the following:
+      | Username|HayM|
+      |Full Name|Michael Hay|
+      | Password|cosc|
+      |Confirm Password|cosc1|
+      | Email|mhay@colgate.edu|
+
+    When I press "Create User Account"
+    Then I should be on the new user account page
+    Then I should see "Passwords are not equal"
+
+  Scenario: Create a new user account with creation failed
+    Given I am on the new user account page
+    When I fill in the following:
+      | Username|HayM|
+      |Full Name|Michael Hay|
+      | Password|cosc|
+      |Confirm Password|cosc|
+      | Email||
+    When I press "Create User Account"
+    Then I should be on the new user account page
+    Then I should see "User Account 'HayM' Creation Failed"
