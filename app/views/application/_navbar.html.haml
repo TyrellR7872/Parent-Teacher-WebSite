@@ -1,0 +1,19 @@
+// # is id, must be unique
+// . for class
+// % for tag
+
+%div.navbar__width
+  / This is the logo for HSCPTO if we have
+  %a.navbar__logo-mod HCS-PTO
+  %button{:type => 'button', :class => 'navbar__mobile-menu', "data-toggle" => "collapse"} Menu
+  <!-- Menu button. Toggle get grouped for small screen --->
+  %div.navbar__navigation
+    %ul.navbar--primary
+      %li.navbar__item--primary
+        =link_to "User Accounts", user_accounts_path, :class => 'navbar__item__link navbar__item__link--primary'
+      %li.navbar__item--primary
+        =link_to "Events", calendar_events_path, :class => 'navbar__item__link navbar__item__link--primary'
+      %li.navbar__item--primary
+        %a.navbar__item__link.navbar__item__link--primary School Activities
+      %li.navbar__item--primary
+        %a.navbar__item__link.navbar__item__link--primary Other Resources

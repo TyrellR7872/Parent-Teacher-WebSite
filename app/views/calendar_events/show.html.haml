@@ -1,28 +1,38 @@
+-# =render 'flash_message'
+
 #main.container
-    .row
-        .col-md-offset-1
-        .col-md-4
-            %h3.header.title= "#{@property.title}"
-        .col-md-offset-1
-        .col-md-offset-4
-            %td.image= image_tag @property.image.url(:medium)
+  .row
+    .col-md-offset-1
+    .col-md-4
+      %h3.header.title= "#{@calendar_event.title}"
+    .col-md-offset-1
+    .col-md-offset-4
+      -# %td.image= image_tag @property.image.url(:medium)
 
-    .row
-        .col-md-offset-2
-        .col-md-8.description= "#{@property.description}"
-    .row
-        .col-md-offset-2
-        .col-md-8= "Sleeps #{@property.maxpersons}, with #{@property.bedrooms} bedrooms, #{@property.beds} beds and #{@property.bathrooms} bathrooms. Pets are #{@property.pets_allowed ? '' : 'not'} allowed."
-    .row
-        .col-md-offset-2
-        .col-md-4.distance= "#{@property.distance_from(@location) ? number_to_human(@property.distance_from(@location), units: {unit: 'mi'}) : 'Unknown distance' } away from you."
-        .col-md-4.price= "#{number_to_currency(@property.price)} per night."
+  .row
+    .col-md-offset-2
+    .col-md-8.description= "#{@calendar_event.description}"
 
-    %br
-    %br
+  .row
+    .col-md-offset-2
+    .col-md-8.date_time= "Start date and time: #{@calendar_event.start_date_time ? @calendar_event.start_date_time.to_formatted_s(:short): "No time indicated"}"
+  .row
+    .col-md-offset-2
+    .col-md-8.date_time= "End date and time: #{@calendar_event.end_date_time ? @calendar_event.end_date_time.to_formatted_s(:short): "No time indicated"}"
+    -# .row
+    -#     .col-md-offset-2
+    -#     .col-md-8=
+  .row
+    .col-md-offset-2
+    .col-md-4.location= "The event is at #{@calendar_event.location}."
+  .row
+    .col-md-4.contact_person= "#{@calendar_event.contact_person} is the contact person for this event."
 
-    .row
-        .col-md-offset-1
-        .col-md-2= link_to('Edit rental property details', edit_rental_property_path(@property))
-        .col-md-2= link_to('Delete rental property', rental_property_path(@property), :method => :delete)
-        .col-md-2= link_to('Back to rental properties list', rental_properties_path)
+  %br
+  %br
+
+  .row
+    .col-md-offset-1
+    .col-md-2= link_to('Edit event details', edit_calendar_event_path(@calendar_event))
+    .col-md-2= link_to('Delete event', calendar_event_path(@calendar_event), :method => :delete)
+    .col-md-2= link_to('Back to event list', calendar_events_path)
