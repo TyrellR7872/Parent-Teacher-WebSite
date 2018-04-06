@@ -41,3 +41,12 @@ Feature: Filter calendar events by date
     Then I should see "jazz concert"
     And I should not see "football"
     And I should not see "game night"
+
+  Scenario: Filter with given start and end dates with events outside of given range
+    Given I am on the calendar events page
+    And I fill in "From" with "02/11/2019"
+    And I fill in "To" with "02/12/2019"
+    And I press "Show events"
+    Then I should not see "jazz concert"
+    And I should not see "football"
+    And I should not see "game night"
