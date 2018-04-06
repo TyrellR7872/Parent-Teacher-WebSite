@@ -10,9 +10,9 @@
   %div.navbar__navigation
     %ul.navbar--primary
       %li.navbar__item--primary
-        %a.navbar__item__link.navbar__item__link--primary= link_to "User Accounts", user_accounts_path
+        =link_to "User Accounts", user_accounts_path, :class => 'navbar__item__link navbar__item__link--primary'
       %li.navbar__item--primary
-        %a.navbar__item__link.navbar__item__link--primary= link_to "Events", calendar_events_path
+        =link_to "Events", calendar_events_path, :class => 'navbar__item__link navbar__item__link--primary'
       %li.navbar__item--primary
         %a.navbar__item__link.navbar__item__link--primary School Activities
       %li.navbar__item--primary
