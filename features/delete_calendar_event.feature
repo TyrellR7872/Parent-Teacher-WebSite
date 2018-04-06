@@ -20,7 +20,7 @@ Feature: Delete a calendar event
     Then I should be on the calendar events page
     And I should see "Event 'jazz concert' deleted"
     When I follow "HCS-PTO"
-    Then I follow "Calendar Home"
+    Then I follow "Events"
     Then I should see "football"
     And I should see "game night"
     And I should not see "jazz concert"
