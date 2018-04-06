@@ -11,6 +11,7 @@ class CalendarEventsController < ApplicationController
 
   def show
     id = params[:id]
+    @user_account = session[:user]
     @calendar_event = CalendarEvent.find(id)
   end
 
@@ -34,6 +35,7 @@ class CalendarEventsController < ApplicationController
 
   def edit
     id = params[:id]
+    @user_account = session[:user]
     @calendar_event = CalendarEvent.find(id)
   end
 
@@ -52,6 +54,7 @@ class CalendarEventsController < ApplicationController
   end
 
   def new
+    @user_account = session[:user]
     @calendar_event = CalendarEvent.new
   end
 

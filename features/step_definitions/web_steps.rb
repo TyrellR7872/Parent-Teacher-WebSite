@@ -278,4 +278,38 @@ Then("I should see that {string} has a datetime of {string}") do |string1, strin
     next unless row.has_css?('td.title', text: string1)
     expect(row).to have_css('td.date', text: string2)
   end # Write code here that turns the phrase above into concrete actions
+
+###############################
+# FOR USER ACCOUNT
+###############################
+
+Given("these UserAccounts:") do |table|
+  table.hashes.each do |h|
+    h['username'] = h.delete('username')
+    h['password'] = h.delete('password')
+    h['email'] = h.delete('email')
+    h['accounttype'] = h.delete('accounttype')
+    h['childname'] = h.delete('childname')
+    h['childgrade'] = h.delete('childgrade').to_i
+    h['homeaddress'] = h.delete('homeaddress')
+    UserAccount.create!(h)
+  end
+end
+
+Then(/^I should see "([^"]*)" Successfully Created$/) do |string|
+  if page.respond_to?(:should)
+    page.should have_content(string)
+  end
+end
+
+Then /^(?:|I )should see that "([^"]*)".*"([^"]*)"$/ do |name,value|
+  actual = find("table.useraccount").text
+  if actual.respond_to? (:should)
+    actual.should have_content(name)
+    actual.should have_content(value)
+  else
+    assert actual.has_content?name
+    assert actual.has_content?value
+  end
+  
 end

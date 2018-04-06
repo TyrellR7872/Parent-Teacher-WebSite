@@ -1,0 +1,35 @@
+#main.container
+  %h3.header Edit Profile
+
+  =form_for @user_account, :method => :patch do |f|
+    .field
+      =f.label :name, "Full Name"
+      =f.text_field :name
+
+    .field
+      =f.label :username, "Username"
+      =f.text_field :username
+
+    .field
+      =f.label :email, "Email"
+      =f.text_field :email
+
+    .field
+      =f.label :childname, "Child's Name"
+      =f.text_field :childname
+
+    .field
+      =f.label :childgrade, "Child's Grade"
+      =f.number_field :childgrade
+
+    .field
+      =f.label :homeaddress, "Address"
+      =f.text_field :homeaddress
+
+    .field
+      =f.label :password, "Password"
+      =f.password_field :password
+
+
+    .field
+      =f.submit "Update Profile"
