@@ -11,11 +11,11 @@
       %h1.header= link_to("HCS-PTO", root_path)
       -if flash[:notice] || flash[:error] || flash[:success]
         .flash
-          -if flash[:notice]
-            .alert.alert-info= flash[:notice]
-          -if flash[:error]
-            .alert.alert-danger= flash[:error]
-          -if flash[:success]
-            .alert.alert-success= flash[:success]
+          =render "flash_message"
+
+      %nav.navbar
+        =render "navbar"
+
+
 
     = yield
