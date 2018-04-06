@@ -8,10 +8,9 @@
 
   %body
     #header
-      %h1.header= link_to("HCS-PTO", root_path)
-      -if flash[:notice] || flash[:error] || flash[:success]
-        .flash
-          =render "flash_message"
+      -# -if flash[:notice] || flash[:error] || flash[:success]
+      .flash
+        =render "flash_message"
 
       %nav.navbar
         =render "navbar"
