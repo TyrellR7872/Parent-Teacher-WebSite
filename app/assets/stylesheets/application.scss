@@ -132,9 +132,14 @@ nav li {
 .homepage .navbar__width {
   max-width: 1380px; }
 
+.navbar__logo__word {
+  font-size: 30px;
+  font-weight: 300;
+}
+
 .navbar__logo-mod {
-  height: 50px;
-  width: 100px;
+  height: 200px; //50px;
+  width: 400px; //100px;
   background-repeat: no-repeat;
   display: block;
   float: left;

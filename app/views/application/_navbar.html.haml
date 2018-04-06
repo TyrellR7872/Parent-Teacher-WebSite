@@ -1,10 +1,11 @@
-// # is id, must be unique
-// . for class
-// % for tag
+-# // # is id, must be unique
+-# // . for class
+-# // % for tag
 
 %div.navbar__width
   / This is the logo for HSCPTO if we have
-  %a.navbar__logo-mod HCS-PTO
+  -# %a.navbar__logo-mod.header /Logo goes here
+  = link_to "HCS-PTO", root_path, :class => "a navbar__logo__word"
   %button{:type => 'button', :class => 'navbar__mobile-menu', "data-toggle" => "collapse"} Menu
   <!-- Menu button. Toggle get grouped for small screen --->
   %div.navbar__navigation

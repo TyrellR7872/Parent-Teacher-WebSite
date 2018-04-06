@@ -278,6 +278,7 @@ Then("I should see that {string} has a datetime of {string}") do |string1, strin
     next unless row.has_css?('td.title', text: string1)
     expect(row).to have_css('td.date', text: string2)
   end # Write code here that turns the phrase above into concrete actions
+end
 
 ###############################
 # FOR USER ACCOUNT
@@ -311,5 +312,4 @@ Then /^(?:|I )should see that "([^"]*)".*"([^"]*)"$/ do |name,value|
     assert actual.has_content?name
     assert actual.has_content?value
   end
-  
 end
