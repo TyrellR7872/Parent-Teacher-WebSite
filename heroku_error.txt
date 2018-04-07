@@ -1,0 +1,2545 @@
+Last login: Thu Apr  5 18:02:17 on console
+hoangs-mbp:~ hoangnamnguyenvu$ cd /Users/hoangnamnguyenvu/Google\ Drive/App/HCS-PTO
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git checkout master
+error: Your local changes to the following files would be overwritten by checkout:
+	app/assets/stylesheets/_colors.scss
+	app/assets/stylesheets/application.scss
+	app/views/calendar_events/index.html.haml
+	app/views/calendar_events/new.html.haml
+	app/views/calendar_events/show.html.haml
+	app/views/layouts/application.html.haml
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add .
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "added css, worked on adding header and navigation bar"
+[pn_event 6febca1] added css, worked on adding header and navigation bar
+ 14 files changed, 307 insertions(+), 22 deletions(-)
+ create mode 100644 app/.DS_Store
+ create mode 100644 app/views/.DS_Store
+ create mode 100644 app/views/application/_navbar.html.haml
+ delete mode 100644 app/views/calendar_events/_flash_message.html.haml
+ create mode 100644 app/views/home/.DS_Store
+ create mode 100644 app/views/layouts/.DS_Store
+ create mode 100644 app/views/layouts/_flash_message.html.haml
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin pn_event
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+ ! [rejected]        pn_event -> pn_event (fetch first)
+error: failed to push some refs to 'https://github.com/ColgateCOSC480/HCS-PTO.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git pull origin pn_event
+remote: Counting objects: 4, done.
+remote: Compressing objects: 100% (1/1), done.
+remote: Total 4 (delta 3), reused 4 (delta 3), pack-reused 0
+Unpacking objects: 100% (4/4), done.
+From https://github.com/ColgateCOSC480/HCS-PTO
+ * branch            pn_event   -> FETCH_HEAD
+   c1b41ec..22f1040  pn_event   -> origin/pn_event
+error: cannot run “atom”: No such file or directory
+error: unable to start editor '“atom”'
+Not committing merge; use 'git commit' to complete the merge.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "added css, worked on adding header and navigation bar"
+[pn_event 8c92c11] added css, worked on adding header and navigation bar
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin pn_event
+Counting objects: 23, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (23/23), 4.82 KiB | 0 bytes/s, done.
+Total 23 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas: 100% (11/11), completed with 9 local objects.
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+   22f1040..8c92c11  pn_event -> pn_event
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add .
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "fixed user accounts and events white font, wrong css class
+> "
+[pn_event 0f9ae52] fixed user accounts and events white font, wrong css class
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin pn_event
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 535 bytes | 0 bytes/s, done.
+Total 6 (delta 4), reused 0 (delta 0)
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+   8c92c11..0f9ae52  pn_event -> pn_event
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git checkout master
+Switched to branch 'master'
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git merge --no-ff pn_event
+Removing features/create_account.feature
+Removing db/test.sqlite3
+Removing app/views/layouts/application.html.erb
+Removing app/assets/stylesheets/application.css
+error: cannot run “atom”: No such file or directory
+error: unable to start editor '“atom”'
+Not committing merge; use 'git commit' to complete the merge.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ atom
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+
+	modified:   .DS_Store
+	modified:   Gemfile.lock
+	new file:   app/.DS_Store
+	new file:   app/assets/stylesheets/_bootstrap.scss
+	new file:   app/assets/stylesheets/_colors.scss
+	deleted:    app/assets/stylesheets/application.css
+	new file:   app/assets/stylesheets/application.scss
+	modified:   app/controllers/calendar_events_controller.rb
+	modified:   app/controllers/home_controller.rb
+	modified:   app/models/calendar_event.rb
+	new file:   app/views/.DS_Store
+	new file:   app/views/application/_navbar.html.haml
+	new file:   app/views/calendar_events/_event_form_template.html.haml
+	modified:   app/views/calendar_events/edit.html.haml
+	modified:   app/views/calendar_events/index.html.haml
+	modified:   app/views/calendar_events/new.html.haml
+	modified:   app/views/calendar_events/show.html.haml
+	new file:   app/views/home/.DS_Store
+	modified:   app/views/home/index.html.haml
+	new file:   app/views/layouts/.DS_Store
+	new file:   app/views/layouts/_flash_message.html.haml
+	deleted:    app/views/layouts/application.html.erb
+	new file:   app/views/layouts/application.html.haml
+	new file:   db/.DS_Store
+	new file:   db/migrate/.DS_Store
+	modified:   db/migrate/20180401052621_create_calendar_events.rb
+	modified:   db/schema.rb
+	modified:   db/seeds.rb
+	deleted:    db/test.sqlite3
+	deleted:    features/create_account.feature
+	modified:   features/create_calendar_event.feature
+	new file:   features/delete_calendar_event.feature
+	new file:   features/filter_calendar_event.feature
+	modified:   features/step_definitions/web_steps.rb
+	modified:   features/support/paths.rb
+	new file:   features/update_calendar_event.feature
+	modified:   spec/models/calendar_event_spec.rb
+	modified:   tmp/cache/assets/sprockets/v3.0/09/09VG3ntpdKqcsVUBQd0vh6gbB61Tg52pl4mX3Dp80zA.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/2d/2dehC5f1yO6b0RJqvvdBIS0A-YLskNOVN4S2c5xKcsM.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/AR/ARPwWwIRqiqhzBzHnRb_L1UiqTWTfLMskszbH0hu0W0.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/HC/HCDOUd7-S45aJ_PjVAC_Vmjyud3i1aQv4cE3t9_Z3Dw.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/OX/OX-A0eGps8FqwdXs6YGrXQNwd2kYP7ahS4jo8q_Jtqk.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/Oo/OoW3_ZPztIafnedaNMlF4mN9W_-eMdk1A8mAwe0OmiA.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/We/WeTUgjFcWIngKOfRJwZ1PMHgBhhE37YDNdv10FBVakY.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/Z-/Z-Tjyjh8Q2K2zHyNUnEynoCpw45Bxk8q50KOQfwh6lE.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/dN/dNlUzp608j-tm3T3ahd8e631dgc1tjtGIWCaG3VJX_0.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/dY/dY4wCNW8TrVH8oDVPCZTwzy39xB8WggOLLqMSWNPUBE.cache
+	modified:   tmp/cache/assets/sprockets/v3.0/sY/sYTSiD1dFW6gw23-7xFzlVhyuPOmzCXwEv7mSB4i5Fk.cache
+
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin master
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/ColgateCOSC480/HCS-PTO.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git pull
+You have not concluded your merge (MERGE_HEAD exists).
+Please, commit your changes before you can merge.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "trying to resolve conflict"
+[master 3cce791] trying to resolve conflict
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin master
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/ColgateCOSC480/HCS-PTO.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git pull origin master
+remote: Counting objects: 192, done.
+remote: Compressing objects: 100% (95/95), done.
+remote: Total 192 (delta 104), reused 168 (delta 81), pack-reused 0
+Receiving objects: 100% (192/192), 23.98 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (104/104), completed with 32 local objects.
+From https://github.com/ColgateCOSC480/HCS-PTO
+ * branch            master     -> FETCH_HEAD
+   6fca309..e82c367  master     -> origin/master
+warning: Cannot merge binary files: tmp/cache/assets/sprockets/v3.0/sY/sYTSiD1dFW6gw23-7xFzlVhyuPOmzCXwEv7mSB4i5Fk.cache (HEAD vs. e82c3672ff949775351d16ca7c8e0251b203c308)
+warning: Cannot merge binary files: tmp/cache/assets/sprockets/v3.0/HC/HCDOUd7-S45aJ_PjVAC_Vmjyud3i1aQv4cE3t9_Z3Dw.cache (HEAD vs. e82c3672ff949775351d16ca7c8e0251b203c308)
+warning: Cannot merge binary files: tmp/cache/assets/sprockets/v3.0/2d/2dehC5f1yO6b0RJqvvdBIS0A-YLskNOVN4S2c5xKcsM.cache (HEAD vs. e82c3672ff949775351d16ca7c8e0251b203c308)
+warning: Cannot merge binary files: tmp/cache/assets/sprockets/v3.0/09/09VG3ntpdKqcsVUBQd0vh6gbB61Tg52pl4mX3Dp80zA.cache (HEAD vs. e82c3672ff949775351d16ca7c8e0251b203c308)
+Auto-merging tmp/cache/assets/sprockets/v3.0/sY/sYTSiD1dFW6gw23-7xFzlVhyuPOmzCXwEv7mSB4i5Fk.cache
+CONFLICT (content): Merge conflict in tmp/cache/assets/sprockets/v3.0/sY/sYTSiD1dFW6gw23-7xFzlVhyuPOmzCXwEv7mSB4i5Fk.cache
+Auto-merging tmp/cache/assets/sprockets/v3.0/HC/HCDOUd7-S45aJ_PjVAC_Vmjyud3i1aQv4cE3t9_Z3Dw.cache
+CONFLICT (content): Merge conflict in tmp/cache/assets/sprockets/v3.0/HC/HCDOUd7-S45aJ_PjVAC_Vmjyud3i1aQv4cE3t9_Z3Dw.cache
+Auto-merging tmp/cache/assets/sprockets/v3.0/2d/2dehC5f1yO6b0RJqvvdBIS0A-YLskNOVN4S2c5xKcsM.cache
+CONFLICT (content): Merge conflict in tmp/cache/assets/sprockets/v3.0/2d/2dehC5f1yO6b0RJqvvdBIS0A-YLskNOVN4S2c5xKcsM.cache
+Auto-merging tmp/cache/assets/sprockets/v3.0/09/09VG3ntpdKqcsVUBQd0vh6gbB61Tg52pl4mX3Dp80zA.cache
+CONFLICT (content): Merge conflict in tmp/cache/assets/sprockets/v3.0/09/09VG3ntpdKqcsVUBQd0vh6gbB61Tg52pl4mX3Dp80zA.cache
+Auto-merging features/step_definitions/web_steps.rb
+CONFLICT (content): Merge conflict in features/step_definitions/web_steps.rb
+CONFLICT (modify/delete): features/create_account.feature deleted in HEAD and modified in e82c3672ff949775351d16ca7c8e0251b203c308. Version e82c3672ff949775351d16ca7c8e0251b203c308 of features/create_account.feature left in tree.
+Removing app/views/user_accounts/update.html.haml
+Removing app/views/user_accounts/create.html.haml
+CONFLICT (modify/delete): app/views/layouts/application.html.erb deleted in HEAD and modified in e82c3672ff949775351d16ca7c8e0251b203c308. Version e82c3672ff949775351d16ca7c8e0251b203c308 of app/views/layouts/application.html.erb left in tree.
+Auto-merging app/views/home/index.html.haml
+CONFLICT (content): Merge conflict in app/views/home/index.html.haml
+Auto-merging app/views/calendar_events/show.html.haml
+Auto-merging app/views/calendar_events/new.html.haml
+Auto-merging app/views/calendar_events/index.html.haml
+CONFLICT (content): Merge conflict in app/views/calendar_events/index.html.haml
+Removing app/helpers/user_accounts_helper.rb
+Auto-merging app/controllers/calendar_events_controller.rb
+CONFLICT (content): Merge conflict in app/controllers/calendar_events_controller.rb
+Removing app/assets/stylesheets/user_accounts.scss
+Auto-merging app/assets/stylesheets/application.scss
+Automatic merge failed; fix conflicts and then commit the result.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git rm app/views/layouts/application.html.erb
+app/views/layouts/application.html.erb: needs merge
+rm 'app/views/layouts/application.html.erb'
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add create_account.feature
+fatal: pathspec 'create_account.feature' did not match any files
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add features/create_account.feature
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add .
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "resolve conflict. May need to remove the tmp file"
+[master a467bf4] resolve conflict. May need to remove the tmp file
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin master
+Counting objects: 17, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (17/17), done.
+Writing objects: 100% (17/17), 2.13 KiB | 0 bytes/s, done.
+Total 17 (delta 13), reused 0 (delta 0)
+remote: Resolving deltas: 100% (13/13), completed with 13 local objects.
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+   e82c367..a467bf4  master -> master
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git checkout pn_event
+Switched to branch 'pn_event'
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add .
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "update pn_event"
+On branch pn_event
+nothing to commit, working directory clean
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin pn_event
+Everything up-to-date
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git checkout pn_event
+Already on 'pn_event'
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git pull origin pn_event
+remote: Counting objects: 1, done.
+remote: Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (1/1), done.
+From https://github.com/ColgateCOSC480/HCS-PTO
+ * branch            pn_event   -> FETCH_HEAD
+   0f9ae52..24dfebd  pn_event   -> origin/pn_event
+Updating 0f9ae52..24dfebd
+Fast-forward
+ app/assets/stylesheets/application.scss       |  14 ++++++++++++--
+ app/assets/stylesheets/user_accounts.scss     |   3 ---
+ app/controllers/calendar_events_controller.rb |   3 +++
+ app/controllers/user_accounts_controller.rb   |  52 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+ app/helpers/user_accounts_helper.rb           |   2 --
+ app/models/user_account.rb                    |  11 +++++++++++
+ app/views/calendar_events/new.html.haml       |  16 ++++++++--------
+ app/views/calendar_events/show.html.haml      |   2 ++
+ app/views/shared/_header.html.haml            |   7 +++++++
+ app/views/user_accounts/create.html.haml      |   2 --
+ app/views/user_accounts/edit.html.haml        |  35 +++++++++++++++++++++++++++++++++++
+ app/views/user_accounts/index.html.haml       |  19 +++++++++++++++++++
+ app/views/user_accounts/new.html.haml         |  40 ++++++++++++++++++++++++++--------------
+ app/views/user_accounts/update.html.haml      |   2 --
+ config/routes.rb                              |  25 ++++++++++++-------------
+ db/test.sqlite3                               | Bin 0 -> 32768 bytes
+ features/create_account.feature               |  36 ++++++++++++++++++++++++++++++++++++
+ features/step_definitions/web_steps.rb        |  34 ++++++++++++++++++++++++++++++++++
+ 18 files changed, 257 insertions(+), 46 deletions(-)
+ delete mode 100644 app/assets/stylesheets/user_accounts.scss
+ delete mode 100644 app/helpers/user_accounts_helper.rb
+ create mode 100644 app/views/shared/_header.html.haml
+ delete mode 100644 app/views/user_accounts/create.html.haml
+ create mode 100644 app/views/user_accounts/edit.html.haml
+ create mode 100644 app/views/user_accounts/index.html.haml
+ delete mode 100644 app/views/user_accounts/update.html.haml
+ create mode 100644 db/test.sqlite3
+ create mode 100644 features/create_account.feature
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+An error occurred while loading ./spec/helpers/user_accounts_helper_spec.rb.
+Failure/Error:
+  RSpec.describe UserAccountsHelper, type: :helper do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end
+
+NameError:
+  uninitialized constant UserAccountsHelper
+# ./spec/helpers/user_accounts_helper_spec.rb:13:in `<top (required)>'
+
+
+Finished in 0.00032 seconds (files took 3.69 seconds to load)
+0 examples, 0 failures, 1 error occurred outside of examples
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 28 / 151 LOC (18.54%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails cucumber
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -S bundle exec cucumber --profile default
+Deprecated: Found tags option '~@wip'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@javascript'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-database-cleaner'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-database-cleaner'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-js-emulation'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+/Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/features/step_definitions/web_steps.rb:315: syntax error, unexpected end-of-input, expecting keyword_end (SyntaxError)
+/usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:286:in `load'
+/usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:286:in `block in load'
+/usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:258:in `load_dependency'
+/usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:286:in `load'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/glue/registry_and_more.rb:106:in `load_code_file'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/runtime/support_code.rb:147:in `load_file'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/runtime/support_code.rb:88:in `block in load_files!'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/runtime/support_code.rb:87:in `each'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/runtime/support_code.rb:87:in `load_files!'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/runtime.rb:270:in `load_step_definitions'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/runtime.rb:67:in `run!'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/lib/cucumber/cli/main.rb:33:in `execute!'
+/usr/local/lib/ruby/gems/2.5.0/gems/cucumber-3.1.0/bin/cucumber:9:in `<top (required)>'
+/usr/local/bin/cucumber:23:in `load'
+/usr/local/bin/cucumber:23:in `<top (required)>'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli/exec.rb:75:in `load'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli/exec.rb:75:in `kernel_load'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli/exec.rb:28:in `run'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli.rb:424:in `exec'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor/command.rb:27:in `run'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor/invocation.rb:126:in `invoke_command'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor.rb:387:in `dispatch'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli.rb:27:in `dispatch'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/vendor/thor/lib/thor/base.rb:466:in `start'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/cli.rb:18:in `start'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/exe/bundle:30:in `block in <top (required)>'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/lib/bundler/friendly_errors.rb:122:in `with_friendly_errors'
+/usr/local/lib/ruby/gems/2.5.0/gems/bundler-1.16.1/exe/bundle:22:in `<top (required)>'
+/usr/local/bin/bundle:23:in `load'
+/usr/local/bin/bundle:23:in `<main>'
+Coverage report generated for Cucumber Features, RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 28 / 151 LOC (18.54%) covered.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails cucumber
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -S bundle exec cucumber --profile default
+Deprecated: Found tags option '~@wip'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@javascript'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-database-cleaner'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-database-cleaner'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-js-emulation'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Using the default profile...
+Feature: Create a Teacher, Staff, or Parent User Account with user submitted login credentials
+  As a Teacher/Staff Member/Parent at Hamilton Central School,
+  So that I can create and access a private account on the school's website,
+  I want to create a Teacher, Staff, or Parent user account using a personal email and password.
+
+  Background: the website has already has existing accounts # features/create_account.feature:6
+    Given these UserAccounts:                               # features/step_definitions/web_steps.rb:287
+      | username | password | email                | accounttype | name           | childname    | childgrade | homeaddress |
+      | ty_rell  | roberts  | troberts@colgate.edu | teacher     | Tyrell Roberts | Little T     | 4          | 13 Oak Dr   |
+      | ycarter  | carter   | ycarter@colgat.edu   | student     | Yesu Carter    | Little Jimmy | 2          | 10 Oak Dr   |
+
+  Scenario: Create a new user account                            # features/create_account.feature:12
+    Given I am on the new user account page                      # features/step_definitions/web_steps.rb:44
+    When I fill in the following:                                # features/step_definitions/web_steps.rb:56
+      | Username         | JSomm                |
+      | Full Name        | Joel Sommers         |
+      | Password         | cosc                 |
+      | Confirm Password | cosc                 |
+      | Email            | jsommers@colgate.edu |
+    When I press "Create User Account"                           # features/step_definitions/web_steps.rb:74
+DEPRECATION: Using `should` from rspec-expectations' old `:should` syntax without explicitly enabling the syntax is deprecated. Use the new `:expect` syntax or explicitly enable `:should` with `config.expect_with(:rspec) { |c| c.syntax = :should }` instead. Called from /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/features/step_definitions/web_steps.rb:238:in `block in <top (required)>'.
+    Then I should be on the user accounts page                   # features/step_definitions/web_steps.rb:235
+    And I should see "User Account 'JSomm'" Successfully Created # features/step_definitions/web_steps.rb:300
+    And I should see that "JSomm" has name of "Joel Sommers"     # features/step_definitions/web_steps.rb:306
+    When I follow "Edit profile details"                         # features/step_definitions/web_steps.rb:78
+    And I fill in the following:                                 # features/step_definitions/web_steps.rb:56
+      | Child's Name  | Annie     |
+      | Child's Grade | 4         |
+      | Address       | 14 Oak Dr |
+    And press "Update Profile"                                   # features/step_definitions/web_steps.rb:74
+    Then I should be on the user accounts page                   # features/step_definitions/web_steps.rb:235
+    And I should see "Joel Sommers"                              # features/step_definitions/web_steps.rb:110
+    And I should see "Annie"                                     # features/step_definitions/web_steps.rb:110
+    And I should see "4"                                         # features/step_definitions/web_steps.rb:110
+    And I should see "14 Oak Dr"                                 # features/step_definitions/web_steps.rb:110
+
+Feature: Create a Calendar events
+  As a Staff Member at PTO,
+  I want to create an event with name, location, description and time,
+  So that I can let everyone who goes to the website know that there is an event coming up
+
+  Background: the website already has some existing calendar event # features/create_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time          | end_date_time            | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 3rd Feb 2021 04:05:06 PM | 2nd Mar 2021 04:05:06 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 6th Feb 2020 04:05:06 PM | 8th Feb 2021 04:05:06 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+
+  Scenario: Create a new calendar event with a status of approved                      # features/create_calendar_event.feature:12
+    Given I am on the create calendar event page                                       # features/step_definitions/web_steps.rb:44
+    When I fill in the following:                                                      # features/step_definitions/web_steps.rb:56
+      | Title                   | easter egg decoration           |
+      | Description             | have fun eating hardboiled eggs |
+      | Start date of the event | 3rd Jan 2021 04:05:06 AM        |
+      | End date of the event   | 3rd Jan 2021 04:05:06 PM        |
+      | Location                | Newell, Colgate University      |
+      | For family              | true                            |
+      | Contact person email    | hnguyenvu@colgate.edu           |
+      | Is this event approved? | true                            |
+    When I press "Create event"                                                        # features/step_definitions/web_steps.rb:74
+    Then I should be on the calendar events page                                       # features/step_definitions/web_steps.rb:235
+    And I should see "New event 'easter egg decoration' created and added to the page" # features/step_definitions/web_steps.rb:110
+    And I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05" # features/create_calendar_event.feature:27
+      Ambiguous match of "I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05"":
+
+      features/step_definitions/web_steps.rb:276:in `"I should see that {string} has a datetime of {string}"'
+      features/step_definitions/web_steps.rb:306:in `/^(?:|I )should see that "([^"]*)".*"([^"]*)"$/'
+
+      You can run again with --guess to make Cucumber be more smart about it
+       (Cucumber::Ambiguous)
+      features/create_calendar_event.feature:27:in `And I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05"'
+    And I should see "football"                                                        # features/step_definitions/web_steps.rb:110
+    And I should see "jazz concert"                                                    # features/step_definitions/web_steps.rb:110
+
+  Scenario: Create a new calendar event with a status of not yet approved # features/create_calendar_event.feature:31
+    Given I am on the create calendar event page                          # features/step_definitions/web_steps.rb:44
+    When I fill in the following:                                         # features/step_definitions/web_steps.rb:56
+      | Title                   | church dinner                   |
+      | Description             | free dinner for hungry students |
+      | Start date of the event | 3rd Jan 2021 04:05:06 AM        |
+      | End date of the event   | 3rd Jan 2021 04:05:06 PM        |
+      | Location                | Newell, Colgate University      |
+      | For family              | true                            |
+      | Contact person email    | hnguyenvu@colgate.edu           |
+      | Is this event approved? | false                           |
+    When I press "Create event"                                           # features/step_definitions/web_steps.rb:74
+    Then I should be on the calendar events page                          # features/step_definitions/web_steps.rb:235
+    And I should see "New event 'church dinner' awaiting approval"        # features/step_definitions/web_steps.rb:110
+    And I should not see "free dinner for hungry students"                # features/step_definitions/web_steps.rb:128
+
+Feature: Delete a calendar event
+  As a member of PTO
+  So that I can remove an event that's no longer relevant
+  I want to delete the calendar event
+
+  Background: the website already has some existing calendar event # features/delete_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time     | end_date_time       | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 2018/03/02 12:00 PM | 2018/05/02 12:00 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 2018/06/02 12:00 PM | 2018/08/02 12:00 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+      | game night   | play some games           | 2018/07/02 12:00 PM | 2018/10/02 12:00 PM | Ho, Hamilton, NY      |          | true       | ajamil@colgate.edu    | true        |
+
+  Scenario: Delete an event                          # features/delete_calendar_event.feature:13
+    Given I am on the calendar events page           # features/step_definitions/web_steps.rb:44
+    When I follow "jazz concert"                     # features/step_definitions/web_steps.rb:78
+    Then I should see "jazz concert"                 # features/step_definitions/web_steps.rb:110
+    And I should see "come and chill with music"     # features/step_definitions/web_steps.rb:110
+    And I should not see "game night"                # features/step_definitions/web_steps.rb:128
+    When I follow "Delete event"                     # features/step_definitions/web_steps.rb:78
+    Then I should be on the calendar events page     # features/step_definitions/web_steps.rb:235
+    And I should see "Event 'jazz concert' deleted"  # features/step_definitions/web_steps.rb:110
+    When I follow "HCS-PTO"                          # features/step_definitions/web_steps.rb:78
+    Then I follow "Calendar Home"                    # features/step_definitions/web_steps.rb:78
+      Unable to find visible link "Calendar Home" (Capybara::ElementNotFound)
+      ./features/step_definitions/web_steps.rb:79:in `/^(?:|I )follow "([^"]*)"$/'
+      features/delete_calendar_event.feature:23:in `Then I follow "Calendar Home"'
+    Then I should see "football"                     # features/step_definitions/web_steps.rb:110
+    And I should see "game night"                    # features/step_definitions/web_steps.rb:110
+    And I should not see "jazz concert"              # features/step_definitions/web_steps.rb:128
+    And I should not see "come and chill with music" # features/step_definitions/web_steps.rb:128
+
+Feature: Filter calendar events by date
+  As a member of PTO
+  So that I can see events between two dates
+  I want to filter the list of calendar events by start and end date
+
+  Background: the website already has some existing calendar event # features/filter_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time     | end_date_time       | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 2018/03/02 12:00 PM | 2018/05/02 12:00 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 2018/06/02 12:00 PM | 2018/08/02 12:00 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+      | game night   | play some games           | 2018/07/02 12:00 PM | 2018/10/02 12:00 PM | Ho, Hamilton, NY      |          | true       | ajamil@colgate.edu    | true        |
+
+  Scenario: Filter with given start date and empty end date # features/filter_calendar_event.feature:13
+    Given I am on the calendar events page                  # features/step_definitions/web_steps.rb:44
+    And I fill in "From" with "02/06/2018"                  # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                               # features/step_definitions/web_steps.rb:74
+    Then I should see "jazz concert"                        # features/step_definitions/web_steps.rb:110
+    And I should see "game night"                           # features/step_definitions/web_steps.rb:110
+    And I should not see "football"                         # features/step_definitions/web_steps.rb:128
+
+  Scenario: Filter with empty start and end dates # features/filter_calendar_event.feature:21
+    Given I am on the calendar events page        # features/step_definitions/web_steps.rb:44
+    When I press "Show events"                    # features/step_definitions/web_steps.rb:74
+    Then I should see "football"                  # features/step_definitions/web_steps.rb:110
+    And I should see "jazz concert"               # features/step_definitions/web_steps.rb:110
+    And I should see "game night"                 # features/step_definitions/web_steps.rb:110
+
+  Scenario: Filter with empty start date and given end date # features/filter_calendar_event.feature:28
+    Given I am on the calendar events page                  # features/step_definitions/web_steps.rb:44
+    And I fill in "To" with "02/05/2018"                    # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                               # features/step_definitions/web_steps.rb:74
+    Then I should see "football"                            # features/step_definitions/web_steps.rb:110
+    And I should not see "jazz concert"                     # features/step_definitions/web_steps.rb:128
+    And I should not see "game night"                       # features/step_definitions/web_steps.rb:128
+
+  Scenario: Filter with given start and end dates # features/filter_calendar_event.feature:36
+    Given I am on the calendar events page        # features/step_definitions/web_steps.rb:44
+    And I fill in "From" with "02/05/2018"        # features/step_definitions/web_steps.rb:82
+    And I fill in "To" with "02/09/2018"          # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                     # features/step_definitions/web_steps.rb:74
+    Then I should see "jazz concert"              # features/step_definitions/web_steps.rb:110
+    And I should not see "football"               # features/step_definitions/web_steps.rb:128
+    And I should not see "game night"             # features/step_definitions/web_steps.rb:128
+
+  Scenario: Filter with given start and end dates with events outside of given range # features/filter_calendar_event.feature:45
+    Given I am on the calendar events page                                           # features/step_definitions/web_steps.rb:44
+    And I fill in "From" with "02/11/2019"                                           # features/step_definitions/web_steps.rb:82
+    And I fill in "To" with "02/12/2019"                                             # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                                                        # features/step_definitions/web_steps.rb:74
+    Then I should not see "jazz concert"                                             # features/step_definitions/web_steps.rb:128
+    And I should not see "football"                                                  # features/step_definitions/web_steps.rb:128
+    And I should not see "game night"                                                # features/step_definitions/web_steps.rb:128
+
+Feature: Update a calendar event
+  As a member of PTO
+  So that I can change the information of an event to reflect the true event
+  I want to update an event
+
+  Background: the website already has some existing calendar event # features/update_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time     | end_date_time       | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 2018/03/02 12:00 PM | 2018/05/02 12:00 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 2018/06/02 12:00 PM | 2018/08/02 12:00 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+      | game night   | play some games           | 2018/07/02 12:00 PM | 2018/10/02 12:00 PM | Ho, Hamilton, NY      |          | true       | ajamil@colgate.edu    | true        |
+
+  Scenario: Update an existing event                                                       # features/update_calendar_event.feature:13
+    Given I am on the calendar events page                                                 # features/step_definitions/web_steps.rb:44
+    When I follow "jazz concert"                                                           # features/step_definitions/web_steps.rb:78
+    Then I should see "jazz concert"                                                       # features/step_definitions/web_steps.rb:110
+    And I should see "come and chill with music"                                           # features/step_definitions/web_steps.rb:110
+    And I should not see "game night"                                                      # features/step_definitions/web_steps.rb:128
+    When I follow "Edit event details"                                                     # features/step_definitions/web_steps.rb:78
+    And I fill in "Description" with "Tony Bennett is sick, we'll have Lady Gaga instead." # features/step_definitions/web_steps.rb:82
+    And I fill in "Location" with "Dana Arts"                                              # features/step_definitions/web_steps.rb:82
+    And I fill in "Start date of the event" with "02/07/2018 10:00 PM"                     # features/step_definitions/web_steps.rb:82
+    And I press "Update event details"                                                     # features/step_definitions/web_steps.rb:74
+    Then I should see "Event 'jazz concert' updated"                                       # features/step_definitions/web_steps.rb:110
+    And I should see "jazz concert"                                                        # features/step_definitions/web_steps.rb:110
+    And I should see "Tony Bennett is sick, we'll have Lady Gaga instead."                 # features/step_definitions/web_steps.rb:110
+    And I should see "Dana Arts"                                                           # features/step_definitions/web_steps.rb:110
+    And I should not see "Ho, Hamilton, NY"                                                # features/step_definitions/web_steps.rb:128
+    And I should see "02 Jul 22:00"                                                        # features/step_definitions/web_steps.rb:110
+    When I follow "Back to event list"                                                     # features/step_definitions/web_steps.rb:78
+    And I should see that "jazz concert" has a datetime of "2018/02/07 10:00 PM"           # features/update_calendar_event.feature:31
+      Ambiguous match of "I should see that "jazz concert" has a datetime of "2018/02/07 10:00 PM"":
+
+      features/step_definitions/web_steps.rb:276:in `"I should see that {string} has a datetime of {string}"'
+      features/step_definitions/web_steps.rb:306:in `/^(?:|I )should see that "([^"]*)".*"([^"]*)"$/'
+
+      You can run again with --guess to make Cucumber be more smart about it
+       (Cucumber::Ambiguous)
+      features/update_calendar_event.feature:31:in `And I should see that "jazz concert" has a datetime of "2018/02/07 10:00 PM"'
+
+Failing Scenarios:
+cucumber features/create_calendar_event.feature:12 # Scenario: Create a new calendar event with a status of approved
+cucumber features/delete_calendar_event.feature:13 # Scenario: Delete an event
+cucumber features/update_calendar_event.feature:13 # Scenario: Update an existing event
+
+10 scenarios (3 failed, 7 passed)
+101 steps (3 failed, 6 skipped, 92 passed)
+0m5.400s
+Coverage report generated for Cucumber Features, RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 105 / 134 LOC (78.36%) covered.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add .
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "chnage merge error in websteps"
+[pn_event 5d6b36a] chnage merge error in websteps
+ 5 files changed, 16 insertions(+), 11 deletions(-)
+ rename app/views/{layouts => application}/_flash_message.html.haml (100%)
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin master
+Everything up-to-date
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git status
+On branch pn_event
+nothing to commit, working directory clean
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin pn_event
+Counting objects: 14, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (14/14), 1.25 KiB | 0 bytes/s, done.
+Total 14 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas: 100% (11/11), completed with 11 local objects.
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+   24dfebd..5d6b36a  pn_event -> pn_event
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin pn_event
+
+^[[A^[[A^[[AEverything up-to-date
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails cucumber
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -S bundle exec cucumber --profile default
+Deprecated: Found tags option '~@wip'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@javascript'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-database-cleaner'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-database-cleaner'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Deprecated: Found tagged hook with '~@no-js-emulation'. Support for '~@tag' will be removed from the next release of Cucumber. Please use 'not @tag' instead.
+Using the default profile...
+Feature: Create a Teacher, Staff, or Parent User Account with user submitted login credentials
+  As a Teacher/Staff Member/Parent at Hamilton Central School,
+  So that I can create and access a private account on the school's website,
+  I want to create a Teacher, Staff, or Parent user account using a personal email and password.
+
+  Background: the website has already has existing accounts # features/create_account.feature:6
+    Given these UserAccounts:                               # features/step_definitions/web_steps.rb:287
+      | username | password | email                | accounttype | name           | childname    | childgrade | homeaddress |
+      | ty_rell  | roberts  | troberts@colgate.edu | teacher     | Tyrell Roberts | Little T     | 4          | 13 Oak Dr   |
+      | ycarter  | carter   | ycarter@colgat.edu   | student     | Yesu Carter    | Little Jimmy | 2          | 10 Oak Dr   |
+
+  Scenario: Create a new user account                             # features/create_account.feature:12
+    Given I am on the new user account page                       # features/step_definitions/web_steps.rb:44
+    When I fill in the following:                                 # features/step_definitions/web_steps.rb:56
+      | Username         | JSomm                |
+      | Full Name        | Joel Sommers         |
+      | Password         | cosc                 |
+      | Confirm Password | cosc                 |
+      | Email            | jsommers@colgate.edu |
+    When I press "Create User Account"                            # features/step_definitions/web_steps.rb:74
+DEPRECATION: Using `should` from rspec-expectations' old `:should` syntax without explicitly enabling the syntax is deprecated. Use the new `:expect` syntax or explicitly enable `:should` with `config.expect_with(:rspec) { |c| c.syntax = :should }` instead. Called from /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/features/step_definitions/web_steps.rb:238:in `block in <top (required)>'.
+    Then I should be on the user accounts page                    # features/step_definitions/web_steps.rb:235
+    And I should see "User Account 'JSomm'" Successfully Created  # features/step_definitions/web_steps.rb:300
+    And I should see that user "JSomm" has name of "Joel Sommers" # features/step_definitions/web_steps.rb:306
+    When I follow "Edit profile details"                          # features/step_definitions/web_steps.rb:78
+    And I fill in the following:                                  # features/step_definitions/web_steps.rb:56
+      | Child's Name  | Annie     |
+      | Child's Grade | 4         |
+      | Address       | 14 Oak Dr |
+    And press "Update Profile"                                    # features/step_definitions/web_steps.rb:74
+    Then I should be on the user accounts page                    # features/step_definitions/web_steps.rb:235
+    And I should see "Joel Sommers"                               # features/step_definitions/web_steps.rb:110
+    And I should see "Annie"                                      # features/step_definitions/web_steps.rb:110
+    And I should see "4"                                          # features/step_definitions/web_steps.rb:110
+    And I should see "14 Oak Dr"                                  # features/step_definitions/web_steps.rb:110
+
+Feature: Create a Calendar events
+  As a Staff Member at PTO,
+  I want to create an event with name, location, description and time,
+  So that I can let everyone who goes to the website know that there is an event coming up
+
+  Background: the website already has some existing calendar event # features/create_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time          | end_date_time            | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 3rd Feb 2021 04:05:06 PM | 2nd Mar 2021 04:05:06 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 6th Feb 2020 04:05:06 PM | 8th Feb 2021 04:05:06 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+
+  Scenario: Create a new calendar event with a status of approved                      # features/create_calendar_event.feature:12
+    Given I am on the create calendar event page                                       # features/step_definitions/web_steps.rb:44
+    When I fill in the following:                                                      # features/step_definitions/web_steps.rb:56
+      | Title                   | easter egg decoration           |
+      | Description             | have fun eating hardboiled eggs |
+      | Start date of the event | 3rd Jan 2021 04:05:06 AM        |
+      | End date of the event   | 3rd Jan 2021 04:05:06 PM        |
+      | Location                | Newell, Colgate University      |
+      | For family              | true                            |
+      | Contact person email    | hnguyenvu@colgate.edu           |
+      | Is this event approved? | true                            |
+    When I press "Create event"                                                        # features/step_definitions/web_steps.rb:74
+    Then I should be on the calendar events page                                       # features/step_definitions/web_steps.rb:235
+    And I should see "New event 'easter egg decoration' created and added to the page" # features/step_definitions/web_steps.rb:110
+    And I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05" # features/step_definitions/web_steps.rb:276
+    And I should see "football"                                                        # features/step_definitions/web_steps.rb:110
+    And I should see "jazz concert"                                                    # features/step_definitions/web_steps.rb:110
+
+  Scenario: Create a new calendar event with a status of not yet approved # features/create_calendar_event.feature:31
+    Given I am on the create calendar event page                          # features/step_definitions/web_steps.rb:44
+    When I fill in the following:                                         # features/step_definitions/web_steps.rb:56
+      | Title                   | church dinner                   |
+      | Description             | free dinner for hungry students |
+      | Start date of the event | 3rd Jan 2021 04:05:06 AM        |
+      | End date of the event   | 3rd Jan 2021 04:05:06 PM        |
+      | Location                | Newell, Colgate University      |
+      | For family              | true                            |
+      | Contact person email    | hnguyenvu@colgate.edu           |
+      | Is this event approved? | false                           |
+    When I press "Create event"                                           # features/step_definitions/web_steps.rb:74
+    Then I should be on the calendar events page                          # features/step_definitions/web_steps.rb:235
+    And I should see "New event 'church dinner' awaiting approval"        # features/step_definitions/web_steps.rb:110
+    And I should not see "free dinner for hungry students"                # features/step_definitions/web_steps.rb:128
+
+Feature: Delete a calendar event
+  As a member of PTO
+  So that I can remove an event that's no longer relevant
+  I want to delete the calendar event
+
+  Background: the website already has some existing calendar event # features/delete_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time     | end_date_time       | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 2018/03/02 12:00 PM | 2018/05/02 12:00 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 2018/06/02 12:00 PM | 2018/08/02 12:00 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+      | game night   | play some games           | 2018/07/02 12:00 PM | 2018/10/02 12:00 PM | Ho, Hamilton, NY      |          | true       | ajamil@colgate.edu    | true        |
+
+  Scenario: Delete an event                          # features/delete_calendar_event.feature:13
+    Given I am on the calendar events page           # features/step_definitions/web_steps.rb:44
+    When I follow "jazz concert"                     # features/step_definitions/web_steps.rb:78
+    Then I should see "jazz concert"                 # features/step_definitions/web_steps.rb:110
+    And I should see "come and chill with music"     # features/step_definitions/web_steps.rb:110
+    And I should not see "game night"                # features/step_definitions/web_steps.rb:128
+    When I follow "Delete event"                     # features/step_definitions/web_steps.rb:78
+    Then I should be on the calendar events page     # features/step_definitions/web_steps.rb:235
+    And I should see "Event 'jazz concert' deleted"  # features/step_definitions/web_steps.rb:110
+    When I follow "HCS-PTO"                          # features/step_definitions/web_steps.rb:78
+    Then I follow "Events"                           # features/step_definitions/web_steps.rb:78
+    Then I should see "football"                     # features/step_definitions/web_steps.rb:110
+    And I should see "game night"                    # features/step_definitions/web_steps.rb:110
+    And I should not see "jazz concert"              # features/step_definitions/web_steps.rb:128
+    And I should not see "come and chill with music" # features/step_definitions/web_steps.rb:128
+
+Feature: Filter calendar events by date
+  As a member of PTO
+  So that I can see events between two dates
+  I want to filter the list of calendar events by start and end date
+
+  Background: the website already has some existing calendar event # features/filter_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time     | end_date_time       | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 2018/03/02 12:00 PM | 2018/05/02 12:00 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 2018/06/02 12:00 PM | 2018/08/02 12:00 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+      | game night   | play some games           | 2018/07/02 12:00 PM | 2018/10/02 12:00 PM | Ho, Hamilton, NY      |          | true       | ajamil@colgate.edu    | true        |
+
+  Scenario: Filter with given start date and empty end date # features/filter_calendar_event.feature:13
+    Given I am on the calendar events page                  # features/step_definitions/web_steps.rb:44
+    And I fill in "From" with "02/06/2018"                  # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                               # features/step_definitions/web_steps.rb:74
+    Then I should see "jazz concert"                        # features/step_definitions/web_steps.rb:110
+    And I should see "game night"                           # features/step_definitions/web_steps.rb:110
+    And I should not see "football"                         # features/step_definitions/web_steps.rb:128
+
+  Scenario: Filter with empty start and end dates # features/filter_calendar_event.feature:21
+    Given I am on the calendar events page        # features/step_definitions/web_steps.rb:44
+    When I press "Show events"                    # features/step_definitions/web_steps.rb:74
+    Then I should see "football"                  # features/step_definitions/web_steps.rb:110
+    And I should see "jazz concert"               # features/step_definitions/web_steps.rb:110
+    And I should see "game night"                 # features/step_definitions/web_steps.rb:110
+
+  Scenario: Filter with empty start date and given end date # features/filter_calendar_event.feature:28
+    Given I am on the calendar events page                  # features/step_definitions/web_steps.rb:44
+    And I fill in "To" with "02/05/2018"                    # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                               # features/step_definitions/web_steps.rb:74
+    Then I should see "football"                            # features/step_definitions/web_steps.rb:110
+    And I should not see "jazz concert"                     # features/step_definitions/web_steps.rb:128
+    And I should not see "game night"                       # features/step_definitions/web_steps.rb:128
+
+  Scenario: Filter with given start and end dates # features/filter_calendar_event.feature:36
+    Given I am on the calendar events page        # features/step_definitions/web_steps.rb:44
+    And I fill in "From" with "02/05/2018"        # features/step_definitions/web_steps.rb:82
+    And I fill in "To" with "02/09/2018"          # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                     # features/step_definitions/web_steps.rb:74
+    Then I should see "jazz concert"              # features/step_definitions/web_steps.rb:110
+    And I should not see "football"               # features/step_definitions/web_steps.rb:128
+    And I should not see "game night"             # features/step_definitions/web_steps.rb:128
+
+  Scenario: Filter with given start and end dates with events outside of given range # features/filter_calendar_event.feature:45
+    Given I am on the calendar events page                                           # features/step_definitions/web_steps.rb:44
+    And I fill in "From" with "02/11/2019"                                           # features/step_definitions/web_steps.rb:82
+    And I fill in "To" with "02/12/2019"                                             # features/step_definitions/web_steps.rb:82
+    And I press "Show events"                                                        # features/step_definitions/web_steps.rb:74
+    Then I should not see "jazz concert"                                             # features/step_definitions/web_steps.rb:128
+    And I should not see "football"                                                  # features/step_definitions/web_steps.rb:128
+    And I should not see "game night"                                                # features/step_definitions/web_steps.rb:128
+
+Feature: Update a calendar event
+  As a member of PTO
+  So that I can change the information of an event to reflect the true event
+  I want to update an event
+
+  Background: the website already has some existing calendar event # features/update_calendar_event.feature:6
+    Given these CalendarEvents:                                    # features/step_definitions/web_steps.rb:265
+      | title        | description               | start_date_time     | end_date_time       | location              | is_sport | is_musical | contact_person        | is_approved |
+      | football     | cozy and sunny            | 2018/03/02 12:00 PM | 2018/05/02 12:00 PM | Lathrop, Hamilton, NY | true     |            | hnguyenvu@colgate.edu | true        |
+      | jazz concert | come and chill with music | 2018/06/02 12:00 PM | 2018/08/02 12:00 PM | Ho, Hamilton, NY      |          | true       | pdhawka@colgate.edu   | true        |
+      | game night   | play some games           | 2018/07/02 12:00 PM | 2018/10/02 12:00 PM | Ho, Hamilton, NY      |          | true       | ajamil@colgate.edu    | true        |
+
+  Scenario: Update an existing event                                                       # features/update_calendar_event.feature:13
+    Given I am on the calendar events page                                                 # features/step_definitions/web_steps.rb:44
+    When I follow "jazz concert"                                                           # features/step_definitions/web_steps.rb:78
+    Then I should see "jazz concert"                                                       # features/step_definitions/web_steps.rb:110
+    And I should see "come and chill with music"                                           # features/step_definitions/web_steps.rb:110
+    And I should not see "game night"                                                      # features/step_definitions/web_steps.rb:128
+    When I follow "Edit event details"                                                     # features/step_definitions/web_steps.rb:78
+    And I fill in "Description" with "Tony Bennett is sick, we'll have Lady Gaga instead." # features/step_definitions/web_steps.rb:82
+    And I fill in "Location" with "Dana Arts"                                              # features/step_definitions/web_steps.rb:82
+    And I fill in "Start date of the event" with "02/07/2018 10:00 PM"                     # features/step_definitions/web_steps.rb:82
+    And I press "Update event details"                                                     # features/step_definitions/web_steps.rb:74
+    Then I should see "Event 'jazz concert' updated"                                       # features/step_definitions/web_steps.rb:110
+    And I should see "jazz concert"                                                        # features/step_definitions/web_steps.rb:110
+    And I should see "Tony Bennett is sick, we'll have Lady Gaga instead."                 # features/step_definitions/web_steps.rb:110
+    And I should see "Dana Arts"                                                           # features/step_definitions/web_steps.rb:110
+    And I should not see "Ho, Hamilton, NY"                                                # features/step_definitions/web_steps.rb:128
+    And I should see "02 Jul 22:00"                                                        # features/step_definitions/web_steps.rb:110
+    When I follow "Back to event list"                                                     # features/step_definitions/web_steps.rb:78
+    And I should see that "jazz concert" has a datetime of "2018/02/07 10:00 PM"           # features/step_definitions/web_steps.rb:276
+
+10 scenarios (10 passed)
+101 steps (101 passed)
+0m2.175s
+Coverage report generated for Cucumber Features to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 105 / 134 LOC (78.36%) covered.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git add .
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git commit -m "resolve ambiguity in cucumber webstep"
+[pn_event e02ebba] resolve ambiguity in cucumber webstep
+ 3 files changed, 3 insertions(+), 3 deletions(-)
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push origin pn_event
+Counting objects: 7, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (7/7), done.
+Writing objects: 100% (7/7), 629 bytes | 0 bytes/s, done.
+Total 7 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 5 local objects.
+To https://github.com/ColgateCOSC480/HCS-PTO.git
+   5d6b36a..e02ebba  pn_event -> pn_event
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ open coverage/index.html
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+An error occurred while loading ./spec/features/show_request_spec.rb.
+Failure/Error: load_dependency(file) { result = super }
+
+SyntaxError:
+  /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/features/show_request_spec.rb:38: syntax error, unexpected end-of-input, expecting keyword_end
+      end
+         ^
+# /usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:286:in `load'
+# /usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:286:in `block in load'
+# /usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:258:in `load_dependency'
+# /usr/local/lib/ruby/gems/2.5.0/gems/activesupport-5.1.6/lib/active_support/dependencies.rb:286:in `load'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/configuration.rb:1954:in `load_spec_file_handling_errors'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/configuration.rb:1496:in `block in load_spec_files'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/configuration.rb:1494:in `each'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/configuration.rb:1494:in `load_spec_files'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/runner.rb:100:in `setup'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/runner.rb:86:in `run'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/runner.rb:71:in `run'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib/rspec/core/runner.rb:45:in `invoke'
+# /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec:4:in `<main>'
+#
+#   Showing full backtrace because every line was filtered out.
+#   See docs for RSpec::Configuration#backtrace_exclusion_patterns and
+#   RSpec::Configuration#backtrace_inclusion_patterns for more information.
+
+An error occurred while loading ./spec/helpers/user_accounts_helper_spec.rb.
+Failure/Error:
+  RSpec.describe UserAccountsHelper, type: :helper do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end
+
+NameError:
+  uninitialized constant UserAccountsHelper
+# ./spec/helpers/user_accounts_helper_spec.rb:13:in `<top (required)>'
+
+
+Finished in 0.00027 seconds (files took 4.08 seconds to load)
+0 examples, 0 failures, 2 errors occurred outside of examples
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 28 / 151 LOC (18.54%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+An error occurred while loading ./spec/features/show_request_spec.rb.
+Failure/Error:
+    RSpec.describe "show page", type: :feature do
+      before :each do
+        CalendarEvent.create!(title: "harry potter", description: "expelliarmust", start_date_time: DateTime.new(2018,9,5.3), end_date_time: DateTime.new(2018,9,5.6), location: "The Dudley's", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+        CalendarEvent.create!(title: "voldermort", description: "AVADA KEDABRA", start_date_time: DateTime.new(2018,10,5.3), end_date_time: DateTime.new(2018,10,5.6), location: "under the bridge", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+
+        visit "/calendar_events"
+      end
+
+      it "should have links to each of the events" do
+        expect(page).to have_link("harry potter")
+
+RuntimeError:
+  Creating an isolated context from within a context is not allowed. Change `RSpec.describe` to `describe` or move this to a top-level scope.
+# ./spec/features/show_request_spec.rb:4:in `block in <top (required)>'
+# ./spec/features/show_request_spec.rb:3:in `<top (required)>'
+
+An error occurred while loading ./spec/helpers/user_accounts_helper_spec.rb.
+Failure/Error:
+  RSpec.describe UserAccountsHelper, type: :helper do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end
+
+NameError:
+  uninitialized constant UserAccountsHelper
+# ./spec/helpers/user_accounts_helper_spec.rb:13:in `<top (required)>'
+
+
+Finished in 0.00032 seconds (files took 4.11 seconds to load)
+0 examples, 0 failures, 2 errors occurred outside of examples
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 28 / 151 LOC (18.54%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+An error occurred while loading ./spec/helpers/user_accounts_helper_spec.rb.
+Failure/Error:
+  RSpec.describe UserAccountsHelper, type: :helper do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end
+
+NameError:
+  uninitialized constant UserAccountsHelper
+# ./spec/helpers/user_accounts_helper_spec.rb:13:in `<top (required)>'
+
+
+Finished in 0.00052 seconds (files took 3.89 seconds to load)
+0 examples, 0 failures, 1 error occurred outside of examples
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 28 / 151 LOC (18.54%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+An error occurred while loading ./spec/helpers/user_accounts_helper_spec.rb.
+Failure/Error:
+  RSpec.describe UserAccountsHelper, type: :helper do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end
+
+NameError:
+  uninitialized constant UserAccountsHelper
+# ./spec/helpers/user_accounts_helper_spec.rb:13:in `<top (required)>'
+
+
+Finished in 0.00034 seconds (files took 4.12 seconds to load)
+0 examples, 0 failures, 1 error occurred outside of examples
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 28 / 151 LOC (18.54%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+
+An error occurred while loading ./spec/helpers/user_accounts_helper_spec.rb.
+Failure/Error:
+  RSpec.describe UserAccountsHelper, type: :helper do
+    pending "add some examples to (or delete) #{__FILE__}"
+  end
+
+NameError:
+  uninitialized constant UserAccountsHelper
+# ./spec/helpers/user_accounts_helper_spec.rb:13:in `<top (required)>'
+
+
+Finished in 0.00058 seconds (files took 3.82 seconds to load)
+0 examples, 0 failures, 1 error occurred outside of examples
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 28 / 151 LOC (18.54%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+.FF.F...........******
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) user_account/create.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_account/create.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_account/create.html.haml_spec.rb:4
+
+  2) user_account/new.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_account/new.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_account/new.html.haml_spec.rb:4
+
+  3) user_account/update.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_account/update.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_account/update.html.haml_spec.rb:4
+
+  4) user_accounts/create.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_accounts/create.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_accounts/create.html.haml_spec.rb:4
+
+  5) user_accounts/new.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_accounts/new.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_accounts/new.html.haml_spec.rb:4
+
+  6) user_accounts/update.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_accounts/update.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_accounts/update.html.haml_spec.rb:4
+
+
+Failures:
+
+  1) UserAccountsController GET #create returns http success
+     Failure/Error: params.require(:user_account).permit(:username,:email,:childgrade,:childname,:homeaddress,:name, :password, :password_confirmation)
+
+     ActionController::ParameterMissing:
+       param is missing or the value is empty: user_account
+     # ./app/controllers/user_accounts_controller.rb:59:in `create_update_params'
+     # ./app/controllers/user_accounts_controller.rb:7:in `create'
+     # ./spec/controllers/user_accounts_controller_spec.rb:14:in `block (3 levels) in <top (required)>'
+
+  2) UserAccountsController GET #update returns http success
+     Failure/Error: get :update
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"update", :controller=>"user_accounts"}
+     # ./spec/controllers/user_accounts_controller_spec.rb:21:in `block (3 levels) in <top (required)>'
+
+  3) show page clicking on link for a calendar event should show details for that event
+     Failure/Error: expect(page).to have_content("2.30")
+       expected to find text "2.30" in "HCS-PTO Menu User Accounts Events School Activities Other Resources harry potter expelliarmust Start date and time: 05 Sep 07:12 End date and time: 05 Sep 14:24 The event is at The Dudley's. hnguyenvu@colgate.edu is the contact person for this event. Edit event details Delete event Back to event list"
+     # ./spec/features/show_request_spec.rb:20:in `block (2 levels) in <top (required)>'
+
+Finished in 0.63616 seconds (files took 3.77 seconds to load)
+22 examples, 3 failures, 6 pending
+
+Failed examples:
+
+rspec ./spec/controllers/user_accounts_controller_spec.rb:13 # UserAccountsController GET #create returns http success
+rspec ./spec/controllers/user_accounts_controller_spec.rb:20 # UserAccountsController GET #update returns http success
+rspec ./spec/features/show_request_spec.rb:15 # show page clicking on link for a calendar event should show details for that event
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 52 / 136 LOC (38.24%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rails spec
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb
+.FF.............******
+
+Pending: (Failures listed here are expected and do not affect your suite's status)
+
+  1) user_account/create.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_account/create.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_account/create.html.haml_spec.rb:4
+
+  2) user_account/new.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_account/new.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_account/new.html.haml_spec.rb:4
+
+  3) user_account/update.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_account/update.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_account/update.html.haml_spec.rb:4
+
+  4) user_accounts/create.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_accounts/create.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_accounts/create.html.haml_spec.rb:4
+
+  5) user_accounts/new.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_accounts/new.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_accounts/new.html.haml_spec.rb:4
+
+  6) user_accounts/update.html.haml add some examples to (or delete) /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/spec/views/user_accounts/update.html.haml_spec.rb
+     # Not yet implemented
+     # ./spec/views/user_accounts/update.html.haml_spec.rb:4
+
+
+Failures:
+
+  1) UserAccountsController GET #create returns http success
+     Failure/Error: params.require(:user_account).permit(:username,:email,:childgrade,:childname,:homeaddress,:name, :password, :password_confirmation)
+
+     ActionController::ParameterMissing:
+       param is missing or the value is empty: user_account
+     # ./app/controllers/user_accounts_controller.rb:59:in `create_update_params'
+     # ./app/controllers/user_accounts_controller.rb:7:in `create'
+     # ./spec/controllers/user_accounts_controller_spec.rb:14:in `block (3 levels) in <top (required)>'
+
+  2) UserAccountsController GET #update returns http success
+     Failure/Error: get :update
+
+     ActionController::UrlGenerationError:
+       No route matches {:action=>"update", :controller=>"user_accounts"}
+     # ./spec/controllers/user_accounts_controller_spec.rb:21:in `block (3 levels) in <top (required)>'
+
+Finished in 0.55115 seconds (files took 4.25 seconds to load)
+22 examples, 2 failures, 6 pending
+
+Failed examples:
+
+rspec ./spec/controllers/user_accounts_controller_spec.rb:13 # UserAccountsController GET #create returns http success
+rspec ./spec/controllers/user_accounts_controller_spec.rb:20 # UserAccountsController GET #update returns http success
+
+Coverage report generated for RSpec to /Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO/coverage. 52 / 136 LOC (38.24%) covered.
+/usr/local/Cellar/ruby/2.5.0/bin/ruby -I/usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/lib:/usr/local/lib/ruby/gems/2.5.0/gems/rspec-support-3.7.1/lib /usr/local/lib/ruby/gems/2.5.0/gems/rspec-core-3.7.1/exe/rspec --pattern spec/\*\*\{,/\*/\*\*\}/\*_spec.rb failed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ $ bundle install--without production
+-bash: $: command not found
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ ls
+Gemfile		README.md	app		config		coverage	features	log		public		spec		tmp
+Gemfile.lock	Rakefile	bin		config.ru	db		lib		package.json	script		test		vendor
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ bundle install--without production
+Could not find command "install--without".
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ bundle install --without production
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies...
+Using rake 12.3.1
+Using concurrent-ruby 1.0.5
+Using i18n 1.0.0
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Using activesupport 5.1.6
+Using builder 3.2.3
+Using erubi 1.7.1
+Using mini_portile2 2.3.0
+Using nokogiri 1.8.2
+Using rails-dom-testing 2.0.3
+Using crass 1.0.3
+Using loofah 2.2.2
+Using rails-html-sanitizer 1.0.4
+Using actionview 5.1.6
+Using rack 2.0.4
+Using rack-test 1.0.0
+Using actionpack 5.1.6
+Using nio4r 2.3.0
+Using websocket-extensions 0.1.3
+Using websocket-driver 0.6.5
+Using actioncable 5.1.6
+Using globalid 0.4.1
+Using activejob 5.1.6
+Using mini_mime 1.0.0
+Using mail 2.7.0
+Using actionmailer 5.1.6
+Using activemodel 5.1.6
+Using arel 8.0.0
+Using activerecord 5.1.6
+Using public_suffix 3.0.2
+Using addressable 2.5.2
+Using backports 3.11.1
+Using bindex 0.5.0
+Using bundler 1.16.1
+Using byebug 10.0.2
+Using xpath 3.0.0
+Using capybara 2.18.0
+Using ffi 1.9.23
+Using childprocess 0.9.0
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Using method_source 0.9.0
+Using thor 0.20.0
+Using railties 5.1.6
+Using coffee-rails 4.2.2
+Using cucumber-tag_expressions 1.1.1
+Using gherkin 5.0.0
+Using cucumber-core 3.1.0
+Using cucumber-expressions 5.0.13
+Using cucumber-wire 0.0.1
+Using diff-lcs 1.3
+Using multi_json 1.13.1
+Using multi_test 0.1.2
+Using cucumber 3.1.0
+Using mime-types-data 3.2016.0521
+Using mime-types 3.1
+Using cucumber-rails 1.5.0
+Using cucumber-rails-training-wheels 1.0.0
+Using database_cleaner 1.6.2
+Using docile 1.3.0
+Using erubis 2.7.0
+Using temple 0.8.0
+Using tilt 2.0.8
+Using haml 5.0.4
+Using sexp_processor 4.10.1
+Using ruby_parser 3.11.0
+Using html2haml 2.2.0
+Using haml-rails 1.0.0
+Using jbuilder 2.7.0
+Using json 2.1.0
+Using launchy 2.4.3
+Using rb-fsevent 0.10.3
+Using rb-inotify 0.9.10
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Fetching pg 1.0.0
+Installing pg 1.0.0 with native extensions
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    current directory: /usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/ext
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20180406-3987-1n4jrni.rb extconf.rb
+checking for pg_config... no
+No pg_config... trying anyway. If building fails, please try again with
+ --with-pg-config=/path/to/pg_config
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/usr/local/Cellar/ruby/2.5.0/bin/$(RUBY_BASE_NAME)
+	--with-pg
+	--without-pg
+	--enable-windows-cross
+	--disable-windows-cross
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/lib
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /usr/local/lib/ruby/gems/2.5.0/extensions/x86_64-darwin-14/2.5.0/pg-1.0.0/mkmf.log
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0 for inspection.
+Results logged to /usr/local/lib/ruby/gems/2.5.0/extensions/x86_64-darwin-14/2.5.0/pg-1.0.0/gem_make.out
+
+An error occurred while installing pg (1.0.0), and Bundler cannot continue.
+Make sure that `gem install pg -v '1.0.0'` succeeds before bundling.
+
+In Gemfile:
+  pg
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ atom /usr/local/lib/ruby/gems/2.5.0/extensions/x86_64-darwin-14/2.5.0/pg-1.0.0/mkmf.log
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ gem install pg -v '1.0.0'
+Building native extensions. This could take a while...
+ERROR:  Error installing pg:
+	ERROR: Failed to build gem native extension.
+
+    current directory: /usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/ext
+/usr/local/opt/ruby/bin/ruby -r ./siteconf20180406-4026-dw687f.rb extconf.rb
+checking for pg_config... no
+No pg_config... trying anyway. If building fails, please try again with
+ --with-pg-config=/path/to/pg_config
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/usr/local/Cellar/ruby/2.5.0/bin/$(RUBY_BASE_NAME)
+	--with-pg
+	--without-pg
+	--enable-windows-cross
+	--disable-windows-cross
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/lib
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /usr/local/lib/ruby/gems/2.5.0/extensions/x86_64-darwin-14/2.5.0/pg-1.0.0/mkmf.log
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0 for inspection.
+Results logged to /usr/local/lib/ruby/gems/2.5.0/extensions/x86_64-darwin-14/2.5.0/pg-1.0.0/gem_make.out
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ brew install postgres
+Updating Homebrew...
+==> Auto-updated Homebrew!
+Updated 1 tap (homebrew/core).
+==> New Formulae
+annie               flintrock           gr-osmosdr          latexdiff           mint                php-cs-fixer        rtptools            template-glib       wp-cli
+ask-cli             ghc@8.2             jsonrpc-glib        libdazzle           parallelstl         phpunit             scrcpy              tox
+composer            goto                jthread             meson-internal      php-code-sniffer    qsoas               ssh-permit-a38      trezor-agent
+==> Updated Formulae
+aws-elasticbeanstalk ✔        diffuse                       gnumeric                      knot-resolver                 msitools                      rocksdb
+heroku ✔                      django-completion             gnuradio                      kobalt                        multimarkdown                 rom-tools
+icu4c ✔                       dlib                          go                            kompose                       mypy                          rrdtool
+imagemagick ✔                 dnscrypt-proxy                go-jira                       kotlin                        nano                          ruby-build
+node ✔                        dnsmasq                       go@1.9                        kubectx                       nativefier                    ruby@2.2
+openssl ✔                     docfx                         gobby                         kubeless                      nats-streaming-server         ruby@2.3
+python ✔                      docker                        gobject-introspection         kubernetes-cli                ncmpc                         rust
+ruby ✔                        docker-completion             gocryptfs                     lablgtk                       neo4j                         s-nail
+sphinx-doc ✔                  docker-compose                godep                         languagetool                  neofetch                      s6
+sqlite ✔                      docker-compose-completion     goenv                         lasi                          neomutt                       sagittarius-scheme
+abcmidi                       dovecot                       goffice                       laszip                        netcdf                        saltstack
+adwaita-icon-theme            dscanner                      gom                           latexila                      newsboat                      samtools
+agda                          dspdfviewer                   goocanvas                     lbdb                          nginx                         sbcl
+agedu                         duc                           google-benchmark              lean-cli                      nicotine-plus                 sbt
+allegro                       duck                          gosu                          legit                         nmap                          scala
+alot                          duo_unix                      gpa                           libatomic_ops                 node-build                    scipy
+amazon-ecs-cli                duplicity                     gpredict                      libbi                         node@4                        sdlpop
+amber                         dwdiff                        gqview                        libcdr                        node@6                        sile
+ammonite-repl                 dynamips                      grafana                       libchamplain                  node@8                        simgrid
+angular-cli                   e2fsprogs                     grails                        libcouchbase                  nodeenv                       simple-tiles
+anjuta                        easy-tag                      grakn                         libdill                       noti                          sip
+ansible                       efl                           graphene                      libdvdcss                     notmuch                       siril
+ant                           eiffelstudio                  grip                          libepoxy                      ntopng                        sjk
+apache-arrow                  ejabberd                      gron                          libfixposix                   nuxeo                         skaffold
+apibuilder-cli                elasticsearch                 groovyserv                    libfreehand                   odpi                          skafos
+apm-server                    embulk                        grpc                          libgdata                      oniguruma                     skinny
+arangodb                      erlang                        grsync                        libgee                        open-mpi                      slimerjs
+argus-clients                 erlang@19                     gsmartcontrol                 libgit2                       open-scene-graph              solr
+armor                         etcd                          gspell                        libgit2-glib                  openldap                      sourcery
+artifactory                   evince                        gssdp                         libglade                      openrct2                      spigot
+arx                           exomizer                      gst-editing-services          libglademm                    openshift-cli                 sqldiff
+asciidoctor                   exploitdb                     gst-libav                     libgnomecanvas                openslide                     sqlite-analyzer
+asciinema                     eye-d3                        gst-plugins-bad               libgnomecanvasmm              openssh                       sqlmap
+at-spi2-atk                   faas-cli                      gst-plugins-base              libgtop                       openssl@1.1                   srt
+at-spi2-core                  fades                         gst-plugins-good              libgweather                   openttd                       ssh-copy-id
+atk                           fail2ban                      gst-plugins-ugly              libhdhomerun                  orocos-kdl                    sshuttle
+atkmm                         fceux                         gst-python                    libhttpseverywhere            osm-gps-map                   stdman
+ats2-postiats                 fd                            gst-rtsp-server               libidn                        osm2pgrouting                 stellar-core
+audacious                     fdroidserver                  gst-validate                  libinfinity                   osmium-tool                   submarine
+auditbeat                     ffe                           gstreamer                     liblas                        osquery                       suil
+autopep8                      file-roller                   gstreamermm                   liblcf                        osrm-backend                  svgcleaner
+awf                           filebeat                      gtk+                          libmpdclient                  packer                        swiftgen
+aws-sdk-cpp                   firebase-cli                  gtk+3                         libmspub                      packetbeat                    sylpheed
+awscli                        flatbuffers                   gtk-chtheme                   libmtp                        paket                         syncthing
+azure-cli                     flawfinder                    gtk-doc                       libnice                       pandoc                        synfig
+ballerina                     flow                          gtk-engines                   libnotify                     pandoc-citeproc               sysbench
+baobab                        fluent-bit                    gtk-gnutella                  libosinfo                     pandoc-crossref               sysdig
+basex                         fn                            gtk-mac-integration           libosmium                     pango                         talloc
+bcftools                      folly                         gtk-murrine-engine            libphonenumber                pangomm                       tarantool
+bcpp                          fontforge                     gtk-vnc                       libqalculate                  paps                          tbb
+bettercap                     fonttools                     gtkdatabox                    librdkafka                    parallel                      tectonic
+biogeme                       freeciv                       gtkextra                      librealsense                  passenger                     teleport
+bit                           freeling                      gtkmm                         libressl                      pazpar2                       tepl
+bluepill                      freeswitch                    gtkmm3                        librest                       pcb                           termbox
+bokken                        freetds                       gtksourceview                 librsvg                       pcb2gcode                     terminator
+botan                         fribidi                       gtksourceview3                libsecret                     pcre                          terraform
+braid                         frugal                        gtksourceview@4               libsoup                       pdal                          terragrunt
+buku                          fuse-emulator                 gtksourceviewmm               libswiften                    pdf2htmlex                    testssl
+bzt                           g3log                         gtksourceviewmm3              libtensorflow                 pdf2svg                       tinyxml2
+cabal-install                 gabedit                       gtkspell3                     libucl                        pdfgrep                       tmuxinator-completion
+caddy                         ganglia                       gucharmap                     libusb                        pdfpc                         translate-toolkit
+caf                           gbdfed                        gupnp                         libuv                         pdfsandwich                   treefrog
+carthage                      gcab                          gupnp-av                      libvirt                       pdftoedn                      twarc
+cattle                        gdal                          gupnp-tools                   libvisio                      pdftoipe                      twine-pypi
+ccache                        gdcm                          gutenberg                     libzzip                       pdnsrec                       typescript
+ceres-solver                  gdk-pixbuf                    gwyddion                      linkerd                       percona-xtrabackup            uhd
+certbot                       gdl                           gxml                          lmdb                          pgcli                         unbound
+chakra                        gdmap                         h2                            lmod                          pgroonga                      unixodbc
+chamber                       gedit                         hadolint                      logstash                      pgrouting                     unrar
+chapel                        geeqie                        haproxy                       logtalk                       php                           unyaffs
+checkstyle                    gegl                          harfbuzz                      lua                           picard-tools                  vala
+chromedriver                  genometools                   headphones                    lua@5.1                       pidgin                        vault
+chronograf                    geocode-glib                  heartbeat                     lxc                           pioneers                      vim
+clearlooks-phenix             geoserver                     hfstospell                    mackup                        pipenv                        vim@7.4
+cliclick                      gerbv                         hledger                       macvim                        pipes-sh                      vips
+clinfo                        get-flash-videos              hlint                         mame                          pius                          vis
+closure-compiler              get_iplayer                   homebank                      mapnik                        planck                        vnu
+clutter                       geth                          hopenpgp-tools                mapserver                     plantuml                      vte
+clutter-gst                   getmail                       htop                          mariadb                       plplot                        vte3
+clutter-gtk                   ghc                           htslib                        mariadb@10.1                  pmd                           watch
+cmake                         ghex                          http-parser                   mat                           points2grid                   webpack
+cnats                         giflossy                      httpd                         maxwell                       poppler                       weechat
+cockroach                     git                           hugo                          mbedtls                       postgis                       wesnoth
+cocoapods                     git-annex                     hwloc                         mdk                           pqiv                          widelands
+coffeescript                  git-ftp                       i3                            media-info                    pre-commit                    wine
+cogl                          git-town                      i3status                      mediaconch                    prefixsuffix                  wireshark
+collectd                      gitbucket                     igv                           mednafen                      presto                        wxmac
+conan                         gitfs                         imagemagick@6                 memcached                     primesieve                    xboard
+container-diff                gitg                          influxdb                      mercurial                     proj                          xdot
+convmv                        gitlab-runner                 ipfs                          meson                         psqlodbc                      xmount
+convox                        gitless                       ipython                       metabase                      pugixml                       xmrig
+corebird                      gjs                           ipython@5                     metricbeat                    pyenv                         xsane
+couchdb                       gkrellm                       ircd-hybrid                   mftrace                       pygobject3                    xtensor
+cppcheck                      glade                         jadx                          mikutter                      pygtk                         yaz
+cython                        glibmm                        jbig2enc                      mill                          pygtkglext                    yelp-tools
+czmq                          gmime                         jenkins                       mimic                         pygtksourceview               youtube-dl
+darcs                         gmp                           joplin                        minbif                        pytouhou                      yq
+dartsim                       gmt                           jpegoptim                     minio-mc                      qbs                           zebra
+davmail                       gmt@4                         jq                            mitmproxy                     qpid-proton                   zenity
+dbhash                        gnatsd                        json-glib                     mkvtoolnix                    quicktype                     zeromq
+dcm2niix                      gnome-autoar                  juju                          modules                       rclone                        zim
+ddgr                          gnome-builder                 just                          monetdb                       re2                           zorba
+dhall-json                    gnome-recipes                 kedge                         mongodb@3.4                   redis                         zstd
+diff-pdf                      gnome-themes-standard         kibana                        mozjpeg                       reminiscence
+diffoscope                    gnu-sed                       klavaro                       mpd                           rgbds
+==> Renamed Formulae
+php56 -> php@5.6                                            php70 -> php@7.0                                            php71 -> php@7.1
+
+==> Installing dependencies for postgresql: openssl
+==> Installing postgresql dependency: openssl
+==> Downloading https://www.openssl.org/source/openssl-1.0.2o.tar.gz
+######################################################################## 100.0%
+==> perl ./Configure --prefix=/usr/local/Cellar/openssl/1.0.2o_1 --openssldir=/usr/local/etc/openssl no-comp no-ssl2 no-ssl3 no-zlib shared enable-cms darwin64-x86_64-cc enable-ec
+==> make depend
+==> make
+==> make test
+==> make install MANDIR=/usr/local/Cellar/openssl/1.0.2o_1/share/man MANSUFFIX=ssl
+==> Caveats
+A CA file has been bootstrapped using certificates from the SystemRoots
+keychain. To add additional certificates (e.g. the certificates added in
+the System keychain), place .pem files in
+  /usr/local/etc/openssl/certs
+
+and run
+  /usr/local/opt/openssl/bin/c_rehash
+
+This formula is keg-only, which means it was not symlinked into /usr/local,
+because Apple has deprecated use of OpenSSL in favor of its own TLS and crypto libraries.
+
+If you need to have this software first in your PATH run:
+  echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.bash_profile
+
+For compilers to find this software you may need to set:
+    LDFLAGS:  -L/usr/local/opt/openssl/lib
+    CPPFLAGS: -I/usr/local/opt/openssl/include
+For pkg-config to find this software you may need to set:
+    PKG_CONFIG_PATH: /usr/local/opt/openssl/lib/pkgconfig
+
+==> Summary
+🍺  /usr/local/Cellar/openssl/1.0.2o_1: 1,783 files, 12MB, built in 7 minutes 19 seconds
+==> Installing postgresql
+==> Downloading https://ftp.postgresql.org/pub/source/v10.3/postgresql-10.3.tar.bz2
+######################################################################## 100.0%
+==> ./configure --prefix=/usr/local/Cellar/postgresql/10.3 --datadir=/usr/local/share/postgresql --libdir=/usr/local/lib --sysconfdir=/usr/loc
+==> make
+==> make install-world datadir=/usr/local/Cellar/postgresql/10.3/share/postgresql libdir=/usr/local/Cellar/postgresql/10.3/lib pkglibdir=/usr/
+==> /usr/local/Cellar/postgresql/10.3/bin/initdb /usr/local/var/postgres
+==> Caveats
+To migrate existing data from a previous major version of PostgreSQL run:
+  brew postgresql-upgrade-database
+
+To have launchd start postgresql now and restart at login:
+  brew services start postgresql
+Or, if you don't want/need a background service you can just run:
+  pg_ctl -D /usr/local/var/postgres start
+==> Summary
+🍺  /usr/local/Cellar/postgresql/10.3: 3,383 files, 39.4MB, built in 3 minutes 28 seconds
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ gem install pg -v '1.0.0'
+Building native extensions. This could take a while...
+Successfully installed pg-1.0.0
+Parsing documentation for pg-1.0.0
+Installing ri documentation for pg-1.0.0
+Done installing documentation for pg after 1 seconds
+1 gem installed
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ ruby -v
+ruby 2.5.0p0 (2017-12-25 revision 61468) [x86_64-darwin14]
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ bundle install --without production
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies....
+Using rake 12.3.1
+Using concurrent-ruby 1.0.5
+Using i18n 1.0.0
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Using activesupport 5.1.6
+Using builder 3.2.3
+Using erubi 1.7.1
+Using mini_portile2 2.3.0
+Using nokogiri 1.8.2
+Using rails-dom-testing 2.0.3
+Using crass 1.0.3
+Using loofah 2.2.2
+Using rails-html-sanitizer 1.0.4
+Using actionview 5.1.6
+Using rack 2.0.4
+Using rack-test 1.0.0
+Using actionpack 5.1.6
+Using nio4r 2.3.0
+Using websocket-extensions 0.1.3
+Using websocket-driver 0.6.5
+Using actioncable 5.1.6
+Using globalid 0.4.1
+Using activejob 5.1.6
+Using mini_mime 1.0.0
+Using mail 2.7.0
+Using actionmailer 5.1.6
+Using activemodel 5.1.6
+Using arel 8.0.0
+Using activerecord 5.1.6
+Using public_suffix 3.0.2
+Using addressable 2.5.2
+Using backports 3.11.1
+Using bindex 0.5.0
+Using bundler 1.16.1
+Using byebug 10.0.2
+Using xpath 3.0.0
+Using capybara 2.18.0
+Using ffi 1.9.23
+Using childprocess 0.9.0
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Using method_source 0.9.0
+Using thor 0.20.0
+Using railties 5.1.6
+Using coffee-rails 4.2.2
+Using cucumber-tag_expressions 1.1.1
+Using gherkin 5.0.0
+Using cucumber-core 3.1.0
+Using cucumber-expressions 5.0.13
+Using cucumber-wire 0.0.1
+Using diff-lcs 1.3
+Using multi_json 1.13.1
+Using multi_test 0.1.2
+Using cucumber 3.1.0
+Using mime-types-data 3.2016.0521
+Using mime-types 3.1
+Using cucumber-rails 1.5.0
+Using cucumber-rails-training-wheels 1.0.0
+Using database_cleaner 1.6.2
+Using docile 1.3.0
+Using erubis 2.7.0
+Using temple 0.8.0
+Using tilt 2.0.8
+Using haml 5.0.4
+Using sexp_processor 4.10.1
+Using ruby_parser 3.11.0
+Using html2haml 2.2.0
+Using haml-rails 1.0.0
+Using jbuilder 2.7.0
+Using json 2.1.0
+Using launchy 2.4.3
+Using rb-fsevent 0.10.3
+Using rb-inotify 0.9.10
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Using pg 1.0.0
+Using puma 3.11.3
+Using sprockets 3.7.1
+Using sprockets-rails 3.2.1
+Using rails 5.1.6
+Using rails-controller-testing 1.0.2
+Using rspec-support 3.7.1
+Using rspec-core 3.7.1
+Using rspec-expectations 3.7.0
+Using rspec-mocks 3.7.0
+Using rspec-rails 3.7.2
+Using rubyzip 1.2.1
+Using sass-listen 4.0.0
+Using sass 3.5.6
+Using sass-rails 5.0.7
+Using selenium-webdriver 3.11.0
+Using simplecov-html 0.10.2
+Using simplecov 0.16.1
+Using spring 2.0.2
+Using spring-watcher-listen 2.0.1
+Using turbolinks-source 5.1.0
+Using turbolinks 5.1.0
+Using uglifier 4.1.8
+Using web-console 3.5.1
+Bundle complete! 25 Gemfile dependencies, 102 gems now installed.
+Gems in the group production were not installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rake db:create
+could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+Couldn't create database for {"adapter"=>"postgresql", "pool"=>5, "timeout"=>5000, "database"=>"hcs_pto_database_development"}
+rake aborted!
+PG::ConnectionBad: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `initialize'
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `new'
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `connect'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:697:in `connect'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:221:in `initialize'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_handling.rb:88:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/postgresql_database_tasks.rb:10:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/postgresql_database_tasks.rb:19:in `create'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:117:in `create'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:137:in `block in create_current'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:305:in `block in each_current_configuration'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:302:in `each'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:302:in `each_current_configuration'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:136:in `create_current'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/railties/databases.rake:27:in `block (2 levels) in <top (required)>'
+/usr/local/lib/ruby/gems/2.5.0/gems/rake-12.3.1/exe/rake:27:in `<top (required)>'
+Tasks: TOP => db:create
+(See full trace by running task with --trace)
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rake db:create
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5433?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5433?
+Couldn't create database for {"adapter"=>"postgresql", "pool"=>5, "timeout"=>5000, "database"=>"hcs_pto_database_development", "host"=>"localhost", "port"=>5433}
+rake aborted!
+PG::ConnectionBad: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5433?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5433?
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `initialize'
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `new'
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `connect'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:697:in `connect'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:221:in `initialize'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_handling.rb:88:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/postgresql_database_tasks.rb:10:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/postgresql_database_tasks.rb:19:in `create'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:117:in `create'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:137:in `block in create_current'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:305:in `block in each_current_configuration'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:302:in `each'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:302:in `each_current_configuration'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:136:in `create_current'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/railties/databases.rake:27:in `block (2 levels) in <top (required)>'
+/usr/local/lib/ruby/gems/2.5.0/gems/rake-12.3.1/exe/rake:27:in `<top (required)>'
+Tasks: TOP => db:create
+(See full trace by running task with --trace)
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ rake db:create
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+Couldn't create database for {"adapter"=>"postgresql", "pool"=>5, "timeout"=>5000, "database"=>"hcs_pto_database_development", "host"=>"localhost"}
+rake aborted!
+PG::ConnectionBad: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `initialize'
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `new'
+/usr/local/lib/ruby/gems/2.5.0/gems/pg-1.0.0/lib/pg.rb:56:in `connect'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:697:in `connect'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:221:in `initialize'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/connection_handling.rb:88:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/postgresql_database_tasks.rb:10:in `connection'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/postgresql_database_tasks.rb:19:in `create'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:117:in `create'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:137:in `block in create_current'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:305:in `block in each_current_configuration'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:302:in `each'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:302:in `each_current_configuration'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/tasks/database_tasks.rb:136:in `create_current'
+/usr/local/lib/ruby/gems/2.5.0/gems/activerecord-5.1.6/lib/active_record/railties/databases.rake:27:in `block (2 levels) in <top (required)>'
+/usr/local/lib/ruby/gems/2.5.0/gems/rake-12.3.1/exe/rake:27:in `<top (required)>'
+Tasks: TOP => db:create
+(See full trace by running task with --trace)
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ which psql
+/usr/local/bin/psql
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ psql
+psql: could not connect to server: No such file or directory
+	Is the server running locally and accepting
+	connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ psql -h localhost
+psql: could not connect to server: Connection refused
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ bundle install --without production
+The dependency tzinfo-data (>= 0) will be unused by any of the platforms Bundler is installing for. Bundler is installing for ruby but the dependency is only for x86-mingw32, x86-mswin32, x64-mingw32, java. To add those platforms to the bundle, run `bundle lock --add-platform x86-mingw32 x86-mswin32 x64-mingw32 java`.
+Fetching gem metadata from https://rubygems.org/.........
+Fetching gem metadata from https://rubygems.org/.
+Resolving dependencies....
+Using rake 12.3.1
+Using concurrent-ruby 1.0.5
+Using i18n 1.0.0
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Using activesupport 5.1.6
+Using builder 3.2.3
+Using erubi 1.7.1
+Using mini_portile2 2.3.0
+Using nokogiri 1.8.2
+Using rails-dom-testing 2.0.3
+Using crass 1.0.3
+Using loofah 2.2.2
+Using rails-html-sanitizer 1.0.4
+Using actionview 5.1.6
+Using rack 2.0.4
+Using rack-test 1.0.0
+Using actionpack 5.1.6
+Using nio4r 2.3.0
+Using websocket-extensions 0.1.3
+Using websocket-driver 0.6.5
+Using actioncable 5.1.6
+Using globalid 0.4.1
+Using activejob 5.1.6
+Using mini_mime 1.0.0
+Using mail 2.7.0
+Using actionmailer 5.1.6
+Using activemodel 5.1.6
+Using arel 8.0.0
+Using activerecord 5.1.6
+Using public_suffix 3.0.2
+Using addressable 2.5.2
+Using backports 3.11.1
+Using bcrypt 3.1.11
+Using bindex 0.5.0
+Using bundler 1.16.1
+Using byebug 10.0.2
+Using xpath 3.0.0
+Using capybara 2.18.0
+Using ffi 1.9.23
+Using childprocess 0.9.0
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Using method_source 0.9.0
+Using thor 0.20.0
+Using railties 5.1.6
+Using coffee-rails 4.2.2
+Using cucumber-tag_expressions 1.1.1
+Using gherkin 5.0.0
+Using cucumber-core 3.1.0
+Using cucumber-expressions 5.0.13
+Using cucumber-wire 0.0.1
+Using diff-lcs 1.3
+Using multi_json 1.13.1
+Using multi_test 0.1.2
+Using cucumber 3.1.0
+Using mime-types-data 3.2016.0521
+Using mime-types 3.1
+Using cucumber-rails 1.5.0
+Using cucumber-rails-training-wheels 1.0.0
+Using database_cleaner 1.6.2
+Using orm_adapter 0.5.0
+Using responders 2.4.0
+Using warden 1.2.7
+Using devise 4.4.3
+Using docile 1.3.0
+Using erubis 2.7.0
+Using temple 0.8.0
+Using tilt 2.0.8
+Using haml 5.0.4
+Using sexp_processor 4.10.1
+Using ruby_parser 3.11.0
+Using html2haml 2.2.0
+Using haml-rails 1.0.0
+Using jbuilder 2.7.0
+Using json 2.1.0
+Using launchy 2.4.3
+Using rb-fsevent 0.10.3
+Using rb-inotify 0.9.10
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Using puma 3.11.3
+Using sprockets 3.7.1
+Using sprockets-rails 3.2.1
+Using rails 5.1.6
+Using rails-controller-testing 1.0.2
+Using rspec-support 3.7.1
+Using rspec-core 3.7.1
+Using rspec-expectations 3.7.0
+Using rspec-mocks 3.7.0
+Using rspec-rails 3.7.2
+Using rubyzip 1.2.1
+Using sass-listen 4.0.0
+Using sass 3.5.6
+Using sass-rails 5.0.7
+Using selenium-webdriver 3.11.0
+Using simplecov-html 0.10.2
+Using simplecov 0.16.1
+Using spring 2.0.2
+Using spring-watcher-listen 2.0.1
+Using sqlite3 1.3.13
+Using turbolinks-source 5.1.0
+Using turbolinks 5.1.0
+Using uglifier 4.1.8
+Using web-console 3.5.1
+Bundle complete! 28 Gemfile dependencies, 107 gems now installed.
+Gems in the group production were not installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ bundle install
+Using rake 12.3.1
+Using concurrent-ruby 1.0.5
+Using i18n 1.0.0
+Using minitest 5.11.3
+Using thread_safe 0.3.6
+Using tzinfo 1.2.5
+Using activesupport 5.1.6
+Using builder 3.2.3
+Using erubi 1.7.1
+Using mini_portile2 2.3.0
+Using nokogiri 1.8.2
+Using rails-dom-testing 2.0.3
+Using crass 1.0.3
+Using loofah 2.2.2
+Using rails-html-sanitizer 1.0.4
+Using actionview 5.1.6
+Using rack 2.0.4
+Using rack-test 1.0.0
+Using actionpack 5.1.6
+Using nio4r 2.3.0
+Using websocket-extensions 0.1.3
+Using websocket-driver 0.6.5
+Using actioncable 5.1.6
+Using globalid 0.4.1
+Using activejob 5.1.6
+Using mini_mime 1.0.0
+Using mail 2.7.0
+Using actionmailer 5.1.6
+Using activemodel 5.1.6
+Using arel 8.0.0
+Using activerecord 5.1.6
+Using public_suffix 3.0.2
+Using addressable 2.5.2
+Using backports 3.11.1
+Using bcrypt 3.1.11
+Using bindex 0.5.0
+Using bundler 1.16.1
+Using byebug 10.0.2
+Using xpath 3.0.0
+Using capybara 2.18.0
+Using ffi 1.9.23
+Using childprocess 0.9.0
+Using coffee-script-source 1.12.2
+Using execjs 2.7.0
+Using coffee-script 2.4.1
+Using method_source 0.9.0
+Using thor 0.20.0
+Using railties 5.1.6
+Using coffee-rails 4.2.2
+Using cucumber-tag_expressions 1.1.1
+Using gherkin 5.0.0
+Using cucumber-core 3.1.0
+Using cucumber-expressions 5.0.13
+Using cucumber-wire 0.0.1
+Using diff-lcs 1.3
+Using multi_json 1.13.1
+Using multi_test 0.1.2
+Using cucumber 3.1.0
+Using mime-types-data 3.2016.0521
+Using mime-types 3.1
+Using cucumber-rails 1.5.0
+Using cucumber-rails-training-wheels 1.0.0
+Using database_cleaner 1.6.2
+Using orm_adapter 0.5.0
+Using responders 2.4.0
+Using warden 1.2.7
+Using devise 4.4.3
+Using docile 1.3.0
+Using erubis 2.7.0
+Using temple 0.8.0
+Using tilt 2.0.8
+Using haml 5.0.4
+Using sexp_processor 4.10.1
+Using ruby_parser 3.11.0
+Using html2haml 2.2.0
+Using haml-rails 1.0.0
+Using jbuilder 2.7.0
+Using json 2.1.0
+Using launchy 2.4.3
+Using rb-fsevent 0.10.3
+Using rb-inotify 0.9.10
+Using ruby_dep 1.5.0
+Using listen 3.1.5
+Using puma 3.11.3
+Using sprockets 3.7.1
+Using sprockets-rails 3.2.1
+Using rails 5.1.6
+Using rails-controller-testing 1.0.2
+Using rspec-support 3.7.1
+Using rspec-core 3.7.1
+Using rspec-expectations 3.7.0
+Using rspec-mocks 3.7.0
+Using rspec-rails 3.7.2
+Using rubyzip 1.2.1
+Using sass-listen 4.0.0
+Using sass 3.5.6
+Using sass-rails 5.0.7
+Using selenium-webdriver 3.11.0
+Using simplecov-html 0.10.2
+Using simplecov 0.16.1
+Using spring 2.0.2
+Using spring-watcher-listen 2.0.1
+Using sqlite3 1.3.13
+Using turbolinks-source 5.1.0
+Using turbolinks 5.1.0
+Using uglifier 4.1.8
+Using web-console 3.5.1
+Bundle complete! 28 Gemfile dependencies, 107 gems now installed.
+Gems in the group production were not installed.
+Use `bundle info [gemname]` to see where a bundled gem is installed.
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ ls
+Gemfile		Rakefile	config		db		log		script		tmp
+Gemfile.lock	app		config.ru	features	package.json	spec		vendor
+README.md	bin		coverage	lib		public		test
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ pwd
+/Users/hoangnamnguyenvu/Google Drive/App/HCS-PTO
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ heroku login
+Enter your Heroku credentials:
+Email: hnguyenvu@colgate.edu
+Password: ************
+Logged in as hnguyenvu@colgate.edu
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ heroku apps:create
+Creating app... done, ⬢ peaceful-dusk-62794
+https://peaceful-dusk-62794.herokuapp.com/ | https://git.heroku.com/peaceful-dusk-62794.git
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$ git push -u heroku master
+Counting objects: 1107, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (885/885), done.
+Writing objects: 100% (1107/1107), 231.79 KiB | 0 bytes/s, done.
+Total 1107 (delta 549), reused 412 (delta 142)
+remote: Compressing source files... done.
+remote: Building source:
+remote:
+remote:  !     Warning: Multiple default buildpacks reported the ability to handle this app. The first buildpack in the list below will be used.
+remote: 			Detected buildpacks: Ruby,Node.js
+remote: 			See https://devcenter.heroku.com/articles/buildpacks#buildpack-detect-order
+remote: -----> Ruby app detected
+remote: -----> Compiling Ruby/Rails
+remote: -----> Using Ruby version: ruby-2.3.4
+remote: ###### WARNING:
+remote:        You have the `.bundle/config` file checked into your repository
+remote:
+remote:         It contains local state like the location of the installed bundle
+remote:
+remote:         as well as configured git local gems, and other settings that should
+remote:
+remote:        not be shared between multiple checkouts of a single repo. Please
+remote:
+remote:        remove the `.bundle/` folder from your repo and add it to your `.gitignore` file.
+remote:
+remote:        https://devcenter.heroku.com/articles/bundler-configuration
+remote:
+remote:
+remote: -----> Installing dependencies using bundler 1.15.2
+remote:        Running: bundle install --without development:test --path vendor/bundle --binstubs vendor/bundle/bin -j4 --deployment
+remote:        Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.16.1). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+remote:
+remote:        Fetching gem metadata from https://rubygems.org/.........
+remote:
+remote:        Fetching version metadata from https://rubygems.org/..
+remote:
+remote:        Fetching dependency metadata from https://rubygems.org/.
+remote:
+remote:        Fetching rake 12.3.1
+remote:
+remote:        Fetching concurrent-ruby 1.0.5
+remote:
+remote:        Fetching minitest 5.11.3
+remote:
+remote:        Installing rake 12.3.1
+remote:
+remote:        Installing minitest 5.11.3
+remote:
+remote:        Installing concurrent-ruby 1.0.5
+remote:
+remote:        Fetching thread_safe 0.3.6
+remote:
+remote:        Fetching builder 3.2.3
+remote:
+remote:        Installing builder 3.2.3
+remote:
+remote:        Installing thread_safe 0.3.6
+remote:
+remote:        Fetching erubi 1.7.1
+remote:
+remote:        Installing erubi 1.7.1
+remote:
+remote:        Fetching mini_portile2 2.3.0
+remote:
+remote:        Fetching crass 1.0.3
+remote:
+remote:        Installing mini_portile2 2.3.0
+remote:
+remote:        Fetching rack 2.0.4
+remote:
+remote:        Installing crass 1.0.3
+remote:
+remote:        Fetching nio4r 2.3.0
+remote:
+remote:        Installing nio4r 2.3.0 with native extensions
+remote:
+remote:        Installing rack 2.0.4
+remote:
+remote:        Fetching websocket-extensions 0.1.3
+remote:
+remote:        Installing websocket-extensions 0.1.3
+remote:
+remote:        Fetching mini_mime 1.0.0
+remote:
+remote:        Installing mini_mime 1.0.0
+remote:
+remote:        Fetching arel 8.0.0
+remote:
+remote:        Installing arel 8.0.0
+remote:
+remote:        Using bundler 1.15.2
+remote:
+remote:        Fetching coffee-script-source 1.12.2
+remote:
+remote:        Fetching execjs 2.7.0
+remote:
+remote:        Installing coffee-script-source 1.12.2
+remote:
+remote:        Installing execjs 2.7.0
+remote:
+remote:        Fetching method_source 0.9.0
+remote:
+remote:        Fetching thor 0.20.0
+remote:
+remote:        Installing method_source 0.9.0
+remote:
+remote:        Installing thor 0.20.0
+remote:
+remote:        Fetching erubis 2.7.0
+remote:
+remote:        Fetching ffi 1.9.23
+remote:
+remote:        Installing erubis 2.7.0
+remote:
+remote:        Installing ffi 1.9.23 with native extensions
+remote:
+remote:        Fetching temple 0.8.0
+remote:
+remote:        Installing temple 0.8.0
+remote:
+remote:        Fetching tilt 2.0.8
+remote:
+remote:        Installing tilt 2.0.8
+remote:
+remote:        Fetching sexp_processor 4.10.1
+remote:
+remote:        Installing sexp_processor 4.10.1
+remote:
+remote:        Fetching multi_json 1.13.1
+remote:
+remote:        Installing multi_json 1.13.1
+remote:
+remote:        Fetching puma 3.11.3
+remote:
+remote:        Installing puma 3.11.3 with native extensions
+remote:
+remote:        Fetching rb-fsevent 0.10.3
+remote:
+remote:        Installing rb-fsevent 0.10.3
+remote:
+remote:        Fetching sqlite3 1.3.13
+remote:
+remote:        Installing sqlite3 1.3.13 with native extensions
+remote:
+remote:        Fetching turbolinks-source 5.1.0
+remote:
+remote:        Installing turbolinks-source 5.1.0
+remote:
+remote:        Fetching i18n 1.0.0
+remote:
+remote:        Installing i18n 1.0.0
+remote:
+remote:        Fetching tzinfo 1.2.5
+remote:
+remote:        Installing tzinfo 1.2.5
+remote:
+remote:        Fetching nokogiri 1.8.2
+remote:
+remote:        Installing nokogiri 1.8.2 with native extensions
+remote:
+remote:        Fetching websocket-driver 0.6.5
+remote:
+remote:        Installing websocket-driver 0.6.5 with native extensions
+remote:
+remote:        Fetching mail 2.7.0
+remote:
+remote:        Installing mail 2.7.0
+remote:
+remote:        Fetching rack-test 1.0.0
+remote:
+remote:        Installing rack-test 1.0.0
+remote:
+remote:        Fetching sprockets 3.7.1
+remote:
+remote:        Installing sprockets 3.7.1
+remote:
+remote:        Fetching coffee-script 2.4.1
+remote:
+remote:        Installing coffee-script 2.4.1
+remote:
+remote:        Fetching uglifier 4.1.8
+remote:
+remote:        Installing uglifier 4.1.8
+remote:
+remote:        Fetching haml 5.0.4
+remote:
+remote:        Installing haml 5.0.4
+remote:
+remote:        Fetching ruby_parser 3.11.0
+remote:
+remote:        Installing ruby_parser 3.11.0
+remote:
+remote:        Fetching rb-inotify 0.9.10
+remote:
+remote:        Installing rb-inotify 0.9.10
+remote:
+remote:        Fetching turbolinks 5.1.0
+remote:
+remote:        Installing turbolinks 5.1.0
+remote:
+remote:        Fetching activesupport 5.1.6
+remote:
+remote:        Installing activesupport 5.1.6
+remote:
+remote:        Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+remote:
+remote:
+remote:
+remote:        current directory:
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13/ext/sqlite3
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/ruby-2.3.4/bin/ruby -r
+remote:
+remote:        ./siteconf20180406-344-lhgrl4.rb extconf.rb
+remote:
+remote:        checking for sqlite3.h... no
+remote:
+remote:        sqlite3.h is missing. Try 'brew install sqlite3',
+remote:
+remote:        'yum install sqlite-devel' or 'apt-get install libsqlite3-dev'
+remote:
+remote:        and check your shared library search path (the
+remote:
+remote:        location where your sqlite3 shared library is located).
+remote:
+remote:        *** extconf.rb failed ***
+remote:
+remote:        Could not create Makefile due to some reason, probably lack of necessary
+remote:
+remote:        libraries and/or headers.  Check the mkmf.log file for more details.  You may
+remote:
+remote:        need configuration options.
+remote:
+remote:
+remote:
+remote:        Provided configuration options:
+remote:
+remote:        	--with-opt-dir
+remote:
+remote:        	--without-opt-dir
+remote:
+remote:        	--with-opt-include
+remote:
+remote:        	--without-opt-include=${opt-dir}/include
+remote:
+remote:        	--with-opt-lib
+remote:
+remote:        	--without-opt-lib=${opt-dir}/lib
+remote:
+remote:        	--with-make-prog
+remote:
+remote:        	--without-make-prog
+remote:
+remote:        	--srcdir=.
+remote:
+remote:        	--curdir
+remote:
+remote:        --ruby=/tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/ruby-2.3.4/bin/$(RUBY_BASE_NAME)
+remote:
+remote:        	--with-sqlite3-config
+remote:
+remote:        	--without-sqlite3-config
+remote:
+remote:        	--with-pkg-config
+remote:
+remote:        	--without-pkg-config
+remote:
+remote:        	--with-sqlite3-dir
+remote:
+remote:        	--without-sqlite3-dir
+remote:
+remote:        	--with-sqlite3-include
+remote:
+remote:        	--without-sqlite3-include=${sqlite3-dir}/include
+remote:
+remote:        	--with-sqlite3-lib
+remote:
+remote:        	--without-sqlite3-lib=${sqlite3-dir}/lib
+remote:
+remote:
+remote:
+remote:        To see why this extension failed to compile, please check the mkmf.log which can
+remote:
+remote:        be found here:
+remote:
+remote:
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/sqlite3-1.3.13/mkmf.log
+remote:
+remote:
+remote:
+remote:        extconf failed, exit code 1
+remote:
+remote:
+remote:
+remote:        Gem files will remain installed in
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13
+remote:
+remote:        for inspection.
+remote:
+remote:        Results logged to
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/sqlite3-1.3.13/gem_make.out
+remote:
+remote:
+remote:
+remote:        An error occurred while installing sqlite3 (1.3.13), and Bundler cannot
+remote:
+remote:        continue.
+remote:
+remote:        Make sure that `gem install sqlite3 -v '1.3.13'` succeeds before bundling.
+remote:
+remote:
+remote:
+remote:        In Gemfile:
+remote:
+remote:          sqlite3
+remote:
+remote:        Bundler Output: Warning: the running version of Bundler (1.15.2) is older than the version that created the lockfile (1.16.1). We suggest you upgrade to the latest version of Bundler by running `gem install bundler`.
+remote:
+remote:        Fetching gem metadata from https://rubygems.org/.........
+remote:
+remote:        Fetching version metadata from https://rubygems.org/..
+remote:
+remote:        Fetching dependency metadata from https://rubygems.org/.
+remote:
+remote:        Fetching rake 12.3.1
+remote:
+remote:        Fetching concurrent-ruby 1.0.5
+remote:
+remote:        Fetching minitest 5.11.3
+remote:
+remote:        Installing rake 12.3.1
+remote:
+remote:        Installing minitest 5.11.3
+remote:
+remote:        Installing concurrent-ruby 1.0.5
+remote:
+remote:        Fetching thread_safe 0.3.6
+remote:
+remote:        Fetching builder 3.2.3
+remote:
+remote:        Installing builder 3.2.3
+remote:
+remote:        Installing thread_safe 0.3.6
+remote:
+remote:        Fetching erubi 1.7.1
+remote:
+remote:        Installing erubi 1.7.1
+remote:
+remote:        Fetching mini_portile2 2.3.0
+remote:
+remote:        Fetching crass 1.0.3
+remote:
+remote:        Installing mini_portile2 2.3.0
+remote:
+remote:        Fetching rack 2.0.4
+remote:
+remote:        Installing crass 1.0.3
+remote:
+remote:        Fetching nio4r 2.3.0
+remote:
+remote:        Installing nio4r 2.3.0 with native extensions
+remote:
+remote:        Installing rack 2.0.4
+remote:
+remote:        Fetching websocket-extensions 0.1.3
+remote:
+remote:        Installing websocket-extensions 0.1.3
+remote:
+remote:        Fetching mini_mime 1.0.0
+remote:
+remote:        Installing mini_mime 1.0.0
+remote:
+remote:        Fetching arel 8.0.0
+remote:
+remote:        Installing arel 8.0.0
+remote:
+remote:        Using bundler 1.15.2
+remote:
+remote:        Fetching coffee-script-source 1.12.2
+remote:
+remote:        Fetching execjs 2.7.0
+remote:
+remote:        Installing coffee-script-source 1.12.2
+remote:
+remote:        Installing execjs 2.7.0
+remote:
+remote:        Fetching method_source 0.9.0
+remote:
+remote:        Fetching thor 0.20.0
+remote:
+remote:        Installing method_source 0.9.0
+remote:
+remote:        Installing thor 0.20.0
+remote:
+remote:        Fetching erubis 2.7.0
+remote:
+remote:        Fetching ffi 1.9.23
+remote:
+remote:        Installing erubis 2.7.0
+remote:
+remote:        Installing ffi 1.9.23 with native extensions
+remote:
+remote:        Fetching temple 0.8.0
+remote:
+remote:        Installing temple 0.8.0
+remote:
+remote:        Fetching tilt 2.0.8
+remote:
+remote:        Installing tilt 2.0.8
+remote:
+remote:        Fetching sexp_processor 4.10.1
+remote:
+remote:        Installing sexp_processor 4.10.1
+remote:
+remote:        Fetching multi_json 1.13.1
+remote:
+remote:        Installing multi_json 1.13.1
+remote:
+remote:        Fetching puma 3.11.3
+remote:
+remote:        Installing puma 3.11.3 with native extensions
+remote:
+remote:        Fetching rb-fsevent 0.10.3
+remote:
+remote:        Installing rb-fsevent 0.10.3
+remote:
+remote:        Fetching sqlite3 1.3.13
+remote:
+remote:        Installing sqlite3 1.3.13 with native extensions
+remote:
+remote:        Fetching turbolinks-source 5.1.0
+remote:
+remote:        Installing turbolinks-source 5.1.0
+remote:
+remote:        Fetching i18n 1.0.0
+remote:
+remote:        Installing i18n 1.0.0
+remote:
+remote:        Fetching tzinfo 1.2.5
+remote:
+remote:        Installing tzinfo 1.2.5
+remote:
+remote:        Fetching nokogiri 1.8.2
+remote:
+remote:        Installing nokogiri 1.8.2 with native extensions
+remote:
+remote:        Fetching websocket-driver 0.6.5
+remote:
+remote:        Installing websocket-driver 0.6.5 with native extensions
+remote:
+remote:        Fetching mail 2.7.0
+remote:
+remote:        Installing mail 2.7.0
+remote:
+remote:        Fetching rack-test 1.0.0
+remote:
+remote:        Installing rack-test 1.0.0
+remote:
+remote:        Fetching sprockets 3.7.1
+remote:
+remote:        Installing sprockets 3.7.1
+remote:
+remote:        Fetching coffee-script 2.4.1
+remote:
+remote:        Installing coffee-script 2.4.1
+remote:
+remote:        Fetching uglifier 4.1.8
+remote:
+remote:        Installing uglifier 4.1.8
+remote:
+remote:        Fetching haml 5.0.4
+remote:
+remote:        Installing haml 5.0.4
+remote:
+remote:        Fetching ruby_parser 3.11.0
+remote:
+remote:        Installing ruby_parser 3.11.0
+remote:
+remote:        Fetching rb-inotify 0.9.10
+remote:
+remote:        Installing rb-inotify 0.9.10
+remote:
+remote:        Fetching turbolinks 5.1.0
+remote:
+remote:        Installing turbolinks 5.1.0
+remote:
+remote:        Fetching activesupport 5.1.6
+remote:
+remote:        Installing activesupport 5.1.6
+remote:
+remote:        Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+remote:
+remote:
+remote:
+remote:        current directory:
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13/ext/sqlite3
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/ruby-2.3.4/bin/ruby -r
+remote:
+remote:        ./siteconf20180406-344-lhgrl4.rb extconf.rb
+remote:
+remote:        checking for sqlite3.h... no
+remote:
+remote:        sqlite3.h is missing. Try 'brew install sqlite3',
+remote:
+remote:        'yum install sqlite-devel' or 'apt-get install libsqlite3-dev'
+remote:
+remote:        and check your shared library search path (the
+remote:
+remote:        location where your sqlite3 shared library is located).
+remote:
+remote:        *** extconf.rb failed ***
+remote:
+remote:        Could not create Makefile due to some reason, probably lack of necessary
+remote:
+remote:        libraries and/or headers.  Check the mkmf.log file for more details.  You may
+remote:
+remote:        need configuration options.
+remote:
+remote:
+remote:
+remote:        Provided configuration options:
+remote:
+remote:        	--with-opt-dir
+remote:
+remote:        	--without-opt-dir
+remote:
+remote:        	--with-opt-include
+remote:
+remote:        	--without-opt-include=${opt-dir}/include
+remote:
+remote:        	--with-opt-lib
+remote:
+remote:        	--without-opt-lib=${opt-dir}/lib
+remote:
+remote:        	--with-make-prog
+remote:
+remote:        	--without-make-prog
+remote:
+remote:        	--srcdir=.
+remote:
+remote:        	--curdir
+remote:
+remote:        --ruby=/tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/ruby-2.3.4/bin/$(RUBY_BASE_NAME)
+remote:
+remote:        	--with-sqlite3-config
+remote:
+remote:        	--without-sqlite3-config
+remote:
+remote:        	--with-pkg-config
+remote:
+remote:        	--without-pkg-config
+remote:
+remote:        	--with-sqlite3-dir
+remote:
+remote:        	--without-sqlite3-dir
+remote:
+remote:        	--with-sqlite3-include
+remote:
+remote:        	--without-sqlite3-include=${sqlite3-dir}/include
+remote:
+remote:        	--with-sqlite3-lib
+remote:
+remote:        	--without-sqlite3-lib=${sqlite3-dir}/lib
+remote:
+remote:
+remote:
+remote:        To see why this extension failed to compile, please check the mkmf.log which can
+remote:
+remote:        be found here:
+remote:
+remote:
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/sqlite3-1.3.13/mkmf.log
+remote:
+remote:
+remote:
+remote:        extconf failed, exit code 1
+remote:
+remote:
+remote:
+remote:        Gem files will remain installed in
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/gems/sqlite3-1.3.13
+remote:
+remote:        for inspection.
+remote:
+remote:        Results logged to
+remote:
+remote:        /tmp/build_4a50990e352a1eed75b0c6fad9b0bd00/vendor/bundle/ruby/2.3.0/extensions/x86_64-linux/2.3.0/sqlite3-1.3.13/gem_make.out
+remote:
+remote:
+remote:
+remote:        An error occurred while installing sqlite3 (1.3.13), and Bundler cannot
+remote:
+remote:        continue.
+remote:
+remote:        Make sure that `gem install sqlite3 -v '1.3.13'` succeeds before bundling.
+remote:
+remote:
+remote:
+remote:        In Gemfile:
+remote:
+remote:          sqlite3
+remote:
+remote:  !
+remote:  !     Failed to install gems via Bundler.
+remote:  !     Detected sqlite3 gem which is not supported on Heroku:
+remote:  !     https://devcenter.heroku.com/articles/sqlite3
+remote:  !
+remote:  !     Push rejected, failed to compile Ruby app.
+remote:
+remote:  !     Push failed
+remote: Verifying deploy...
+remote:
+remote: !	Push rejected to peaceful-dusk-62794.
+remote:
+To https://git.heroku.com/peaceful-dusk-62794.git
+ ! [remote rejected] master -> master (pre-receive hook declined)
+error: failed to push some refs to 'https://git.heroku.com/peaceful-dusk-62794.git'
+hoangs-mbp:HCS-PTO hoangnamnguyenvu$

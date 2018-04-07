@@ -31,7 +31,7 @@ class UserAccountsController < ApplicationController
     end
     if user.save
       session[:id] = user.id
-      flash[:notice] = "Profile \"#{user.username}\" updated"
+      flash[:notice] = "Profile '#{user.username}' updated"
       redirect_to user_accounts_path and return
     else
       flash[:warning] = "Error updating profile"

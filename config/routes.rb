@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   # get 'user_accounts/create'
   #
   # get 'user_accounts/update'
-
+  #
   # get 'user_account/new'
   #
   # get 'user_account/create'
