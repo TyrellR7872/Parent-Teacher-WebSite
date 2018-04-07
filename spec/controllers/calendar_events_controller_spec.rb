@@ -21,6 +21,7 @@ RSpec.describe CalendarEventsController, type: :controller do
       CalendarEvent.create!(title: "Nerd Nite", description: "Board game fun", start_date_time: DateTime.new(2018,9,5.9), end_date_time: DateTime.new(2018,9,5.9), location: "Donovan's Pub", is_approved: true, contact_person: "ajamil@colgate.edu")
     end
     it "returns http success" do
+      CalendarEvent.create!(title: "Nerd Nite", description: "Board game fun", start_date_time: DateTime.new(2018,9,5.9), end_date_time: DateTime.new(2018,9,5.9), location: "Donovan's Pub", is_approved: true, contact_person: "ajamil@colgate.edu")
       get :update, params: {:id => 1, :calendar_event => { title: "Nerf Nite", description: "Nerf gun warfare", start_date_time: DateTime.new(2018,9,5.9), end_date_time: DateTime.new(2018,9,5.9), location: "Huntington Gym", is_sport: true, is_approved: true, contact_person: "ajamil@colgate.edu" }}
       expect(response).to have_http_status(:redirect)
     end
