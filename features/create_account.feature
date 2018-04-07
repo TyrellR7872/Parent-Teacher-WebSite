@@ -21,7 +21,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     When I press "Create User Account"
     Then I should be on the user accounts page
     And I should see "User Account 'JSomm'" Successfully Created
-    And I should see that "JSomm" has name of "Joel Sommers"
+    And I should see that user "JSomm" has name of "Joel Sommers"
     When I follow "Edit profile details"
     And I fill in the following:
       | Child's Name  |Annie        |

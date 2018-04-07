@@ -303,7 +303,7 @@ Then(/^I should see "([^"]*)" Successfully Created$/) do |string|
   end
 end
 
-Then /^(?:|I )should see that "([^"]*)".*"([^"]*)"$/ do |name,value|
+Then /^(?:|I )should see that user "([^"]*)".*"([^"]*)"$/ do |name,value|
   actual = find("table.useraccount").text
   if actual.respond_to? (:should)
     actual.should have_content(name)
