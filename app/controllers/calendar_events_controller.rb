@@ -40,7 +40,7 @@ class CalendarEventsController < ApplicationController
   end
 
   def update
-    id = params[:id]
+    id = params[:id].to_i
     @calendar_event = CalendarEvent.find(id)
 
     @calendar_event.update(create_update_params)

@@ -17,6 +17,7 @@ RSpec.describe UserAccountsController, type: :controller do
       expect(user).to respond_to :update
     end
   end
+
   describe "check failure when entered input does not meet requirements set" do
     it "returns an error when the username length < 5 and fail to create a user account" do
       expect {
@@ -31,4 +32,22 @@ RSpec.describe UserAccountsController, type: :controller do
           UserAccount.create!(username: "Rudolph",email: "",childgrade: "11",childname: "Lamb Nose",homeaddress: "North Pole",name: "Red Nosed Rudolph", password: "SnowChristmasMustGo", password_confirmation: "SnoGo")}.to raise_exception ActiveRecord::RecordInvalid
     end
   end
+
+  describe "GET #create" do
+    it "returns http success" do
+      get :create, params: {:user_account => {username: "TestUser", password: "testpass", email: "testuser@test.com", accounttype: "Parent", name: "Tester Name", childname: "Test Child", childgrade: 5, homeaddress: "123 Test Street"}}
+      expect(response).to have_http_status(:redirect)
+    end
+  end
+
+  describe "GET #update" do
+    before(:example) do
+      ua = UserAccount.create!(username: "TestUser", password: "testpass", email: "testuser@test.com", accounttype: "Parent", name: "Tester Name", childname: "Test Child", childgrade: 5, homeaddress: "123 Test Street")
+    end
+    it "returns http success" do
+      get :update, session: {:id => 1},  params: {:id => 1, :user_account => {username: "TestUser", password: "testpass", email: "testuser@test.com", accounttype: "Parent", name: "Tester Name", childname: "Test Child", childgrade: 5, homeaddress: "123 Test Street"}}
+      expect(response).to have_http_status(:redirect)
+    end
+  end
+
 end
