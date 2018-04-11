@@ -272,11 +272,11 @@ nav li {
     .navbar--primary {
       background-color: #fff;
       position: relative;
-      margin: 56px -15px 0 0;
+      margin: 0 -15px 0 0;
       font-weight: 600; } }
   @media (min-width: 1024px) {
     .navbar--primary {
-      margin-top: 60px; } }
+      margin-top: 0; } }
 
 .navbar__item--primary {
   padding: 0;
