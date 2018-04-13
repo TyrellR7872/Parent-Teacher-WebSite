@@ -15,7 +15,6 @@
         %th= link_to('End Date', calendar_events_path(:order => :end_date_time))
         %th Start Time
         %th End Time
-        %th Volunteer
     %tbody
       -@calendar_events.each do |event|
         %tr.event
@@ -27,7 +26,6 @@
         %td.date=event.end_date_time ? event.end_date: "No date indicated"
         %td.time=event.start_date_time ? event.start_time: "No time indicated"
         %td.time=event.end_date_time ? event.end_time: "No time indicated"
-        %td.signup= "Sign up"
 
   = form_tag calendar_events_path, :method => :get do
     = label_tag :start_date_time, "From"
