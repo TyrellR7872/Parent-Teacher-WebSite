@@ -1,15 +1,5 @@
 class PagesController < ApplicationController
-  def index
-
-  end
-
-  def about
-  end
-
-  def clubs
-  end
-
-  def show
+    def show
     # Show the appropriate static pages from the /views folder, or
     # render file 404 error
     begin
@@ -18,21 +8,15 @@ class PagesController < ApplicationController
       render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
     end
   end
-  
-  # def show
-  #   render template: "pages/#{params[:page]}"
+
+  # NOTE: Deprecated method, no longer need as we have show() now.
+  #
+  # def index
   # end
   #
-  # def show
-  #   if valid_page?
-  #     render template: "pages/#{params[:page]}"
-  #   else
-  #     render file: "public/404.html", status: :not_found #TODO
-  #   end
+  # def about
   # end
   #
-  # private
-  # def valid_page?
-  #   File.exist?(Pathname.new(Rails.root + "app/views/pages/#{params[:page]}.html.erb"))
+  # def clubs
   # end
 end
