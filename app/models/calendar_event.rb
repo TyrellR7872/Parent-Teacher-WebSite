@@ -1,4 +1,5 @@
 class CalendarEvent < ApplicationRecord
+  has_many :user_accounts
   scope :event_between, -> (start_date, end_date) {
     if start_date.blank? && end_date.present?
       where("end_date_time < ?", DateTime.parse(end_date).next_day)
@@ -29,6 +30,5 @@ class CalendarEvent < ApplicationRecord
 
   def end_time
     self.end_date_time.strftime('%l.%M %p')
-  end
-
+  end 
 end

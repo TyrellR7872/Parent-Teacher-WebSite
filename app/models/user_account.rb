@@ -2,7 +2,7 @@ class UserAccount < ApplicationRecord
   validates :username, presence: {message: "Must be given"}, length: {minimum: 5}
   validates :password, confirmation: true, on: new, length: {minimum: 6}
   validates :email, presence: {message: "Must be given"}
-
+  belongs_to :calendar_event
 
   def self.fill_user(user)
     user.childname = ""

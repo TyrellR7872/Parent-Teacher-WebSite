@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :calendar_events
+  resources :calendar_events do
+    member do
+      get 'volunteer_signup'
+    end
+  end
   root "home#index"
   resources :user_accounts
   root "user_accounts#new"
