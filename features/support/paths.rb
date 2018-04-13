@@ -19,6 +19,8 @@ module NavigationHelpers
       '/calendar_events/'
     when /^the create calendar event page$/
       '/calendar_events/new'
+    when /^the members page$/
+      '/user_accounts/members'
     when /^the edit user account page$/
       '/user_accounts/3/edit'
     # Add more mappings here.

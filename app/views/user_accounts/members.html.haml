@@ -5,9 +5,9 @@
   = form_tag members_user_accounts_path, :method => :get do
     = label_tag :accounttype, "Account type"
     = text_field_tag :accounttype
-    = label_tag :bathrooms, "Grades from"
+    = label_tag :fromgrade, "From grade"
     = number_field_tag :fromgrade
-    = label_tag :price, "Grades to"
+    = label_tag :tograde, "To grade"
     = number_field_tag :tograde
     = submit_tag "Refine the list of members"
 
@@ -16,6 +16,7 @@
     %thead
       %tr
         %th Name
+        %th Email
         %th Child's Grade
         %th Account type
 
@@ -24,5 +25,6 @@
       -@members.each do |member|
         %tr.member
         %td.name= member.name
+        %td.email= member.email
         %td.grade= member.childgrade
         %td.type= member.accounttype

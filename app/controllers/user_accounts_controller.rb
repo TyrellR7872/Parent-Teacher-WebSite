@@ -54,11 +54,7 @@ class UserAccountsController < ApplicationController
   end
 
   def members
-    # render plain: params.inspect
-    @members = UserAccount.all
-    @members = UserAccount.where("accounttype == ?", params[:accounttype]) if params[:accounttype].present?
-    @members = UserAccount.where("childgrade >= ?", params[:fromgrade]) if params[:fromgrade].present?
-    @members = UserAccount.where("childgrade >= ?", params[:tograde]) if params[:tograde].present? 
+    @members = UserAccount.filter_on_constraints(constraints)
   end
 
 
@@ -69,5 +65,13 @@ private
     params.require(:user_account).permit(:username,:email,:childgrade,:childname,:homeaddress,:name, :password, :password_confirmation)
   end
 
+  def constraints
+    constraints = [:accounttype, :fromgrade, :tograde]
+    hash = {}
+    constraints.each do |sym|
+      hash[sym] = params[sym] if params[sym].present?
+    end
+    hash
+  end
 
 end

@@ -14,9 +14,13 @@ class UserAccount < ApplicationRecord
   def self.filter_on_constraints(constraints)
     filtered = UserAccount.all
     constraints.each_pair do |sym, val|
-      filtered = filtered.where("accounttype == ?", val) if sym == :accounttype and val.present?
-      filtered = filtered.where("childgrade >= ?", val) if sym == :fromgrade and val.present?
-      filtered = filtered.where("childgrade <= ?", val) if sym == :tograde and val.present?
+      if sym == :accounttype
+        filtered = UserAccount.where("accounttype == ?", val)
+      elsif sym == :fromgrade
+        filtered = UserAccount.where("childgrade >= ?", val)
+      else
+        filtered = UserAccount.where("childgrade <= ?", val)
+      end
     end
     filtered
   end
