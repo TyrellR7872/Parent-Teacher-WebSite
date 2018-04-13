@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   resources :calendar_events
   root "home#index"
-  resources :user_accounts
+  resources :user_accounts do
+    collection do
+      get "members"
+    end
+  end
   root "user_accounts#new"
   # get 'user_accounts/new'
   #

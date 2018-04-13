@@ -53,6 +53,16 @@ class UserAccountsController < ApplicationController
 
   end
 
+  def members
+    # render plain: params.inspect
+    @members = UserAccount.all
+    @members = UserAccount.where("accounttype == ?", params[:accounttype]) if params[:accounttype].present?
+    @members = UserAccount.where("childgrade >= ?", params[:fromgrade]) if params[:fromgrade].present?
+    @members = UserAccount.where("childgrade >= ?", params[:tograde]) if params[:tograde].present? 
+  end
+
+
+
 
 private
   def create_update_params

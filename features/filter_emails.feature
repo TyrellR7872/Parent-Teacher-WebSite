@@ -45,3 +45,5 @@ Feature: Filter emails based on account attributes
     And I press "Filter users"
     Then I should see "lhalitjaha@colgate.edu"
     And I should not see "ajamil@colgate.edu"
+
+  

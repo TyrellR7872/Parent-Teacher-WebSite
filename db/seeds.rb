@@ -21,3 +21,8 @@ calendar_event_5 = CalendarEvent.create!(title: "Chill night with the Beatles", 
 calendar_event_6 = CalendarEvent.create!(title: "Learn about Python with Monty Python", start_date_time: DateTime.new(2018,4,1), end_date_time: DateTime.new(2018,4,6), location: 'Colgate University,Hamilton NY', description: "Python is a modern programming language, also the object of comic relief", is_sport: false, is_musical: false, is_meeting: false, is_charity: false, is_gathering: true, is_optional: true, for_teacher: false, for_parent: true, for_elementary_student: true, for_highschool_student: true, contact_person: "Monty Python", is_approved: true)
 
 calendar_event_7 = CalendarEvent.create!(title: "Food-eating contest", start_date_time: DateTime.new(2018,5,1), end_date_time: DateTime.new(2018,5,4), location: 'Pizza Place,Hamilton NY', description: "Cooked, uncooked, food is meant to be eaten", is_sport: false, is_musical: false, is_meeting: false, is_charity: false, is_gathering: true, is_optional: true, for_teacher: true, for_parent: true, for_elementary_student: true, for_highschool_student: true, contact_person: "Dominoes", is_approved: true)
+
+UserAccount.delete_all
+
+user_account_1 = UserAccount.create!(username: "TestUser", password: "testpass1", email: "testuser@test.com", accounttype: "Parent", name: "Tester Name", childname: "Bad Child", childgrade: 10, homeaddress: "Drake Hall")
+user_account_2 = UserAccount.create!(username: "TestUser", password: "testpass2", email: "testuser@test2.com", accounttype: "Teacher", name: "Tester Name", childname: "Good Child", childgrade: 5, homeaddress: "123 Test Street")

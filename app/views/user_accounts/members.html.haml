@@ -1,0 +1,28 @@
+#main.container
+
+  %h3.header PTO members
+
+  = form_tag members_user_accounts_path, :method => :get do
+    = label_tag :accounttype, "Account type"
+    = text_field_tag :accounttype
+    = label_tag :bathrooms, "Grades from"
+    = number_field_tag :fromgrade
+    = label_tag :price, "Grades to"
+    = number_field_tag :tograde
+    = submit_tag "Refine the list of members"
+
+
+  %table.table
+    %thead
+      %tr
+        %th Name
+        %th Child's Grade
+        %th Account type
+
+
+    %tbody
+      -@members.each do |member|
+        %tr.member
+        %td.name= member.name
+        %td.grade= member.childgrade
+        %td.type= member.accounttype
