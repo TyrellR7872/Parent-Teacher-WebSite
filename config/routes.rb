@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
+  devise_for :user_accounts
   resources :calendar_events
   root "home#index"
-  resources :user_accounts
-  root "user_accounts#new"
+  # resources :user_accounts
+  # root "user_accounts#new"
   # get 'user_accounts/new'
   #
   # get 'user_accounts/create'
