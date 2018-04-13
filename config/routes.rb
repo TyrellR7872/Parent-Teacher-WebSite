@@ -6,9 +6,9 @@ Rails.application.routes.draw do
 
   # render static pages
   controller :pages do
-    # get :home
-    get :about
-    get :clubs
+    get ':id', to: 'pages#show', as: 'pages'
+    # get :about
+    # get :clubs
   end
 
   # get 'user_accounts/new'
