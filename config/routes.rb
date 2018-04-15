@@ -3,6 +3,12 @@ Rails.application.routes.draw do
   root "home#index"
   resources :user_accounts
   root "user_accounts#new"
+  # render static pages
+   controller :pages do
+     # get :home
+     get :about
+     get :clubs
+   end
   # get 'user_accounts/new'
   #
   # get 'user_accounts/create'
