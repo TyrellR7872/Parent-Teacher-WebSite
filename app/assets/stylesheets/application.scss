@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+ // @import "bootstrap";
  @import "colors";
  #warning {
    background-color: red;
@@ -110,7 +110,6 @@ nav li {
 .homepage .navbar__width {
   max-width: 1380px; }
 
-
 .navbar__logo__word {
   color: $school-white;
   font-family: $font-serif; }
@@ -131,6 +130,7 @@ nav li {
   color: $school-white;
   font-family: $font-serif;
   font-style: italic;
+  padding: 15px 0 0 0;
 }
 
 .navbar__logo-mod {

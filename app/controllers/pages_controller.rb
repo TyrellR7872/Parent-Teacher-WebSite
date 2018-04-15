@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  
     def show
     # Show the appropriate static pages from the /views folder, or
     # render file 404 error
@@ -9,14 +10,4 @@ class PagesController < ApplicationController
     end
   end
 
-  # NOTE: Deprecated method, no longer need as we have show() now.
-  #
-  # def index
-  # end
-  #
-  # def about
-  # end
-  #
-  # def clubs
-  # end
 end
