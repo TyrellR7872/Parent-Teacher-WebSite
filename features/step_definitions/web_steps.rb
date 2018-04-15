@@ -286,7 +286,6 @@ end
 
 Given("these UserAccounts:") do |table|
   table.hashes.each do |h|
-    h['username'] = h.delete('username')
     h['password'] = h.delete('password')
     h['email'] = h.delete('email')
     h['accounttype'] = h.delete('accounttype')
