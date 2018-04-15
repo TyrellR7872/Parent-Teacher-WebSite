@@ -20,8 +20,6 @@ RSpec.describe CalendarEvent, type: :model do
       expect(event).to respond_to :for_highschool_student
       expect(event).to respond_to :contact_person
       expect(event).to respond_to :is_approved
-      # expect(event).to respond_to :
-      # expect(CalendarEvent).to respond_to :filter_on_constraints
     end
   end
 
