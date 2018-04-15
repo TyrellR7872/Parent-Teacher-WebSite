@@ -40,4 +40,3 @@ Feature: Delete a user account
     And I should see "Edit Profile Details"
     And I should see "Delete User Account"
     And I should see "Account Details for tyrell"
-    
