@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
 
 end
-=======
+
 require 'rails_helper'
 
 
@@ -32,4 +32,3 @@ RSpec.describe PagesController, type: :controller do
   end
 
 end
->>>>>>> 47a67e901809ae3e9e38814948b7e25000611b2e

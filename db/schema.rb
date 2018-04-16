@@ -12,10 +12,6 @@
 
 ActiveRecord::Schema.define(version: 20180411235521) do
 
-<<<<<<< HEAD
-# Could not dump table "calendar_events" because of following StandardError
-#   Unknown type 'array' for column 'volunteer_list'
-=======
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false
     t.text "description", null: false
@@ -39,7 +35,6 @@ ActiveRecord::Schema.define(version: 20180411235521) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
->>>>>>> 47a67e901809ae3e9e38814948b7e25000611b2e
 
   create_table "user_accounts", force: :cascade do |t|
     t.string "username"
