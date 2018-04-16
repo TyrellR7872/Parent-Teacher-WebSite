@@ -2,21 +2,23 @@
 -# // . for class
 -# // % for tag
 
-%div.navbar__width
+%div.navbar__header.navbar__width
   / This is the logo for HSCPTO if we have
   -# %a.navbar__logo-mod.header /Logo goes here
   .navbar__logo__word.navbar__logo__word--small HAMILTON CENTRAL SCHOOL
   = link_to "PARENT TEACHER ORGANISATION", root_path, :class => "navbar__logo__word navbar__logo__word--big"
   .navbar__logo__description Description to add like THIS IS THE OFFICIAL PTO FOR HCS
   %button{:type => 'button', :class => 'navbar__mobile-menu', "data-toggle" => "collapse"} Menu
-  <!-- Menu button. Toggle get grouped for small screen --->
-  %div.navbar__navigation
-    %ul.navbar--primary
-      %li.navbar__item--primary
-        =link_to "User Accounts", user_accounts_path, :class => 'navbar__item__link navbar__item__link--primary'
-      %li.navbar__item--primary
-        =link_to "Events", calendar_events_path, :class => 'navbar__item__link navbar__item__link--primary'
-      %li.navbar__item--primary
-        =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'navbar__item__link navbar__item__link--primary'
-      %li.navbar__item--primary
-        =link_to "About", pages_path(:about), :class => 'navbar__item__link navbar__item__link--primary'
+  / Menu button. Toggle get grouped for small screen
+/ close navbar__header AND navbar_width
+%div.navbar__navigation
+  %ul.navbar--primary
+    %li.navbar__item--primary
+      =link_to "User Accounts", user_accounts_path, :class => 'navbar__item__link navbar__item__link--primary'
+    %li.navbar__item--primary
+      =link_to "Events", calendar_events_path, :class => 'navbar__item__link navbar__item__link--primary'
+    %li.navbar__item--primary
+      =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'navbar__item__link navbar__item__link--primary'
+    %li.navbar__item--primary
+      =link_to "About", pages_path(:about), :class => 'navbar__item__link navbar__item__link--primary'
+/ close navbar__navigation
