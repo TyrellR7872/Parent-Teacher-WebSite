@@ -10,49 +10,51 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
 
   Scenario: Create a new user account with success
-    Given I am on the new user account page
+    Given I am on the new user account registration page
     When I fill in the following:
-      |Full Name|Joel Sommers|
-      | Password|cosc|
-      |Confirm Password|cosc|
+      |Name|Joel Sommers|
       | Email|jsommers@colgate.edu|
+      | Password|cosc|
+      |Password confirmation|cosc|
 
-    When I press "Create User Account"
-    Then I should be on the user accounts page
-    And I should see "User Account for 'Joel Sommers'" Successfully Created
-    And I should see "Joel Sommers"
-    When I follow "Edit profile details"
+    When I press "Sign Up"
+    Then I should be on the home page
+    And I should see "Welcome! You have signed up successfully.
+    When I follow "Hello, jsommers@colgate.edu"
+    And I follow "Edit profile details"
     And I fill in the following:
       | Child's Name  |Annie        |
       | Child's Grade |4            |
       | Address  |14 Oak Dr     |
 
-    And press "Update Profile"
-    Then I should be on the user accounts page
+    And press "Update"
+    Then I should be on the home page
+    And when I follow "Hello, jsommers@colgate.edu"
     And I should see "Joel Sommers"
     And I should see "Annie"
     And I should see "4"
     And I should see "14 Oak Dr"
 
   Scenario: Create a new user account with unequal password
-    Given I am on the new user account page
+    Given I am on the new user account registration page
     When I fill in the following:
       |Full Name|Michael Hay|
+      | Email|mhay@colgate.edu|
       | Password|cosc|
       |Confirm Password|cosc1|
-      | Email|mhay@colgate.edu|
 
-    When I press "Create User Account"
-    Then I should be on the new user account page
+    When I press "Sign Up"
+    Then I should be on the new user account registration page
     Then I should see "Passwords are not equal"
 
   Scenario: Create a new user account with creation failed
-    Given I am on the new user account page
+    Given I am on the new user account registration page
     When I fill in the following:
       |Full Name|Michael Hay|
+      | Email||
       | Password|cosc|
       |Confirm Password|cosc|
-      | Email||
-    When I press "Create User Account"
+
+    When I press "Sign Up"
     Then I should be on the new user account page
-    Then I should see "User Account 'Michael Hay' Creation Failed"
+    Then I should see "Email can't be blank"
