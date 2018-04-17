@@ -13,8 +13,4 @@
         =render "flash_message"
       %nav.navbar
         =render "navbar"
-      -{:notice => "alert-primary", :alert => "alert-warning"}.each do |fkey, xclass|
-        -if flash[fkey]
-          %div.col-md.flash.alert{:role => 'alert', :class => xclass}
-            %p= "#{flash[fkey]}"
-    = yield 
+    = yield

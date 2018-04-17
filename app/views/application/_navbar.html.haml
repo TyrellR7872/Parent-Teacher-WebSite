@@ -18,7 +18,7 @@
         %a.navbar__item__link.navbar__item__link--primary Other Resources
       -if !current_user_account.nil?
         %li.navbar__item--primary
-          =link_to "Hello, #{current_user_account.email}", user_account_path(current_user_account), :class => 'navbar__item__link navbar__item__link--primary'
+          =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'navbar__item__link navbar__item__link--primary'
         %li.navbar__item--primary
           =link_to "Log Out", destroy_user_account_session_path, method: :delete, :class => 'navbar__item__link navbar__item__link--primary'
       -else

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :user_account
+  devise_for :user_account, :controllers => {
+    :registrations => 'user_accounts/registrations'}
   resources :calendar_events
   root "home#index"
   resources :user_accounts

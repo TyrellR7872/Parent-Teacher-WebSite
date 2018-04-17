@@ -12,18 +12,25 @@ class UserAccounts::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-    UserAccount.fill_user(current_user_account)
   end
 
   # GET /resource/edit
-  # def edit
-  #   super
-  # end
+  def edit
+    super
+  end
 
   # PUT /resource
-  # def update
-  #   super
-  # end
+  def update
+    user = UserAccount.find(current_user_account.id)
+    user.update(update_params)
+    if user.save
+      flash[:success] = "Profile '#{user.name}' updated"
+      redirect_to user_account_path(user) and return
+    else
+      flash[:warning] = "Error updating profile"
+      redirect_to edit_user_account_registration_path(user) and return
+    end
+  end
 
   # DELETE /resource
   # def destroy
@@ -42,6 +49,7 @@ class UserAccounts::RegistrationsController < Devise::RegistrationsController
   # protected
 
   # If you have extra params to permit, append them to the sanitizer.
+
   def configure_sign_up_params
     attrs = [:name,:childname,:childgrade, :homeaddress]
     devise_parameter_sanitizer.permit(:sign_up, keys: attrs)
@@ -52,6 +60,10 @@ class UserAccounts::RegistrationsController < Devise::RegistrationsController
     attrs = [:name,:childname,:childgrade, :homeaddress]
     devise_parameter_sanitizer.permit(:account_update, keys: attrs)
   end
+  private
+    def update_params
+      params.require(:user_account).permit(:email,:childgrade,:childname,:homeaddress,:name)
+    end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)

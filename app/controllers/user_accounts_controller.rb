@@ -45,14 +45,14 @@ class UserAccountsController < ApplicationController
 
   def show
     @user_account = UserAccount.find(params[:id])
-    
+
     UserAccount.fill_user(@user_account)
   end
 
 
 private
   def create_update_params
-    params.require(:user_account).permit(:username,:email,:childgrade,:childname,:homeaddress,:name, :password, :password_confirmation)
+    params.require(:user_account).permit(:email,:childgrade,:childname,:homeaddress,:name, :password, :password_confirmation)
   end
 
 
