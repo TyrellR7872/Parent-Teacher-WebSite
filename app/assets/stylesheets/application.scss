@@ -66,13 +66,11 @@ nav li {
 //   overflow: hidden; }
 
 .navbar {
-  background-color: $light-emerald-green;
+  // background-color: $light-emerald-green;
   z-index: 4;
   text-align: center;
-  padding: 0 15px;
-  position: -webkit-sticky; /* Safari */
-  position: sticky;
-  min-height: 170px;
+  // padding: 0 15px;
+  position: relative;
   top: 0;
   left: 0;
   right: 0; }
@@ -80,26 +78,28 @@ nav li {
     content: " ";
     display: table;
     clear: both; }
+  // @media (min-width: 750px) {
+  //   .navbar {
+  //     position: relative;
+  //     padding: 0 30px; } }
+
+.navbar__header {
+  background-color: $light-emerald-green; }
   @media (min-width: 750px) {
-    .navbar {
-      //position: relative;
-      padding: 0 30px; } }
+    .navbar__width {
+      margin: 0 auto;
+      max-width: 1180px;
+      // position: relative;
+      // height: 130px;
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      padding-top: 23px;
+      padding-bottom: 20px; } }
 
-@media (min-width: 750px) {
-  .navbar__width {
-    margin: 0 auto;
-    max-width: 1180px;
-    // position: relative;
-    height: 130px;
-    display: inline-block;
-    width: 100%;
-    text-align: left;
-    padding-top: 23px;
-    padding-bottom: 20px; } }
-
-@media (min-width: 1024px) {
-  .navbar__width {
-    padding-top: 20px; } }
+  @media (min-width: 1024px) {
+    .navbar__width {
+      padding-top: 20px; } }
 
 @media (min-width: 750px) {
   .homepage .navbar {
@@ -113,6 +113,7 @@ nav li {
   max-width: 1380px; }
 
 .navbar__logo__word {
+  padding: 0 30px;
   color: $school-white;
   font-family: $font-serif; }
 
@@ -132,7 +133,7 @@ nav li {
   color: $school-white;
   font-family: $font-serif;
   font-style: italic;
-  padding: 15px 0 0 0;
+  padding: 15px 0 0 30px;
 }
 
 .navbar__logo-mod {
@@ -183,16 +184,18 @@ nav li {
 
 .navbar__navigation {
   text-align: center;
-  position: static;
+  position: relative;
   top: 100%;
   right: 0;
   left: 0;
+  width:100%;
+  z-index:5000000;
   max-height: calc(100vh - 75px); }
   .navbar__navigation.navbar__navigation--no-tertiary {
     margin-right: 0; }
   @media (min-width: 750px) {
     .navbar__navigation {
-      background: #fff;
+      // background: #fff;
       overflow: visible;
       display: block;
       width: auto;
@@ -207,6 +210,16 @@ nav li {
       margin-left: 0; } //200px; }
       .navbar__navigation.navbar__navigation--no-tertiary {
         margin-right: 0; } }
+
+  .navbar__navigation:before{
+    background-color: $light-emerald-green;
+    bottom:0;
+    // content:"";
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    z-index:-1}
 
 .navbar__item--primary,
 .navbar__item--secondary {
