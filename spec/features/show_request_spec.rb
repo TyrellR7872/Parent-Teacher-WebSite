@@ -33,4 +33,15 @@ describe "show page", type: :feature do
     click_link("harry potter")
     expect(page).to have_link("Delete event")
   end
+
+  describe "show page for about feature", type: :feature do
+    before :each do
+      visit "/about"
+    end
+    it "should show the names of Officers and Chairs of the current academic year" do
+      expect(page).to have_content("Officers")
+      expect(page).to have_content("Chairs")
+      expect(page).to have_content("2017-2018")
+    end
+  end
 end
