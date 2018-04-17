@@ -1,3 +1,10 @@
+
+require 'rails_helper'
+
+RSpec.describe PagesController, type: :controller do
+
+end
+
 require 'rails_helper'
 
 
@@ -23,5 +30,4 @@ RSpec.describe PagesController, type: :controller do
       expect(response).to have_http_status(:not_found)
     end
   end
-
 end
