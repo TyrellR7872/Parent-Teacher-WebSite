@@ -224,9 +224,8 @@ nav li {
 .navbar__item--primary,
 .navbar__item--secondary {
   display: list-item;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
-  // font-family: "NeueHaas", sans-serif;
   font-size: 16px; }
   @media (min-width: 750px) {
     .navbar__item--primary,
@@ -290,7 +289,6 @@ nav li {
       margin-top: 0; } }
 
 .navbar__item--primary {
-  padding: 0;
   margin: 0;
   background-color: $light-emerald-green;
   border-bottom: 1px solid #666; }
@@ -300,6 +298,14 @@ nav li {
     border-bottom: 0; }
   @media (min-width: 750px) {
     .navbar__item--primary {
+      padding: 1 2 1 2;
+      background-color: transparent;
+      position: relative;
+      margin: 0;
+      border-bottom: 0; } }
+  @media (min-width: 1024px) {
+    .navbar__item--primary {
+      padding: 3 12 3 12;
       background-color: transparent;
       position: relative;
       margin: 0;
