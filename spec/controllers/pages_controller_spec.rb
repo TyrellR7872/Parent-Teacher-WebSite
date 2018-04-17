@@ -15,6 +15,9 @@ RSpec.describe PagesController, type: :controller do
       get :show, params: {:id => 'about'}
       expect(response).to have_http_status(:success)
     end
+    it "should display the names of officers and chairs" do
+      get :show, params: {:id => 'about'}
+    end
   end
 
   describe "GET #show for the Clubs and Organizations page" do
