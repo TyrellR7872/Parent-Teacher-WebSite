@@ -35,5 +35,19 @@ RSpec.describe UserAccountsController, type: :controller do
   #     expect(response).to have_http_status(:redirect)
   #   end
   # end
+  describe "GET #show" do
+    it "redirects to index on a bad id" do
+      expect(UserAccount).to receive(:find).and_raise(ActiveRecord::RecordNotFound)
+      get :show, :params => {:id => 1}
+      expect(response).to redirect_to(new_user_account_registration_path)
+    end
+
+    it "returns http success" do
+      user = UserAccount.new
+      expect(UserAccount).to receive(:find).with(eq(1).or eq("1")).and_return(user)
+      get :show, :params => {:id => "1"}
+      expect(response).to have_http_status(:success)
+    end
+  end
 
 end

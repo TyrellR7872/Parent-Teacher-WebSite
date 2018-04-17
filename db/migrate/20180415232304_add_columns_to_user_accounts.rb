@@ -1,9 +1,9 @@
 class AddColumnsToUserAccounts < ActiveRecord::Migration[5.1]
   def change
-    add_column :user_accounts, :accounttype, :string
-    add_column :user_accounts, :name, :string
-    add_column :user_accounts, :childname, :string
-    add_column :user_accounts, :childgrade, :integer
-    add_column :user_accounts, :homeaddress, :string
+    add_column :user_accounts, :accounttype, :string, default: ""
+    add_column :user_accounts, :name, :string, default: ""
+    add_column :user_accounts, :childname, :string, default: ""
+    add_column :user_accounts, :childgrade, :integer, default: ""
+    add_column :user_accounts, :homeaddress, :string, default: ""
   end
 end
