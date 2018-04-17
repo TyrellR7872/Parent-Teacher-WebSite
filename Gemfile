@@ -17,7 +17,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem 'figaro' 
 # 04/11/18: Nam: using pg for production only. Change back to sqlite3 for test and dev
 # gem 'pg'
 
