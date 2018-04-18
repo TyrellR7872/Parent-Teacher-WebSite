@@ -25,9 +25,13 @@ class UserAccounts::RegistrationsController < Devise::RegistrationsController
   # end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    @user_account = UserAccount.find(current_user_account.id)
+    if @user_account.delete
+      flash[:notice] = "User Account Successfully Deleted"
+      redirect_to root_path
+    end
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
