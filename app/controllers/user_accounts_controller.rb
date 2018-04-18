@@ -62,7 +62,7 @@ class UserAccountsController < ApplicationController
     members.each do |user|
       UserMailer.new_message(user, email_details).deliver
     end
-    redirect_to members_user_accounts_path, :accounttype => params[:accounttype], :name => params[:name], :fromgrade => params[:fromgrade], :tograde => params[:tograde] 
+    redirect_to members_user_accounts_path(:accounttype => params[:accounttype], :name => params[:name], :fromgrade => params[:fromgrade], :tograde => params[:tograde])
   end
 
 
