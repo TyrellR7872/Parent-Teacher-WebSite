@@ -16,6 +16,13 @@ Feature: Filter emails based on account attributes
     Then I should see "lhalitjaha@colgate.edu"
     And I should not see "ajamil@colgate.edu"
 
+  Scenario: Filter by name
+    Given I am on the members page
+    And I fill in "Name" with "as"
+    And I press "Refine the list of members"
+    Then I should not see "lhalitjaha@colgate.edu"
+    And I should see "ajamil@colgate.edu"
+
   Scenario: Filter by start grade only
     Given I am on the members page
     And I fill in "From grade" with "1"

@@ -5,10 +5,13 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.new_message.subject
   #
-  def new_message
-    @greeting = "Hi!"
+  def new_message user, details
+    subject = details[:subject]
+    @user = user
+    @body = details[:body]
+    @sender = details[:sender]
 
-    mail to: "ajamil@colgate.edu",
-         subject: "test email for software engineering project"
+    mail to: "#{@user.email}",
+         subject: "[HCS-PTO] #{subject}"
   end
 end

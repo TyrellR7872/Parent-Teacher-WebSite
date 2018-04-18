@@ -1,3 +1,5 @@
 
 %p
-  = @greeting + ", find me in app/views/user_mailer/new_message.html.haml"
+  %p= "Hello #{@user.name}! You have received a message from #{@sender}:"
+  %p= "#{@body}"
+  %p= "Thank you!"

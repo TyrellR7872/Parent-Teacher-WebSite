@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :user_accounts do
     collection do
       get "members"
+      get "email"
     end
   end
   root "user_accounts#new"

@@ -57,6 +57,14 @@ class UserAccountsController < ApplicationController
     @members = UserAccount.filter_on_constraints(constraints)
   end
 
+  def email
+    members = UserAccount.filter_on_constraints(constraints)
+    members.each do |user|
+      UserMailer.new_message(user, email_details).deliver
+    end
+    redirect_to members_user_accounts_path, :accounttype => params[:accounttype], :name => params[:name], :fromgrade => params[:fromgrade], :tograde => params[:tograde] 
+  end
+
 
 
 
@@ -66,10 +74,19 @@ private
   end
 
   def constraints
-    constraints = [:accounttype, :fromgrade, :tograde]
+    constraints = [:name, :accounttype, :fromgrade, :tograde]
     hash = {}
     constraints.each do |sym|
       hash[sym] = params[sym] if params[sym].present?
+    end
+    hash
+  end
+
+  def email_details
+    details = [:subject, :sender, :body]
+    hash = {}
+    details.each do |sym|
+      hash[sym] = params[sym]
     end
     hash
   end
