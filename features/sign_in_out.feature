@@ -7,5 +7,3 @@ Feature: Sign in and sign out of a user's account
     Given these UserAccounts:
     | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
     | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
-
-  Scenario

@@ -14,23 +14,25 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     When I fill in the following:
       |Name|Joel Sommers|
       | Email|jsommers@colgate.edu|
-      | Password|cosc|
-      |Password confirmation|cosc|
+      | Password|cosc123|
+      |Password confirmation|cosc123|
 
-    When I press "Sign Up"
-    Then I should be on the home page
-    And I should see "Welcome! You have signed up successfully.
-    When I follow "Hello, jsommers@colgate.edu"
+    And I press "Sign up"
+    Then I should be on the root page
+    And I should see "Welcome! You have signed up successfully."
+    When I follow "Hello, Joel Sommers"
     And I follow "Edit profile details"
+    Then I should see "Edit User account"
     And I fill in the following:
-      | Child's Name  |Annie        |
-      | Child's Grade |4            |
-      | Address  |14 Oak Dr     |
+      | Childname |Annie        |
+      | Childgrade |4            |
+      | Homeaddress  |14 Oak Dr     |
+      |Current password|cosc123|
 
-    And press "Update"
-    Then I should be on the home page
-    And when I follow "Hello, jsommers@colgate.edu"
-    And I should see "Joel Sommers"
+    And press "Update details"
+    Then I should be on the root page
+    When I follow "Hello, Joel Sommers"
+    Then I should see "Joel Sommers"
     And I should see "Annie"
     And I should see "4"
     And I should see "14 Oak Dr"
@@ -38,23 +40,23 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
   Scenario: Create a new user account with unequal password
     Given I am on the new user account registration page
     When I fill in the following:
-      |Full Name|Michael Hay|
+      |Name|Michael Hay|
       | Email|mhay@colgate.edu|
       | Password|cosc|
-      |Confirm Password|cosc1|
+      |Password confirmation|cosc1|
 
-    When I press "Sign Up"
-    Then I should be on the new user account registration page
-    Then I should see "Passwords are not equal"
+    And I press "Sign up"
+    Then I should be on the user account registration page
+    Then I should see "Password confirmation doesn't match Password"
 
   Scenario: Create a new user account with creation failed
     Given I am on the new user account registration page
     When I fill in the following:
-      |Full Name|Michael Hay|
+      |Name|Michael Hay|
       | Email||
       | Password|cosc|
-      |Confirm Password|cosc|
+      |Password confirmation|cosc|
 
-    When I press "Sign Up"
-    Then I should be on the new user account page
+    When I press "Sign up"
+    Then I should be on the user account registration page
     Then I should see "Email can't be blank"
