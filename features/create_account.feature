@@ -22,7 +22,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     And I should see "Welcome! You have signed up successfully."
     When I follow "Hello, Joel Sommers"
     And I follow "Edit profile details"
-    Then I should see "Edit User account"
+    And I should see "Edit User account"
     And I fill in the following:
       | Childname |Annie        |
       | Childgrade |4            |
