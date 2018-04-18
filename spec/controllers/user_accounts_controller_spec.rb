@@ -14,13 +14,6 @@ RSpec.describe UserAccountsController, type: :controller do
     end
   end
 
-  describe "GET #show not signed in" do
-    it "should redirect user if not signed in" do
-      expect(subject.current_user_account).to eq(nil)
-      get :show, :params => {:id => 1}
-      expect(response).to redirect_to(new_user_account_registration_path)
-    end
-  end
 
   describe "GET #show" do
     login_user
