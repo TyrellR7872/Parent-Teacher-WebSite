@@ -9,15 +9,15 @@ Feature: Delete a user account
       | Name                | Joel Sommers        |
       | Email               | jsommers@colgate.edu|
       | Password            |  cosc123            |
-      |Password confirmation|  cosc123            |
+      |Password Confirmation|  cosc123            |
     And I press "Sign up"
     Then I should be on the root page
 
   Scenario: Delete a user account with confirmation
     Given I am on the root page
     When I follow "Hello, Joel Sommers"
-    Then I should see "Account details for Joel Sommers"
-    When I follow "Edit profile details"
+    Then I should see "Account Details for Joel Sommers"
+    When I follow "Edit Profile Details"
     And I press "Delete User Account"
     Then I should be on the root page
     And I should see "User Account Successfully Deleted"

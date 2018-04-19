@@ -4,27 +4,27 @@
   <%= devise_error_messages! %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Name" %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true %>
   </div>
 
   <div class="field">
-    <%= f.label :childname %><br />
+    <%= f.label :childname, "Child's Name" %><br />
     <%= f.text_field :childname, autofocus: true, autocomplete: "Child's name" %>
   </div>
 
   <div class="field">
-    <%= f.label :childgrade %><br />
+    <%= f.label :childgrade, "Child's Grade" %><br />
     <%= f.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
   </div>
 
   <div class="field">
-    <%= f.label :homeaddress  %><br />
+    <%= f.label :homeaddress, "Home Address"%><br />
     <%= f.text_field :homeaddress, autofocus: true, autocomplete: "Home Address" %>
   </div>
 
   <div class="field">
-    <%= f.label :email %><br />
+    <%= f.label :email, "Email" %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
   </div>
 
@@ -33,7 +33,7 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :password %> <i>(leave blank if not intending to change)</i><br />
+    <%= f.label :password, "Password"%> <i>(leave blank if not intending to change)</i><br />
     <%= f.password_field :password, autocomplete: "off" %>
     <% if @minimum_password_length %>
       <br />
@@ -42,12 +42,12 @@
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation %><br />
+    <%= f.label :password_confirmation, "Password Confirmation" %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
 
   <div class="field">
-    <%= f.label :current_password %> <i>(use your current password to confirm your changes)</i><br />
+    <%= f.label :current_password, "Current Password" %> <i>(use your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
 
@@ -58,4 +58,4 @@
 
 <%= button_to "Delete User Account", registration_path(resource_name), data: { confirm: "Confirm Deletion" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<id="back"><%= link_to "Back", :back %>
