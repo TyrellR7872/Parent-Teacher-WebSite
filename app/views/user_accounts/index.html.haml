@@ -32,8 +32,6 @@
         %td.type= member.accounttype
 
   = form_tag email_user_accounts_path, :method => :get do
-    = label_tag :sender, "Your name", :required => true
-    = text_field_tag :sender
     = label_tag :subject, "Subject", :required => true
     = text_field_tag :subject
     = label_tag :body, "Body", :required => true
