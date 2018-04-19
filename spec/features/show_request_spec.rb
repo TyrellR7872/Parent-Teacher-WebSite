@@ -33,4 +33,32 @@ describe "show page", type: :feature do
     click_link("harry potter")
     expect(page).to have_link("Delete event")
   end
+
+  describe "show page for about feature", type: :feature do
+    before :each do
+      visit "/about"
+    end
+    it "should show the names of Officers and Chairs of the current academic year" do
+      expect(page).to have_content("Officers")
+      expect(page).to have_content("Chairs")
+      expect(page).to have_content("2017-2018")
+    end
+  end
+  describe "home page", type: :feature do
+    before :each do
+      visit "/"
+    end
+    it "should show tabs for User Accounts" do
+      expect(page).to have_content("User Accounts")
+    end
+    it "should show tabs for  Events" do
+        expect(page).to have_content("Events")
+    end
+    it "should show a tab for About" do
+      expect(page).to have_content("About")
+    end
+    it "should show a tab for Clubs and Organisations" do
+      expect(page).to have_content("Clubs and Organisations")
+    end
+  end
 end
