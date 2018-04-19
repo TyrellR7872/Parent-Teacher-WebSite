@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise'
 gem 'factory_bot'
+gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
@@ -63,6 +64,7 @@ group :test do
   gem 'rails-controller-testing'
   gem 'simplecov', :require => false
 	gem 'launchy'
+  gem 'email_spec'
 end
 
 group :production do

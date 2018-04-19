@@ -3,8 +3,12 @@ Rails.application.routes.draw do
     :registrations => 'user_accounts/registrations', :sessions => 'user_accounts/sessions'}
   resources :calendar_events
   root "home#index"
-  
-  resources :user_accounts
+
+  resources :user_accounts do
+    collection do
+      get "email"
+    end
+  end 
   root "user_accounts#new"
 
   # render static pages
