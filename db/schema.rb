@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180415232304) do
+=======
+ActiveRecord::Schema.define(version: 20180413041409) do
+>>>>>>> lumi_volunteer_signup
 
 # Could not dump table "calendar_events" because of following StandardError
 #   Unknown type 'array' for column 'volunteer_list'

@@ -42,7 +42,7 @@ class CalendarEventsController < ApplicationController
   def update
     id = params[:id].to_i
     @calendar_event = CalendarEvent.find(id)
-    
+
     @calendar_event.update(create_update_params)
     if @calendar_event.save
       flash[:success] = "Event \'#{@calendar_event.title}\' updated"
@@ -56,6 +56,18 @@ class CalendarEventsController < ApplicationController
   def new
     @user_account = session[:user]
     @calendar_event = CalendarEvent.new
+  end
+  def volunteer_signup
+    @new_volunteer = session[:user]
+    if !@new_volunteer.nil?
+      @calendar_event =  CalendarEvent.find(params[:id])
+      @calendar_event.user_accounts << @new_volunteer
+      flash[:notice] = "You signed up to volunteer for \'#{@calendar_event.title}\'"
+      redirect_to calendar_event_path
+    else
+      flash[:error] = "You need to sign up to volunteer"
+      redirect_to calendar_event_path
+    end
   end
 
   def destroy
