@@ -59,3 +59,4 @@ Feature: Update a user account
   Then I should see "Email can't be blank"
   And I should see "Email is invalid"
   And I should see "Current password is invalid"
+
