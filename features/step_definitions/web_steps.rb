@@ -287,7 +287,6 @@ end
 
 Given("these UserAccounts:") do |table|
   table.hashes.each do |h|
-    h['username'] = h.delete('username')
     h['password'] = h.delete('password')
     h['email'] = h.delete('email')
     h['accounttype'] = h.delete('accounttype')
@@ -313,4 +312,21 @@ Then /^(?:|I )should see that user "([^"]*)".*"([^"]*)"$/ do |name,value|
     assert actual.has_content?name
     assert actual.has_content?value
   end
+end
+
+###############################
+# FOR SIGN IN/OUT
+###############################
+
+Given /^I am a new, signed-in user account$/ do
+  name = 'Test User'
+  email = 'testeruser@colgate.edu'
+  password = 'testpass'
+  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password).save!
+
+  visit '/user_account/sign_in'
+  fill_in "user_account_email", :with => email
+  fill_in "user_account_password", :with => password
+  click_button "Log in"
+
 end

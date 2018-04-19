@@ -7,16 +7,12 @@
     = javascript_include_tag 'application'
 
   %body
-    %header
-      -# -if flash[:notice] || flash[:error] || flash[:success]
+    #header
+      -# -if flash[:notice] || flash[:error] || flash[:success] || flash[:warning]
       .flash
         =render "flash_message"
-
       %nav.navbar
         =render "navbar"
-
-
-
     = yield
 
     %footer
