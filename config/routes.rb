@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     :registrations => 'user_accounts/registrations', :sessions => 'user_accounts/sessions'}
   resources :calendar_events
   root "home#index"
-  
+
   resources :user_accounts
   root "user_accounts#new"
 

@@ -284,7 +284,6 @@ DEPENDENCIES
   cucumber-rails-training-wheels
   database_cleaner
   devise
-  factory_bot
   haml
   haml-rails
   jbuilder (~> 2.5)
