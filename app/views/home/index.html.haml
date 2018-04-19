@@ -1,5 +1,28 @@
--# %h1
--#   =link_to "User Account Home", user_accounts_path
--#
--# %h1
--#   =link_to "Calendar Home", calendar_events_path
+#main.container
+  -# TODO need to add images as carousel
+  -# example: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+  %h3.header Calendar Events
+
+  %table.table
+    %tbody
+      -@calendar_events.each do |event|
+        / Add a line to separate between events
+        %tr.pages__line--primary
+          %hr/
+        / Finishing adding line
+        %tr.pages__event
+          / Insert image of the event here
+          %td.pages__event__image
+          %td.pages__event__details
+            .pages__event__details__title=link_to event.title, calendar_event_path(event)
+            .pages__event__details__date=event.start_date_time ? event.start_date: "No date indicated"
+            .pages__event__details__time=event.start_date_time ? event.start_time: "No time indicated"
+            .pages__event__details__location=event.location
+        %tr
+          %td
+            .pages__event__details__description=truncate(event.description, length: 50)
+            .contact_person=event.contact_person
+        -# %td.time=event.end_date_time ? event.end_time: "No time indicated"
+
+  %br
+  %br

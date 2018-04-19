@@ -183,6 +183,7 @@ nav li {
       display: none; } }
 
 .navbar__navigation {
+  margin: 0 auto;
   text-align: center;
   position: relative;
   top: 100%;
@@ -195,19 +196,14 @@ nav li {
     margin-right: 0; }
   @media (min-width: 750px) {
     .navbar__navigation {
+      max-width: 1180px;
       // background: #fff;
       overflow: visible;
       display: block;
-      width: auto;
-      position: static;
-      margin-right: 0; // 115px;
-      margin-left: 0; }//175px; }
+      width: auto;}
       .navbar__navigation.navbar__navigation--no-tertiary {
         margin-right: 0; } }
   @media (min-width: 1024px) {
-    .navbar__navigation {
-      margin-right: 0; //160px;
-      margin-left: 0; } //200px; }
       .navbar__navigation.navbar__navigation--no-tertiary {
         margin-right: 0; } }
 

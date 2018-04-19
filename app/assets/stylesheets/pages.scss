@@ -3,7 +3,20 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "bootstrap";
 @import "colors";
+
 div {
   font-family: $font-sans;
   font-size: 18px;
+}
+
+.pages--primary {
+
+}
+
+.pages__item--primary {
+
+}
+
+.pages__item__link {
+  color: blue;
 }

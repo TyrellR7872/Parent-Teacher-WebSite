@@ -50,8 +50,17 @@ RSpec.describe CalendarEvent, type: :model do
     end
 
     it "should fail to create a CalendarEvent object if the title is not specified" do
-        expect {
-            CalendarEvent.create!(description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5.4), end_date_time: DateTime.new(2018,9,5.6), is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+      expect {
+        CalendarEvent.create!(description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5.4), end_date_time: DateTime.new(2018,9,5.6), is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      }.to raise_exception ActiveRecord::NotNullViolation
     end
   end
+
+  # TODO Need to add test for the new scope
+  # describe "check scope approved_pending" do
+  #   it "should return the correct approved_pending events" do
+  #     expect {CalendarEvent.approved_pending}.to
+  #   end
+  # end
+
 end
