@@ -58,11 +58,16 @@ class CalendarEventsController < ApplicationController
     @calendar_event = CalendarEvent.new
   end
   def volunteer_signup
-    @user_account = session[:user]
-    @calendar_event =  CalendarEvent.find(params[:id])
-    @calendar_event.user_accounts << @user_account
-    flash[:notice] = "You signed up to volunteer for \'#{@calendar_event.title}\'"
-    redirect_to calendar_event_path
+    @new_volunteer = session[:user]
+    if !@new_volunteer.nil?
+      @calendar_event =  CalendarEvent.find(params[:id])
+      @calendar_event.user_accounts << @new_volunteer
+      flash[:notice] = "You signed up to volunteer for \'#{@calendar_event.title}\'"
+      redirect_to calendar_event_path
+    else
+      flash[:error] = "You need to sign up to volunteer"
+      redirect_to calendar_event_path
+    end
   end
 
   def destroy

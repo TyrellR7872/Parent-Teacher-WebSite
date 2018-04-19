@@ -16,6 +16,7 @@ class CalendarEvent < ApplicationRecord
 
   scope :approved_pending, -> {find_approved(false)}
 
+  
   def start_date
     self.start_date_time.to_date
   end
@@ -30,5 +31,5 @@ class CalendarEvent < ApplicationRecord
 
   def end_time
     self.end_date_time.strftime('%l.%M %p')
-  end 
+  end
 end
