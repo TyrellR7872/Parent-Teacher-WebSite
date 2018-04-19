@@ -1,0 +1,91 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap";
+ @import "colors";
+
+ * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+ #warning {
+   background-color: red;
+   font-size: 18px;
+ }
+
+ #notice {
+   background-color: green;
+   text-align: center;
+   font-family: Arial;
+   font-size: 18px;
+ }
+
+body {
+  background-color: $bg-light;
+  font-family: $font-sans
+}
+
+main {
+  width: 50%;
+  max-width: 800px;
+  margin: 3em auto; }
+
+.home__grid {
+  /* autoprefixer: off */
+  display: grid;
+  justify-content: start; }
+
+.home__container {
+  display: block; }
+
+  .home__container__menu span {
+    grid-column: 1 / 2;
+    grid-row: 1 / 6; }
+
+  .home__container__image span {
+    grid-column: 3 / 6;
+    grid-row: 1 / 2; }
+
+  .home__container__event {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 180px 180px;
+    justify-content: space-between; }
+
+  // .home__container__event--1 span {
+  //   grid-column: 3 / 4;
+  //   grid-row: 5 / 6; }
+  //
+  // .home__container__event--2 span {
+  //   grid-column: 5 / 6;
+  //   grid-row: 5 / 6; }
+  //
+  // .home__container__event--3 span {
+  //   grid-column: 3 / 4;
+  //   grid-row: 7 / 8; }
+  //
+  // .home__container__event--4 span {
+  //   grid-column: 5 / 6;
+  //   grid-row: 7 / 8; }
+
+.home__text__event--bold {
+  font-weight: bold;
+  color: $light-emerald-green;
+}
+
+.home__text__event--italic {
+  font-style: italic;
+}
