@@ -15,18 +15,18 @@ Feature: Update a user account
     | Name|Joel Sommers|
     | Email|jsommers@colgate.edu|
     | Password|cosc_is_cool|
-    | Password confirmation|cosc_is_cool|
+    | Password Confirmation|cosc_is_cool|
 
   When I press "Sign up"
   Then I should see "Welcome! You have signed up successfully."
   When I follow "Hello, Joel Sommers"
-  Then I should see "Account details for Joel Sommers"
-  When I follow "Edit profile details"
+  Then I should see "Account Details for Joel Sommers"
+  When I follow "Edit Profile Details"
   And I fill in the following:
-    | Childname  |Puppy                |
-    | Childgrade |3                    |
-    | Homeaddress  |Good Boy Drive, Yorkshire |
-    | Current password|cosc_is_cool|
+    | Child's Name  |Puppy                |
+    | Child's Grade|3                    |
+    | Home Address  |Good Boy Drive, Yorkshire |
+    | Current Password|cosc_is_cool|
 
   And press "Update details"
   Then I should see "Your account has been updated successfully."
@@ -42,19 +42,19 @@ Feature: Update a user account
     | Name|Joel Sommers|
     | Email|jsommers@colgate.edu|
     | Password|cosc_is_cool|
-    | Password confirmation|cosc_is_cool|
+    | Password Confirmation|cosc_is_cool|
 
   When I press "Sign up"
   Then I should see "Welcome! You have signed up successfully."
   When I follow "Hello, Joel Sommers"
-  Then I should see "Account details for Joel Sommers"
-  When I follow "Edit profile details"
+  Then I should see "Account Details for Joel Sommers"
+  When I follow "Edit Profile Details"
   And I fill in the following:
     | Email|                              |
-    | Childname  |Puppy                |
-    | Childgrade |3                    |
-    | Homeaddress  |Good Boy Drive, Yorkshire |
-    | Current password|cosc_is_lame|
+    | Child's Name  |Puppy                |
+    | Child's Grade|3                    |
+    | Home Address  |Good Boy Drive, Yorkshire |
+    | Current Password|cosc_is_lame|
   And I press "Update details"
   Then I should see "Email can't be blank"
   And I should see "Email is invalid"
