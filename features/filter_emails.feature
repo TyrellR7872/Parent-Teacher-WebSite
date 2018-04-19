@@ -8,6 +8,13 @@ Feature: Filter emails based on account attributes
     | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
     | halitjaha  | lhalitjaha@colgate.edu |  teacher   | Lumbardh Halitjaha  | Little T        | 4         | 13 Oak Dr   |
     | jamila    | ajamil@colgate.edu   |  parent  | Asad Jamil    | Little Jimmy    | 10         | 10 Oak Dr   |
+    Given I am a new, signed-in user account
+
+  Scenario: Redirect to login page if not signed in
+    When I follow "Log Out"
+    And I follow "User Accounts"
+    Then I should be on the sign in page
+    And I should see "Sign in to view user accounts"
 
   Scenario: Filter by account type
     Given I am on the user accounts page
