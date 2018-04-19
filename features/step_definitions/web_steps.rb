@@ -330,3 +330,7 @@ Given /^I am a new, signed-in user account$/ do
   click_button "Log in"
 
 end
+
+###############################
+# FOR VOLUNTEER SIGN UP
+###############################

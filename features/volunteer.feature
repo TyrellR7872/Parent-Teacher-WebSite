@@ -14,4 +14,4 @@ I want to access a Volunteer Sign Up form from the description of the calendar e
     Given I am on the calendar_events page
     When I press "Sign up" for "football"
     Then I should be on the calendar events page
-    And I should see "Successfully signed up to volunteer for football"
+    And I should see "Successfully signed up to volunteer"
