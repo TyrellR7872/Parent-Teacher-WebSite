@@ -5,14 +5,13 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
   Background: the website has already has existing accounts
     Given these UserAccounts:
-    | username  | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
-    | ty_rell   | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
-    | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
+    | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
+    | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
+    | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
 
   Scenario: Create a new user account with success
     Given I am on the new user account page
     When I fill in the following:
-      | Username|JSomm|
       |Full Name|Joel Sommers|
       | Password|cosc|
       |Confirm Password|cosc|
@@ -20,8 +19,8 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
     When I press "Create User Account"
     Then I should be on the user accounts page
-    And I should see "User Account 'JSomm'" Successfully Created
-    And I should see that user "JSomm" has name of "Joel Sommers"
+    And I should see "User Account for 'Joel Sommers'" Successfully Created
+    And I should see "Joel Sommers"
     When I follow "Edit profile details"
     And I fill in the following:
       | Child's Name  |Annie        |
@@ -38,7 +37,6 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
   Scenario: Create a new user account with unequal password
     Given I am on the new user account page
     When I fill in the following:
-      | Username|HayM|
       |Full Name|Michael Hay|
       | Password|cosc|
       |Confirm Password|cosc1|
@@ -51,11 +49,10 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
   Scenario: Create a new user account with creation failed
     Given I am on the new user account page
     When I fill in the following:
-      | Username|HayM|
       |Full Name|Michael Hay|
       | Password|cosc|
       |Confirm Password|cosc|
       | Email||
     When I press "Create User Account"
     Then I should be on the new user account page
-    Then I should see "User Account 'HayM' Creation Failed"
+    Then I should see "User Account 'Michael Hay' Creation Failed"
