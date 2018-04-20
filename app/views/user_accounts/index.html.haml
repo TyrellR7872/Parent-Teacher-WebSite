@@ -7,6 +7,7 @@
     = text_field_tag :name, @name
     = label_tag :accounttype, "Account type"
     = text_field_tag :accounttype, @accounttype
+    %br
     = label_tag :fromgrade, "From grade"
     = number_field_tag :fromgrade, @fromgrade
     = label_tag :tograde, "To grade"
@@ -33,11 +34,14 @@
 
   = form_tag email_user_accounts_path, :method => :get do
     = label_tag :subject, "Subject"
-    = text_field_tag :subject, @subject
+    = text_field_tag :subject
+    %br
     = label_tag :body, "Body"
-    = text_area_tag :body, @body
+    = text_area_tag :body
+    %br
     = hidden_field_tag :name, params[:name]
     = hidden_field_tag :accounttype, params[:accounttype]
     = hidden_field_tag :fromgrade, params[:fromgrade]
     = hidden_field_tag :tograde, params[:tograde]
+    %br
     = submit_tag "Send message to members shown"

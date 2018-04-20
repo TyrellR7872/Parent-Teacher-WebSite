@@ -1,7 +1,7 @@
 Feature: Send emails based on account attributes
   As a member at Hamilton Central School,
-  So that I can send emails to other members selected according to my criteria,
-  I want to be able to send emails to a select subset of users
+  So that I can send messages to other members
+  I want to be able to send emails to a other users
 
   Background: the website already has existing accounts
     Given these UserAccounts:

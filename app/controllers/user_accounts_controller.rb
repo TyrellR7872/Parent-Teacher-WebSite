@@ -10,8 +10,6 @@ class UserAccountsController < ApplicationController
     @fromgrade = params[:fromgrade] || ""
     @name = params[:name] || ""
     @account_type = params[:accounttype] || ""
-    @body = params[:body] || ""
-    @subject = params[:subject] || ""
   end
 
   def show
