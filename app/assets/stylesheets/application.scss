@@ -76,10 +76,7 @@ nav li {
     content: " ";
     display: table;
     clear: both; }
-  // @media (min-width: 750px) {
-  //   .navbar {
-  //     position: relative;
-  //     padding: 0 30px; } }
+
 
 .navbar__header {
   // background-color: $light-emerald-green; }
@@ -97,6 +94,16 @@ nav li {
   @media (min-width: 1024px) {
     .navbar__width {
       padding-top: 20px; } }
+
+.navbar__user-status {
+  background-image: $school-white; }
+  @media (min-width: 750px) {
+    .navbar__user-status {
+      margin: 0 auto;
+      max-width: 1180px;
+      display: inline-block;
+      width: 100%;
+      text-align: right; } }
 
 @media (min-width: 750px) {
   .homepage .navbar {

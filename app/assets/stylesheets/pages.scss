@@ -18,6 +18,10 @@ div {
 //   box-shadow: 0px 10px 20px -5px rgba(0,0,0,.8);
 // }
 
-.pages__item__link {
+.pages__item--link {
   color: blue;
+}
+
+a[href^="mailto:"] { 
+  color: red;
 }
