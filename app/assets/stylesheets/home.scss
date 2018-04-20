@@ -1,19 +1,3 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
- @import "bootstrap";
  @import "colors";
 
  * {
@@ -34,52 +18,78 @@
 
 body {
   background-color: $bg-light;
-  font-family: $font-sans
+  font-family: $font-sans;
 }
 
 main {
-  width: 50%;
+  width: 80%;
   max-width: 800px;
   margin: 3em auto; }
 
 .home__grid {
   /* autoprefixer: off */
   display: grid;
-  justify-content: start; }
+  width: 100vw;
+  height: 120vh;
+  justify-content: center;
+  align-content: start;
+  grid-template-columns: 20vmin 5vmin 38vmin 4vmin 38vmin;
+  grid-template-rows: 40vmin 10vmin 23vmin 4vmin 23vmin;
+}
+
+// @media (min-width: 750px){
+// TODO
+//}
+
+.border {
+  border-style: solid;
+  border-width: 1px;
+  border-color: $light-emerald-green;
+}
 
 .home__container {
+  background-color: $school-white;
   display: block; }
 
-  .home__container__menu span {
+  .home__container__event--header{
+    grid-column: 3 / 6;
+    grid-row: 2; }
+
+  .home__container__menu {
+    background-color: green;
     grid-column: 1 / 2;
     grid-row: 1 / 6; }
 
-  .home__container__image span {
+  .home__container__image {
     grid-column: 3 / 6;
     grid-row: 1 / 2; }
 
   .home__container__event {
     display: grid;
-    grid-auto-flow: row;
-    grid-template-columns: 200px 200px;
-    grid-template-rows: 180px 180px;
+    // grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 3 / 6;
+    grid-row: 3 / 6;
     justify-content: space-between; }
 
-  // .home__container__event--1 span {
-  //   grid-column: 3 / 4;
-  //   grid-row: 5 / 6; }
-  //
-  // .home__container__event--2 span {
-  //   grid-column: 5 / 6;
-  //   grid-row: 5 / 6; }
-  //
-  // .home__container__event--3 span {
-  //   grid-column: 3 / 4;
-  //   grid-row: 7 / 8; }
-  //
-  // .home__container__event--4 span {
-  //   grid-column: 5 / 6;
-  //   grid-row: 7 / 8; }
+  .home__container__event__item span {
+    display: block; }
+
+  .home__container__event__item--1 {
+    grid-column: 3 / 4;
+    grid-row: 3 / 4; }
+
+  .home__container__event__item--2 {
+    grid-column: 5 / 6;
+    grid-row: 3 / 4; }
+
+  .home__container__event__item--3 {
+    grid-column: 3 / 4;
+    grid-row: 5 / 6; }
+
+  .home__container__event__item--4 {
+    grid-column: 5 / 6;
+    grid-row: 5 / 6; }
 
 .home__text__event--bold {
   font-weight: bold;
