@@ -322,7 +322,8 @@ Given /^I am a new, signed-in user account$/ do
   name = 'Test User'
   email = 'testeruser@colgate.edu'
   password = 'testpass'
-  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password).save!
+  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password, :confirmed_at => DateTime.new(2018,5,1)).save!
+
 
   visit '/user_account/sign_in'
   fill_in "user_account_email", :with => email

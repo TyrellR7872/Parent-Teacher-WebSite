@@ -10,6 +10,10 @@ class CalendarEvent < ApplicationRecord
     end
   }
 
+  scope :future_event, -> {where('start_date_time >= ?', DateTime.now)}
+
+  scope :approved_upcoming, -> (lim) {approved_confirmed.future_event.order("start_date_time desc").limit(lim)}
+
   scope :find_approved, -> (is_approved) {where("is_approved = ?", is_approved)}
 
   scope :approved_confirmed, -> {find_approved(true)}

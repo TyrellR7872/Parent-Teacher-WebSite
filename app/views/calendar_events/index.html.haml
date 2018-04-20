@@ -31,10 +31,10 @@
 
   = form_tag calendar_events_path, :method => :get do
     = label_tag :start_date_time, "From"
-    = date_field_tag :start_date_time
+    = date_field_tag :start_date_time, @start_date_time
 
     = label_tag :end_date_time, "To"
-    = date_field_tag :end_date_time
+    = date_field_tag :end_date_time, @end_date_time
 
     = submit_tag "Show events"
   %br

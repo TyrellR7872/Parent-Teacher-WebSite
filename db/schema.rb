@@ -10,10 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419174143) do
-
-# Could not dump table "calendar_events" because of following StandardError
-#   Unknown type 'array' for column 'volunteer_list'
 
   create_table "calendar_events_user_accounts", id: false, force: :cascade do |t|
     t.integer "calendar_event_id", null: false
