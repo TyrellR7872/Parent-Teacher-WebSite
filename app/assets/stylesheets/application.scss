@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- @import "bootstrap";
+ // @import "bootstrap";
  @import "colors";
  #warning {
    background-color: red;
@@ -32,28 +32,6 @@
 // over regular CSS
 
 // Text Styling
-h1, h2 {
-  color: $text-color;
-  padding: 30px 0;
-  margin-left: auto;
-  margin-right: auto;
-  font-weight: bold;
-}
-
-h3, h4 {
-  color: $text-color;
-  margin-bottom: 20px;
-  font-weight: bold;
-}
-
-h5 {
-  color: $text-color;
-  font-weight: bold;
-}
-
-p {
-  color: $text-color-light;
-}
 
 .subtitle {
   color: $text-color-light;
@@ -61,7 +39,7 @@ p {
 
 body {
   background-color: $bg-light;
-  font-family: $font
+  font-family: $font-sans
 }
 
 a {
@@ -88,10 +66,10 @@ nav li {
 //   overflow: hidden; }
 
 .navbar {
-  background-color: #fff;
+  // background-color: $light-emerald-green;
   z-index: 4;
   text-align: center;
-  padding: 0 15px;
+  // padding: 0 15px;
   position: relative;
   top: 0;
   left: 0;
@@ -100,26 +78,29 @@ nav li {
     content: " ";
     display: table;
     clear: both; }
+  // @media (min-width: 750px) {
+  //   .navbar {
+  //     position: relative;
+  //     padding: 0 30px; } }
+
+.navbar__header {
+  // background-color: $light-emerald-green; }
+  background-image: linear-gradient(to top right, #008B45	, $light-emerald-green);}
   @media (min-width: 750px) {
-    .navbar {
-      position: relative;
-      padding: 0 30px; } }
+    .navbar__width {
+      margin: 0 auto;
+      max-width: 1180px;
+      // position: relative;
+      // height: 130px;
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+      padding-top: 23px;
+      padding-bottom: 20px; } }
 
-@media (min-width: 750px) {
-  .navbar__width {
-    margin: 0 auto;
-    max-width: 1180px;
-    position: relative;
-    height: 130px;
-    display: inline-block;
-    width: 100%;
-    text-align: left;
-    padding-top: 23px;
-    padding-bottom: 20px; } }
-
-@media (min-width: 1024px) {
-  .navbar__width {
-    padding-top: 20px; } }
+  @media (min-width: 1024px) {
+    .navbar__width {
+      padding-top: 20px; } }
 
 @media (min-width: 750px) {
   .homepage .navbar {
@@ -133,8 +114,27 @@ nav li {
   max-width: 1380px; }
 
 .navbar__logo__word {
-  font-size: 30px;
-  font-weight: 300;
+  padding: 0 30px;
+  color: $school-white;
+  font-family: $font-serif; }
+
+  .navbar__logo__word--small {
+    font-size: 15px;
+    font-weight: 200;
+  }
+
+  .navbar__logo__word--big {
+    font-size: 30px;
+    font-weight: 300;
+  }
+
+.navbar__logo__description {
+  font-size: 15px;
+  font-weight: 100;
+  color: $school-white;
+  font-family: $font-serif;
+  font-style: italic;
+  padding: 15px 0 0 30px;
 }
 
 .navbar__logo-mod {
@@ -184,38 +184,39 @@ nav li {
       display: none; } }
 
 .navbar__navigation {
-  text-align: right;
-  position: absolute;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
   top: 100%;
   right: 0;
   left: 0;
+  width:100%;
+  z-index:5000000;
   max-height: calc(100vh - 75px); }
   .navbar__navigation.navbar__navigation--no-tertiary {
     margin-right: 0; }
   @media (min-width: 750px) {
     .navbar__navigation {
-      background: #fff;
+      max-width: 1180px;
+      // background: #fff;
       overflow: visible;
       display: block;
-      width: auto;
-      position: static;
-      margin-right: 115px;
-      margin-left: 175px; }
-      .navbar__navigation.navbar__navigation--no-tertiary {
-        margin-right: 0; } }
-  @media (min-width: 1024px) {
-    .navbar__navigation {
-      margin-right: 160px;
-      margin-left: 200px; }
-      .navbar__navigation.navbar__navigation--no-tertiary {
-        margin-right: 0; } }
+      width: auto;} }
+
+  .navbar__navigation:before{
+    background-color: $light-emerald-green;
+    bottom:0;
+    position:absolute;
+    top:0;
+    right:0;
+    left:0;
+    z-index:-1}
 
 .navbar__item--primary,
 .navbar__item--secondary {
   display: list-item;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
-  // font-family: "NeueHaas", sans-serif;
   font-size: 16px; }
   @media (min-width: 750px) {
     .navbar__item--primary,
@@ -230,24 +231,23 @@ nav li {
   @media (min-width: 1024px) {
     .navbar__item--primary,
     .navbar__item--secondary {
-      // font-family: "NeueHaas", sans-serif;
       font-size: 16px;
       margin: 0 15px; } }
 
-@media (max-width: 749px) {
-  .navbar--primary,
-  .navbar--secondary,
-  .navbar--tertiary {
-    display: none;
-    width: 100%;
-    opacity: 0;
-    -webkit-transition: opacity 0.1s ease-out;
-    transition: opacity 0.1s ease-out; }
-    .js-mobile-nav-is-open .navbar--primary, .js-mobile-nav-is-open
-    .navbar--secondary, .js-mobile-nav-is-open
-    .navbar--tertiary {
-      display: block;
-      opacity: 1; } }
+// @media (max-width: 749px) {
+//   .navbar--primary,
+//   .navbar--secondary,
+//   .navbar--tertiary {
+//     display: none;
+//     width: 100%;
+//     opacity: 0;
+//     -webkit-transition: opacity 0.1s ease-out;
+//     transition: opacity 0.1s ease-out; }
+//     .js-mobile-nav-is-open .navbar--primary, .js-mobile-nav-is-open
+//     .navbar--secondary, .js-mobile-nav-is-open
+//     .navbar--tertiary {
+//       display: block;
+//       opacity: 1; } }
 
 @media (min-width: 750px) {
   .navbar--primary,
@@ -272,16 +272,15 @@ nav li {
     .navbar--primary {
       background-color: #fff;
       position: relative;
-      margin: 56px -15px 0 0;
+      margin: 0 -15px 0 0;
       font-weight: 600; } }
   @media (min-width: 1024px) {
     .navbar--primary {
-      margin-top: 60px; } }
+      margin-top: 0; } }
 
 .navbar__item--primary {
-  padding: 0;
   margin: 0;
-  background-color: #000;
+  background-color: $light-emerald-green;
   border-bottom: 1px solid #666; }
   .navbar__item--primary:last-child {
     border-bottom: 0; }
@@ -289,6 +288,14 @@ nav li {
     border-bottom: 0; }
   @media (min-width: 750px) {
     .navbar__item--primary {
+      padding: 1 2 1 2;
+      background-color: transparent;
+      position: relative;
+      margin: 0;
+      border-bottom: 0; } }
+  @media (min-width: 1024px) {
+    .navbar__item--primary {
+      padding: 3 12 3 12;
       background-color: transparent;
       position: relative;
       margin: 0;
@@ -316,12 +323,12 @@ nav li {
       .navbar__item__link--expandable,
       .navbar__item--primary:hover
       .navbar__item__link--expandable {
-        background-color: #000;
-        color: #ffffff; } }
-  @media (min-width: 1024px) {
-    .navbar__item__link,
-    .navbar__item__link--expandable {
-      padding: 12px 15px; } }
+        background-color: $light-emerald-green;
+        color: $school-white; } }
+  // @media (min-width: 1024px) {
+  //   .navbar__item__link,
+  //   .navbar__item__link--expandable {
+  //     padding: 12px 15px; } }
 
 .navbar__item__link--primary {
   background-color: #000;

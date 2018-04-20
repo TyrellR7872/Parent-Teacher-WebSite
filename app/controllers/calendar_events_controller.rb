@@ -42,7 +42,7 @@ class CalendarEventsController < ApplicationController
   def update
     id = params[:id].to_i
     @calendar_event = CalendarEvent.find(id)
-    
+
     @calendar_event.update(create_update_params)
     if @calendar_event.save
       flash[:success] = "Event \'#{@calendar_event.title}\' updated"
