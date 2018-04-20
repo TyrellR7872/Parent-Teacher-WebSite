@@ -1,0 +1,31 @@
+#main.container
+
+  .row
+    .col-md-offset-1
+    .col-md-4
+      %h3.header.title= "#{@calendar_event.title}"
+    .col-md-offset-1
+    .col-md-offset-4
+      -# %td.image= image_tag @property.image.url(:medium)
+  .row
+    .col-md-offset-2
+    .col-md-8.date_time= "Start date and time: #{@calendar_event.start_date_time ? @calendar_event.start_date_time.to_formatted_s(:short): "No time indicated"}"
+  .row
+    .col-md-4.contact_person= "#{@calendar_event.contact_person} is the contact person for this event."
+  %h3.header Volunteer List
+  %table.table
+    %thead
+      %tr
+        %th Name
+        %th Email
+    %tbody
+      -@calendar_event.user_accounts.each do |user|
+        %tr.event
+        %td.name=user.name
+        %td.email=user.email
+    %br
+    %br
+
+  .row
+    .col-md-offset-1
+    .col-md-2= link_to('Back to events list', calendar_events_path)

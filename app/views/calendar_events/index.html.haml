@@ -27,7 +27,7 @@
         %td.date=event.end_date_time ? event.end_date: "No date indicated"
         %td.time=event.start_date_time ? event.start_time: "No time indicated"
         %td.time=event.end_date_time ? event.end_time: "No time indicated"
-        %td.volunteer_signup=link_to('Sign_up to volunteer', volunteer_signup_calendar_event_path(event))
+        %td.volunteer_signup=link_to("Sign up for #{event.title} ", volunteer_signup_calendar_event_path(event))
 
   = form_tag calendar_events_path, :method => :get do
     = label_tag :start_date_time, "From"

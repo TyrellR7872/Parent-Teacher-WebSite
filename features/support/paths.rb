@@ -20,7 +20,11 @@ module NavigationHelpers
     when /^the create calendar event page$/
       '/calendar_events/new'
     when /^the edit user account page$/
-      '/user_accounts/3/edit' 
+      '/user_accounts/3/edit'
+    when /^the football page$/
+      '/calendar_events/1'
+    when /^the volunteers list page$/
+      '/calendar_events/1/show_volunteer_list'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #
