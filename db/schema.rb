@@ -10,30 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415232304) do
-  create_table "calendar_events", force: :cascade do |t|
-    t.text "title", null: false
-    t.text "description", null: false
-    t.datetime "start_date_time", null: false
-    t.datetime "end_date_time", null: false
-    t.text "location", null: false
-    t.boolean "is_sport"
-    t.boolean "is_musical"
-    t.boolean "is_meeting"
-    t.boolean "is_charity"
-    t.boolean "is_approved", null: false
-    t.boolean "is_gathering"
-    t.boolean "is_optional"
-    t.boolean "for_teacher"
-    t.boolean "for_parent"
-    t.boolean "for_student"
-    t.boolean "for_family"
-    t.boolean "for_elementary_student"
-    t.boolean "for_highschool_student"
-    t.text "contact_person", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
   create_table "calendar_events_user_accounts", id: false, force: :cascade do |t|
     t.integer "calendar_event_id", null: false
@@ -51,7 +27,6 @@ ActiveRecord::Schema.define(version: 20180415232304) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.integer "calendar_event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "accounttype", default: ""
@@ -59,7 +34,6 @@ ActiveRecord::Schema.define(version: 20180415232304) do
     t.string "childname", default: ""
     t.integer "childgrade"
     t.string "homeaddress", default: ""
-    t.index ["calendar_event_id"], name: "index_user_accounts_on_calendar_event_id"
     t.index ["email"], name: "index_user_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_user_accounts_on_reset_password_token", unique: true
   end
