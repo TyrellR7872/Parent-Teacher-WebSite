@@ -75,7 +75,7 @@ class CalendarEventsController < ApplicationController
     #  redirect_to calendar_event_path
     end
   end
-  
+
   def show_volunteer_list
     @calendar_event =  CalendarEvent.find(params[:id])
     if current_user_account.nil?
@@ -95,6 +95,7 @@ class CalendarEventsController < ApplicationController
     redirect_to calendar_events_path
   end
 
+  private
   def create_update_params
     params.require(:calendar_event).permit(:title, :start_date_time, :end_date_time, :location, :description, :is_sport, :is_musical, :is_meeting, :is_charity, :is_gathering, :is_optional, :for_teacher, :for_parent, :for_elementary_student, :for_highschool_student, :contact_person, :is_approved)
   end
