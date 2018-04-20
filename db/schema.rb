@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20180415232304) do
-
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false
     t.text "description", null: false
@@ -36,6 +35,11 @@ ActiveRecord::Schema.define(version: 20180415232304) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "calendar_events_user_accounts", id: false, force: :cascade do |t|
+    t.integer "calendar_event_id", null: false
+    t.integer "user_account_id", null: false
+  end
+
   create_table "user_accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -47,10 +51,7 @@ ActiveRecord::Schema.define(version: 20180415232304) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
-    t.string "confirmation_token"
-    t.datetime "confirmed_at"
-    t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
+    t.integer "calendar_event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "accounttype", default: ""
@@ -58,6 +59,7 @@ ActiveRecord::Schema.define(version: 20180415232304) do
     t.string "childname", default: ""
     t.integer "childgrade"
     t.string "homeaddress", default: ""
+    t.index ["calendar_event_id"], name: "index_user_accounts_on_calendar_event_id"
     t.index ["email"], name: "index_user_accounts_on_email", unique: true
     t.index ["reset_password_token"], name: "index_user_accounts_on_reset_password_token", unique: true
   end

@@ -25,7 +25,10 @@ module NavigationHelpers
       '/user_accounts'
     when /^the sign in page$/
       '/user_account/sign_in' 
-
+    when /^the football page$/
+      '/calendar_events/1'
+    when /^the volunteers list page$/
+      '/calendar_events/1/show_volunteer_list'
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

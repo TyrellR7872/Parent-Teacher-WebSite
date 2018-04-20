@@ -21,7 +21,7 @@ describe "show page", type: :feature do
 
   it "should have a link to go back to the event index page" do
     click_link("harry potter")
-    expect(page).to have_link("Back to event list")
+    expect(page).to have_link("Back to events list")
   end
 
   it "should have a link to edit the event" do

@@ -32,8 +32,8 @@ class DeviseCreateUserAccounts < ActiveRecord::Migration[5.1]
       # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
-
-
+      # Lumi: added a reference to calendar_event
+      t.references :calendar_event
       t.timestamps null: false
     end
 

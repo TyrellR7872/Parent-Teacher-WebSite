@@ -27,5 +27,5 @@ Feature: Update a calendar event
     And I should see "Dana Arts"
     And I should not see "Ho, Hamilton, NY"
     And I should see "02 Jul 22:00"
-    When I follow "Back to event list"
+    When I follow "Back to events list"
     And I should see that "jazz concert" has a datetime of "2018/02/07 10:00 PM"
