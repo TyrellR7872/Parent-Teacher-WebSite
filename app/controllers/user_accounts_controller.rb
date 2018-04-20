@@ -6,6 +6,10 @@ class UserAccountsController < ApplicationController
       redirect_to new_user_account_session_path and return
     end
     @members = UserAccount.filter_on_constraints(constraints)
+    @tograde = params[:tograde] || ""
+    @fromgrade = params[:fromgrade] || ""
+    @name = params[:name] || ""
+    @account_type = params[:accounttype] || ""
   end
 
   def show
@@ -20,7 +24,8 @@ class UserAccountsController < ApplicationController
       UserMailer.new_message(user, email_details).deliver
     end
     flash[:notice] = "Message sent to the following users"
-    redirect_to user_accounts_path(:accounttype => params[:accounttype], :name => params[:name], :fromgrade => params[:fromgrade], :tograde => params[:tograde]) and return
+    redirect_to user_accounts_path(:accounttype => params[:accounttype], :name => params[:name], :fromgrade => params[:fromgrade],
+      :tograde => params[:tograde], :subject => params[:subject], :body => params[:body]) and return
   end
 
   private
@@ -42,6 +47,7 @@ class UserAccountsController < ApplicationController
     hash[:from] = current_user_account.name
     hash
   end
+
 
 
 end

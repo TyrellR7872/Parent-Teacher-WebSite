@@ -5,9 +5,9 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
   Background: the website has already has existing accounts
     Given these UserAccounts:
-    | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
-    | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
-    | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
+    | password  | email                | accounttype| name            | childname       | childgrade| homeaddress | remember_created_at |
+    | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   | DateTime.beginning_of_day |
+    | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   | DateTime.beginning_of_day |
 
   Scenario: Create a new user account with success
     Given I am on the new user account registration page
