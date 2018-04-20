@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20180419174143) do
+=======
+ActiveRecord::Schema.define(version: 20180415232304) do
+>>>>>>> master
 
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false

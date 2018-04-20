@@ -15,19 +15,19 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
       |Name|Joel Sommers|
       | Email|jsommers@colgate.edu|
       | Password|cosc123|
-      |Password confirmation|cosc123|
+      |Password Confirmation|cosc123|
 
     And I press "Sign up"
     Then I should be on the root page
     And I should see "Welcome! You have signed up successfully."
     When I follow "Hello, Joel Sommers"
-    And I follow "Edit profile details"
+    And I follow "Edit Profile Details"
     And I should see "Edit User account"
     And I fill in the following:
-      | Childname |Annie        |
-      | Childgrade |4            |
-      | Homeaddress  |14 Oak Dr     |
-      |Current password|cosc123|
+      | Child's Name |Annie        |
+      | Child's Grade |4            |
+      | Home Address  |14 Oak Dr     |
+      |Current Password|cosc123|
 
     And press "Update details"
     Then I should be on the root page
@@ -43,7 +43,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
       |Name|Michael Hay|
       | Email|mhay@colgate.edu|
       | Password|cosc|
-      |Password confirmation|cosc1|
+      |Password Confirmation|cosc1|
 
     And I press "Sign up"
     Then I should be on the user account registration page
@@ -55,7 +55,7 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
       |Name|Michael Hay|
       | Email||
       | Password|cosc|
-      |Password confirmation|cosc|
+      |Password Confirmation|cosc|
 
     When I press "Sign up"
     Then I should be on the user account registration page

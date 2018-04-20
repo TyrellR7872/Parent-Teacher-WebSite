@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   end
   root "home#index"
 
-  resources :user_accounts
+  resources :user_accounts do
+    collection do
+      get "email"
+    end
+  end
   root "user_accounts#new"
 
   # render static pages

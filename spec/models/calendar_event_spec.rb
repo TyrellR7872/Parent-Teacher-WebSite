@@ -50,8 +50,50 @@ RSpec.describe CalendarEvent, type: :model do
     end
 
     it "should fail to create a CalendarEvent object if the title is not specified" do
-        expect {
-            CalendarEvent.create!(description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5.4), end_date_time: DateTime.new(2018,9,5.6), is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")}.to raise_exception ActiveRecord::NotNullViolation
+      expect {
+        CalendarEvent.create!(description: "Gibberish nonsensical text", location: "Huntington Gym", start_date_time: DateTime.new(2018,9,5.4), end_date_time: DateTime.new(2018,9,5.6), is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      }.to raise_exception ActiveRecord::NotNullViolation
     end
   end
+
+  # TODO Need to add test for the new scope
+  describe "check scope in CalendarEvent" do
+    before(:example) do
+      CalendarEvent.create!(title: "harry potter", description: "expelliarmust", start_date_time: DateTime.new(2017,9,5.3), end_date_time: DateTime.new(2017,9,5.6), location: "The Dudley's", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "voldermort", description: "AVADA KEDABRA", start_date_time: DateTime.new(2018,10,5.3), end_date_time: DateTime.new(2018,10,5.6), location: "under the bridge", is_sport: true, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "dumbledore", description: "i don't have time Severus", start_date_time: DateTime.new(2018,10,5.3), end_date_time: DateTime.new(2018,10,5.6), location: "hogwarts", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "severus snape", description: "After all this time? Always.", start_date_time: DateTime.new(2018,10,5.3), end_date_time: DateTime.new(2018,10,5.6), location: "in the pensieve", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "dummy 1", description: "namnamnamanmanamanam", start_date_time: DateTime.new(2019,10,5.3), end_date_time: DateTime.new(2019,10,5.6), location: "dummy dummy", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "dummy 2", description: "namnamnamanmanamanam", start_date_time: DateTime.new(2019,10,5.3), end_date_time: DateTime.new(2019,10,5.6), location: "dummy dummy", is_sport: false, is_approved: false, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "dummy 3", description: "namnamnamanmanamanam", start_date_time: DateTime.new(2019,10,5.3), end_date_time: DateTime.new(2019,10,5.6), location: "dummy dummy", is_sport: false, is_approved: false, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "dummy 4", description: "namnamnamanmanamanam", start_date_time: DateTime.new(2019,12,5.3), end_date_time: DateTime.new(2019,12,5.6), location: "dummy dummy", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+      CalendarEvent.create!(title: "dummy 5", description: "namnamnamanmanamanam", start_date_time: DateTime.new(2014,12,5.3), end_date_time: DateTime.new(2014,12,5.6), location: "dummy dummy", is_sport: false, is_approved: true, contact_person: "hnguyenvu@colgate.edu")
+    end
+
+    it "should return the correct number of approved_pending events" do
+      event = CalendarEvent.approved_pending
+      expect(event.length).to eq(2)
+    end
+
+    it "should return the correct number of approved_confirmed events" do
+      event = CalendarEvent.approved_confirmed
+      expect(event.length).to eq(7)
+    end
+
+    it "should return the correct number of future_event events" do
+      allow(DateTime).to receive(:now).and_return(DateTime.new(2018,9,5))
+      event = CalendarEvent.future_event
+      expect(event.length).to eq(7)
+    end
+
+    it "should return the correct number of approved_upcoming events" do
+      allow(DateTime).to receive(:now).and_return(DateTime.new(2018,9,5))
+      event = CalendarEvent.approved_upcoming(5)
+      expect(event.length).to eq(5)
+      allow(DateTime).to receive(:now).and_return(DateTime.new(2019,9,5))
+      event = CalendarEvent.approved_upcoming(5)
+      expect(event.length).to eq(2)
+    end
+  end
+
 end
