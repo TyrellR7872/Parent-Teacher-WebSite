@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :calendar_events do
     member do
       get 'volunteer_signup'
+      get 'show_volunteer_list'
     end
   end
   root "home#index"

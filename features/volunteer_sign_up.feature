@@ -11,7 +11,16 @@ I want to access a Volunteer Sign Up form from the description of the calendar e
       | game night   | play some games           | 2018/07/02 12:00 PM       | 2018/10/02 12:00 PM       | Ho, Hamilton, NY        |          | true       | ajamil@colgate.edu   | true        |
 
   Scenario: Successfully signed up for an event
-    Given I am on the calendar_events page
-    When I press "Sign up" for "football"
-    Then I should be on the calendar events page
-    And I should see "Successfully signed up to volunteer"
+    Given I am a new, signed-in user account
+    And I am on the calendar events page
+    When I follow "Sign up for football"
+    Then I should be on the football page
+    And I should see "football"
+    And I should not see "jazz concert"
+    And I should see "You have signed up to volunteer for 'football'. Event will take place on 2018-03-02 12:00:00 UTC."
+
+  Scenario: Failed to signed up for an event
+    Given I am on the calendar events page
+    When I follow "Sign up for football"
+    Then I should be on the football page
+    And I should see "You need to sign in to volunteer"
