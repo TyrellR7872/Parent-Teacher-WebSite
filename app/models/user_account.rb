@@ -1,13 +1,24 @@
 class UserAccount < ApplicationRecord
-  validates :username, presence: {message: "Must be given"}, length: {minimum: 5}
-  validates :password, confirmation: true, on: new, length: {minimum: 6}
-  validates :email, presence: {message: "Must be given"}
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+  validates_format_of :email, :with => /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
 
-
-  def self.fill_user(user)
-    user.childname = ""
-    user.childgrade = 0
-    user.homeaddress = ""
-    user
+  def self.filter_on_constraints(constraints)
+    filtered = UserAccount.all
+    constraints.each_pair do |sym, val|
+      if sym == :name
+        filtered = UserAccount.where("name LIKE ?", "%#{val}%")
+      elsif sym == :accounttype
+        filtered = UserAccount.where("accounttype == ?", val)
+      elsif sym == :fromgrade
+        filtered = UserAccount.where("childgrade >= ?", val)
+      elsif sym == :tograde
+        filtered = UserAccount.where("childgrade <= ?", val)
+      end
+    end
+    filtered
   end
+
 end

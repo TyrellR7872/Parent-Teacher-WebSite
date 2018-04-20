@@ -5,57 +5,58 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
   Background: the website has already has existing accounts
     Given these UserAccounts:
-    | username  | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
-    | ty_rell   | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
-    | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
+    | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
+    | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
+    | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
 
   Scenario: Create a new user account with success
-    Given I am on the new user account page
+    Given I am on the new user account registration page
     When I fill in the following:
-      | Username|JSomm|
-      |Full Name|Joel Sommers|
-      | Password|cosc|
-      |Confirm Password|cosc|
+      |Name|Joel Sommers|
       | Email|jsommers@colgate.edu|
+      | Password|cosc123|
+      |Password Confirmation|cosc123|
 
-    When I press "Create User Account"
-    Then I should be on the user accounts page
-    And I should see "User Account 'JSomm'" Successfully Created
-    And I should see that user "JSomm" has name of "Joel Sommers"
-    When I follow "Edit profile details"
+    And I press "Sign up"
+    Then I should be on the root page
+    And I should see "Welcome! You have signed up successfully."
+    When I follow "Hello, Joel Sommers"
+    And I follow "Edit Profile Details"
+    And I should see "Edit User account"
     And I fill in the following:
-      | Child's Name  |Annie        |
+      | Child's Name |Annie        |
       | Child's Grade |4            |
-      | Address  |14 Oak Dr     |
+      | Home Address  |14 Oak Dr     |
+      |Current Password|cosc123|
 
-    And press "Update Profile"
-    Then I should be on the user accounts page
-    And I should see "Joel Sommers"
+    And press "Update details"
+    Then I should be on the root page
+    When I follow "Hello, Joel Sommers"
+    Then I should see "Joel Sommers"
     And I should see "Annie"
     And I should see "4"
     And I should see "14 Oak Dr"
 
   Scenario: Create a new user account with unequal password
-    Given I am on the new user account page
+    Given I am on the new user account registration page
     When I fill in the following:
-      | Username|HayM|
-      |Full Name|Michael Hay|
-      | Password|cosc|
-      |Confirm Password|cosc1|
+      |Name|Michael Hay|
       | Email|mhay@colgate.edu|
+      | Password|cosc|
+      |Password Confirmation|cosc1|
 
-    When I press "Create User Account"
-    Then I should be on the new user account page
-    Then I should see "Passwords are not equal"
+    And I press "Sign up"
+    Then I should be on the user account registration page
+    Then I should see "Password confirmation doesn't match Password"
 
   Scenario: Create a new user account with creation failed
-    Given I am on the new user account page
+    Given I am on the new user account registration page
     When I fill in the following:
-      | Username|HayM|
-      |Full Name|Michael Hay|
-      | Password|cosc|
-      |Confirm Password|cosc|
+      |Name|Michael Hay|
       | Email||
-    When I press "Create User Account"
-    Then I should be on the new user account page
-    Then I should see "User Account 'HayM' Creation Failed"
+      | Password|cosc|
+      |Password Confirmation|cosc|
+
+    When I press "Sign up"
+    Then I should be on the user account registration page
+    Then I should see "Email can't be blank"
