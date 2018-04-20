@@ -67,7 +67,7 @@ class CalendarEventsController < ApplicationController
     else
       @new_volunteer = UserAccount.find(current_user_account.id)
       @calendar_event =  CalendarEvent.find(params[:id])
-      @calendar_event.user_accounts<<@new_volunteer
+      @calendar_event.user_accounts << @new_volunteer
       flash[:notice] = "You have signed up to volunteer for \'#{@calendar_event.title}\'. Event will take place on #{@calendar_event.start_date_time}."
       redirect_to calendar_event_path(@calendar_event)
     #else
@@ -75,6 +75,7 @@ class CalendarEventsController < ApplicationController
     #  redirect_to calendar_event_path
     end
   end
+  
   def show_volunteer_list
     @calendar_event =  CalendarEvent.find(params[:id])
     if current_user_account.nil?

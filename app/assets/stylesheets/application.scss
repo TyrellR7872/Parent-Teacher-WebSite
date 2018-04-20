@@ -66,10 +66,8 @@ nav li {
 //   overflow: hidden; }
 
 .navbar {
-  // background-color: $light-emerald-green;
   z-index: 4;
   text-align: center;
-  // padding: 0 15px;
   position: relative;
   top: 0;
   left: 0;
@@ -90,8 +88,6 @@ nav li {
     .navbar__width {
       margin: 0 auto;
       max-width: 1180px;
-      // position: relative;
-      // height: 130px;
       display: inline-block;
       width: 100%;
       text-align: left;
@@ -166,7 +162,6 @@ nav li {
           box-shadow: none;
   border-radius: 0;
   -webkit-appearance: none;
-  // font-family: "NeueHaas", sans-serif;
   font-size: 15px;
   font-weight: 600;
   position: absolute;

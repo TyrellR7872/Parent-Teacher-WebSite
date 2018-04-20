@@ -10,7 +10,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415232304) do
+ActiveRecord::Schema.define(version: 20180419174143) do
+
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false
     t.text "description", null: false
@@ -51,6 +52,10 @@ ActiveRecord::Schema.define(version: 20180415232304) do
     t.datetime "last_sign_in_at"
     t.string "current_sign_in_ip"
     t.string "last_sign_in_ip"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
     t.integer "calendar_event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
