@@ -27,6 +27,9 @@ Feature: Create a Calendar events
     And I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05"
     And I should see "football"
     And I should see "jazz concert"
+    And I should see that "football" has an image "default_image.png"
+    And I should see that "jazz concert" has an image "default_image.png"
+
 
   Scenario: Create a new calendar event with a status of not yet approved
     Given I am on the create calendar event page
