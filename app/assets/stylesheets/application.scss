@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
- // @import "bootstrap";
+ @import "bootstrap";
  @import "colors";
  #warning {
    background-color: red;
@@ -236,21 +236,6 @@ nav li {
       font-size: 16px;
       margin: 0 15px; } }
 
-// @media (max-width: 749px) {
-//   .navbar--primary,
-//   .navbar--secondary,
-//   .navbar--tertiary {
-//     display: none;
-//     width: 100%;
-//     opacity: 0;
-//     -webkit-transition: opacity 0.1s ease-out;
-//     transition: opacity 0.1s ease-out; }
-//     .js-mobile-nav-is-open .navbar--primary, .js-mobile-nav-is-open
-//     .navbar--secondary, .js-mobile-nav-is-open
-//     .navbar--tertiary {
-//       display: block;
-//       opacity: 1; } }
-
 @media (min-width: 750px) {
   .navbar--primary,
   .navbar--secondary,
@@ -327,10 +312,6 @@ nav li {
       .navbar__item__link--expandable {
         background-color: $light-emerald-green;
         color: $school-white; } }
-  // @media (min-width: 1024px) {
-  //   .navbar__item__link,
-  //   .navbar__item__link--expandable {
-  //     padding: 12px 15px; } }
 
 .navbar__item__link--primary {
   background-color: #000;

@@ -47,7 +47,5 @@ class UserAccountsController < ApplicationController
     hash[:from] = current_user_account.name
     hash
   end
-
-
-
+  
 end

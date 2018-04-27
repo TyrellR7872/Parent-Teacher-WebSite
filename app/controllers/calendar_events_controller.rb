@@ -21,7 +21,6 @@ class CalendarEventsController < ApplicationController
     @calendar_event = CalendarEvent.new(create_update_params)
     @calendar_event.start_date_time = @calendar_event.start_date_time.to_formatted_s(:short)
     @calendar_event.end_date_time = @calendar_event.end_date_time.to_formatted_s(:short)
-    # is_approved = @calendar_event.is_approved
     if @calendar_event.save
       if @calendar_event.is_approved
         flash[:success] = "New event \'#{@calendar_event.title}\' created and added to the page"
@@ -70,9 +69,6 @@ class CalendarEventsController < ApplicationController
       @calendar_event.user_accounts << @new_volunteer
       flash[:notice] = "You have signed up to volunteer for \'#{@calendar_event.title}\'. Event will take place on #{@calendar_event.start_date_time}."
       redirect_to calendar_event_path(@calendar_event)
-    #else
-    #  flash[:error] = "You need to sign in to volunteer"
-    #  redirect_to calendar_event_path
     end
   end
 
@@ -82,8 +78,7 @@ class CalendarEventsController < ApplicationController
       flash[:error] = "You need to sign in to see the volunteer list"
       redirect_to calendar_event_path(@calendar_event)
     else
-      #@calendar_event =  CalendarEvent.find(params[:id])
-      #render show_volunteer_list_calendar_event_path
+      # TODO add in case to handle volunteer
     end
   end
 

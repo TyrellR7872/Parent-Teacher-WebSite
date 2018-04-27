@@ -20,7 +20,6 @@ class CalendarEvent < ApplicationRecord
 
   scope :approved_pending, -> {find_approved(false)}
 
-
   def start_date
     self.start_date_time.to_date
   end
