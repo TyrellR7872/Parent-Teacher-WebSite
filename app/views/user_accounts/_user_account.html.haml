@@ -1,0 +1,13 @@
+%h1.header= "Account Details for #{@user_account.name}"
+
+%table.useraccount
+  %tr
+    .user= "Email: "+@user_account.email
+  %tr
+    .user= "Name: "+@user_account.name
+  %tr
+    .user= "Child's Name: "+@user_account.childname.to_s
+    - @user_account.childgrade == 0 ? childgrade = "" : childgrade =  @user_account.childgrade
+    .user= "Child's Grade: "+childgrade.to_s
+  %tr
+    .user= "Address: "+@user_account.homeaddress.to_s

@@ -3,15 +3,6 @@ class UserAccounts::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
 
 
-  # DELETE /resource
-  def destroy
-    @user_account = UserAccount.find(current_user_account.id)
-    if @user_account.delete
-      flash[:notice] = "User Account Successfully Deleted"
-      redirect_to root_path
-    end
-  end
-
   def configure_sign_up_params
     attrs = [:name,:childname,:childgrade, :homeaddress]
     devise_parameter_sanitizer.permit(:sign_up, keys: attrs)

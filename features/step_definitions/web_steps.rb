@@ -318,11 +318,12 @@ end
 # FOR SIGN IN/OUT
 ###############################
 
-Given /^I am a new, signed-in user account$/ do
+Given /^I am a new, signed-in user account(?:| with admin)$/ do
   name = 'Test User'
   email = 'testeruser@colgate.edu'
   password = 'testpass'
-  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password, :confirmed_at => DateTime.new(2018,5,1)).save!
+  admin = $1 == " with admin"? true : false
+  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password, :admin => admin, :confirmed_at => DateTime.new(2018,5,1)).save!
 
 
   visit '/user_account/sign_in'

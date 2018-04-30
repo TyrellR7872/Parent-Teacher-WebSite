@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :user_accounts do
     collection do
       get "email"
+      get ':id', to: 'user_accounts#show_user', as: 'show_user'
     end
   end
   root "user_accounts#new"
@@ -21,6 +22,9 @@ Rails.application.routes.draw do
   controller :pages do
     get ':id', to: 'pages#show', as: 'pages'
   end
+
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
