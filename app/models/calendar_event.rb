@@ -1,6 +1,6 @@
 class CalendarEvent < ApplicationRecord
   has_and_belongs_to_many :user_accounts
-  has_attached_file :image, :styles=> {:medium => "300x300>", :thumb => "100x100>" }, :default_url => "noimg.png"
+  has_attached_file :image, :styles => {:medium => "300x300>", :thumb => "100x100>" }, :default_url => "noimg.png"
 validates_attachment :image, :content_type => {:content_type => ["image/jpeg", "image/png", "image/gif"]}
 
 

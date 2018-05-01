@@ -6,9 +6,5 @@
   =form_for @calendar_event, :method => :patch do |f|
     =render 'event_form_template', f: f
 
-    -# .field
-    -#   =f.label :image, "Image"
-    -#   =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
-
     .field
       =f.submit "Update event details"
