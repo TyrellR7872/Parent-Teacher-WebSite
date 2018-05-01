@@ -6,7 +6,6 @@
       %h3.header.title= "#{@calendar_event.title}"
     .col-md-offset-1
     .col-md-offset-4
-      %td.image= image_tag @property.image.url(:medium)
   .row
     .col-md-offset-2
     .col-md-8.date_time= "Start date and time: #{@calendar_event.start_date_time ? @calendar_event.start_date_time.to_formatted_s(:short): "No time indicated"}"
