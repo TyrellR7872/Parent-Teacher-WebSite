@@ -6,10 +6,13 @@ class UserAccounts::RegistrationsController < Devise::RegistrationsController
   # DELETE /resource
   def destroy
     @user_account = UserAccount.find(current_user_account.id)
-    if @user_account.delete
-      flash[:notice] = "User Account Successfully Deleted"
-      redirect_to root_path
-    end
+      if @user_account.destroy_with_password(params[:current_password])
+        flash[:notice] = "User Account Successfully Deleted"
+        redirect_to root_path
+      else
+         flash[:warning] = "Please Enter Correct Account Password to Delete Account"
+      end
+
   end
 
   def configure_sign_up_params

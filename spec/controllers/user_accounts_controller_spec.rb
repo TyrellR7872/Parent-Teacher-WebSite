@@ -19,7 +19,7 @@ RSpec.describe UserAccountsController, type: :controller do
     login_user
 
     it "should have a current_user" do
-      # note the fact that you should remove the "validate_session" parameter if this was a     scaffold-generated controller
+      # note the fact that you should remove the "validate_session" parameter if this was a scaffold-generated controller
       expect(subject.current_user_account).to_not eq(nil)
     end
 
@@ -30,6 +30,16 @@ RSpec.describe UserAccountsController, type: :controller do
       expect(response).to have_http_status(:success)
     end
 
+
+  end
+
+  describe "DELETE #destroy" do
+    login_user
+    # UserAccounts::RegistrationsController#destroy
+    it "should delete a user account successfully with click and password confirmation" do
+      expect(UserAccount).to receive(:delete).with(subject.current_user_account.id).and_return(subject.current_user_account)
+      get :delete, :params => {:id => subject.current_user_account.id, :current_password => subject.current_user_account.password_confirmation}
+    end
 
   end
 
