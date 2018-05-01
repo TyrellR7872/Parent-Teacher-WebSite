@@ -61,10 +61,6 @@ nav li {
  * Adapted from the MIT Technology Review CSS
  */
 
-// .site-content {
-//   background-color: #fff;
-//   overflow: hidden; }
-
 .navbar {
   z-index: 4;
   text-align: center;
@@ -79,7 +75,6 @@ nav li {
 
 
 .navbar__header {
-  // background-color: $light-emerald-green; }
   background-image: linear-gradient(to top right, #008B45	, $light-emerald-green);}
   @media (min-width: 750px) {
     .navbar__width {
