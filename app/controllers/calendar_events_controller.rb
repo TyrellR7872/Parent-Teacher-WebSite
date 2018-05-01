@@ -1,4 +1,4 @@
-require 'date' # or is it datetime?
+require 'date'
 
 class CalendarEventsController < ApplicationController
 
@@ -92,7 +92,7 @@ class CalendarEventsController < ApplicationController
 
   private
   def create_update_params
-    params.require(:calendar_event).permit(:title, :start_date_time, :end_date_time, :location, :description, :is_sport, :is_musical, :is_meeting, :is_charity, :is_gathering, :is_optional, :for_teacher, :for_parent, :for_elementary_student, :for_highschool_student, :contact_person, :is_approved)
+    params.require(:calendar_event).permit(:title, :start_date_time, :end_date_time, :location, :description, :is_sport, :is_musical, :is_meeting, :is_charity, :is_gathering, :is_optional, :for_teacher, :for_parent, :for_elementary_student, :for_highschool_student, :contact_person, :is_approved, :image)
   end
 
 end

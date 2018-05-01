@@ -295,8 +295,9 @@ Then /^(?:|I )should see the image "([^"]*)"$/ do |image_name|
   expect(page).to have_xpath("//img[contains(@src, \"#{image_name}\")]")
 end
 
-When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
-  attach_file(field, File.expand_path('app/assets/images/' + path))
+When /^(?:|I )attach the image "([^"]*)" to "([^"]*)"$/ do |path, field|
+  path = 'app/assets/images/' + path
+  attach_file(field, File.expand_path(path))
 end
 
 ###############################

@@ -16,12 +16,9 @@ gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 gem "paperclip"
-gem 'icalendar', '~> 2.2.2' # for exporting ics phone calendar
+# gem 'icalendar', '~> 2.2.2' # for exporting ics phone calendar
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
-# 04/11/18: Nam: using pg for production only. Change back to sqlite3 for test and dev
-# gem 'pg'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

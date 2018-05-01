@@ -27,8 +27,10 @@ Feature: Create a Calendar events
     And I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05"
     And I should see "football"
     And I should see "jazz concert"
-    And I should see that "football" has an image "default_image.png"
-    And I should see that "jazz concert" has an image "default_image.png"
+    When I follow "jazz concert"
+    Then I should see "jazz concert"
+    And I should see "come and chill with music"
+    And I should see the image "default_image_event"
 
 
   Scenario: Create a new calendar event with a status of not yet approved
@@ -60,9 +62,11 @@ Feature: Create a Calendar events
     | Contact person email     |  hnguyenvu@colgate.edu |
     | Is this event approved?  | true |
 
+    When I attach the image "lady_gaga.png" to "Image"
     When I press "Create event"
-    When I attach the file "lady_gaga.png" to "Image"
     Then I should be on the calendar events page
     And I should see "New event 'church dinner' created and added to the page"
     And I should see "free dinner for hungry students"
-    And I should see that "church dinner" has an image "lady_gaga.png"
+    When I follow "church dinner"
+    Then I should see "church dinner"
+    And I should see the image "lady_gaga"
