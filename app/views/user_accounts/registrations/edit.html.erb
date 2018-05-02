@@ -8,7 +8,13 @@
     <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true %>
   </div>
 
-  <div class="field">
+  <%= f.fields_for :children do |kid| %>
+    <%= f.association :childname, "Child's name"%>
+    <%= f.text_field :childname, autofocus: true, autocomplete: "Child's name" %>
+    <%= f.association :childgrade, "Child's Grade"%>
+    <%= f.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
+  <% end %>
+  <!-- <div class="field">
     <%= f.label :childname, "Child's Name" %><br />
     <%= f.text_field :childname, autofocus: true, autocomplete: "Child's name" %>
   </div>
@@ -16,7 +22,7 @@
   <div class="field">
     <%= f.label :childgrade, "Child's Grade" %><br />
     <%= f.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
-  </div>
+  </div> -->
 
   <div class="field">
     <%= f.label :homeaddress, "Home Address"%><br />

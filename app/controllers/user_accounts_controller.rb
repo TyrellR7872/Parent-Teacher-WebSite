@@ -17,7 +17,6 @@ class UserAccountsController < ApplicationController
       @user_account = UserAccount.find(current_user_account.id)
     end
   end
-
   def email
     members = UserAccount.filter_on_constraints(constraints)
     members.each do |user|

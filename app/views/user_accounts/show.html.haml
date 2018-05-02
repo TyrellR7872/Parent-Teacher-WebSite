@@ -7,9 +7,15 @@
     %tr
       .user= "Name: "+@user_account.name
     %tr
-      .user= "Child's Name: "+@user_account.childname.to_s
-      - @user_account.childgrade == 0 ? childgrade = "" : childgrade =  @user_account.childgrade
-      .user= "Child's Grade: "+childgrade.to_s
+      -@user_account.children.any? do |c|
+        .user= "Child's Name: "+ c.to_s
+        - c.childgrade == 0 ? childgrade = "" : childgrade =  c.childgrade
+        .user= "Child's Grade: "+ childgrade.to_s
+    %tr
+      .user="Children"+ @user_account.children.any?.to_s
+    -#   .user= "Child's Name: "+ @child.childname.to_s
+    -#   - @child.childgrade == 0 ? childgrade = "" : childgrade =  @child.childgrade
+    -#   .user= "Child's Grade: "+childgrade.to_s
     %tr
       .user= "Address: "+@user_account.homeaddress.to_s
 
