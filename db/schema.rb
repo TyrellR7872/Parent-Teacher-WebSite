@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180429225436) do
+ActiveRecord::Schema.define(version: 20180502020106) do
 
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false
@@ -39,6 +39,21 @@ ActiveRecord::Schema.define(version: 20180429225436) do
   create_table "calendar_events_user_accounts", id: false, force: :cascade do |t|
     t.integer "calendar_event_id", null: false
     t.integer "user_account_id", null: false
+  end
+
+  create_table "requests", force: :cascade do |t|
+    t.string "requesttype"
+    t.string "projectname"
+    t.string "accounttype"
+    t.text "description"
+    t.string "datesubmit"
+    t.string "datemailed"
+    t.decimal "price", precision: 10, scale: 2
+    t.string "attachments"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_account_id"
+    t.index ["user_account_id"], name: "index_requests_on_user_account_id"
   end
 
   create_table "user_accounts", force: :cascade do |t|

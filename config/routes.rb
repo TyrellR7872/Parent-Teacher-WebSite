@@ -23,6 +23,8 @@ Rails.application.routes.draw do
     get ':id', to: 'pages#show', as: 'pages'
   end
 
+  resources :requests
+
 
 
 
