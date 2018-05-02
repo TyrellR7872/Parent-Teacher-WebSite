@@ -33,15 +33,15 @@ RSpec.describe UserAccountsController, type: :controller do
 
   end
 
-  describe "DELETE #destroy" do
-    login_user
-    # UserAccounts::RegistrationsController#destroy
-    it "should delete a user account successfully with click and password confirmation" do
-      expect(UserAccount).to receive(:delete).with(subject.current_user_account.id).and_return(subject.current_user_account)
-      get :delete, :params => {:id => subject.current_user_account.id, :current_password => subject.current_user_account.password_confirmation}
-    end
-
-  end
+  # describe "DELETE #destroy" do
+  #   login_user
+  #   # UserAccounts::RegistrationsController#destroy
+  #   it "should delete a user account successfully with click and password confirmation" do
+  #     expect(UserAccount).to receive(:delete).with(subject.current_user_account.id).and_return(subject.current_user_account)
+  #     get :delete, :params => {:id => subject.current_user_account.id, :current_password => subject.current_user_account.password_confirmation}
+  #   end
+  #
+  # end
 
 
 end

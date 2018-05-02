@@ -19,15 +19,15 @@ Feature: Delete a user account
     Then I should see "Account Details for Joel Sommers"
     When I follow "Edit Profile Details"
     And I press "Delete User Account"
-    Then I should see "Please Enter Correct Account Password Needed to Delete Account"
-    And I should see "Account Details for Joel Sommers"
+    Then I should see "Please Enter Correct Account Password to Delete Account"
+    And I should see "Hello, Joel Sommers"
 
   Scenario: Delete a user account with password confirmation
     Given I am on the root page
     When I follow "Hello, Joel Sommers"
     Then I should see "Account Details for Joel Sommers"
     When I follow "Edit Profile Details"
-    And I fill in "Current Password" with "cosc123"
+    And I fill in "Password" with "cosc123"
     And I press "Delete User Account"
     Then I should be on the root page
     And I should see "User Account Successfully Deleted"
