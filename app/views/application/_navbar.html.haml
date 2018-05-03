@@ -4,7 +4,7 @@
 
 %nav.navbar.navbar-expand.navbar-dark.flex-column.flex-md-row.bg-emerald.fixed-top
   = link_to "HCS-PTO", root_path, :class => "navbar-brand mr-0 mr-md-2"
-  %div.navbar-nav-scroll.mr-auto
+  %div.navbar-nav-scroll
     %ul.navbar-nav
       %li.nav-item
         =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
@@ -14,7 +14,7 @@
         =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'nav-link'
       %li.nav-item
         =link_to "About", pages_path(:about), :class => 'nav-link'
-  %ul.navbar-nav
+  %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
     -if !current_user_account.nil?
       %li.nav-item
         =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'nav-link p-2'

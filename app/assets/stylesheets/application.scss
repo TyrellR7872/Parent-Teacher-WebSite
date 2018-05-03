@@ -14,6 +14,7 @@
  *= require_self
  */
  @import "bootstrap";
+ @import "bootstrap.min";
  @import "colors";
  #warning {
    background-color: red;
@@ -60,10 +61,6 @@ nav li ol {
   list-style: none;
   padding: 0;
   margin: 0; }
-/**
- * Navbar CSS
- * Adapted from the MIT Technology Review CSS
- */
 
 .bg-emerald {
   //background-image: linear-gradient(to top right, #008B45, $light-emerald-green);
@@ -72,6 +69,19 @@ nav li ol {
 
 .bd-navbar .navbar-nav .nav-link {
   color: lightgreen;
+}
+
+.navbar-nav {
+  font-size: 0.85rem; }
+  @media (min-width: 750px) {
+    .navbar {
+      padding: 5px 20px; } }
+  @media (min-width: 1024px) {
+    .navbar-nav {
+      font-size: 1.1rem; } }
+
+.navbar-brand {
+  font-size: 1.3rem;
 }
 
 // .navbar__header {
