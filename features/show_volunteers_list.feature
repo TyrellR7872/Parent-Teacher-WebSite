@@ -15,11 +15,10 @@ I want to access a Volunteer list from the description of the calendar event.
     Scenario: Signed in but not volunteering
       Given I am a new, signed-in user account
       And I am on the calendar events page
-      When I follow "Sign up for football"
-      Then I should be on the football page
-      And I should see "football"
-      When I follow "Show volunteers list"
+      When I follow "football"
+      And I follow "Show volunteers list"
       Then I should be on the volunteers list page
+      And I should not see "testeruser"
 
     Scenario: Signed in and volunteering
       Given I am a new, signed-in user account
