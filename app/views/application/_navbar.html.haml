@@ -4,8 +4,8 @@
 
 %nav.navbar.navbar-expand.navbar-dark.flex-column.flex-md-row.bg-emerald.fixed-top
   = link_to "HCS-PTO", root_path, :class => "navbar-brand mr-0 mr-md-2"
-  %div.navbar-nav-scroll
-    %ul.navbar-nav.mr-auto
+  %div.navbar-nav-scroll.mr-auto
+    %ul.navbar-nav
       %li.nav-item
         =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
       %li.nav-item
@@ -35,6 +35,3 @@
 -#   %button{:type => 'button', :class => 'navbar-toggler', "data-toggle" => "collapse", "data-target"=>"#navbarSupportedContent", "aria-controls"=>"navbarSupportedContent", "aria-expanded"=>"false", "aria-label"=>"Toggle navigation"}
 -#     %span.navbar-toggler-icon
 / close navbar
-
-%div
-/close break adding to counter the fixed-top position
