@@ -1,2 +1,23 @@
-%h1 Request#show
-%p Find me in app/views/request/show.html.haml
+- if @request.funding
+  %h1.header= "Funding Request: #{@request.projectname}"
+
+  .row
+    .col-md-offset-2
+    .col-md-8.description= "Description: #{@request.description}"
+
+  .row
+    .col-md-offset-2
+    .col-md-8= "Estimated Students this Request will Benefit: #{@request.students}"
+  .row
+    .col-md-offset-2
+    .col-md-4.datecreated= "Date Submitted: #{@request.created_at.to_s[0..10]}"
+  .row
+    .col-md-offset-2
+    .col-md-8.price= "Estimated Cost of Project: #{number_to_currency(@request.price)}"
+  .row
+    .col-md-offset-2
+    .col-md-8= "Approved? #{@request.approved ? "Yes" : "No"}"
+  - if current_user_account.admin?
+    .row
+      .col-md-offset-2
+      .col-md-8 = "Contact Email: #{@user_account.email}"

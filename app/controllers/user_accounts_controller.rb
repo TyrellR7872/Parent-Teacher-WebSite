@@ -17,6 +17,7 @@ class UserAccountsController < ApplicationController
         current_user_account.update_attribute :admin, true
       end
       @user_account = current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
+      @requests =  @user_account.requests
     end
   end
 
@@ -30,12 +31,13 @@ class UserAccountsController < ApplicationController
       :tograde => params[:tograde], :subject => params[:subject], :body => params[:body]) and return
   end
 
-  def show_user
+  def view
     if !current_user_account.nil?
       if current_user_account.email == "troberts@colgate.edu"
         current_user_account.update_attribute :admin, true
       end
       @user_account = UserAccount.find(params[:id])
+      @requests =  @user_account.requests
       # current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
     end
   end

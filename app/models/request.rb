@@ -3,7 +3,7 @@ class Request < ApplicationRecord
 
   attr_writer :current_page
 
-  # validates_presence_of :requesttype, :if => lambda { |p| p.current_page == "request_type" }
+  validates :projectname, :description, :price, :students, :presence => { :message => "cannot be blank" }
 
   def current_page
     @current_page || pages.first

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502020106) do
+ActiveRecord::Schema.define(version: 20180503190236) do
 
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180502020106) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.string "requesttype"
+    t.boolean "funding"
     t.string "projectname"
     t.string "accounttype"
     t.text "description"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(version: 20180502020106) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_account_id"
+    t.integer "students"
+    t.boolean "approved", default: false
     t.index ["user_account_id"], name: "index_requests_on_user_account_id"
   end
 

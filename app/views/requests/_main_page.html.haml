@@ -1,3 +1,18 @@
 .field
-  =f.label :description, "Loser"
-  =f.text_field :description, :required => true
+  Funding Request Form
+.field
+  =f.label :projectname, "Name of Project"
+  = @request.errors[:projectname].first
+  =f.text_field :projectname
+.field
+  =f.label :students, "Estimated Number of Students to Benefit"
+  = @request.errors[:students].first
+  =f.number_field :students
+.field
+  =f.label :price, "Estimated Cost of Project"
+  = @request.errors[:price].first
+  =f.number_field :price
+.field
+  = f.label :description, "Brief Description of How the Requested Funds Will Advance the PTO’s Mission and Who will Benefit from the Purchased Item(s) or Activity"
+  = @request.errors[:description].first
+  = f.text_area :description, size: '100x5'

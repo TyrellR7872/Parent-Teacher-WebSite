@@ -11,3 +11,16 @@
     .user= "Child's Grade: "+childgrade.to_s
   %tr
     .user= "Address: "+@user_account.homeaddress.to_s
+
+  %h1.header= "Requests submitted for #{@user_account.name}"
+  %table.table
+    %thead
+      %tr
+        %th Request Name
+        %th Project Description
+
+    %tbody
+      -@requests.each do |request|
+        %tr.request
+          %td.projectname= link_to(request.projectname, request_path(request))
+          %td.projectdesc= request.description

@@ -13,10 +13,10 @@ Rails.application.routes.draw do
   resources :user_accounts do
     collection do
       get "email"
-      get ':id', to: 'user_accounts#show_user', as: 'show_user'
     end
   end
-  root "user_accounts#new"
+
+  get ':id', to: 'user_accounts#view', as: 'view'
 
   # render static pages
   controller :pages do
