@@ -17,8 +17,7 @@ Feature: Delete a user account
     Given I am on the root page
     When I follow "Hello, Joel Sommers"
     Then I should see "Account Details for Joel Sommers"
-    When I follow "Edit Profile Details"
-    And I press "Delete User Account"
+    When I follow "Delete User Account"
     Then I should be on the root page
     And I should see "User Account Successfully Deleted"
     And I should not see "Hello, Joel Sommers"
