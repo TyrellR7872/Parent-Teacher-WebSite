@@ -21,14 +21,23 @@ Feature: Create a User that has administrative privileges
     Then I should be on the root page
     And I should see "User Accounts"
 
-    Scenario: Sign in to a User account that is not an admin
-      Given I am on the root page
-      When I follow "Sign In"
-      Then I should see "Log in"
-      When I fill in the following:
-        |Email|ycarter@colgate.edu|
-        |Password|carter|
+  Scenario: Sign in to a User account that is not an admin
+    Given I am on the root page
+    When I follow "Sign In"
+    Then I should see "Log in"
+    When I fill in the following:
+      |Email|ycarter@colgate.edu|
+      |Password|carter|
 
-      And I press "Log in"
-      Then I should be on the root page
-      And I should not see "User Accounts"
+    And I press "Log in"
+    Then I should be on the root page
+    And I should not see "User Accounts"
+
+  Scenario: Delete an Account as admin
+    Given I am a new, signed-in user account with admin
+    Given I am on the root page
+    When I follow "User Accounts"
+    When I follow "Yesu Carter"
+    Then I should see "Delete User Account"
+    When I follow "Delete User Account"
+    Then I should be on the root page

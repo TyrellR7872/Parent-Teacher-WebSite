@@ -25,8 +25,7 @@ RSpec.describe UserAccountsController, type: :controller do
 
 
     it "returns http success" do
-      expect(UserAccount).to receive(:find).with(eq(subject.current_user_account.id)).and_return(subject.current_user_account)
-      get :show, :params => {:id => subject.current_user_account.id}
+      get :show, :params => {:id => subject.current_user_account}
       expect(response).to have_http_status(:success)
     end
 

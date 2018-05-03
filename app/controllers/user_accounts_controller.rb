@@ -1,9 +1,5 @@
 class UserAccountsController < ApplicationController
   def index
-    if current_user_account.nil?
-      flash[:warning] = "Sign in to view user accounts"
-      redirect_to new_user_account_session_path and return
-    end
     @useraccounts = UserAccount.filter_on_constraints(constraints)
     @tograde = params[:tograde] || ""
     @fromgrade = params[:fromgrade] || ""
@@ -13,9 +9,6 @@ class UserAccountsController < ApplicationController
 
   def show
     if !current_user_account.nil?
-      if current_user_account.email == "troberts@colgate.edu"
-        current_user_account.update_attribute :admin, true
-      end
       @user_account = current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
       @requests =  @user_account.requests
     end
@@ -32,14 +25,8 @@ class UserAccountsController < ApplicationController
   end
 
   def view
-    if !current_user_account.nil?
-      if current_user_account.email == "troberts@colgate.edu"
-        current_user_account.update_attribute :admin, true
-      end
-      @user_account = UserAccount.find(params[:id])
-      @requests =  @user_account.requests
-      # current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
-    end
+    @user_account = UserAccount.find(params[:id])
+    @requests = @user_account.requests
   end
 
   # DELETE /resource

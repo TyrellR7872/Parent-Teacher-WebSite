@@ -24,5 +24,5 @@ calendar_event_7 = CalendarEvent.create!(title: "Food-eating contest", start_dat
 
 UserAccount.delete_all
 
-user_account_1 = UserAccount.create!(password: "testpass1", password_confirmation:"testpass1", email: "asad876@gmail.com", accounttype: "Parent", name: "Asad", childname: "Bad Child", childgrade: 10, homeaddress: "Drake Hall", created_at: DateTime.new(2018,6,6), updated_at: DateTime.new(2018,6,6))
+user_account_1 = UserAccount.create!(password: "testpass1", password_confirmation:"testpass1", email: "asad876@gmail.com", accounttype: "Parent", name: "Asad", childname: "Bad Child", childgrade: 10, homeaddress: "Drake Hall", created_at: DateTime.new(2018,6,6), updated_at: DateTime.new(2018,6,6), admin: true)
 user_account_2 = UserAccount.create!(password: "testpass2", password_confirmation:"testpass2",  email: "ajamil@colgate.edu", accounttype: "Teacher", name: "Archil", childname: "Good Child", childgrade: 5, homeaddress: "123 Test Street", created_at: DateTime.new(2018,6,6), updated_at: DateTime.new(2018,6,6))

@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
     if params[:back]
       @request.previous_page
     elsif @request.last_page?
-      @request.save
+      @request.save if @request.all_valid?
     else
       @request.next_page
     end
@@ -28,12 +28,6 @@ class RequestsController < ApplicationController
       @user_account.requests << @request
       redirect_to root_path and return
     end
-  end
-
-  def index
-    redirect_to new_request_path and return
-    # @user_account = UserAccount.find(current_user_account.id)
-    # @requests = @user.requests
   end
 
   def show
