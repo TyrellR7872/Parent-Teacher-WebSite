@@ -10,10 +10,6 @@
 
   <%= f.fields_for :children do |child| %>
   <div class="field">
-    <%= child.label :number_of_children, "Number of Children" %><br />
-    <%= child.number_field :number_of_children, autofocus: true, autocomplete: "Number of children",  within: 1...13 %>
-  </div>
-  <div class="field">
     <%= child.label :childname, "Child's Name" %><br />
     <%= child.text_field :childname, autofocus: true, autocomplete: "Child's name" %>
   </div>
@@ -22,6 +18,10 @@
     <%= child.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
   </div>
   <% end %>
+  <input type="button", name="increase", value="+" ,onclick="increaseBtnOnclick()", remote :true/>
+  <input type="button", name="decrease" value="-", onclick="increaseBtnOnclick()",remote :true/>
+  <input type="text", name="htop", value="0", id="htop", remote: true>
+  <label for="htop">Add Children </label>
 
   <div class="field">
     <%= f.label :homeaddress, "Home Address"%><br />
