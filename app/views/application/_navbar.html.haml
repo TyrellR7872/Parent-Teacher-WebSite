@@ -2,10 +2,10 @@
 -# // . for class
 -# // % for tag
 
-%nav.navbar.navbar-expand.navbar-dark.flex-column.flex-md-row.bd-navbar.bg-dark.fixed-top
+%nav.navbar.navbar-expand.navbar-dark.flex-column.flex-md-row.bg-emerald.fixed-top
   = link_to "HCS-PTO", root_path, :class => "navbar-brand mr-0 mr-md-2"
   %div.navbar-nav-scroll
-    %ul.navbar-nav.bd-navbar-nav.flex-row
+    %ul.navbar-nav.mr-auto
       %li.nav-item
         =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
       %li.nav-item
@@ -14,18 +14,17 @@
         =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'nav-link'
       %li.nav-item
         =link_to "About", pages_path(:about), :class => 'nav-link'
-    %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
-      -if !current_user_account.nil?
-        %li.nav-item
-          =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'nav-link p-2'
-        %li.nav-item
-          =link_to "Log Out", destroy_user_account_session_path, method: :delete, :class => 'nav-link p-2'
-      -else
-        %li.nav-item
-          =link_to "Sign In", new_user_account_session_path, :class => 'nav-link p-2'
-        %li.nav-item
-          =link_to "Sign Up", new_user_account_registration_path, :class => 'nav-link p-2'
-/ close navbar__navigation
+  %ul.navbar-nav
+    -if !current_user_account.nil?
+      %li.nav-item
+        =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'nav-link p-2'
+      %li.nav-item
+        =link_to "Log Out", destroy_user_account_session_path, method: :delete, :class => 'nav-link p-2'
+    -else
+      %li.nav-item
+        =link_to "Sign In", new_user_account_session_path, :class => 'nav-link p-2'
+      %li.nav-item
+        =link_to "Sign Up", new_user_account_registration_path, :class => 'nav-link p-2'
 
 -# %div.navbar__header.navbar__width
 -#   / This is the logo for HSCPTO if we have
@@ -35,5 +34,7 @@
 -#   .navbar__logo__description THIS IS THE OFFICIAL WEBSITE OF PTO FOR HCS
 -#   %button{:type => 'button', :class => 'navbar-toggler', "data-toggle" => "collapse", "data-target"=>"#navbarSupportedContent", "aria-controls"=>"navbarSupportedContent", "aria-expanded"=>"false", "aria-label"=>"Toggle navigation"}
 -#     %span.navbar-toggler-icon
+/ close navbar
 
-/ close navbar__header AND navbar_width
+%div
+/close break adding to counter the fixed-top position

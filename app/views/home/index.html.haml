@@ -1,22 +1,18 @@
-#main.container.home__gri
+#main.container
   -# TODO need to add images as carousel
   -# example: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
 
-  .border.home__container__menu Menu placeholder // can be used to display news or notice
-  .border.home__container__image This is where to add the images carousel of the school
+  %h3 Calendar Events
 
-  %h3.home__container__event--header Calendar Events
-
-  .home__container__event
-    -@calendar_events.each do |event|
-      / Add a line to separate between events
-      %span.home__container__event__item.border
-        =link_to event.title, calendar_event_path(event)
-        =event.start_date_time ? event.start_date: "No date indicated"
-        =event.start_date_time ? event.start_time: "No time indicated"
-        =event.location
-        =truncate(event.description, length: 50)
-        =event.contact_person
+  -@calendar_events.each do |event|
+    / Add a line to separate between events
+    %span
+      =link_to event.title, calendar_event_path(event)
+      =event.start_date_time ? event.start_date: "No date indicated"
+      =event.start_date_time ? event.start_time: "No time indicated"
+      =event.location
+      =truncate(event.description, length: 50)
+      =event.contact_person
 
   / Room for footer?
   %br

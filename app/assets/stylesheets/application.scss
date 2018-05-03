@@ -39,7 +39,9 @@
 
 body {
   background-color: $bg-light;
-  font-family: $font-sans
+  font-family: $font-sans;
+  padding-top: 60px;
+  padding-bottom: 40px;
 }
 
 a {
@@ -64,7 +66,13 @@ nav li ol {
  */
 
 .bg-emerald {
-  background-image: linear-gradient(to top right, #008B45, $light-emerald-green);}
+  //background-image: linear-gradient(to top right, #008B45, $light-emerald-green);
+  background-color: darkgreen;
+}
+
+.bd-navbar .navbar-nav .nav-link {
+  color: lightgreen;
+}
 
 // .navbar__header {
 //   background-image: linear-gradient(to top right, #008B45	, $light-emerald-green);}
