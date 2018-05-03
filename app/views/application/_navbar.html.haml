@@ -2,38 +2,38 @@
 -# // . for class
 -# // % for tag
 
-%nav.navbar.sticky-top.navbar-light.bg-light
-  = link_to "HCS-PTO", root_path, :class => "navbar-brand"
-  %ul.navbar-nav.mr-auto
-    %li.nav-item
-      =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
-    %li.nav-item
-      =link_to "Events", calendar_events_path, :class => 'nav-link'
-    %li.nav-item
-      =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'nav-link'
-    %li.nav-item
-      =link_to "About", pages_path(:about), :class => 'nav-link'
-  %ul.navbar-nav
-    -if !current_user_account.nil?
+%nav.navbar.navbar-expand.navbar-dark.flex-column.flex-md-row.bd-navbar.bg-dark.fixed-top
+  = link_to "HCS-PTO", root_path, :class => "navbar-brand mr-0 mr-md-2"
+  %div.navbar-nav-scroll
+    %ul.navbar-nav.bd-navbar-nav.flex-row
       %li.nav-item
-        =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'nav-link'
+        =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
       %li.nav-item
-        =link_to "Log Out", destroy_user_account_session_path, method: :delete, :class => 'nav-link'
-    -else
+        =link_to "Events", calendar_events_path, :class => 'nav-link'
       %li.nav-item
-        =link_to "Sign In", new_user_account_session_path, :class => 'nav-link'
+        =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'nav-link'
       %li.nav-item
-        =link_to "Sign Up", new_user_account_registration_path, :class => 'nav-link'
+        =link_to "About", pages_path(:about), :class => 'nav-link'
+    %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
+      -if !current_user_account.nil?
+        %li.nav-item
+          =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'nav-link p-2'
+        %li.nav-item
+          =link_to "Log Out", destroy_user_account_session_path, method: :delete, :class => 'nav-link p-2'
+      -else
+        %li.nav-item
+          =link_to "Sign In", new_user_account_session_path, :class => 'nav-link p-2'
+        %li.nav-item
+          =link_to "Sign Up", new_user_account_registration_path, :class => 'nav-link p-2'
 / close navbar__navigation
 
-%div.navbar__header.navbar__width
-  / This is the logo for HSCPTO if we have
-  -# %a.navbar__logo-mod.header /Logo goes here
-  .navbar__logo__word.navbar__logo__word--small HAMILTON CENTRAL SCHOOL
-  = link_to "PARENT TEACHER ORGANISATION", root_path, :class => "navbar__logo__word navbar__logo__word--big"
-  .navbar__logo__description THIS IS THE OFFICIAL WEBSITE OF PTO FOR HCS
-  %button{:type => 'button', :class => 'navbar-toggler', "data-toggle" => "collapse", "data-target"=>"#navbarSupportedContent", "aria-controls"=>"navbarSupportedContent", "aria-expanded"=>"false", "aria-label"=>"Toggle navigation"}
-    %span.navbar-toggler-icon
+-# %div.navbar__header.navbar__width
+-#   / This is the logo for HSCPTO if we have
+-#   -# %a.navbar__logo-mod.header /Logo goes here
+-#   .navbar__logo__word.navbar__logo__word--small HAMILTON CENTRAL SCHOOL
+-#   = link_to "PARENT TEACHER ORGANISATION", root_path, :class => "navbar__logo__word navbar__logo__word--big"
+-#   .navbar__logo__description THIS IS THE OFFICIAL WEBSITE OF PTO FOR HCS
+-#   %button{:type => 'button', :class => 'navbar-toggler', "data-toggle" => "collapse", "data-target"=>"#navbarSupportedContent", "aria-controls"=>"navbarSupportedContent", "aria-expanded"=>"false", "aria-label"=>"Toggle navigation"}
+-#     %span.navbar-toggler-icon
 
-  / Menu button. Toggle get grouped for small screen
 / close navbar__header AND navbar_width
