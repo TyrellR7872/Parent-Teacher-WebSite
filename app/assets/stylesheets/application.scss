@@ -54,25 +54,17 @@ a {
   a:focus {
     outline: 0; }
 
-nav li {
+nav li ol {
+  list-style: none;
+  padding: 0;
   margin: 0; }
 /**
  * Navbar CSS
  * Adapted from the MIT Technology Review CSS
  */
 
-.navbar {
-  z-index: 4;
-  text-align: center;
-  position: relative;
-  top: 0;
-  left: 0;
-  right: 0; }
-  .navbar:after {
-    content: " ";
-    display: table;
-    clear: both; }
-
+.bg-emerald {
+  background-image: linear-gradient(to top right, #008B45, $light-emerald-green);}
 
 .navbar__header {
   background-image: linear-gradient(to top right, #008B45	, $light-emerald-green);}
@@ -244,25 +236,9 @@ nav li {
   .navbar__item--search.navbar__item--phone {
     display: none; } }
 
-.navbar--primary {
-  margin: 0;
-  padding: 1px 15px;
-  background-color: #000;
-  color: white;
-  z-index: 1; }
-  @media (min-width: 750px) {
-    .navbar--primary {
-      background-color: #fff;
-      position: relative;
-      margin: 0 -15px 0 0;
-      font-weight: 600; } }
-  @media (min-width: 1024px) {
-    .navbar--primary {
-      margin-top: 0; } }
-
 .navbar__item--primary {
   margin: 0;
-  background-color: $light-emerald-green;
+  background-color: red;
   border-bottom: 1px solid #666; }
   .navbar__item--primary:last-child {
     border-bottom: 0; }
