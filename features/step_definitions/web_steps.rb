@@ -49,15 +49,8 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-# When(/^(?:|I )select "([^"]*)" from the date box "([^"]*)" $/) do |value, select_label|
-#   select_date value, from: select_label
-# end
-
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
-    # puts name
-    # if (name =~ /date_time$/)
-    #   step %{I select "#{value}" from the date box "#{name}"}
     if (name =~ /(For|Is)/) #TODO
       if (value =~ /true/)
         step %{I check "#{name}"}
@@ -65,7 +58,6 @@ When /^(?:|I )fill in the following:$/ do |fields|
         step %{I uncheck "#{name}"}
       end
     else
-      # puts "using fill" + name
       step %{I fill in "#{name}" with "#{value}"}
     end
   end
@@ -104,7 +96,7 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
 end
 
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
-  attach_file(field, File.expand_path(path))
+  attach_file(field, File.expand_path("/app/assets/images/" + path))
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
@@ -281,7 +273,24 @@ Then("I should see that {string} has a datetime of {string}") do |string1, strin
   end # Write code here that turns the phrase above into concrete actions
 end
 
+Then /^(?:|I )should see that "([^"]*)" has an image "([^"]*)"$/ do |event, image_name|
+  chosen_row = nil
+  page.all('.event').each do |row|
+    if (row.find('.title').text == prop)
+      chosen_row = row
+    end
+  end
+  expect(chosen_row).to have_xpath("//img[contains(@src, \"#{image_name}\")]")
+end
 
+Then /^(?:|I )should see the image "([^"]*)"$/ do |image_name|
+  expect(page).to have_xpath("//img[contains(@src, \"#{image_name}\")]")
+end
+
+When /^(?:|I )attach the image "([^"]*)" to "([^"]*)"$/ do |path, field|
+  path = 'app/assets/images/' + path
+  attach_file(field, File.expand_path(path))
+end
 
 ###############################
 # FOR USER ACCOUNT
@@ -292,8 +301,6 @@ Given("these UserAccounts:") do |table|
     h['password'] = h.delete('password')
     h['email'] = h.delete('email')
     h['accounttype'] = h.delete('accounttype')
-    h['childname'] = h.delete('childname')
-    h['childgrade'] = h.delete('childgrade').to_i
     h['homeaddress'] = h.delete('homeaddress')
     UserAccount.create!(h)
   end

@@ -2,42 +2,30 @@
 -# // . for class
 -# // % for tag
 
-%div.navbar__user-status
-  -if !current_user_account.nil?
-    %li.navbar__item--primary
-      =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'navbar__item__link navbar__item__link--primary'
-    %li.navbar__item--primary
-      =link_to "Log Out", destroy_user_account_session_path, method: :delete, :class => 'navbar__item__link navbar__item__link--primary'
-  -else
-    %li.navbar__item--primary
-      =link_to "Sign In", new_user_account_session_path, :class => 'navbar__item__link navbar__item__link--primary'
-    %li.navbar__item--primary
-      =link_to "Sign Up", new_user_account_registration_path, :class => 'navbar__item__link navbar__item__link--primary'
-
-%div.navbar__header.navbar__width
-  / This is the logo for HSCPTO if we have
-  -# %a.navbar__logo-mod.header /Logo goes here
-  .navbar__logo__word.navbar__logo__word--small HAMILTON CENTRAL SCHOOL
-  = link_to "PARENT TEACHER ORGANISATION", root_path, :class => "navbar__logo__word navbar__logo__word--big"
-  .navbar__logo__description THIS IS THE OFFICIAL WEBSITE OF PTO FOR HCS
-  %button{:type => 'button', :class => 'navbar__mobile-menu', "data-toggle" => "collapse"} Menu
-
-  / Menu button. Toggle get grouped for small screen
-/ close navbar__header AND navbar_width
-%div.navbar__navigation
-  %ul.navbar--primary
+%nav.navbar.navbar-expand.navbar-dark.flex-column.flex-md-row.bg-emerald
+  = link_to "HCS-PTO", root_path, :class => "navbar-brand mr-0 mr-md-2"
+  %div.navbar-nav-scroll
+    %ul.navbar-nav
+      -if !current_user_account.nil?
+        -if current_user_account.admin?
+          %li.nav-item
+            =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
+      %li.nav-item
+        =link_to "Events", calendar_events_path, :class => 'nav-link'
+      %li.nav-item
+        =link_to "Clubs and Organizations", pages_path(:clubs), :class => 'nav-link'
+      %li.nav-item
+        =link_to "Create a Request", new_request_path, :class => 'nav-link'
+      %li.nav-item
+        =link_to "About", pages_path(:about), :class => 'nav-link'
+  %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
     -if !current_user_account.nil?
-      -if current_user_account.admin?
-        %li.navbar__item--primary
-          =link_to "User Accounts", user_accounts_path, :class => 'navbar__item__link navbar__item__link--primary'
-    %li.navbar__item--primary
-      =link_to "Events", calendar_events_path, :class => 'navbar__item__link navbar__item__link--primary'
-    %li.navbar__item--primary
-      =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'navbar__item__link navbar__item__link--primary'
-    %li.navbar__item--primary
-      =link_to "Create a Request", new_request_path, :class => 'navbar__item__link navbar__item__link--primary'
-    %li.navbar__item--primary
-      =link_to "About", pages_path(:about), :class => 'navbar__item__link navbar__item__link--primary'
-    -# %li.navbar__item--primary
-      =link_to "Committees", pages_path(:committees), :class => 'navbar__item__link navbar__item__link--primary'
-/ close navbar__navigation
+      %li.nav-item
+        =link_to "Hello, #{current_user_account.name}", user_account_path(current_user_account), :class => 'nav-link p-2'
+      %li.nav-item
+        =link_to "Log Out", destroy_user_account_session_path, method: :delete, :class => 'nav-link p-2'
+    -else
+      %li.nav-item
+        =link_to "Sign In", new_user_account_session_path, :class => 'nav-link p-2'
+      %li.nav-item
+        =link_to "Sign Up", new_user_account_registration_path, :class => 'nav-link p-2'

@@ -9,6 +9,7 @@ Feature: Update a calendar event
       | football     | cozy and sunny            | 2018/03/02 12:00 PM       | 2018/05/02 12:00 PM       | Lathrop, Hamilton, NY   | true     |            | hnguyenvu@colgate.edu | true        |
       | jazz concert | come and chill with music | 2018/06/02 12:00 PM       | 2018/08/02 12:00 PM       | Ho, Hamilton, NY        |          | true       | pdhawka@colgate.edu   | true        |
       | game night   | play some games           | 2018/07/02 12:00 PM       | 2018/10/02 12:00 PM       | Ho, Hamilton, NY        |          | true       | ajamil@colgate.edu   | true        |
+    Given I am a new, signed-in user account with admin
 
   Scenario: Update an existing event
     Given I am on the calendar events page
@@ -16,13 +17,16 @@ Feature: Update a calendar event
     Then I should see "jazz concert"
     And I should see "come and chill with music"
     And I should not see "game night"
+    And I should see the image "default_image_event"
     When I follow "Edit event details"
     And I fill in "Description" with "Tony Bennett is sick, we'll have Lady Gaga instead."
     And I fill in "Location" with "Dana Arts"
+    And I attach the image "lady_gaga.png" to "Image"
     And I fill in "Start date of the event" with "02/07/2018 10:00 PM"
     And I press "Update event details"
     Then I should see "Event 'jazz concert' updated"
     And I should see "jazz concert"
+    And I should see the image "lady_gaga"
     And I should see "Tony Bennett is sick, we'll have Lady Gaga instead."
     And I should see "Dana Arts"
     And I should not see "Ho, Hamilton, NY"

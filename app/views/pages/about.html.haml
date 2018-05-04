@@ -1,33 +1,38 @@
 #main.container
-  %div.pages--primary
+  %br
+  %br
+
+  %div.pages__text--primary
     Hamilton Central School, located on West Kendrick Avenue, Hamilton, New York was established in 1946.
     It educates students in kindergarten through grade 12, with an average class size of 45 and a teacher to student ratio of 1:10.
     Hamilton Central School Parent Teacher Organization is dedicated to support parents and teachers
-    of HCS. Our members for the year 2017-2018 are listed as follows.
+    of HCS. Our members of the PTO for the year 2017-2018 are listed as follows.
 
   %br
-  %div.pages--primary
-    Officers for 2017-2018
+  .pages--primary
+    .pages__item--primary Officers for 2017-2018
     %ul
-      %li.pages__item--primary Jennifer Jones, Co-President
-      %li.pages__item--primary Kathleen Catania, Co-President
-      %li.pages__item--primary Kathleen Stahl, Vice President (Middle & High School)
-      %li.pages__item--primary Karli Murray, Vice President (Elementary)
-      %li.pages__item--primary Alicia Simmons, Secretary
-      %li.pages__item--primary ​Carey Hay, Treasurer
+      %li.pages__item--secondary Jennifer Jones, Co-President
+      %li.pages__item--secondary Kathleen Catania, Co-President
+      %li.pages__item--secondary Kathleen Stahl, Vice President (Middle & High School)
+      %li.pages__item--secondary Karli Murray, Vice President (Elementary)
+      %li.pages__item--secondary Alicia Simmons, Secretary
+      %li.pages__item--secondary ​Carey Hay, Treasurer
 
-    %br
-    %div.pages--primary
-      Chairs for 2017-2018
-    %div.pages--primary
-      %ul
-        %li.pages__item--primary ​Angela Britton: Holiday Chair
-        %li.pages__item--primary Karen Rains: PARP Chair
-        %li.pages__item--primary Jackie Cleary and Liz Bodian: BoxTops Chair
-        %li.pages__item--primary Sabrina Craven: Faculty/Staff Luncheon Chair
-        %li.pages__item--primary Sheila Catania: Book Fair Chair
-        %li.pages__item--primary Amy Sommers: Garden Coordinator
-        %li.pages__item--primary ​Tara Langel: Health & Wellness Coordinator
-    %a
-      Contact us at
-      =mail_to("HamiltonCentralPTO@gmail.com")
+  %br
+  .pages--primary
+    .pages__item--primary Chairs for 2017-2018
+    %ul
+      %li.pages__item--secondary ​Angela Britton: Holiday Chair
+      %li.pages__item--secondary Karen Rains: PARP Chair
+      %li.pages__item--secondary Jackie Cleary and Liz Bodian: BoxTops Chair
+      %li.pages__item--secondary Sabrina Craven: Faculty/Staff Luncheon Chair
+      %li.pages__item--secondary Sheila Catania: Book Fair Chair
+      %li.pages__item--secondary Amy Sommers: Garden Coordinator
+      %li.pages__item--secondary ​Tara Langel: Health & Wellness Coordinator
+  %a
+    Contact us at
+    =mail_to("HamiltonCentralPTO@gmail.com")
+  %br
+    Read about our established
+    =link_to "By laws", 'https://docs.google.com/document/d/1785HHe3mqN0L6s-q8n5WEkGLx5WfpNo5Gzb2bzz9fQo/edit', :class => 'pages__item--link'

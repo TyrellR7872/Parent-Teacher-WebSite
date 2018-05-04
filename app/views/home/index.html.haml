@@ -1,29 +1,57 @@
-#main.container.home__grid
-  -# TODO need to add images as carousel
-  -# example: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
+#main
 
-  .border.home__container__menu Menu placeholder // can be used to display news or notice
-  .border.home__container__image This is where to add the images carousel of the school
+  %div.carousel.slide{ "data-ride" => "carousel", :id => 'homepage__image-carousel'}
+    // Indicators
+    %ol.carousel-indicators
+      %li.active{"data-target" => "#homepage__image-carousel", "data-slide-to"=>"0"}
+      %li{"data-target" => "#homepage__image-carousel", "data-slide-to"=>"1"}
+      %li{"data-target" => "#homepage__image-carousel", "data-slide-to"=>"2"}
 
-  %h3.home__container__event--header Calendar Events
+    // Wrapper for slides
+    %div.carousel-inner{ :role => "listbox" }
+      // Slide One
+      %div.carousel-item.active.crop=image_tag 'emerald.png', :class => "d-block w-100"
+      .container
+        .carousel-caption
+          %h1 Hamilton Central Parent Teacher Organization
+          %p.lead Welcome to the official webpage of the Hamilton Central Parent Teacher Organization. Learn more about how you can be involved with the group, or understand more about us.
+          =link_to "Understand HCS PTO Better", pages_path(:about), :class => "btn btn-success btn-lg"
+      // Slide Two
+      %div.carousel-item.img-fluid.crop=image_tag 'slideshow2.jpg', :class => "d-block w-100"
+      // Slide Three
+      %div.carousel-item.img-fluid.crop=image_tag 'slideshow3.jpg', :class => "d-block w-100"
 
-  -# .home__container__event
-  -# .border.home__container__event__item--1 EVENT 1
-  -# .border.home__container__event__item--2 EVENT 2
-  -# .border.home__container__event__item--3 EVENT 3
-  -# .border.home__container__event__item--4 EVENT 4
+    // Controls
+    %a.carousel-control-prev{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"prev"}
+      %span.carousel-control-prev-icon
+      %span.sr-only Previous
+    %a.carousel-control-next{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"next"}
+      %span.carousel-control-next-icon
+      %span.sr-only Next
 
-  .home__container__event
+%br
+.container
+  %h2 Upcoming events
+  %hr
+  %br
+
+  %div.row.card-set
     -@calendar_events.each do |event|
-      / Add a line to separate between events
-      %span.home__container__event__item.border
-        =link_to event.title, calendar_event_path(event)
-        =event.start_date_time ? event.start_date: "No date indicated"
-        =event.start_date_time ? event.start_time: "No time indicated"
-        =event.location
-        =truncate(event.description, length: 50)
-        =event.contact_person
+      .col-lg-4.col-md-6.col-sm-12.card-set
+        / Add a line to separate between events
+        %card.mb-4
+          .card-img-top=image_tag event.image.url(:medium)
+          -# Card body, containing title and description
+          .card-body
+            .homepage__event__title.title=link_to event.title, calendar_event_path(event)
+            .card-text
+              .homepage__event__description.description=truncate(event.description, length: 40)
+              .homepage__event__description.contact=event.contact_person
+          .card-footer.homepage__event__footer
+            .row
+              .col-sm-4=event.start_date_time ? event.start_date: "No date indicated"
+              .col-sm-4=event.start_date_time ? event.start_time: "No time indicated"
+              .col-sm-4=event.location
 
-  / Room for footer?
   %br
   %br

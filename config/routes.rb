@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get 'volunteer_signup'
       get 'show_volunteer_list'
+      get "email_volunteer_list"
     end
   end
   root "home#index"
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   resources :user_accounts do
     collection do
       get "email"
+    end
+    member do
       get "view"
     end
   end

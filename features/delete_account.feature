@@ -13,11 +13,21 @@ Feature: Delete a user account
     And I press "Sign up"
     Then I should be on the root page
 
-  Scenario: Delete a user account with confirmation
+  Scenario: Unsuccessfully delete a user account without password confirmation
     Given I am on the root page
     When I follow "Hello, Joel Sommers"
     Then I should see "Account Details for Joel Sommers"
     When I follow "Edit Profile Details"
+    And I press "Delete User Account"
+    Then I should see "Please Enter Correct Account Password to Delete Account"
+    And I should see "Hello, Joel Sommers"
+
+  Scenario: Delete a user account with password confirmation
+    Given I am on the root page
+    When I follow "Hello, Joel Sommers"
+    Then I should see "Account Details for Joel Sommers"
+    When I follow "Edit Profile Details"
+    And I fill in "Password" with "cosc123"
     And I press "Delete User Account"
     Then I should be on the root page
     And I should see "User Account Successfully Deleted"

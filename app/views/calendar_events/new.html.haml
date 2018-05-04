@@ -1,13 +1,11 @@
--# =render 'flash_message'
-
 #main.container
+%br
+%br
+
 %h3.header Create a new calendar event to list
 
 =form_for @calendar_event, :method => :post do |f|
   =render 'event_form_template', f: f
-  -# .field
-  -#   =f.label :image, "Image"
-  -#   =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
 
   .field
     =f.submit "Create event"
