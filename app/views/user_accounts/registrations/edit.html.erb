@@ -16,14 +16,6 @@
         <%= child.label :childgrade, "First Child's Grade" %><br />
         <%= child.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
       </div>
-      <div class="field" id="cname">
-        <%= child.label :childname, "Second Child's Name" %><br />
-        <%= child.text_field :childname, autofocus: true, autocomplete: "Child's name" %>
-      </div>
-      <div class="field" id="cgrade">
-        <%= child.label :childgrade, "Second Child's Grade" %><br />
-        <%= child.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
-      </div>
     <% end %>
 
   <script type="text/javascript">

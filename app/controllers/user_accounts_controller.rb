@@ -14,7 +14,8 @@ class UserAccountsController < ApplicationController
 
   def show
     if !current_user_account.nil?
-      @user_account = UserAccount.find(current_user_account.id)
+      @user_account = current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
+      flash[:notice] = " HERE " + @user_account.children.any?.to_s
       if @user_account.children.any?
         @children = @user_account.children
         @children.map do |child|
