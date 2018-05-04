@@ -1,11 +1,6 @@
 class UserAccountsController < ApplicationController
-
   def index
-    if current_user_account.nil?
-      flash[:warning] = "Sign in to view user accounts"
-      redirect_to new_user_account_session_path and return
-    end
-    @members = UserAccount.filter_on_constraints(constraints)
+    @useraccounts = UserAccount.filter_on_constraints(constraints)
     @tograde = params[:tograde] || ""
     @fromgrade = params[:fromgrade] || ""
     @name = params[:name] || ""
@@ -14,10 +9,10 @@ class UserAccountsController < ApplicationController
 
   def show
     if !current_user_account.nil?
-      @user_account = UserAccount.find(current_user_account.id)
+      @user_account = current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
+      @requests =  @user_account.requests
     end
   end
-
   def email
     members = UserAccount.filter_on_constraints(constraints)
     members.each do |user|
@@ -26,6 +21,19 @@ class UserAccountsController < ApplicationController
     flash[:notice] = "Message sent to the following users"
     redirect_to user_accounts_path(:accounttype => params[:accounttype], :name => params[:name], :fromgrade => params[:fromgrade],
       :tograde => params[:tograde], :subject => params[:subject], :body => params[:body]) and return
+  end
+
+  def view
+    @user_account = UserAccount.find(params[:id])
+    @requests = @user_account.requests
+  end
+
+  # DELETE /resource
+  def destroy
+    @user_account = current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
+    @user_account.destroy
+    flash[:notice] = "User Account Successfully Deleted"
+    redirect_to root_path
   end
 
   private
