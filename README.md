@@ -28,7 +28,8 @@ HCS-PTO is a ruby web app developed by Colgate University students.
 This application uses:
 Ruby 2.4.1
 Rails 5.1.4
-
+gem devise
+gem pg  ~> 0.18
 ## Installation
 
 * Clone the git repo at: https://github.com/ColgateCOSC480/HCS-PTO.git
@@ -47,3 +48,10 @@ Rails 5.1.4
 * Yesu Carter
 * Nam Nguyen
 * Tyrell Roberts
+## Future Stories to be implemented
+* Add has_many :children to add more children to a User Account
+* Use Google Geocode to geocode the locations of Calendar Events
+* Allow only admins to approve submitted calendar events
+* Authentication of user accounts by admins to confirm user account type
+* Donate button or link for specific events on the event calendar
+* General donate button or link for PTO
