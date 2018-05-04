@@ -1,7 +1,9 @@
-= form_for @request do |f|
-  = render partial: "#{@request.current_page}_page", locals: { f: f }
+#main.container
 
-  .field
-    =f.submit "Continue" unless @request.last_page?
-    =f.submit "Back", :name => "back" unless @request.first_page?
-    =f.submit "Submit Request" if @request.last_page?
+  = form_for @request do |f|
+    = render partial: "#{@request.current_page}_page", locals: { f: f }
+
+    .field
+      =f.submit "Continue" unless @request.last_page?
+      =f.submit "Back", :name => "back" unless @request.first_page?
+      =f.submit "Submit Request" if @request.last_page?
