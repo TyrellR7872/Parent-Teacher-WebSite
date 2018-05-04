@@ -26,12 +26,16 @@
 / close navbar__header AND navbar_width
 %div.navbar__navigation
   %ul.navbar--primary
-    %li.navbar__item--primary
-      =link_to "User Accounts", user_accounts_path, :class => 'navbar__item__link navbar__item__link--primary'
+    -if !current_user_account.nil?
+      -if current_user_account.admin?
+        %li.navbar__item--primary
+          =link_to "User Accounts", user_accounts_path, :class => 'navbar__item__link navbar__item__link--primary'
     %li.navbar__item--primary
       =link_to "Events", calendar_events_path, :class => 'navbar__item__link navbar__item__link--primary'
     %li.navbar__item--primary
       =link_to "Clubs and Organisations", pages_path(:clubs), :class => 'navbar__item__link navbar__item__link--primary'
+    %li.navbar__item--primary
+      =link_to "Create a Request", new_request_path, :class => 'navbar__item__link navbar__item__link--primary'
     %li.navbar__item--primary
       =link_to "About", pages_path(:about), :class => 'navbar__item__link navbar__item__link--primary'
 / close navbar__navigation

@@ -76,11 +76,21 @@ class CalendarEventsController < ApplicationController
     @calendar_event =  CalendarEvent.find(params[:id])
     if current_user_account.nil?
       flash[:error] = "You need to sign in to see the volunteer list"
-      redirect_to calendar_event_path(@calendar_event)
-    else
-      # TODO add in case to handle volunteer
+      redirect_to calendar_event_path(@calendar_event) and return
+      # TODO what happen if this case does not occur?
     end
   end
+
+  def email_volunteer_list
+    @calendar_event = CalendarEvent.find(params[:id])
+    @calendar_event.user_accounts.each do |user|
+      UserMailer.new_message(user, email_details).deliver
+    end
+    flash[:notice] = "Message sent to the following users"
+    redirect_to show_volunteer_list_calendar_event_path(@calendar_event)
+  end
+
+
 
   def destroy
     id = params[:id]
@@ -93,6 +103,16 @@ class CalendarEventsController < ApplicationController
   private
   def create_update_params
     params.require(:calendar_event).permit(:title, :start_date_time, :end_date_time, :location, :description, :is_sport, :is_musical, :is_meeting, :is_charity, :is_gathering, :is_optional, :for_teacher, :for_parent, :for_elementary_student, :for_highschool_student, :contact_person, :is_approved, :image)
+  end
+  
+  def email_details
+    details = [:subject, :body]
+    hash = {}
+    details.each do |sym|
+      hash[sym] = params[sym]
+    end
+    hash[:from] = current_user_account.name
+    hash
   end
 
 end

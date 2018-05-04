@@ -49,15 +49,8 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-# When(/^(?:|I )select "([^"]*)" from the date box "([^"]*)" $/) do |value, select_label|
-#   select_date value, from: select_label
-# end
-
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
-    # puts name
-    # if (name =~ /date_time$/)
-    #   step %{I select "#{value}" from the date box "#{name}"}
     if (name =~ /(For|Is)/) #TODO
       if (value =~ /true/)
         step %{I check "#{name}"}
@@ -65,7 +58,6 @@ When /^(?:|I )fill in the following:$/ do |fields|
         step %{I uncheck "#{name}"}
       end
     else
-      # puts "using fill" + name
       step %{I fill in "#{name}" with "#{value}"}
     end
   end
@@ -309,8 +301,6 @@ Given("these UserAccounts:") do |table|
     h['password'] = h.delete('password')
     h['email'] = h.delete('email')
     h['accounttype'] = h.delete('accounttype')
-    h['childname'] = h.delete('childname')
-    h['childgrade'] = h.delete('childgrade').to_i
     h['homeaddress'] = h.delete('homeaddress')
     UserAccount.create!(h)
   end
@@ -333,15 +323,18 @@ Then /^(?:|I )should see that user "([^"]*)".*"([^"]*)"$/ do |name,value|
   end
 end
 
+
+
 ###############################
 # FOR SIGN IN/OUT
 ###############################
 
-Given /^I am a new, signed-in user account$/ do
+Given /^I am a new, signed-in user account(?:| (with admin))$/ do |admin|
   name = 'Test User'
   email = 'testeruser@colgate.edu'
   password = 'testpass'
-  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password, :confirmed_at => DateTime.new(2018,5,1)).save!
+  adminstatus = admin == "with admin" ? true : false
+  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password, :admin => adminstatus, :confirmed_at => DateTime.new(2018,5,1)).save!
 
 
   visit '/user_account/sign_in'

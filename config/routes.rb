@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     member do
       get 'volunteer_signup'
       get 'show_volunteer_list'
+      get "email_volunteer_list"
     end
   end
   root "home#index"
@@ -13,14 +14,20 @@ Rails.application.routes.draw do
   resources :user_accounts do
     collection do
       get "email"
+      get "view"
     end
   end
-  root "user_accounts#new"
 
   # render static pages
   controller :pages do
     get ':id', to: 'pages#show', as: 'pages'
   end
+
+
+  resources :requests
+
+
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
