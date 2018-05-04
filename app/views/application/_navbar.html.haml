@@ -6,12 +6,16 @@
   = link_to "HCS-PTO", root_path, :class => "navbar-brand mr-0 mr-md-2"
   %div.navbar-nav-scroll
     %ul.navbar-nav
-      %li.nav-item
-        =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
+      -if !current_user_account.nil?
+        -if current_user_account.admin?
+          %li.nav-item
+            =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
       %li.nav-item
         =link_to "Events", calendar_events_path, :class => 'nav-link'
       %li.nav-item
         =link_to "Clubs and Organizations", pages_path(:clubs), :class => 'nav-link'
+      %li.nav-item
+        =link_to "Create a Request", new_request_path, :class => 'nav-link'
       %li.nav-item
         =link_to "About", pages_path(:about), :class => 'nav-link'
   %ul.navbar-nav.flex-row.ml-md-auto.d-none.d-md-flex
@@ -25,13 +29,3 @@
         =link_to "Sign In", new_user_account_session_path, :class => 'nav-link p-2'
       %li.nav-item
         =link_to "Sign Up", new_user_account_registration_path, :class => 'nav-link p-2'
-
--# %div.navbar__header.navbar__width
--#   / This is the logo for HSCPTO if we have
--#   -# %a.navbar__logo-mod.header /Logo goes here
--#   .navbar__logo__word.navbar__logo__word--small HAMILTON CENTRAL SCHOOL
--#   = link_to "PARENT TEACHER ORGANISATION", root_path, :class => "navbar__logo__word navbar__logo__word--big"
--#   .navbar__logo__description THIS IS THE OFFICIAL WEBSITE OF PTO FOR HCS
--#   %button{:type => 'button', :class => 'navbar-toggler', "data-toggle" => "collapse", "data-target"=>"#navbarSupportedContent", "aria-controls"=>"navbarSupportedContent", "aria-expanded"=>"false", "aria-label"=>"Toggle navigation"}
--#     %span.navbar-toggler-icon
-/ close navbar
