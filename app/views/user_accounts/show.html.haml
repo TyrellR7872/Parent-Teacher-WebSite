@@ -7,9 +7,9 @@
     %tr
       .user= "Name: "+@user_account.name
     %tr
-      .user= "Child's Name: "+@user_account.childname.to_s
-      - @user_account.childgrade == 0 ? childgrade = "" : childgrade =  @user_account.childgrade
-      .user= "Child's Grade: "+childgrade.to_s
+      .user= "Children: " + @children
+      .user="Childname: "+@childname
+      .user="Childgrade: "+@childgrade
     %tr
       .user= "Address: "+@user_account.homeaddress.to_s
 

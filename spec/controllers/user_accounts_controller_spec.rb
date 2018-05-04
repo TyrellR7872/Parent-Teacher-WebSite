@@ -6,11 +6,11 @@ RSpec.describe UserAccountsController, type: :controller do
   describe "check failure when entered input does not meet requirements set" do
     it "returns an error when no email address is entered and fails to create a user account" do
       expect {
-          UserAccount.create!(email: "",childgrade: "11",childname: "Lamb Nose",homeaddress: "North Pole",name: "Red Nosed Rudolph", password: "SnowChristmasMustGo", password_confirmation: "SnowChristmasMustGo")}.to raise_exception ActiveRecord::RecordInvalid
+          UserAccount.create!(email: "",homeaddress: "North Pole",name: "Red Nosed Rudolph", password: "SnowChristmasMustGo", password_confirmation: "SnowChristmasMustGo")}.to raise_exception ActiveRecord::RecordInvalid
     end
     it "returns an error when the password input by the user is < 6" do
       expect {
-          UserAccount.create!(email: "",childgrade: "11",childname: "Lamb Nose",homeaddress: "North Pole",name: "Red Nosed Rudolph", password: "SnowChristmasMustGo", password_confirmation: "SnoGo")}.to raise_exception ActiveRecord::RecordInvalid
+          UserAccount.create!(email: "",homeaddress: "North Pole",name: "Red Nosed Rudolph", password: "SnowChristmasMustGo", password_confirmation: "SnoGo")}.to raise_exception ActiveRecord::RecordInvalid
     end
   end
 
