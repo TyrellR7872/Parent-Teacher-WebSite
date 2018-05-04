@@ -41,7 +41,7 @@
 body {
   background-color: $bg-light;
   font-family: $font-sans;
-  padding-top: 60px;
+  // padding-top: 60px;
   padding-bottom: 40px;
 }
 
@@ -82,6 +82,20 @@ nav li ol {
 
 .navbar-brand {
   font-size: 1.3rem;
+}
+
+.carousel-inner > .item > img {
+  margin: 0 auto;
+}
+
+.crop {
+ height: 300px;
+ width: 400px;
+ overflow: hidden;
+}
+.crop img {
+ height: auto;
+ width: 400px;
 }
 
 // .navbar__header {

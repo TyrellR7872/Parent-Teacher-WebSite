@@ -19,6 +19,9 @@ gem "paperclip"
 # gem 'icalendar', '~> 2.2.2' # for exporting ics phone calendar
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
+gem 'bootstrap'
+gem 'sprockets-rails', '~> 3.2.1'
+gem 'jquery-rails'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

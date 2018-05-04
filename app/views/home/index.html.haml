@@ -2,6 +2,30 @@
   -# TODO need to add images as carousel
   -# example: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
 
+  %div.carousel.slide.mb-4{ "data-ride" => "carousel", :id => 'homepage__image-carousel'}
+    // Indicators
+    %ol.carousel-indicators
+      %li.active{"data-target" => "#homepage__image-carousel", "data-slide-to"=>"0"}
+      %li{"data-target" => "#homepage__image-carousel", "data-slide-to"=>"1"}
+      %li{"data-target" => "#homepage__image-carousel", "data-slide-to"=>"2"}
+
+    // Wrapper for slides
+    %div.carousel-inner{ :role => "listbox" }
+      // Slide One
+      %div.carousel-item.active.img-fluid.crop=image_tag 'slideshow1.jpg', :class => "d-block w-30 "
+      // Slide Two
+      %div.carousel-item.img-fluid.crop=image_tag 'slideshow2.jpg', :class => "d-block w-30"
+      // Slide Three
+      %div.carousel-item.img-fluid.crop=image_tag 'slideshow3.jpg', :class => "d-block w-30"
+
+    // Controls
+    %a.carousel-control-prev{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"prev"}
+      %span.carousel-control-prev-icon
+      %span.sr-only Previous
+    %a.carousel-control-next{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"next"}
+      %span.carousel-control-next-icon
+      %span.sr-only Next
+
   %h3 Calendar Events
 
   -@calendar_events.each do |event|
@@ -14,6 +38,5 @@
       =truncate(event.description, length: 50)
       =event.contact_person
 
-  / Room for footer?
   %br
   %br
