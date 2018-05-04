@@ -6,35 +6,15 @@
   <div class="field">
     <%= f.label :name, "Name" %><br />
     <%= f.text_field :name, autofocus: true, autocomplete: "name", :required => true %>
-
-    <%= f.fields_for :children do |child| %>
-      <div class="field" id="cname">
-        <%= child.label :childname, "First Child's Name" %><br />
-        <%= child.text_field :childname, autofocus: true, autocomplete: "Child's name" %>
-      </div>
-      <div class="field" id="cgrade">
-        <%= child.label :childgrade, "First Child's Grade" %><br />
-        <%= child.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
-      </div>
-    <% end %>
-
-  <script type="text/javascript">
-    for(var a = 0; a<3; a++){
-      document.getElementById("cname").hidden = true;
-      document.getElementById("cgrade").hidden = true;
-    }
-    function increaseBtnOnclick() {
-        document.getElementById("htop").value = Number(document.getElementById("htop").value) + 1;
-        var i = document.getElementById("htop").value;
-        for(var j =0; j<i; j++){
-        document.getElementById("cname").hidden = false;
-        document.getElementById("cgrade").hidden = false;
-      }
-    }
-  </script>
-  <label for="htop">Number of Children </label>
-  <input type="number" min ="1" max ="3" name="htop" value="1" id="htop" onchange="increaseBtnOnclick()">
-
+  </div>
+  <div class="field">
+    <%= f.label :childname, "First Child's Name" %><br />
+    <%= f.text_field :childname, autofocus: true, autocomplete: "Child's name" %>
+  </div>
+  <div class="field">
+    <%= f.label :childgrade, "First Child's Grade" %><br />
+    <%= f.number_field :childgrade, autofocus: true, autocomplete: "Child's grade", within: 1...13 %>
+  </div>
   <div class="field">
     <%= f.label :homeaddress, "Home Address"%><br />
     <%= f.text_field :homeaddress, autofocus: true, autocomplete: "Home Address" %>
