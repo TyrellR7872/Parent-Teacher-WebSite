@@ -1,5 +1,3 @@
--# =render 'flash_message'
-
 #main.container
 
   .row
@@ -7,9 +5,9 @@
     .col-md-4
       %h3.header.title= "#{@calendar_event.title}"
     .col-md-offset-1
-    .col-md-offset-4
-      -# %td.image= image_tag @property.image.url(:medium)
 
+  .row
+    .col-md-8.image= image_tag @calendar_event.image.url(:medium)
 
   .row
     .col-md-offset-2
@@ -21,9 +19,6 @@
   .row
     .col-md-offset-2
     .col-md-8.date_time= "End date and time: #{@calendar_event.end_date_time ? @calendar_event.end_date_time.to_formatted_s(:short): "No time indicated"}"
-    -# .row
-    -#     .col-md-offset-2
-    -#     .col-md-8=
   .row
     .col-md-offset-2
     .col-md-4.location= "The event is at #{@calendar_event.location}."

@@ -96,7 +96,7 @@ When /^(?:|I )choose "([^"]*)"$/ do |field|
 end
 
 When /^(?:|I )attach the file "([^"]*)" to "([^"]*)"$/ do |path, field|
-  attach_file(field, File.expand_path(path))
+  attach_file(field, File.expand_path("/app/assets/images/" + path))
 end
 
 Then /^(?:|I )should see "([^"]*)"$/ do |text|
@@ -273,7 +273,24 @@ Then("I should see that {string} has a datetime of {string}") do |string1, strin
   end # Write code here that turns the phrase above into concrete actions
 end
 
+Then /^(?:|I )should see that "([^"]*)" has an image "([^"]*)"$/ do |event, image_name|
+  chosen_row = nil
+  page.all('.event').each do |row|
+    if (row.find('.title').text == prop)
+      chosen_row = row
+    end
+  end
+  expect(chosen_row).to have_xpath("//img[contains(@src, \"#{image_name}\")]")
+end
 
+Then /^(?:|I )should see the image "([^"]*)"$/ do |image_name|
+  expect(page).to have_xpath("//img[contains(@src, \"#{image_name}\")]")
+end
+
+When /^(?:|I )attach the image "([^"]*)" to "([^"]*)"$/ do |path, field|
+  path = 'app/assets/images/' + path
+  attach_file(field, File.expand_path(path))
+end
 
 ###############################
 # FOR USER ACCOUNT
