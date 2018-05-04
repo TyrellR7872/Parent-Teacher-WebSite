@@ -290,8 +290,6 @@ Given("these UserAccounts:") do |table|
     h['password'] = h.delete('password')
     h['email'] = h.delete('email')
     h['accounttype'] = h.delete('accounttype')
-    h['childname'] = h.delete('childname')
-    h['childgrade'] = h.delete('childgrade').to_i
     h['homeaddress'] = h.delete('homeaddress')
     UserAccount.create!(h)
   end
