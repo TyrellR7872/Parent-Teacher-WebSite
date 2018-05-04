@@ -48,10 +48,8 @@ describe "show page", type: :feature do
     before :each do
       visit "/"
     end
-    it "should show tabs for User Accounts" do
-      expect(page).to have_content("User Accounts")
-    end
-    it "should show tabs for Events" do
+
+    it "should show tabs for  Events" do
         expect(page).to have_content("Events")
     end
     it "should show a tab for About" do

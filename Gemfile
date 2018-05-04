@@ -22,6 +22,7 @@ gem "paperclip"
 gem 'bootstrap'
 gem 'sprockets-rails', '~> 3.2.1'
 gem 'jquery-rails'
+gem 'google-api-client', '~> 0.11'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
@@ -76,3 +77,4 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+

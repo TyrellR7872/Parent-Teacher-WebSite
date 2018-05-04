@@ -1,4 +1,6 @@
-#main.container-fluid
+#main.container
+  %br
+  %br
 
   .row
     .col-md-offset-1
@@ -31,7 +33,8 @@
   .row
     .col-md-offset-1
     .col-md-2= link_to('Sign up to volunteer for this event', volunteer_signup_calendar_event_path)
-    .col-md-2= link_to('Edit event details', edit_calendar_event_path(@calendar_event))
-    .col-md-2= link_to('Delete event', calendar_event_path(@calendar_event), :method => :delete)
     .col-md-2= link_to('Back to events list', calendar_events_path)
-    .col-md-2= link_to('Show volunteers list', show_volunteer_list_calendar_event_path)
+    -if !current_user_account.nil? and current_user_account.admin
+      .col-md-2= link_to('Show volunteers list', show_volunteer_list_calendar_event_path)
+      .col-md-2= link_to('Edit event details', edit_calendar_event_path(@calendar_event))
+      .col-md-2= link_to('Delete event', calendar_event_path(@calendar_event), :method => :delete)

@@ -5,8 +5,8 @@ Feature: Sign in and sign out of a user's account
 
   Background: the website has already has existing accounts
     Given these UserAccounts:
-    |name    | password  | email  | childname       | childgrade| homeaddress |
-    |Test User| testpass| testpass@email.com |Test child| 7| 13 Oak Drive|
+    |name    | password  | email  | homeaddress |
+    |Test User| testpass| testpass@email.com | 13 Oak Drive|
 
   Scenario: Sign in to a user account
     Given I am on the root page

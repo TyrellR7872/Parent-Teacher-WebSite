@@ -33,6 +33,8 @@ Rails 5.1.4
 
 * Clone the git repo at: https://github.com/ColgateCOSC480/HCS-PTO.git
 * Run bundle install to install the gems
+* Rub bundle exec figaro install to create config/application.yml
+* Set GMAIL_USERNAME and GMAIL_PASSWORD environment variables in application.yml with username and app password 
 * Run rails db:migrate to set up database
 * Run rails db:seed to seed admin account
 * Run rails db:test:prepare to prepare the test database
