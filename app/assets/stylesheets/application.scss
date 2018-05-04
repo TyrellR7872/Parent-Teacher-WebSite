@@ -27,19 +27,43 @@
    font-family: Arial;
    font-size: 18px;
  }
-
+.font {}
 // For more information about the scss syntax and the sass language, go to http://sass-lang.com/guide
 // I think it's fine to use vanilla CSS in an scss file, but there are many advantages to using SCSS
 // over regular CSS
 
 // Text Styling
+.row {
+margin-bottom: 50px;
+}
 span {
   background-color: $light-emerald-green;
 }
 .subtitle {
   color: $text-color-light;
 }
-
+.form_styling {
+ width:200px;
+ height:25px;
+ margin:auto;
+ position:relative;
+ align: center;
+ margin-bottom: 200px
+ }
+.input {
+ width:200px;
+ height:30px;
+ align-content: center;
+   }
+.b {
+    list-style-type: square;
+}
+.t{
+    background: #4CAF50;
+    margin: 2px;
+    font-size: 25px;
+    //color: white;
+}
 body {
   background-color: $bg-light;
   font-family: $font-sans;
@@ -80,6 +104,15 @@ h1 {
     text-align: center;
     border: 2px solid green;
 
+}
+.table_caption {
+    display: table-caption;
+    text-align: center;
+
+}
+.events_style .set_width {
+    table-layout: auto;
+    width: 700px;
 }
 .shaded_green {
   background-color: $light-emerald-green;
@@ -176,12 +209,7 @@ h1 {
   background-color: #4dff4d;
   color: black;
 }
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: $light-emerald-green;
-  color: white;
+.centered {
+  padding: 15px 0;
   text-align: center;
-      }
+}
