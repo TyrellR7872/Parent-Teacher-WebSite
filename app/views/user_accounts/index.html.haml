@@ -39,7 +39,8 @@
         %tr.member
         %td.name= member.name
         %td.email= member.email
-        %td.grade= member.childgrade
+        -member.children.map do |c|
+          %td.grade= c.childgrade
         %td.type= member.accounttype
 
   = form_tag email_user_accounts_path, :method => :get do

@@ -18,8 +18,8 @@ class UserAccountsController < ApplicationController
       if @user_account.children.any?
         @children = @user_account.children
         @children.map do |child|
-          @childname=child.childname
-          @childgrade=child.childgrade
+          @childname=child.childname.to_s
+          @childgrade=child.childgrade.to_s
         end
       else
         @children = ""

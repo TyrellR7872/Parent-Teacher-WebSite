@@ -5,9 +5,9 @@ Feature: Send emails based on account attributes
 
   Background: the website already has existing accounts
     Given these UserAccounts:
-    | password  | email                | accounttype| name            | childname       | childgrade| homeaddress | confirmed_at |
-    | halitjaha  | lhalitjaha@colgate.edu |  teacher   | Lumbardh Halitjaha  | Little T        | 4         | 13 Oak Dr   | DateTime.new(2018, 4, 19)|
-    | jamila    | ajamil@colgate.edu   |  parent  | Asad Jamil    | Little Jimmy    | 10         | 10 Oak Dr   | DateTime.new(2018, 4, 19) |
+    | password  | email                | accounttype| name            | homeaddress | confirmed_at |
+    | halitjaha  | lhalitjaha@colgate.edu |  teacher   | Lumbardh Halitjaha  | 13 Oak Dr   | DateTime.new(2018, 4, 19)|
+    | jamila    | ajamil@colgate.edu   |  parent  | Asad Jamil    | 10 Oak Dr   | DateTime.new(2018, 4, 19) |
     Given I am a new, signed-in user account
 
   Scenario: Send to all users
