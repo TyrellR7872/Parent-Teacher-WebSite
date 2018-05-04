@@ -15,9 +15,19 @@ class UserAccountsController < ApplicationController
   def show
     if !current_user_account.nil?
       @user_account = UserAccount.find(current_user_account.id)
+      if @user_account.children.any?
+        @children = @user_account.children
+        @children.map do |child|
+          @childname=child.childname
+          @childgrade=child.childgrade
+        end
+      else
+        @children = ""
+        @childname = ""
+        @childgrade= ""
+      end
     end
   end
-
   def email
     members = UserAccount.filter_on_constraints(constraints)
     members.each do |user|

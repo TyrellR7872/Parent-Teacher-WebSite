@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180419174143) do
+ActiveRecord::Schema.define(version: 20180502165744) do
 
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 20180419174143) do
     t.integer "user_account_id", null: false
   end
 
+  create_table "children", force: :cascade do |t|
+    t.integer "user_account_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "childname", default: ""
+    t.integer "childgrade"
+    t.integer "number_of_children"
+    t.index ["user_account_id"], name: "index_children_on_user_account_id"
+  end
+
   create_table "user_accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -61,8 +71,6 @@ ActiveRecord::Schema.define(version: 20180419174143) do
     t.datetime "updated_at", null: false
     t.string "accounttype", default: ""
     t.string "name", default: ""
-    t.string "childname", default: ""
-    t.integer "childgrade"
     t.string "homeaddress", default: ""
     t.index ["calendar_event_id"], name: "index_user_accounts_on_calendar_event_id"
     t.index ["email"], name: "index_user_accounts_on_email", unique: true
