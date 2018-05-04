@@ -49,15 +49,8 @@ When /^(?:|I )go to (.+)$/ do |page_name|
   visit path_to(page_name)
 end
 
-# When(/^(?:|I )select "([^"]*)" from the date box "([^"]*)" $/) do |value, select_label|
-#   select_date value, from: select_label
-# end
-
 When /^(?:|I )fill in the following:$/ do |fields|
   fields.rows_hash.each do |name, value|
-    # puts name
-    # if (name =~ /date_time$/)
-    #   step %{I select "#{value}" from the date box "#{name}"}
     if (name =~ /(For|Is)/) #TODO
       if (value =~ /true/)
         step %{I check "#{name}"}
@@ -65,7 +58,6 @@ When /^(?:|I )fill in the following:$/ do |fields|
         step %{I uncheck "#{name}"}
       end
     else
-      # puts "using fill" + name
       step %{I fill in "#{name}" with "#{value}"}
     end
   end
@@ -290,8 +282,6 @@ Given("these UserAccounts:") do |table|
     h['password'] = h.delete('password')
     h['email'] = h.delete('email')
     h['accounttype'] = h.delete('accounttype')
-    h['childname'] = h.delete('childname')
-    h['childgrade'] = h.delete('childgrade').to_i
     h['homeaddress'] = h.delete('homeaddress')
     UserAccount.create!(h)
   end

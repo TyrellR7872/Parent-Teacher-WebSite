@@ -5,15 +5,15 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
 
   Background: the website has already has existing accounts
     Given these UserAccounts:
-    | password  | email                | accounttype| name            | childname       | childgrade| homeaddress | remember_created_at |
-    | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   | DateTime.beginning_of_day |
-    | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   | DateTime.beginning_of_day |
+    | password  | email                | accounttype| name            | homeaddress | remember_created_at       |
+    | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | 13 Oak Dr   | DateTime.beginning_of_day |
+    | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | 10 Oak Dr   | DateTime.beginning_of_day |
 
   Scenario: Create a new user account with success
     Given I am on the new user account registration page
     When I fill in the following:
-      |Name|Joel Sommers|
-      | Email|jsommers@colgate.edu|
+      |Name   |Joel Sommers|
+      |Email |jsommers@colgate.edu|
       | Password|cosc123|
       |Password Confirmation|cosc123|
 
@@ -24,10 +24,10 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     And I follow "Edit Profile Details"
     And I should see "Edit User Account"
     And I fill in the following:
-      | Child's Name |Annie        |
-      | Child's Grade |4            |
-      | Home Address  |14 Oak Dr     |
-      |Current Password|cosc123|
+      | First Child's Name  |Annie        |
+      | First Child's Grade |4            |
+      | Home Address  |14 Oak Dr    |
+      |Current Password|cosc123     |
 
     And press "Update details"
     Then I should be on the root page

@@ -71,6 +71,8 @@ ActiveRecord::Schema.define(version: 20180502165744) do
     t.datetime "updated_at", null: false
     t.string "accounttype", default: ""
     t.string "name", default: ""
+    t.string "childname", default: ""
+    t.integer "childgrade"
     t.string "homeaddress", default: ""
     t.index ["calendar_event_id"], name: "index_user_accounts_on_calendar_event_id"
     t.index ["email"], name: "index_user_accounts_on_email", unique: true
