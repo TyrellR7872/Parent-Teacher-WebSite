@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180503190236) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.boolean "funding"
+    t.string "funding"
     t.string "projectname"
     t.string "accounttype"
     t.text "description"

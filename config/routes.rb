@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   resources :user_accounts do
     collection do
       get "email"
+    end
+    member do
       get "view"
     end
   end

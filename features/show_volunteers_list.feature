@@ -12,8 +12,9 @@ I want to access a Volunteer list from the description of the calendar event.
 
 
 
+
     Scenario: Signed in but not volunteering
-      Given I am a new, signed-in user account
+      Given I am a new, signed-in user account with admin
       And I am on the calendar events page
       When I follow "football"
       And I follow "Show volunteers list"
@@ -21,7 +22,7 @@ I want to access a Volunteer list from the description of the calendar event.
       And I should not see "testeruser"
 
     Scenario: Signed in and volunteering
-      Given I am a new, signed-in user account
+      Given I am a new, signed-in user account with admin
       And I am on the calendar events page
       When I follow "Sign up for football"
       Then I should be on the football page
@@ -30,7 +31,11 @@ I want to access a Volunteer list from the description of the calendar event.
       And I should see "Test User"
 
 
-    Scenario: Failed to see volunteers list
+    Scenario: Signed in as non-admin but failed to see volunteers list
+      Given I am a new, signed-in user account
       Given I am on the football page
-      When I follow "Show volunteers list"
-      Then I should see "You need to sign in to see the volunteer list"
+      Then I should not see "Show volunteers list"
+
+    Scenario: Not signed in but failed to see volunteers list
+      Given I am on the football page
+      Then I should not see "Show volunteers list"
