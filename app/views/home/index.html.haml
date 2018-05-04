@@ -28,17 +28,17 @@
 
   %h2 Upcoming events
 
-  %div.row
+  %div.row.card-set
     -@calendar_events.each do |event|
-      / Add a line to separate between events
-      %div.col-lg-4.col-md-6.col-sm-12.card-set
+      .col-lg-4.col-md-6.col-sm-12.card-set
+        / Add a line to separate between events
         %card.mb-4
-          .img-fluid.card-img=image_tag event.image.url(:medium)
+          .card-img-top=image_tag event.image.url(:medium)
           -# Card body, containing title and description
           .card-body
             .homepage__event__title.title=link_to event.title, calendar_event_path(event)
             .card-text
-              .homepage__event__description.description=truncate(event.description, length: 50)
+              .homepage__event__description.description=truncate(event.description, length: 40)
               .homepage__event__description.contact=event.contact_person
           .card-footer.homepage__event__footer
             .row
