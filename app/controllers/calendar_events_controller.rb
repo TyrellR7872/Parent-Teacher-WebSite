@@ -3,7 +3,9 @@ require 'date'
 class CalendarEventsController < ApplicationController
 
   def index
-    @calendar_events = CalendarEvent.where('is_approved = ?', true)
+    if !current_user_account.try(:admin?)
+      @calendar_events = CalendarEvent.where('is_approved = ?', true)
+    end 
     @start_date_time = params[:start_date_time] || ""
     @end_date_time = params[:end_date_time] || ""
     @calendar_events = @calendar_events.event_between(params[:start_date_time],params[:end_date_time]) if params[:start_date_time].present? || params[:end_date_time].present?

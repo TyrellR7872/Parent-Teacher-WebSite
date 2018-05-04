@@ -75,11 +75,14 @@
 -#   =f.check_box :is_approved, class: 'form-template'
 
 -# TODO for futre implementation with authorization
--# -if !@user_account.admin.nil?
--#   .field.form-group
--#     = f.label :is_approved, "Is the event approved?"
--#     = f.check_box :is_reviewed, :checked => (f.is_approved ? f.is_approved : false), required: true
--#
--# -else
--#   .field.form-group
--#     = form.hidden_field :is_approved, :value => false, required: false
+-if current_user_account.admin
+  .field.form-group
+    = f.label :is_approved, "Is the event approved?"
+    -if @calendar_event.is_approved
+      = f.check_box :is_approved, :checked => (f.is_approved ? f.is_approved : false), required: true
+    -else
+      =f.check_box :is_approved, :checked =>false, required: false
+
+-else
+  .field.form-group
+    = f.hidden_field :is_approved, :value => false, required: false

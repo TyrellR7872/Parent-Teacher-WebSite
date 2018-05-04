@@ -19,7 +19,7 @@ Feature: Create a Calendar events
       | Location                 |  Newell, Colgate University |
       | For family               |  true |
       | Contact person email     |  hnguyenvu@colgate.edu |
-      | Is this event approved?  | true |
+
 
     When I press "Create event"
     Then I should be on the calendar events page
