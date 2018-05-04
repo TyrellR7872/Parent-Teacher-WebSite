@@ -33,7 +33,9 @@
 // over regular CSS
 
 // Text Styling
-
+span {
+  background-color: $light-emerald-green;
+}
 .subtitle {
   color: $text-color-light;
 }
@@ -73,7 +75,18 @@ h1 {
 .bd-navbar .navbar-nav .nav-link {
   color: lightgreen;
 }
+.centered_text {
+    padding: 15px 0;
+    text-align: center;
+    border: 2px solid green;
 
+}
+.shaded_green {
+  background-color: $light-emerald-green;
+  color: white;
+  max-width: 400px;
+  min-width: 400px;
+}
 .navbar-nav {
   font-size: 0.85rem; }
   @media (min-width: 750px) {
@@ -156,7 +169,13 @@ h1 {
      background-color: #4CAF50;
      color: white;
  }
-
+.cent {
+  text_align: center;
+}
+.background_green {
+  background-color: #4dff4d;
+  color: black;
+}
 .footer {
   position: fixed;
   left: 0;
