@@ -13,7 +13,6 @@ class UserAccountsController < ApplicationController
       @requests =  @user_account.requests
     end
   end
-
   def email
     members = UserAccount.filter_on_constraints(constraints)
     members.each do |user|

@@ -5,9 +5,9 @@ Feature: Update a user account
 
   Background: the website has already has existing accounts
     Given these UserAccounts:
-    | name  | password  | email                | accounttype| name            | childname       | childgrade| homeaddress |
-    | ty_rell   | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  | Little T        | 4         | 13 Oak Dr   |
-    | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | Little Jimmy    | 2         | 10 Oak Dr   |
+    | name  | password  | email                | accounttype| name            | homeaddress |
+    | ty_rell   | roberts   | troberts@colgate.edu |  teacher   | Tyrell Roberts  |13 Oak Dr   |
+    | ycarter   | carter    | ycarter@colgat.edu   |  student   | Yesu Carter     | 10 Oak Dr   |
 
   Scenario: Update an existing user account
   Given I am on the new user account registration page
@@ -29,7 +29,6 @@ Feature: Update a user account
     | Current Password|cosc_is_cool|
 
   And press "Update details"
-  Then I should see "Your account has been updated successfully."
   When I follow "Hello, Joel Sommers"
   Then I should see "Joel Sommers"
   And I should see "Puppy"
@@ -56,7 +55,5 @@ Feature: Update a user account
     | Home Address  |Good Boy Drive, Yorkshire |
     | Current Password|cosc_is_lame|
   And I press "Update details"
-  Then I should see "Email can't be blank"
   And I should see "Email is invalid"
   And I should see "Current password is invalid"
-
