@@ -15,7 +15,7 @@ class RequestsController < ApplicationController
     if params[:back]
       @request.previous_page
     elsif @request.last_page?
-      @request.save if @request.all_valid?
+      @request.save
     else
       @request.next_page
     end
@@ -31,8 +31,8 @@ class RequestsController < ApplicationController
   end
 
   def show
-      @request = Request.find(params[:id])
-      @user_account = @request.user_account
+    @request = Request.find(params[:id])
+    @user_account = @request.user_account
   end
 
 end

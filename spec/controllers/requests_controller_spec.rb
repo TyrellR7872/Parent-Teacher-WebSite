@@ -9,14 +9,9 @@ RSpec.describe RequestsController, type: :controller do
     end
   end
 
-  describe "GET #index" do
-    it "returns http success" do
-      get :index
-      expect(response).to have_http_status(:success)
-    end
-  end
-
   describe "GET #create" do
+    login_user
+
     it "returns http success" do
       get :create
       expect(response).to have_http_status(:success)
@@ -24,17 +19,14 @@ RSpec.describe RequestsController, type: :controller do
   end
 
   describe "GET #show" do
+    login_user
+
     it "returns http success" do
-      get :show
+      request = Request.create!(funding: true, projectname: "Test Project", description: "For testing purposes", price: 50, students: 500, user_account_id: subject.current_user_account.id)
+      get :show, :params => {:id => request}
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET #destroy" do
-    it "returns http success" do
-      get :destroy
-      expect(response).to have_http_status(:success)
-    end
-  end
 
 end

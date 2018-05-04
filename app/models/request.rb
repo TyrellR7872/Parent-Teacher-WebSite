@@ -29,10 +29,4 @@ class Request < ApplicationRecord
     current_page == pages.last
   end
 
-  def all_valid?
-    pages.all? do |page|
-      self.current_page = page
-      valid?
-    end
-  end
 end

@@ -129,9 +129,9 @@ RSpec.describe UserAccount, type: :model do
     end
 
     it "should be have multiple requests" do
-     @user.requests << Request.create(requesttype: "funding", projectname: "Bake Sale", accounttype: "Teacher", description: "Cupcakes, cookies, brownies, and more!", datesubmit: "5/1/18", datemailed: "4", price: 12.34, attachments: "request.txt")
+     @user.requests << Request.create(funding: true, projectname: "Bake Sale", accounttype: "Teacher", description: "Cupcakes, cookies, brownies, and more!", datesubmit: "5/1/18", datemailed: "4", price: 12.34, attachments: "request.txt")
      expect(@user.requests.length).to eq(1)
-     @user.requests << Request.create(requesttype: "funding", projectname: "Car Wash", accounttype: "Parent", description: "Student run car wash", datesubmit: "4/23/18", datemailed: "4/26/18", price: 12.34, attachments: "request.txt")
+     @user.requests << Request.create(funding: true, projectname: "Car Wash", accounttype: "Parent", description: "Student run car wash", datesubmit: "4/23/18", datemailed: "4/26/18", price: 12.34, attachments: "request.txt")
      expect(@user.requests.length).to eq(2)
 
     end

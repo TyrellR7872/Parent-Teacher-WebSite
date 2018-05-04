@@ -32,10 +32,9 @@ class UserAccountsController < ApplicationController
   # DELETE /resource
   def destroy
     @user_account = current_user_account.id == params[:id] ? UserAccount.find(current_user_account.id) : UserAccount.find(params[:id])
-    if @user_account.delete
-      flash[:notice] = "User Account Successfully Deleted"
-      redirect_to root_path
-    end
+    @user_account.destroy
+    flash[:notice] = "User Account Successfully Deleted"
+    redirect_to root_path
   end
 
   private
