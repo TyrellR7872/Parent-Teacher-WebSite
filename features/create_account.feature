@@ -24,8 +24,8 @@ Feature: Create a Teacher, Staff, or Parent User Account with user submitted log
     And I follow "Edit Profile Details"
     And I should see "Edit User Account"
     And I fill in the following:
-      | First Child's Name  |Annie        |
-      | First Child's Grade |4            |
+      | Child's Name  |Annie        |
+      | Child's Grade |4            |
       | Home Address  |14 Oak Dr    |
       |Current Password|cosc123     |
 

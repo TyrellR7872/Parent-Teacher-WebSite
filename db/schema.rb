@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180503190236) do
   end
 
   create_table "requests", force: :cascade do |t|
-    t.boolean "funding"
+    t.string "funding"
     t.string "projectname"
     t.string "accounttype"
     t.text "description"
@@ -78,9 +78,9 @@ ActiveRecord::Schema.define(version: 20180503190236) do
     t.datetime "updated_at", null: false
     t.string "accounttype", default: ""
     t.string "name", default: ""
+    t.string "homeaddress", default: ""
     t.string "childname", default: ""
     t.integer "childgrade"
-    t.string "homeaddress", default: ""
     t.boolean "admin", default: false
     t.index ["calendar_event_id"], name: "index_user_accounts_on_calendar_event_id"
     t.index ["email"], name: "index_user_accounts_on_email", unique: true

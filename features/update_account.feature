@@ -28,7 +28,7 @@ Feature: Update a user account
     | Home Address  |Good Boy Drive, Yorkshire |
     | Current Password|cosc_is_cool|
 
-  And press "Update details"
+  And I press "Update details"
   When I follow "Hello, Joel Sommers"
   Then I should see "Joel Sommers"
   And I should see "Puppy"
