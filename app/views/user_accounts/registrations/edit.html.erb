@@ -56,6 +56,8 @@
   </div>
 <% end %>
 
+<h2>Delete User Account</h2>
+
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: {method: :delete}) do |f| %>
       <div class="field">
         <%= f.label :delete_account_password, "Password"%> <i>(use your current password to confirm account deletion)</i><br />

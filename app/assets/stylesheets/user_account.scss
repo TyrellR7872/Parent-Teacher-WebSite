@@ -22,15 +22,19 @@ input{
   border-radius: 4px;
 }
 
-
-body{
-  #back{
-    color: blue
-  }
+#error_explanation{
+  color: black;
 }
-
-
+#edit_user_account{
+  margin-left: 25px;
+}
+body{
+    #back.a{
+      color: blue;
+    }
+}
 h2{
   color: $emerald-green;
   font-family: Vollkorn;
+  margin-left: 25px;
 }
