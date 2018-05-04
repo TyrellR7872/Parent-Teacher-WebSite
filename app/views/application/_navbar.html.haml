@@ -7,8 +7,9 @@
   %div.navbar-nav-scroll
     %ul.navbar-nav
       -if !current_user_account.nil?
-        %li.nav-item
-          =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
+        -if current_user_account.admin?
+          %li.nav-item
+            =link_to "User Accounts", user_accounts_path, :class => 'nav-link'
       %li.nav-item
         =link_to "Events", calendar_events_path, :class => 'nav-link'
       %li.nav-item

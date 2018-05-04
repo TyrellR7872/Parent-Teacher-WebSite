@@ -8,6 +8,21 @@ div {
   font-family: $font-sans;
 }
 
+.pages__text--primary{
+  font-size: 1rem;
+}
+
+.pages__item--primary {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: $emerald-green;
+}
+
+.pages__item--secondary {
+  font-weight: 400;
+  color: black;
+}
+
 .pages__item--link {
   color: blue;
 }
