@@ -1,17 +1,27 @@
 #main.container
 
-  %h3.header PTO members
+  %h3.header PTO Members
 
   = form_tag user_accounts_path, :method => :get do
+    .field
     = label_tag :name, "Name"
+    .field
     = text_field_tag :name, @name
+    .field
     = label_tag :accounttype, "Account type"
+    .field
     = text_field_tag :accounttype, @accounttype
     %br
+    .field
     = label_tag :fromgrade, "From grade"
+    .field
     = number_field_tag :fromgrade, @fromgrade
+    .field
     = label_tag :tograde, "To grade"
+    .field
     = number_field_tag :tograde, @tograde
+
+    .actions
     = submit_tag "Refine the list of members"
 
 
@@ -44,4 +54,5 @@
     = hidden_field_tag :fromgrade, params[:fromgrade]
     = hidden_field_tag :tograde, params[:tograde]
     %br
+    .action
     = submit_tag "Send message to members shown"
