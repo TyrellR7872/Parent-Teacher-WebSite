@@ -25,9 +25,9 @@
 
 
     %tbody
-      -@members.each do |member|
+      -@useraccounts.each do |member|
         %tr.member
-        %td.name= member.name
+        %td.name= link_to(member.name, view_user_accounts_path(member))
         %td.email= member.email
         %td.grade= member.childgrade
         %td.type= member.accounttype

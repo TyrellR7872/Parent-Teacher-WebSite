@@ -281,6 +281,8 @@ Then("I should see that {string} has a datetime of {string}") do |string1, strin
   end # Write code here that turns the phrase above into concrete actions
 end
 
+
+
 ###############################
 # FOR USER ACCOUNT
 ###############################
@@ -314,15 +316,18 @@ Then /^(?:|I )should see that user "([^"]*)".*"([^"]*)"$/ do |name,value|
   end
 end
 
+
+
 ###############################
 # FOR SIGN IN/OUT
 ###############################
 
-Given /^I am a new, signed-in user account$/ do
+Given /^I am a new, signed-in user account(?:| (with admin))$/ do |admin|
   name = 'Test User'
   email = 'testeruser@colgate.edu'
   password = 'testpass'
-  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password, :confirmed_at => DateTime.new(2018,5,1)).save!
+  adminstatus = admin == "with admin" ? true : false
+  UserAccount.new(:name => name, :email => email, :password => password, :password_confirmation => password, :admin => adminstatus, :confirmed_at => DateTime.new(2018,5,1)).save!
 
 
   visit '/user_account/sign_in'

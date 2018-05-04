@@ -56,6 +56,6 @@
   </div>
 <% end %>
 
-<%= button_to "Delete User Account", registration_path(resource_name), data: { confirm: "Confirm Deletion" }, method: :delete %></p>
+<%= button_to "Delete User Account", user_account_path(current_user_account), data: { confirm: "Confirm Deletion" }, method: :delete %></p>
 
 <id="back"><%= link_to "Back", :back %>

@@ -4,7 +4,7 @@ require 'spec_helper'
 RSpec.describe UserAccount, type: :model do
   describe "check attributes and methods" do
     it "should be able to create a UserAccount object which has correct methods" do
-      ua = UserAccount.create!(password: "testpass", email: "testuser@test.com", accounttype: "Parent", name: "Tester Name", childname: "Test Child", childgrade: 5, homeaddress: "123 Test Street")
+      ua = UserAccount.create!(password: "testpass", email: "testuser@tests.com", accounttype: "Parent", name: "Tester Name", childname: "Test Child", childgrade: 5, homeaddress: "123 Test Street", admin: false)
       expect(ua).to respond_to :email
       expect(ua).to respond_to :accounttype
       expect(ua).to respond_to :name
@@ -12,7 +12,9 @@ RSpec.describe UserAccount, type: :model do
       expect(ua).to respond_to :childgrade
       expect(ua).to respond_to :homeaddress
       expect(ua).to respond_to :validates_format_of
+      expect(ua).to respond_to :admin
     end
+
   end
 
   before(:each) do
@@ -114,5 +116,27 @@ RSpec.describe UserAccount, type: :model do
     end
 
   end
+
+  describe "has many association" do
+
+    before(:each) do
+      @user = UserAccount.create!(@attribute)
+    end
+
+    it "should have many requests" do
+      ua = UserAccount.reflect_on_association(:requests)
+      expect(ua.macro).to eq(:has_many)
+    end
+
+    it "should be have multiple requests" do
+     @user.requests << Request.create(funding: true, projectname: "Bake Sale", accounttype: "Teacher", description: "Cupcakes, cookies, brownies, and more!", datesubmit: "5/1/18", datemailed: "4", price: 12.34, attachments: "request.txt")
+     expect(@user.requests.length).to eq(1)
+     @user.requests << Request.create(funding: true, projectname: "Car Wash", accounttype: "Parent", description: "Student run car wash", datesubmit: "4/23/18", datemailed: "4/26/18", price: 12.34, attachments: "request.txt")
+     expect(@user.requests.length).to eq(2)
+
+    end
+
+  end
+
 
 end
