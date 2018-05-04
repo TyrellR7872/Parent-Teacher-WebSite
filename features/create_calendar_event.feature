@@ -9,7 +9,7 @@ Feature: Create a Calendar events
       | football     | cozy and sunny            | 3rd Feb 2021 04:05:06 PM   | 2nd Mar 2021 04:05:06 PM   | Lathrop, Hamilton, NY   | true     |            | hnguyenvu@colgate.edu | true        |
       | jazz concert | come and chill with music | 6th Feb 2020 04:05:06 PM   | 8th Feb 2021 04:05:06 PM   | Ho, Hamilton, NY        |          | true       | pdhawka@colgate.edu   | true        |
 
-  Scenario: Create a new calendar event with a status of approved
+  Scenario: Create a new calendar event with a status of approved without adding pictures
     Given I am on the create calendar event page
     When I fill in the following:
       | Title                    | easter egg decoration            |
@@ -27,6 +27,11 @@ Feature: Create a Calendar events
     And I should see that "easter egg decoration" has a datetime of "2021/01/03 04:05"
     And I should see "football"
     And I should see "jazz concert"
+    When I follow "jazz concert"
+    Then I should see "jazz concert"
+    And I should see "come and chill with music"
+    And I should see the image "default_image_event"
+
 
   Scenario: Create a new calendar event with a status of not yet approved
     Given I am on the create calendar event page
@@ -44,3 +49,24 @@ Feature: Create a Calendar events
     Then I should be on the calendar events page
     And I should see "New event 'church dinner' awaiting approval"
     And I should not see "free dinner for hungry students"
+
+  Scenario: Create a new calendar event with a status of approved and with a specific image
+    Given I am on the create calendar event page
+    When I fill in the following:
+    | Title                    | church dinner                    |
+    | Description              | free dinner for hungry students  |
+    | Start date of the event  | 3rd Jan 2021 04:05:06 AM         |
+    | End date of the event    | 3rd Jan 2021 04:05:06 PM         |
+    | Location                 |  Newell, Colgate University |
+    | For family               |  true |
+    | Contact person email     |  hnguyenvu@colgate.edu |
+    | Is this event approved?  | true |
+
+    When I attach the image "lady_gaga.png" to "Image"
+    When I press "Create event"
+    Then I should be on the calendar events page
+    And I should see "New event 'church dinner' created and added to the page"
+    And I should see "free dinner for hungry students"
+    When I follow "church dinner"
+    Then I should see "church dinner"
+    And I should see the image "lady_gaga"

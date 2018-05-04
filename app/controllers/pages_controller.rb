@@ -1,5 +1,4 @@
 class PagesController < ApplicationController
-
     def show
       # Show the appropriate static pages from the /views folder, or
       # render file 404 error

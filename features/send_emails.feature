@@ -10,6 +10,7 @@ Feature: Send emails based on account attributes
     | jamila    | ajamil@colgate.edu   |  parent  | Asad Jamil    | Little Jimmy    | 10         | 10 Oak Dr   | DateTime.new(2018, 4, 19) |
     Given I am a new, signed-in user account with admin
 
+
   Scenario: Send to all users
     Given I am on the user accounts page
     And I fill in "Subject" with "Test"

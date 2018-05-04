@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180503190236) do
+ActiveRecord::Schema.define(version: 20180427200400) do
 
   create_table "calendar_events", force: :cascade do |t|
     t.text "title", null: false
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(version: 20180503190236) do
     t.text "contact_person", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.integer "image_file_size"
+    t.datetime "image_updated_at"
   end
 
   create_table "calendar_events_user_accounts", id: false, force: :cascade do |t|
@@ -78,9 +82,9 @@ ActiveRecord::Schema.define(version: 20180503190236) do
     t.datetime "updated_at", null: false
     t.string "accounttype", default: ""
     t.string "name", default: ""
+    t.string "homeaddress", default: ""
     t.string "childname", default: ""
     t.integer "childgrade"
-    t.string "homeaddress", default: ""
     t.boolean "admin", default: false
     t.index ["calendar_event_id"], name: "index_user_accounts_on_calendar_event_id"
     t.index ["email"], name: "index_user_accounts_on_email", unique: true

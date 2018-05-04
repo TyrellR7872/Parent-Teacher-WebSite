@@ -67,6 +67,10 @@
   =f.text_field :contact_person, required: true, class: 'form-template'
 
 .field
+  =f.label :image, "Image"
+  =f.file_field :image, accept: "image/png,image/gif,image/jpeg"
+
+.field
   =f.label :is_approved, "Is this event approved?"
   =f.check_box :is_approved, class: 'form-template'
 

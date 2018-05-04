@@ -2,7 +2,6 @@
 
 require 'rails_helper'
 
-
 RSpec.describe PagesController, type: :controller do
 
   describe "GET #show for the About page" do
@@ -18,13 +17,6 @@ RSpec.describe PagesController, type: :controller do
       expect(response).to have_http_status(:success)
     end
   end
-
-  # describe "GET #show for the Committees page" do
-  #   it "returns http success" do
-  #     get :show, params: {:id => 'committees'}
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
 
   describe "GET #show for non-existent page" do
     it "returns http failure" do

@@ -13,7 +13,6 @@ class UserAccountsController < ApplicationController
       @requests =  @user_account.requests
     end
   end
-
   def email
     members = UserAccount.filter_on_constraints(constraints)
     members.each do |user|
@@ -56,7 +55,5 @@ class UserAccountsController < ApplicationController
     hash[:from] = current_user_account.name
     hash
   end
-
-
-
+  
 end

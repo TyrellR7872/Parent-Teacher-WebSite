@@ -48,6 +48,7 @@ describe "show page", type: :feature do
     before :each do
       visit "/"
     end
+
     it "should show tabs for  Events" do
         expect(page).to have_content("Events")
     end
