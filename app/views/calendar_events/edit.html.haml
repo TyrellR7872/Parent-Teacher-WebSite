@@ -3,6 +3,13 @@
 
   =form_for @calendar_event, :method => :patch do |f|
     =render 'event_form_template', f: f
+    -if !@user_account.admin.nil?
+      .field.form-group
+        = f.label :is_approved, "Is the event approved?"
+        = f.check_box :is_reviewed, :checked => (f.is_approved ? f.is_approved : false), required: true
 
+    -else
+      .field.form-group
+        = form.hidden_field :is_approved, :value => false, required: false
     .field
       =f.submit "Update event details"
