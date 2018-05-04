@@ -62,6 +62,9 @@ nav li ol {
   padding: 0;
   margin: 0; }
 
+h1 {
+  font-weight: 800;
+}
 .bg-emerald {
   //background-image: linear-gradient(to top right, #008B45, $light-emerald-green);
   background-color: darkgreen;
@@ -88,14 +91,14 @@ nav li ol {
   margin: 0 auto;
 }
 
-.crop {
-  height: 300px;
-  width: 400px;
-  overflow: hidden;
-}
+// .crop {
+//   height: 300px;
+//   width: 1500px;
+//   overflow: hidden;
+// }
 .crop img {
-  height: auto;
-  width: 400px;
+  height: 300px;
+  width: auto;
 }
 
 .crop-card img{
@@ -116,5 +119,16 @@ nav li ol {
 
 .homepage__event__footer {
   font-weight: 200;
-  font-size: 0.75rem;
+  font-size: 0.75rem;}
+
+.carousel-item:after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background:rgba(0,0,0,0.6);
+  opacity: 0.4;
 }

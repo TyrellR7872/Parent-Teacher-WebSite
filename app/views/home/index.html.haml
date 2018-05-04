@@ -1,8 +1,15 @@
-#main.container
+#main
   -# TODO need to add images as carousel
   -# example: https://www.w3schools.com/bootstrap/bootstrap_carousel.asp
 
-  %div.carousel.slide.mb-4{ "data-ride" => "carousel", :id => 'homepage__image-carousel'}
+  -# .row
+  -#   .jumbotron.jumbotron-fluid
+  -#     .container
+  -#       .h1.display-4 Hamilton Central Parent Teacher Organization
+  -#       %p.lead Welcome to the official webpage of the Hamilton Central Parent Teacher Organization. Learn more about how you can be involved with the group, or understand more about us.
+  -#       =link_to "Understand HC PTO Better", pages_path(:about), :class => "btn btn-success btn-lg"
+
+  %div.carousel.slide{ "data-ride" => "carousel", :id => 'homepage__image-carousel'}
     // Indicators
     %ol.carousel-indicators
       %li.active{"data-target" => "#homepage__image-carousel", "data-slide-to"=>"0"}
@@ -12,11 +19,16 @@
     // Wrapper for slides
     %div.carousel-inner{ :role => "listbox" }
       // Slide One
-      %div.carousel-item.active.img-fluid.crop=image_tag 'slideshow1.jpg', :class => "d-block w-30 "
+      %div.carousel-item.active.crop=image_tag 'emerald.png', :class => "d-block w-100"
+      .container
+        .carousel-caption
+          %h1 Hamilton Central Parent Teacher Organization
+          %p.lead Welcome to the official webpage of the Hamilton Central Parent Teacher Organization. Learn more about how you can be involved with the group, or understand more about us.
+          =link_to "Understand HC PTO Better", pages_path(:about), :class => "btn btn-success btn-lg"
       // Slide Two
-      %div.carousel-item.img-fluid.crop=image_tag 'slideshow2.jpg', :class => "d-block w-30"
+      %div.carousel-item.img-fluid.crop=image_tag 'slideshow2.jpg', :class => "d-block w-100"
       // Slide Three
-      %div.carousel-item.img-fluid.crop=image_tag 'slideshow3.jpg', :class => "d-block w-30"
+      %div.carousel-item.img-fluid.crop=image_tag 'slideshow3.jpg', :class => "d-block w-100"
 
     // Controls
     %a.carousel-control-prev{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"prev"}
@@ -26,7 +38,11 @@
       %span.carousel-control-next-icon
       %span.sr-only Next
 
+%br
+.container
   %h2 Upcoming events
+  %hr
+  %br
 
   %div.row.card-set
     -@calendar_events.each do |event|
