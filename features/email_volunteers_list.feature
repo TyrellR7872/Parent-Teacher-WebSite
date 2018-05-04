@@ -9,7 +9,7 @@ Feature: Send emails based to volunteers of an event
       | title        | description               | start_date_time           | end_date_time             | location                | is_sport | is_musical | contact_person        | is_approved |
       | football     | cozy and sunny            | 2018/03/02 12:00 PM       | 2018/05/02 12:00 PM       | Lathrop, Hamilton, NY   | true     |            | hnguyenvu@colgate.edu | true        |
 
-    Given I am a new, signed-in user account
+    Given I am a new, signed-in user account with admin
     And I am on the calendar events page
     And I follow "Sign up for football"
 
@@ -24,4 +24,3 @@ Feature: Send emails based to volunteers of an event
     When I open the email
     Then I should see "Hello Test User!" in the email body
     And I should see "Is this working?" in the email body
-    
