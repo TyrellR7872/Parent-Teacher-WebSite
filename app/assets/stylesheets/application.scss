@@ -132,3 +132,37 @@ h1 {
   background:rgba(0,0,0,0.6);
   opacity: 0.4;
 }
+
+
+ #events_style {
+     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+     border-collapse: collapse;
+     width: 100%;
+ }
+
+ #events_style td, #events_style th {
+     border: 1px solid #ddd;
+     padding: 8px;
+ }
+
+ #events_style tr:nth-child(even){background-color: #f2f2f2;}
+
+ #events_style tr:hover {background-color: #ddd;}
+
+ #events_style th {
+     padding-top: 12px;
+     padding-bottom: 12px;
+     text-align: left;
+     background-color: #4CAF50;
+     color: white;
+ }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: $light-emerald-green;
+  color: white;
+  text-align: center;
+      }
