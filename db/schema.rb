@@ -45,16 +45,6 @@ ActiveRecord::Schema.define(version: 20180503190236) do
     t.integer "user_account_id", null: false
   end
 
-  create_table "children", force: :cascade do |t|
-    t.integer "user_account_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "childname", default: ""
-    t.integer "childgrade"
-    t.integer "number_of_children"
-    t.index ["user_account_id"], name: "index_children_on_user_account_id"
-  end
-
   create_table "requests", force: :cascade do |t|
     t.string "funding"
     t.string "projectname"
