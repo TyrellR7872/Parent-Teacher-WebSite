@@ -1,6 +1,6 @@
 class UserAccountsController < ApplicationController
   def index
-    @useraccounts = UserAccount.filter_on_constraints(constraints)
+    @user_accounts = UserAccount.filter_on_constraints(constraints)
     @tograde = params[:tograde] || ""
     @fromgrade = params[:fromgrade] || ""
     @name = params[:name] || ""
@@ -55,5 +55,5 @@ class UserAccountsController < ApplicationController
     hash[:from] = current_user_account.name
     hash
   end
-  
+
 end

@@ -24,10 +24,10 @@
       %div.carousel-item.img-fluid.crop=image_tag 'slideshow3.jpg', :class => "d-block w-100"
 
     // Controls
-    %a.carousel-control-prev{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"prev"}
+    .carousel-control-prev{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"prev"}
       %span.carousel-control-prev-icon
       %span.sr-only Previous
-    %a.carousel-control-next{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"next"}
+    .carousel-control-next{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"next"}
       %span.carousel-control-next-icon
       %span.sr-only Next
 
@@ -35,11 +35,10 @@
 .container
   %h2 Upcoming events
   %hr
-  %br
 
   %div.row.card-set
     -@calendar_events.each do |event|
-      .col-lg-4.col-md-6.col-sm-12.card-set
+      .col-lg-4.col-md-6.col-sm-12.card-set.homepage__event
         / Add a line to separate between events
         %card.mb-4
           .card-img-top=image_tag event.image.url(:medium)

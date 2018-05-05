@@ -179,29 +179,30 @@ h1 {
   opacity: 0.4;
 }
 
+#events_style {
+  // font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  // width: 100%;
+}
 
- #events_style {
-     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-     border-collapse: collapse;
-     width: 100%;
- }
+#events_style td, #events_style th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
 
- #events_style td, #events_style th {
-     border: 1px solid #ddd;
-     padding: 8px;
- }
+#events_style tr:nth-child(even){background-color: #f2f2f2;}
 
- #events_style tr:nth-child(even){background-color: #f2f2f2;}
+.homepage__event {
+  padding-top: 20px;
+}
 
- #events_style tr:hover {background-color: #ddd;}
-
- #events_style th {
-     padding-top: 12px;
-     padding-bottom: 12px;
-     text-align: left;
-     background-color: #4CAF50;
-     color: white;
- }
+#events_style th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #4CAF50;
+   color: white;
+}
 .cent {
   text_align: center;
 }
@@ -210,6 +211,4 @@ h1 {
   color: black;
 }
 .centered {
-  padding: 15px 0;
-  text-align: center;
-}
+  padding: 15px 0;}

@@ -7,9 +7,10 @@
   .row
     .col-md-offset-1
     .col-md-4
-      %h3.header.title.cent= "#{@calendar_event.title}"
+      %h3.header.title= "#{@calendar_event.title}"
     .col-md-offset-1
 
+  %br
   .row
     .col-md-2.image= image_tag @calendar_event.image.url(:medium)
     .col-md-8.description= "#{@calendar_event.description}"
@@ -34,7 +35,7 @@
   .row
     .col-md-offset-1
 
-    .col-md-2.centered_text= link_to('Sign up to volunteer for this event', volunteer_signup_calendar_event_path)
+    .col-sm-2= link_to 'Sign up to volunteer for this event', volunteer_signup_calendar_event_path, :class => "btn btn-success btn-sm"
     .col-md-2.centered_text= link_to('Back to events list', calendar_events_path)
     -if !current_user_account.nil? and current_user_account.admin
       .col-md-2.centered_text= link_to('Show volunteers list', show_volunteer_list_calendar_event_path)
