@@ -3,8 +3,14 @@
   %br
   %br
 
-    %h3.header Calendar Events
+    .row
+      .col-md-1
+      %h3.col-md-3.header Calendar Events
+      .col-md-3
+      .col-md-2=link_to "Create a new event for HCS-PTO", new_calendar_event_path, :class => "btn btn-success btn-lg"
+      .col-md-3
 
+    %br
     %table.table#events_style
       %thead
         %tr
@@ -40,5 +46,3 @@
       = submit_tag "Show events"
     %br
     %br
-
-=link_to "Create a new event for HCS-PTO", new_calendar_event_path

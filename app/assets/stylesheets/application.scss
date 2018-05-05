@@ -134,11 +134,11 @@ h1 {
 }
 
 
- #events_style {
-     font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-     border-collapse: collapse;
-     width: 100%;
- }
+#events_style {
+  // font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  // width: 100%;
+}
 
  #events_style td, #events_style th {
      border: 1px solid #ddd;
@@ -153,7 +153,7 @@ h1 {
      padding-top: 12px;
      padding-bottom: 12px;
      text-align: left;
-     background-color: #4CAF50;
+     background-color: $light-emerald-green;
      color: white;
  }
 
@@ -162,7 +162,11 @@ h1 {
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: $light-emerald-green;
+  background-color: $emerald-green;
   color: white;
   text-align: center;
-      }
+}
+
+img {
+  text-align: center;
+}

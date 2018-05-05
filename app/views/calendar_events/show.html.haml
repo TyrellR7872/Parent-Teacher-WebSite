@@ -3,38 +3,40 @@
   %br
 
   .row
-    .col-md-offset-1
-    .col-md-4
+    .col-sm-2
+    .col-sm-8
       %h3.header.title= "#{@calendar_event.title}"
-    .col-md-offset-1
+    .col-sm-offset-1
 
   .row
-    .col-md-8.image= image_tag @calendar_event.image.url(:medium)
+    .col-sm-8.image= image_tag @calendar_event.image.url(:medium)
+
+  %br
 
   .row
-    .col-md-offset-2
-    .col-md-8.description= "#{@calendar_event.description}"
+    .col-sm-offset-8
+    .col-sm-8.description= "#{@calendar_event.description}"
 
   .row
-    .col-md-offset-2
-    .col-md-8.date_time= "Start date and time: #{@calendar_event.start_date_time ? @calendar_event.start_date_time.to_formatted_s(:short): "No time indicated"}"
+    .col-sm-offset-2
+    .col-sm-8.date_time= "Start date and time: #{@calendar_event.start_date_time ? @calendar_event.start_date_time.to_formatted_s(:short): "No time indicated"}"
   .row
-    .col-md-offset-2
-    .col-md-8.date_time= "End date and time: #{@calendar_event.end_date_time ? @calendar_event.end_date_time.to_formatted_s(:short): "No time indicated"}"
+    .col-sm-offset-2
+    .col-sm-8.date_time= "End date and time: #{@calendar_event.end_date_time ? @calendar_event.end_date_time.to_formatted_s(:short): "No time indicated"}"
   .row
-    .col-md-offset-2
-    .col-md-4.location= "The event is at #{@calendar_event.location}."
+    .col-sm-offset-2
+    .col-sm-8.location= "The event is at #{@calendar_event.location}."
   .row
-    .col-md-4.contact_person= "#{@calendar_event.contact_person} is the contact person for this event."
+    .col-sm-8.contact_person= "#{@calendar_event.contact_person} is the contact person for this event."
 
   %br
   %br
 
   .row
-    .col-md-offset-1
-    .col-md-2= link_to('Sign up to volunteer for this event', volunteer_signup_calendar_event_path)
-    .col-md-2= link_to('Back to events list', calendar_events_path)
+    .col-sm-offset-1
+    .col-sm-2= link_to('Sign up to volunteer for this event', volunteer_signup_calendar_event_path)
+    .col-sm-2= link_to('Back to events list', calendar_events_path)
     -if !current_user_account.nil? and current_user_account.admin
-      .col-md-2= link_to('Show volunteers list', show_volunteer_list_calendar_event_path)
-      .col-md-2= link_to('Edit event details', edit_calendar_event_path(@calendar_event))
-      .col-md-2= link_to('Delete event', calendar_event_path(@calendar_event), :method => :delete)
+      .col-sm-2= link_to('Show volunteers list', show_volunteer_list_calendar_event_path)
+      .col-sm-2= link_to('Edit event details', edit_calendar_event_path(@calendar_event))
+      .col-sm-2= link_to('Delete event', calendar_event_path(@calendar_event), :method => :delete)
