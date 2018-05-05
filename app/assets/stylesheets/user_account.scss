@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 @import "colors";
+
 #main.container{
   font-family: Vollkorn;
   .header{
@@ -25,6 +26,7 @@ input{
 #error_explanation{
   color: black;
 }
+
 #edit_user_account{
   margin-left: 25px;
 }
@@ -33,6 +35,7 @@ body{
       color: blue;
     }
 }
+
 h2{
   color: $emerald-green;
   font-family: Vollkorn;

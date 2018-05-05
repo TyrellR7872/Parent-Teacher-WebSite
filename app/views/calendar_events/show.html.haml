@@ -3,11 +3,12 @@
   %br
 
   .row
-    .col-sm-2
+    .col-sm-offset-2
     .col-sm-8
       %h3.header.title= "#{@calendar_event.title}"
     .col-sm-offset-1
 
+  %br
   .row
     .col-sm-8.image= image_tag @calendar_event.image.url(:medium)
 
@@ -34,7 +35,7 @@
 
   .row
     .col-sm-offset-1
-    .col-sm-2= link_to('Sign up to volunteer for this event', volunteer_signup_calendar_event_path)
+    .col-sm-2= link_to 'Sign up to volunteer for this event', volunteer_signup_calendar_event_path, :class => "btn btn-success btn-sm"
     .col-sm-2= link_to('Back to events list', calendar_events_path)
     -if !current_user_account.nil? and current_user_account.admin
       .col-sm-2= link_to('Show volunteers list', show_volunteer_list_calendar_event_path)
