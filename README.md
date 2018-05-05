@@ -30,6 +30,7 @@ Ruby 2.4.1
 Rails 5.1.4
 gem devise
 gem pg  ~> 0.18
+
 ## Installation
 
 * Clone the git repo at: https://github.com/ColgateCOSC480/HCS-PTO.git
@@ -48,6 +49,7 @@ gem pg  ~> 0.18
 * Yesu Carter
 * Nam Nguyen
 * Tyrell Roberts
+
 ## Future Stories to be implemented
 * Add has_many :children to add more children to a User Account
 * Use Google Geocode to geocode the locations of Calendar Events
@@ -55,3 +57,7 @@ gem pg  ~> 0.18
 * Authentication of user accounts by admins to confirm user account type
 * Donate button or link for specific events on the event calendar
 * General donate button or link for PTO
+* Store images from events in a cloud rather than putting them in the assets folder (Heroku only allows mmaximum 500Mb)
+
+## Current Problems/Bugs that need more attention
+* There can be times when Heroku gives a R13 problem. Do a ```heroku run:detached rake db:migrate```. However, this needs more attention as to understand why there is a R13 problem in the first place.

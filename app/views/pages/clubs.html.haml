@@ -1,13 +1,11 @@
-#main.container
+#main.container.centered_text
+  %h2 Clubs and Organizations
+  %div.pages--primary.centered
   %br
-  %br
-
-  %div.pages--primary
     Hamilton Central School encourages participation in the various musical, dramatic, athletic, journalistic and intellectual activities listed below.  Those marked with an asterisk have an academic eligibility requirement.  The coach or advisor, upon approval by the principal, has the prerogative to establish reasonable criteria, oral or written, for participation in their respective extra-curricular program.
-
   %br
   %div.pages--primary
-    %ul
+    %ul.b.t
       %li.pages__item--secondary  Almeda
       %li.pages__item--secondary  Amnesty International
       %li.pages__item--secondary  Chess Club
@@ -28,6 +26,6 @@
       %li.pages__item--secondary  Student Council (HS & MS)
       %li.pages__item--secondary  Teen Aids Task Force (TATF)
 
-    For more information, please take a look at the school official
-    =link_to "website", 'https://www.hamiltoncentral.org/domain/70', :class => 'pages__item--link'
+    %h5 For more information, please take a look at the school official website
+    .centered_text=link_to "Hamilton Central Website", 'https://www.hamiltoncentral.org/domain/70', :class => 'pages__item--link'
   %br
