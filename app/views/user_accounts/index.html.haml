@@ -1,50 +1,64 @@
+
 #main.container
 
-  %h3.header PTO members
+  %h3.header.centered_text PTO members
+  %br
+  .row
+    .col-md-6.form_styling.input
+      = form_tag user_accounts_path, :method => :get do
+        = label_tag :name, "Name"
+        %br
+        = text_field_tag :name, @name
+        %br
+        = label_tag :accounttype, "Account type"
+        %br
+        = text_field_tag :accounttype, @accounttype
+        %br
+        = label_tag :fromgrade, "From grade"
+        %br
+        = number_field_tag :fromgrade, @fromgrade
+        %br
+        = label_tag :tograde, "To grade"
+        %br
+        = number_field_tag :tograde, @tograde
+        %br
+        %br
+        = submit_tag "Refine the list of members"
+      %br
+      %br
+    .col-md-6.form_styling.input
+      = form_tag email_user_accounts_path, :method => :get do
+        = label_tag :subject, "Subject"
+        %br
+        = text_field_tag :subject
+        %br
+        = label_tag :body, "Body"
+        %br
+        = text_area_tag :body
+        %br
+        = hidden_field_tag :name, params[:name]
+        = hidden_field_tag :accounttype, params[:accounttype]
+        = hidden_field_tag :fromgrade, params[:fromgrade]
+        = hidden_field_tag :tograde, params[:tograde]
+        %br
+        = submit_tag "Send message to members shown"
+  %br
+  .row
+    .col-md-12
+      %table#events_style
+        %thead
+          %tr
+            %th Name
+            %th Email
+            %th Child's Grade
+            %th Account type
 
-  = form_tag user_accounts_path, :method => :get do
-    = label_tag :name, "Name"
-    = text_field_tag :name, @name
-    = label_tag :accounttype, "Account type"
-    = text_field_tag :accounttype, @accounttype
-    %br
-    = label_tag :fromgrade, "From grade"
-    = number_field_tag :fromgrade, @fromgrade
-    = label_tag :tograde, "To grade"
-    = number_field_tag :tograde, @tograde
-    = submit_tag "Refine the list of members"
 
+        %tbody
+          -@members.each do |member|
+            %tr.member
+            %td.name= member.name
+            %td.email= member.email
+            %td.grade= member.childgrade
+            %td.type= member.accounttype
 
-  %table.table
-    %thead
-      %tr
-        %th Name
-        %th Email
-        %th Child's Grade
-        %th Account type
-
-
-    %tbody
-      -@useraccounts.each do |member|
-        %tr.member
-        - if member.admin?
-          %td.name= member.name
-        - else
-          %td.name= link_to(member.name, view_user_accounts_path(member))
-        %td.email= member.email
-        %td.grade= member.childgrade
-        %td.type= member.accounttype
-
-  = form_tag email_user_accounts_path, :method => :get do
-    = label_tag :subject, "Subject"
-    = text_field_tag :subject
-    %br
-    = label_tag :body, "Body"
-    = text_area_tag :body
-    %br
-    = hidden_field_tag :name, params[:name]
-    = hidden_field_tag :accounttype, params[:accounttype]
-    = hidden_field_tag :fromgrade, params[:fromgrade]
-    = hidden_field_tag :tograde, params[:tograde]
-    %br
-    = submit_tag "Send message to members shown"
