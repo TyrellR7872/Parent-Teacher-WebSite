@@ -8,7 +8,8 @@ Feature: Send emails based on account attributes
     | password  | email                | accounttype| name            | childname       | childgrade| homeaddress | confirmed_at |
     | halitjaha  | lhalitjaha@colgate.edu |  teacher   | Lumbardh Halitjaha  | Little T        | 4         | 13 Oak Dr   | DateTime.new(2018, 4, 19)|
     | jamila    | ajamil@colgate.edu   |  parent  | Asad Jamil    | Little Jimmy    | 10         | 10 Oak Dr   | DateTime.new(2018, 4, 19) |
-    Given I am a new, signed-in user account
+    Given I am a new, signed-in user account with admin
+
 
   Scenario: Send to all users
     Given I am on the user accounts page
