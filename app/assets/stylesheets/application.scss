@@ -36,9 +36,11 @@
 .row {
 margin-bottom: 50px;
 }
+
 span {
   background-color: $light-emerald-green;
 }
+
 .subtitle {
   color: $text-color-light;
 }
@@ -58,12 +60,14 @@ span {
 .b {
     list-style-type: square;
 }
-.t{
-    background: #4CAF50;
-    margin: 2px;
-    font-size: 25px;
-    //color: white;
-}
+
+// .t{
+//     background: #4CAF50;
+//     margin: 2px;
+//     font-size: 25px;
+//     //color: white;
+// }
+
 body {
   background-color: $bg-light;
   font-family: $font-sans;
@@ -99,12 +103,13 @@ h1 {
 .bd-navbar .navbar-nav .nav-link {
   color: lightgreen;
 }
-.centered_text {
-    padding: 15px 0;
-    text-align: center;
-    border: 2px solid green;
 
-}
+// .centered_text {
+//     padding: 15px 0;
+//     text-align: center;
+//     border: 2px solid green;
+// }
+
 .table_caption {
     display: table-caption;
     text-align: center;
@@ -206,9 +211,3 @@ h1 {
 .cent {
   text_align: center;
 }
-.background_green {
-  background-color: #4dff4d;
-  color: black;
-}
-.centered {
-  padding: 15px 0;}

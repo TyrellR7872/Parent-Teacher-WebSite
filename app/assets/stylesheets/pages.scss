@@ -8,6 +8,12 @@ div {
   font-family: $font-sans;
 }
 
+// .width-medium {
+//   width: 100%; }
+//   @media (min-width: 1024px) {
+//     .width-medium  {
+//       width: 50%; } }
+
 .pages__text--primary{
   font-size: 1rem;
 }
@@ -30,3 +36,11 @@ div {
 a[href^="mailto:"] {
   color: red;
 }
+
+// .centered {
+//   padding: 15px 0;}
+
+// .background_green {
+//   background-color: #4dff4d;
+//   color: black;
+// }

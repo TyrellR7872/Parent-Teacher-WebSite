@@ -1,31 +1,36 @@
-#main.container.centered_text
-  %h2 Clubs and Organizations
-  %div.pages--primary.centered
-  %br
-    Hamilton Central School encourages participation in the various musical, dramatic, athletic, journalistic and intellectual activities listed below.  Those marked with an asterisk have an academic eligibility requirement.  The coach or advisor, upon approval by the principal, has the prerogative to establish reasonable criteria, oral or written, for participation in their respective extra-curricular program.
-  %br
-  %div.pages--primary
-    %ul.b.t
-      %li.pages__item--secondary  Almeda
-      %li.pages__item--secondary  Amnesty International
-      %li.pages__item--secondary  Chess Club
-      %li.pages__item--secondary  FFA
-      %li.pages__item--secondary  French Club
-      %li.pages__item--secondary  Greensleeves (Drama)
-      %li.pages__item--secondary  Hamilton Outdoor Group
-      %li.pages__item--secondary  International Thespian Society
-      %li.pages__item--secondary  Jazz Band
-      %li.pages__item--secondary  Latin Club
-      %li.pages__item--secondary  Masquers
-      %li.pages__item--secondary  Model UN
-      %li.pages__item--secondary  National Honor Society
-      %li.pages__item--secondary  Odyssey of the Mind (OM)
-      %li.pages__item--secondary  SADD
-      %li.pages__item--secondary  Ski Club
-      %li.pages__item--secondary  Spanish Club
-      %li.pages__item--secondary  Student Council (HS & MS)
-      %li.pages__item--secondary  Teen Aids Task Force (TATF)
+#main.container
+  .row
+    .col-md-2
+    .col-md-8
+      %br
+      %h2.text-center Clubs and Organizations
+      %br
+      %div.h6.text-center Hamilton Central School encourages participation in the various musical, dramatic, athletic, journalistic and intellectual activities listed below.  Those marked with an asterisk have an academic eligibility requirement.  The coach or advisor, upon approval by the principal, has the prerogative to establish reasonable criteria, oral or written, for participation in their respective extra-curricular program.
 
-    %h5 For more information, please take a look at the school official website
-    .centered_text=link_to "Hamilton Central Website", 'https://www.hamiltoncentral.org/domain/70', :class => 'pages__item--link'
-  %br
+      %br
+      %div.text-center
+        %ul
+          %li.h6  Almeda
+          %li.h6  Amnesty International
+          %li.h6  Chess Club
+          %li.h6  FFA
+          %li.h6  French Club
+          %li.h6  Greensleeves (Drama)
+          %li.h6  Hamilton Outdoor Group
+          %li.h6  International Thespian Society
+          %li.h6  Jazz Band
+          %li.h6  Latin Club
+          %li.h6  Masquers
+          %li.h6  Model UN
+          %li.h6  National Honor Society
+          %li.h6  Odyssey of the Mind (OM)
+          %li.h6  SADD
+          %li.h6  Ski Club
+          %li.h6  Spanish Club
+          %li.h6  Student Council (HS & MS)
+          %li.h6  Teen Aids Task Force (TATF)
+
+        .h6 For more information, please take a look at the school official website
+        .text-center=link_to "Hamilton Central Website", 'https://www.hamiltoncentral.org/domain/70', :class => 'pages__item--link'
+      %br
+    .col-md-2
