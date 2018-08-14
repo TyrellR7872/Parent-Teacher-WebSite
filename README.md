@@ -33,7 +33,7 @@ gem pg  ~> 0.18
 
 ## Installation
 
-* Clone the git repo at: https://github.com/ColgateCOSC480/HCS-PTO.git
+* Clone the git repo at: https://github.com/TyrellR7872/Parent-Teacher-WebSite.git
 * Run bundle install to install the gems
 * Rub bundle exec figaro install to create config/application.yml
 * Set GMAIL_USERNAME and GMAIL_PASSWORD environment variables in application.yml with username and app password 
