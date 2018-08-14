@@ -1,18 +1,18 @@
-#main.container-fluid
+#main.container
+  %br
+  %br
 
   .row
     .col-md-offset-1
     .col-md-4
-      %h3.header.title= "#{@calendar_event.title}"
-    .col-md-offset-1
-    .col-md-offset-4
-  .row
+      %h2.header.title= "#{@calendar_event.title}"
     .col-md-offset-2
-    .col-md-8.date_time= "Start date and time: #{@calendar_event.start_date_time ? @calendar_event.start_date_time.to_formatted_s(:short): "No time indicated"}"
-  .row
-    .col-md-4.contact_person= "#{@calendar_event.contact_person} is the contact person for this event."
-  %h3.header Volunteer List
-  %table.table
+    .col-md-4.centered_text.date_time= "Start date and time: #{@calendar_event.start_date_time ? @calendar_event.start_date_time.to_formatted_s(:short): "No time indicated"}"
+    .col-md-4.centered_text.contact_person= "#{@calendar_event.contact_person} is the contact person for this event."
+    .col-md-offset-4
+    %h4 Volunteer List
+  %table.table#events_style
+    //%caption Volunteer List
     %thead
       %tr
         %th Name
@@ -27,7 +27,8 @@
 
   .row
     .col-md-offset-1
-    .col-md-2= link_to('Back to events list', calendar_events_path)
+
+    .col-md-2.centered_text.shaded_green= link_to('Back to events list', calendar_events_path)
 
 = form_tag email_volunteer_list_calendar_event_path(@calendar_event), :method => :get do
   = label_tag :subject, "Subject"
@@ -37,3 +38,4 @@
   = text_area_tag :body
   %br
   = submit_tag "Send message to members shown"
+

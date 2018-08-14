@@ -13,19 +13,25 @@
       %div.carousel-item.active.crop=image_tag 'emerald.png', :class => "d-block w-100"
       .container
         .carousel-caption
+
           .homepage__carousel__title Hamilton Central Parent Teacher Organization
           .homepage__carousel__description Welcome to the official webpage of the Hamilton Central Parent Teacher Organization. Learn more about how you can be involved with the group, or understand more about us.
+          %h1 Hamilton Central Parent Teacher Organization
+
+          %p.lead Welcome to the official webpage of the Hamilton Central Parent Teacher Organization. Learn more about how you can be involved with the organization, or understand more about us.
+
           =link_to "Understand HC PTO Better", pages_path(:about), :class => "btn btn-success btn-lg"
+
       // Slide Two
       %div.carousel-item.img-fluid.crop=image_tag 'slideshow2.jpg', :class => "d-block w-100"
       // Slide Three
       %div.carousel-item.img-fluid.crop=image_tag 'slideshow3.jpg', :class => "d-block w-100"
 
     // Controls
-    %a.carousel-control-prev{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"prev"}
+    .carousel-control-prev{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"prev"}
       %span.carousel-control-prev-icon
       %span.sr-only Previous
-    %a.carousel-control-next{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"next"}
+    .carousel-control-next{:href => "#homepage__image-carousel", :role => "button", 'data-slide'=>"next"}
       %span.carousel-control-next-icon
       %span.sr-only Next
 
@@ -33,11 +39,10 @@
 .container
   %h2 Upcoming events
   %hr
-  %br
 
   %div.row.card-set
     -@calendar_events.each do |event|
-      .col-lg-4.col-md-6.col-sm-12.card-set
+      .col-lg-4.col-md-6.col-sm-12.card-set.homepage__event
         / Add a line to separate between events
         %card.mb-4
           .card-img-top=image_tag event.image.url(:medium)

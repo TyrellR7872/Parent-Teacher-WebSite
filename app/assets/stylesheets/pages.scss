@@ -8,6 +8,27 @@ div {
   font-family: $font-sans;
 }
 
+// .width-medium {
+//   width: 100%; }
+//   @media (min-width: 1024px) {
+//     .width-medium  {
+//       width: 50%; } }
+
+.pages__text--primary{
+  font-size: 1rem;
+}
+
+.pages__item--primary {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: $emerald-green;
+}
+
+.pages__item--secondary {
+  font-weight: 400;
+  color: black;
+}
+
 .pages__item--link {
   color: blue;
 }
@@ -15,3 +36,11 @@ div {
 a[href^="mailto:"] {
   color: red;
 }
+
+// .centered {
+//   padding: 15px 0;}
+
+// .background_green {
+//   background-color: #4dff4d;
+//   color: black;
+// }

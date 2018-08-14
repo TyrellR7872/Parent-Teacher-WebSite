@@ -27,16 +27,46 @@
    font-family: Arial;
    font-size: 18px;
  }
-
+.font {}
 // For more information about the scss syntax and the sass language, go to http://sass-lang.com/guide
 // I think it's fine to use vanilla CSS in an scss file, but there are many advantages to using SCSS
 // over regular CSS
 
 // Text Styling
+.row {
+margin-bottom: 50px;
+}
+
+span {
+  background-color: $light-emerald-green;
+}
 
 .subtitle {
   color: $text-color-light;
 }
+.form_styling {
+ width:200px;
+ height:25px;
+ margin:auto;
+ position:relative;
+ align: center;
+ margin-bottom: 200px
+ }
+.input {
+ width:200px;
+ height:30px;
+ align-content: center;
+   }
+.b {
+    list-style-type: square;
+}
+
+// .t{
+//     background: #4CAF50;
+//     margin: 2px;
+//     font-size: 25px;
+//     //color: white;
+// }
 
 body {
   background-color: $bg-light;
@@ -74,6 +104,27 @@ h1 {
   color: white;
 }
 
+// .centered_text {
+//     padding: 15px 0;
+//     text-align: center;
+//     border: 2px solid green;
+// }
+
+.table_caption {
+    display: table-caption;
+    text-align: center;
+
+}
+.events_style .set_width {
+    table-layout: auto;
+    width: 700px;
+}
+.shaded_green {
+  background-color: $light-emerald-green;
+  color: white;
+  max-width: 400px;
+  min-width: 400px;
+}
 .navbar-nav {
   font-size: 0.85rem; }
   @media (min-width: 750px) {
@@ -136,4 +187,32 @@ h1 {
   right: 0;
   background:rgba(0,0,0,0.6);
   opacity: 0.4;
+}
+
+#events_style {
+  // font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  // width: 100%;
+}
+
+#events_style td, #events_style th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#events_style tr:nth-child(even){background-color: #f2f2f2;}
+
+.homepage__event {
+  padding-top: 20px;
+}
+
+#events_style th {
+   padding-top: 12px;
+   padding-bottom: 12px;
+   text-align: left;
+   background-color: #4CAF50;
+   color: white;
+}
+.cent {
+  text_align: center;
 }
