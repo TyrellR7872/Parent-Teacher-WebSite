@@ -101,7 +101,7 @@ h1 {
 }
 
 .bd-navbar .navbar-nav .nav-link {
-  color: lightgreen;
+  color: white;
 }
 
 // .centered_text {
@@ -142,11 +142,16 @@ h1 {
   margin: 0 auto;
 }
 
-// .crop {
-//   height: 300px;
-//   width: 1500px;
-//   overflow: hidden;
-// }
+.homepage__carousel__title {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.homepage__carousel__description {
+  font-weight: 200;
+  font-size: 1.25rem;
+}
+
 .crop img {
   height: 300px;
   width: auto;
