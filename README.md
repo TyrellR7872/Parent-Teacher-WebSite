@@ -2,7 +2,7 @@
 
 ## Project Description
 
-HCS-PTO is a ruby web app developed by Colgate University students.
+Parent-Teacher-WebSite is a ruby web app developed by Colgate University students.
 
 ## Project Features
 
